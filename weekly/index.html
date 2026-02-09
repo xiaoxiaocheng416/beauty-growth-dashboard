@@ -38,7 +38,7 @@ small{color:var(--muted);}
 .imgWrap{height:150px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:center;justify-content:center;overflow:hidden;}
 @media (max-width: 720px){
   .wrap{padding:14px 12px;}
-  .card{min-height:auto;}
+  /* keep height for flip cards; JS will set exact height */
   .imgWrap{height:170px;}
   .pill{padding:6px 10px;font-size:12px;}
   .links a{font-size:13px;}
@@ -887,16 +887,43 @@ a:hover{text-decoration:underline;}
 </div>
 <script>
 (function(){
+  function fit(card){
+    try{
+      var front = card.querySelector('.front');
+      var back = card.querySelector('.back');
+      if(!front || !back) return;
+      var was = card.classList.contains('isFlipped');
+      card.classList.remove('isFlipped');
+      var h1 = front.scrollHeight || 0;
+      card.classList.add('isFlipped');
+      var h2 = back.scrollHeight || 0;
+      if(!was) card.classList.remove('isFlipped');
+      card.style.height = Math.max(h1, h2, 320) + 'px';
+    } catch(_e){}
+  }
+
+  function fitAll(){
+    document.querySelectorAll('.flip').forEach(fit);
+  }
+
   function toggle(card){
     card.classList.toggle('isFlipped');
+    fit(card);
   }
+
+  window.addEventListener('load', fitAll);
+  window.addEventListener('resize', function(){
+    clearTimeout(window.__fitT);
+    window.__fitT = setTimeout(fitAll, 120);
+  });
+
   document.addEventListener('click', function(e){
     var card = e.target.closest && e.target.closest('.flip');
     if(!card) return;
-    // don't flip when clicking a link
     if(e.target.tagName === 'A') return;
     toggle(card);
   });
+
   document.addEventListener('keydown', function(e){
     if(e.key !== 'Enter' && e.key !== ' ') return;
     var card = document.activeElement;

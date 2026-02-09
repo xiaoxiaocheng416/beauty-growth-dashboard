@@ -831,13 +831,17 @@ button.btnlink{cursor:pointer;}
 
   function toggle(card){
     card.classList.toggle('isFlipped');
-    fit(card);
   }
 
-  window.addEventListener('load', fitAll);
+  window.addEventListener('load', function(){
+    // Defer to next frame so images/layout settle
+    requestAnimationFrame(function(){
+      fitAll();
+    });
+  });
   window.addEventListener('resize', function(){
     clearTimeout(window.__fitT);
-    window.__fitT = setTimeout(fitAll, 120);
+    window.__fitT = setTimeout(fitAll, 160);
   });
 
   document.addEventListener('click', function(e){

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>新品 Hop-on 看板</title>
+  <style>
+  :root{--bg:#f6f7fb;--panel:#ffffff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);} 
+  header{position:sticky;top:0;z-index:10;background:rgba(246,247,251,.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);} 
+  .wrap{max-width:1280px;margin:0 auto;padding:14px 16px;}
+  .hrow{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;}
+  h1{margin:0;font-size:18px;letter-spacing:.2px}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);border:1px solid var(--line);background:#fff;padding:4px 10px;border-radius:999px;}
+  .controls{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  select,input{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px;color:var(--text);outline:none;}
+  .btn{cursor:pointer;border:1px solid var(--line);background:#fff;padding:8px 10px;border-radius:12px;font-size:13px;color:var(--text);} 
+  main .wrap{padding-top:14px;}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+  .tabs{display:flex;gap:8px;padding:10px;border-bottom:1px solid var(--line);} 
+  .tab{cursor:pointer;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:12px;background:#fff;}
+  .tab.active{color:#1e293b;background:#eef2ff;border-color:#c7d2fe;}
+  .view{display:none;}
+  .view.active{display:block;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:14px;}
+  @media (max-width: 980px){.cards{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width: 640px){.cards{grid-template-columns:1fr;}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px;}
+  .heroWrap{width:100%;height:160px;border-radius:14px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .hero{max-width:100%;max-height:100%;object-fit:contain;}
+  .title{font-weight:720;font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:4.8em;}
+  .sub{color:var(--muted);font-size:11px;}
+  .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+  .badge{font-size:11px;border:1px solid var(--line);padding:2px 8px;border-radius:999px;color:var(--muted);} 
+  .badge.hop{background:#fee2e2;border-color:#fecaca;color:#7f1d1d;}
+  .badge.pair{background:#fffbeb;border-color:#fde68a;color:#78350f;}
+  .badge.solo{background:#eef2ff;border-color:#c7d2fe;color:#1e293b;}
+  .carrier{font-size:12px;color:#334155;display:flex;gap:8px;flex-wrap:wrap;}
+  .carrier .muted{color:var(--muted);font-size:11px;}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="hrow">
+    <h1>新品 Hop-on 看板</h1>
+    <span class="pill">生成时间：<span id="gen"></span></span>
+    <span class="pill">新品窗口：<span id="nd"></span>天</span>
+  </div>
+  <div class="controls">
+    <label class="pill">视图 <select id="tab"><option value="hop" selected>Hop-on（按重合）</option><option value="creator">按达人（每人新品）</option></select></label>
+    <label class="pill">最小重合 <select id="minCount"><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label>
+    <label class="pill">TopN <select id="topn"><option>20</option><option selected>50</option><option>100</option><option>200</option></select></label>
+    <label class="pill">搜索 <input id="q" placeholder="商品/店铺/达人" size="22" /></label>
+    <button class="btn" id="reset">重置</button>
+    <span class="pill">条目：<span id="count"></span></span>
+  </div>
+</div></header>
+
+<main><div class="wrap">
+  <div class="panel">
+    <div class="view active" id="view_hop"><div class="cards" id="cards_hop"></div></div>
+    <div class="view" id="view_creator"><div class="cards" id="cards_creator"></div></div>
+  </div>
+</div></main>
+
+<script id="data" type="application/json">{"generated_at": "2026-02-13T17:30:55Z", "run_dir": "/Users/mybro/.openclaw/workspace/tools/fastmoss_creator_goods_monitor/runs/20260213_152944", "new_days": 7, "creators": [{"uid": "6753111641049203717", "handle": "thestephedition", "name": "NurseHaus", "new_count": 1, "new_items": [{"product_id": "1732157257719255067", "title": "[Dr.Melaxin Official] Cactox & Collagen Multi Pore Firming Duo with Cactus Cooling & Eye Care Stick for Visible Pore Refining and Skin Repair", "shop_title": "Dr.Melaxin Global", "shelf_time": "2026-02-07 04:18:53", "shelf_ts": 1770437933, "age_days": 6.550023148148148, "sale_amount": 666.9, "sale_amount_show": "$666.9", "sold_count_show": "19", "real_price": "$41.30", "commission_rate_show": "15%", "cover": "https://s.500fd.com/tt_product/c6e93dc24bed49f2aa13e24e3b9906ae~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg", "cover_proxy": "https://images.weserv.nl/?url=s.500fd.com/tt_product/c6e93dc24bed49f2aa13e24e3b9906ae~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg&w=520&fit=contain&output=webp", "fastmoss_url": "https://www.fastmoss.com/zh/e-commerce/detail/1732157257719255067", "tiktok_url": "https://www.tiktok.com/shop/pdp/1732157257719255067?source=product_detail"}]}, {"uid": "7250601658829849646", "handle": "midlife.nursing", "name": "Midlife Nursing Aesthetics", "new_count": 1, "new_items": [{"product_id": "1732157257719255067", "title": "[Dr.Melaxin Official] Cactox & Collagen Multi Pore Firming Duo with Cactus Cooling & Eye Care Stick for Visible Pore Refining and Skin Repair", "shop_title": "Dr.Melaxin Global", "shelf_time": "2026-02-07 04:18:53", "shelf_ts": 1770437933, "age_days": 6.550023148148148, "sale_amount": 1840.4, "sale_amount_show": "$1840.4", "sold_count_show": "52", "real_price": "$41.30", "commission_rate_show": "15%", "cover": "https://s.500fd.com/tt_product/c6e93dc24bed49f2aa13e24e3b9906ae~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg", "cover_proxy": "https://images.weserv.nl/?url=s.500fd.com/tt_product/c6e93dc24bed49f2aa13e24e3b9906ae~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg&w=520&fit=contain&output=webp", "fastmoss_url": "https://www.fastmoss.com/zh/e-commerce/detail/1732157257719255067", "tiktok_url": "https://www.tiktok.com/shop/pdp/1732157257719255067?source=product_detail"}]}, {"uid": "7215285688273798187", "handle": "skincarepronikki", "name": "Esthetician Nikki", "new_count": 0, "new_items": []}, {"uid": "7429520051840271403", "handle": "quinclips3", "name": "quinclips3", "new_count": 0, "new_items": []}, {"uid": "7024678698423403522", "handle": "rachelmadisoncarlisle", "name": "Rachel Carlisle", "new_count": 0, "new_items": []}, {"uid": "6865320366932575237", "handle": "theallisonveer", "name": "Allison Veer", "new_count": 0, "new_items": []}, {"uid": "7270784888601101355", "handle": "jessicaaa.1996", "name": "Jessica Campbell", "new_count": 0, "new_items": []}, {"uid": "7416489107738281006", "handle": "kajsa.ziebell", "name": "Kajsa", "new_count": 0, "new_items": []}, {"uid": "6844346479865512966", "handle": "oahufaves", "name": "oahufaves", "new_count": 0, "new_items": []}, {"uid": "7544036433149821982", "handle": "sadefinds1", "name": "sadefinds1", "new_count": 0, "new_items": []}, {"uid": "7436686228703265838", "handle": "cakedfinds", "name": "cakedfinds", "new_count": 0, "new_items": []}, {"uid": "7153432386608251946", "handle": "based", "name": "BASED", "new_count": 0, "new_items": []}, {"uid": "7493118952743912494", "handle": "jetskcqzy7m", "name": "jet", "new_count": 0, "new_items": []}, {"uid": "6574085939651608582", "handle": "sammycakes2020", "name": "Sammy Cakes", "new_count": 0, "new_items": []}, {"uid": "6751215854061093893", "handle": "ashmartodam", "name": "Big Hair by Ash", "new_count": 0, "new_items": []}, {"uid": "7323074614472655915", "handle": "hismileus", "name": "Hismile US", "new_count": 0, "new_items": []}, {"uid": "6764767030534325254", "handle": "dazeemaee", "name": "Dazee Mae", "new_count": 0, "new_items": []}, {"uid": "6997931477694809094", "handle": "kendrabrowning1", "name": "kendrabrowning1", "new_count": 0, "new_items": []}, {"uid": "7366772668787524654", "handle": "jackie.morales.7", "name": "jackie.morales.7", "new_count": 0, "new_items": []}, {"uid": "7317172768830587950", "handle": "preciousreviewsit", "name": "Precious", "new_count": 0, "new_items": []}], "hop": [{"product_id": "1732157257719255067", "title": "[Dr.Melaxin Official] Cactox & Collagen Multi Pore Firming Duo with Cactus Cooling & Eye Care Stick for Visible Pore Refining and Skin Repair", "shop_title": "Dr.Melaxin Global", "real_price": "$41.30", "commission_rate_show": "15%", "shelf_time": "2026-02-07 04:18:53", "shelf_ts": 1770437933, "age_days": 6.550023148148148, "cover": "https://s.500fd.com/tt_product/c6e93dc24bed49f2aa13e24e3b9906ae~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg", "cover_proxy": "https://images.weserv.nl/?url=s.500fd.com/tt_product/c6e93dc24bed49f2aa13e24e3b9906ae~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg&w=520&fit=contain&output=webp", "fastmoss_url": "https://www.fastmoss.com/zh/e-commerce/detail/1732157257719255067", "tiktok_url": "https://www.tiktok.com/shop/pdp/1732157257719255067?source=product_detail", "carriers": [{"uid": "7250601658829849646", "handle": "midlife.nursing", "name": "Midlife Nursing Aesthetics", "rank": 1, "sale_amount": 1840.4, "sale_amount_show": "$1840.4"}, {"uid": "6753111641049203717", "handle": "thestephedition", "name": "NurseHaus", "rank": 1, "sale_amount": 666.9, "sale_amount_show": "$666.9"}], "sum_gmv": 2507.3, "max_gmv": 1840.4, "count": 2, "hop_score": 6.798758956305258}]}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+document.getElementById('gen').textContent = DATA.generated_at;
+document.getElementById('nd').textContent = DATA.new_days;
+
+function norm(s){ return (s||'').toString().toLowerCase(); }
+function moneyShort(n){
+  const x=Number(n);
+  if(!isFinite(x)) return '';
+  if(x>=1e8) return '$'+(x/1e8).toFixed(2)+'亿';
+  if(x>=1e4) return '$'+(x/1e4).toFixed(2)+'万';
+  return '$'+x.toFixed(0);
+}
+
+function badgeClass(count){
+  if(count>=3) return 'hop';
+  if(count==2) return 'pair';
+  return 'solo';
+}
+
+function carrierText(carriers){
+  return (carriers||[]).map(c=>`${c.handle||c.uid}#${c.rank}` + (c.sale_amount_show?`(${c.sale_amount_show})`:'' )).join(', ');
+}
+
+function filteredHop(){
+  const minCount=parseInt(document.getElementById('minCount').value,10);
+  const topn=parseInt(document.getElementById('topn').value,10);
+  const q=norm(document.getElementById('q').value||'');
+  let items=(DATA.hop||[]).filter(it => (it.count||0) >= minCount);
+  if(q){
+    items=items.filter(it => norm([it.title,it.shop_title,it.product_id,carrierText(it.carriers)].join(' ')).includes(q));
+  }
+  items.sort((a,b)=> (b.count-a.count) || ((b.sum_gmv||0)-(a.sum_gmv||0)) );
+  return items.slice(0, topn);
+}
+
+function renderHop(items){
+  const root=document.getElementById('cards_hop');
+  root.innerHTML='';
+  for(const it of items){
+    const el=document.createElement('div');
+    el.className='card';
+    const carriers=(it.carriers||[]).slice(0, 10).map(c=>{
+      return `<div class="carrier"><strong>${c.handle||c.uid}</strong> <span class="muted">#${c.rank}</span> <span class="muted">${c.sale_amount_show||''}</span></div>`;
+    }).join('');
+
+    el.innerHTML=`
+      <div class="heroWrap"><img class="hero" referrerpolicy="no-referrer" loading="lazy" src="${it.cover_proxy||it.cover||''}" onerror="this.onerror=null; this.src='${it.cover||''}';" /></div>
+      <div class="title">${it.title||''}</div>
+      <div class="sub">${it.shop_title||''}</div>
+      <div class="row">
+        <span class="badge ${badgeClass(it.count)}">重合 ${it.count}</span>
+        <span class="badge">sum ${moneyShort(it.sum_gmv)}</span>
+        <span class="badge">max ${moneyShort(it.max_gmv)}</span>
+        <span class="badge">${it.shelf_time||''}</span>
+      </div>
+      <div class="row">
+        ${it.real_price?`<span class="badge">${it.real_price}</span>`:''}
+        ${it.commission_rate_show?`<span class="badge">佣金 ${it.commission_rate_show}</span>`:''}
+      </div>
+      <div>${carriers}</div>
+      <div class="row" style="margin-top:auto;">
+        <a class="badge" href="${it.fastmoss_url}" target="_blank" rel="noreferrer">Fastmoss</a>
+        <a class="badge" href="${it.tiktok_url}" target="_blank" rel="noreferrer">TikTok</a>
+      </div>
+    `;
+    root.appendChild(el);
+  }
+}
+
+function filteredCreators(){
+  const q=norm(document.getElementById('q').value||'');
+  let items=(DATA.creators||[]);
+  if(q){
+    items=items.filter(c => norm([c.handle,c.name].join(' ')).includes(q));
+  }
+  return items;
+}
+
+function renderCreators(items){
+  const root=document.getElementById('cards_creator');
+  root.innerHTML='';
+  for(const c of items){
+    const el=document.createElement('div');
+    el.className='card';
+    const newItems=(c.new_items||[]).slice(0, 8).map(it=>{
+      return `<div class="carrier"><strong>${it.title||''}</strong> <span class="muted">${it.shelf_time||''}</span> <span class="muted">${it.sale_amount_show||moneyShort(it.sale_amount)||''}</span></div>`;
+    }).join('') || '<div class="sub">（本窗口无新品）</div>';
+
+    el.innerHTML=`
+      <div class="title">${c.handle} <span class="badge">新品 ${c.new_count||0}</span></div>
+      <div class="sub">${c.name||''}</div>
+      <div>${newItems}</div>
+    `;
+    root.appendChild(el);
+  }
+}
+
+function render(){
+  const tab=document.getElementById('tab').value;
+  document.getElementById('view_hop').classList.toggle('active', tab==='hop');
+  document.getElementById('view_creator').classList.toggle('active', tab==='creator');
+
+  if(tab==='hop'){
+    const items=filteredHop();
+    document.getElementById('count').textContent = items.length;
+    renderHop(items);
+  } else {
+    const items=filteredCreators();
+    document.getElementById('count').textContent = items.length;
+    renderCreators(items);
+  }
+}
+
+['tab','minCount','topn','q'].forEach(id=>{
+  document.getElementById(id).addEventListener(id==='q'?'input':'change', render);
+});
+document.getElementById('reset').addEventListener('click', ()=>{
+  document.getElementById('tab').value='hop';
+  document.getElementById('minCount').value='1';
+  document.getElementById('topn').value='50';
+  document.getElementById('q').value='';
+  render();
+});
+
+render();
+</script>
+</body>
+</html>

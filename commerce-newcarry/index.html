@@ -67,9 +67,10 @@
   </div>
 </div></main>
 
-<script id="data" type="application/json">{"generated_at": "2026-02-13T19:28:15Z", "week_key": "2026-07", "week_start_ts": 1770595200, "week_start_date": "2026-02-09", "baseline_ts": 1771010768, "run_dir": "/Users/mybro/.openclaw/workspace/tools/fastmoss_creator_goods_monitor/runs_newcarry/20260213_192815", "hop": [], "creators": [], "notes": {"definition": "刚带=该商品第一次被我们的监控抓到出现在该达人带货列表（不是商品上架时间）", "caveat": "首次运行会建立基线；基线之前的带货无法回溯。"}}</script>
+<script id="data" type="application/json">{"generated_at": "2026-02-13T23:21:16Z", "week_key": "2026-07", "week_start_ts": 1770595200, "week_start_date": "2026-02-09", "baseline_ts": 1771010768, "run_dir": "/Users/mybro/.openclaw/workspace/tools/fastmoss_creator_goods_monitor/runs_newcarry/20260213_232116", "hop": [], "creators": [], "notes": {"definition": "刚带=该商品第一次被我们的监控抓到出现在该达人带货列表（不是商品上架时间）", "caveat": "首次运行会建立基线；基线之前的带货无法回溯。"}}</script>
 <script>
 const DATA = JSON.parse(document.getElementById('data').textContent);
+if((DATA.hop||[]).length===0){ document.getElementById('tab').value='creator'; }
 document.getElementById('gen').textContent = DATA.generated_at;
 document.getElementById('wk').textContent = DATA.week_key + ' (Mon ' + DATA.week_start_date + ')';
 document.getElementById('base').textContent = DATA.baseline_ts ? (new Date(DATA.baseline_ts*1000)).toISOString().slice(0,19).replace('T',' ') : '-';
@@ -98,6 +99,14 @@ function filteredHop(){
 function renderHop(items){
   const root=document.getElementById('cards_hop');
   root.innerHTML='';
+  if(!items || items.length===0){
+    root.innerHTML = `<div class="card">
+      <div class="title">当前没有“刚带重合”条目</div>
+      <div class="sub">原因通常是：这是首次运行（建基线），或本周/本周期内尚未检测到新上车。
+      你可以切换到「按达人」视图看看本周每个达人是否有刚带记录。</div>
+    </div>`;
+    return;
+  }
   for(const it of items){
     const el=document.createElement('div');
     el.className='card';

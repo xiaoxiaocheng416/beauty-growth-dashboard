@@ -1,52 +1,74 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anua · Fastmoss Dashboard</title>
+  <title>Anua · Fastmoss 看板（Top20 GMV 28D）</title>
   <style>
-    :root{--bg:#f6f7fb;--panel:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--shadow:0 1px 2px rgba(15,23,42,.06),0 10px 25px rgba(15,23,42,.06);} 
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-    header{background:#fff;border-bottom:1px solid var(--line);}
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 16px;}
-    h1{margin:0;font-size:20px;letter-spacing:-0.01em;}
-    .sub{margin-top:6px;color:var(--muted);font-size:13px;}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
-    @media (max-width: 720px){.grid{grid-template-columns:1fr;}}
-    .card{background:var(--panel);border:1px solid rgba(226,232,240,.9);border-radius:16px;padding:14px;box-shadow:var(--shadow);}
-    .title{font-weight:800;font-size:14px;}
-    .desc{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.35;}
-    a.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;padding:8px 10px;border-radius:10px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#ffffff,#f8fafc);color:var(--accent);text-decoration:none;font-size:12px;font-weight:800;}
-    a.btn:hover{filter:brightness(.98);}
-    .note{margin-top:12px;color:var(--muted);font-size:12px;}
-    code{background:#fff;border:1px solid var(--line);border-radius:8px;padding:2px 6px;}
+    :root{--bg:#0b1020;--panel:#0f172a;--card:#111c33;--text:#e5e7eb;--muted:#94a3b8;--line:#1f2a44;--accent:#60a5fa;}
+    body{margin:0;background:linear-gradient(180deg,#070a14,#0b1020 30%,#070a14);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 14px 40px;}
+    header{position:sticky;top:0;background:rgba(11,16,32,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10;}
+    h1{margin:0;font-size:18px;letter-spacing:-.01em;}
+    .sub{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.35;}
+    .row{display:flex;gap:10px;align-items:center;justify-content:space-between;}
+    a.back{color:var(--accent);text-decoration:none;font-weight:700;font-size:12px;}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px;}
+    .card{display:grid;grid-template-columns:140px 1fr;gap:12px;background:rgba(17,28,51,.72);border:1px solid rgba(31,42,68,.9);border-radius:16px;overflow:hidden;}
+    @media (max-width:720px){.card{grid-template-columns:1fr;}}
+
+    .rank{position:absolute;margin:10px;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:800;}
+    .thumb{position:relative;display:block;background:#0a1225;}
+    .thumb img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;display:block;}
+
+    .meta{padding:12px 12px 12px 0;}
+    @media (max-width:720px){.meta{padding:12px;}}
+
+    .topline{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
+    .handle{font-weight:900;}
+    .date{color:var(--muted);font-size:12px;white-space:nowrap;}
+    .nums{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;}
+    .nums div{display:flex;gap:6px;align-items:baseline;}
+    .nums span{color:var(--muted);font-size:11px;}
+    .nums b{font-size:13px;}
+    .desc{margin-top:8px;color:#cbd5e1;font-size:12px;line-height:1.35;max-height:3.9em;overflow:hidden;}
+    .actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
+    .btn,.btn2{border-radius:10px;padding:7px 10px;font-size:12px;font-weight:800;}
+    .btn{background:linear-gradient(180deg,#1d4ed8,#1e40af);color:white;text-decoration:none;border:1px solid rgba(255,255,255,.12);}
+    .btn2{background:transparent;color:var(--accent);border:1px solid rgba(96,165,250,.35);}
   </style>
 </head>
 <body>
-  <header><div class="wrap">
-    <h1>Anua · Fastmoss Dashboard</h1>
-    <div class="sub">Channel page (clean/public). We’ll drop the Anua panels here.</div>
-  </div></header>
-
-  <div class="wrap">
-    <div class="grid">
-      <div class="card">
-        <div class="title">Status</div>
-        <div class="desc">This is a clean placeholder page. Next step: generate the Anua cards (products/creators/GMV trend) and publish into this channel folder.</div>
-        <a class="btn" href="../">Back to Home →</a>
-        <div class="note">Path: <code>/anuafastmoss/</code></div>
-      </div>
-
-      <div class="card">
-        <div class="title">What will appear here</div>
-        <div class="desc">
-          • Top products (with cover)<br/>
-          • GMV/day 90d trend flip chart<br/>
-          • Direct TikTok links + copy link button<br/>
-          • Weekly snapshots
+  <header>
+    <div class=wrap>
+      <div class=row>
+        <div>
+          <h1>Anua · Fastmoss 看板（Top20 · GMV 28D）</h1>
+          <div class=sub>干净版（仅静态页面）。口径：从现有 Anua 数据里按 GMV 排前 20（去重）。</div>
         </div>
+        <a class=back href="../">← Home</a>
       </div>
     </div>
+  </header>
+
+  <div class=wrap>
+    <div class=grid>
+      
+    </div>
   </div>
+
+  <script>
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-copy]');
+      if (!btn) return;
+      const text = btn.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(() => {
+        const old = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => btn.textContent = old, 900);
+      });
+    });
+  </script>
 </body>
 </html>

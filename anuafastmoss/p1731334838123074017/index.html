@@ -22,18 +22,18 @@
     @media (max-width: 780px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
     @media (max-width: 480px){.grid{grid-template-columns:1fr;}}
 
-    .tile{position:relative;display:block;border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(226,232,240,.95);box-shadow:var(--shadow);text-decoration:none;color:inherit;}
-    .rank{position:absolute;top:10px;left:10px;z-index:3;padding:4px 8px;border-radius:999px;background:rgba(15,23,42,.78);color:#fff;border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:950;}
+    .tile{background:#fff;border:1px solid rgba(226,232,240,.95);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);} 
+    .rank{position:absolute;top:10px;left:10px;z-index:3;padding:4px 8px;border-radius:999px;background:rgba(15,23,42,.78);color:#fff;border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:950;} 
     .cover{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#eef2ff;}
 
-    .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;pointer-events:none;}
-    .meta{display:flex;justify-content:space-between;gap:10px;align-items:flex-end;padding:10px 10px 8px;background:linear-gradient(180deg, rgba(0,0,0,0), rgba(15,23,42,.78));color:#fff;}
+    .thumblink{position:relative;display:block;text-decoration:none;color:inherit;}
+    .info{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 10px 12px;border-top:1px solid rgba(226,232,240,.95);}
+    .left{min-width:0;}
+    .handle{font-weight:950;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;}
+    .subline{margin-top:4px;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:240px;}
+    .copy{border-radius:12px;padding:10px 14px;font-size:13px;font-weight:900;background:#fff;color:#2563eb;border:2px solid rgba(37,99,235,.55);} 
+ 
     .handle{font-weight:950;font-size:13px;}
-    .right{text-align:right;}
-    .views{font-weight:900;font-size:12px;}
-    .date{font-size:11px;opacity:.85;}
-
-    .actions{padding:0 10px 10px;display:flex;justify-content:flex-end;}
     .copy{pointer-events:auto;border-radius:12px;padding:10px 14px;font-size:13px;font-weight:900;background:#fff;color:#2563eb;border:2px solid rgba(37,99,235,.55);box-shadow:0 8px 18px rgba(15,23,42,.18);}
     .copy:hover{filter:brightness(.98);}
   </style>
@@ -54,345 +54,325 @@
   <div class=wrap>
     <div class=grid>
       
-    <a class=tile href="https://www.tiktok.com/@lukasgreyy/video/7583506615089761550" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
-      <div class=rank>#1</div>
-      <img class=cover loading="lazy" src="assets/covers/91290bd9a457e4be69878427.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oofp1tRBE9DPaewErBFcqIAyD4AOQgCog8ASjA~tplv-photomode-zoomcover:480:480.avif';"/>
-      <div class=overlay>
-        <div class=meta>
-          <div class=handle>@lukasgreyy</div>
-          <div class=right>
-            <div class=views>Views 4,600,000</div>
-            <div class=date>2025-12-14</div>
-          </div>
-        </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7583506615089761550" type="button">Copy link</button>
-        </div>
-      </div>
-    </a>
     
-    <a class=tile href="https://www.tiktok.com/@philsmypharmacist/video/7584248903583665463" target="_blank" rel="noopener" aria-label="open tiktok philsmypharmacist">
-      <div class=rank>#2</div>
-      <img class=cover loading="lazy" src="assets/covers/ecedf14dd5b0f0ae7ecc6a59.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/ogaAvAA7kE4UdBki7ViIqiBAIEqtBTagCawMA~tplv-photomode-zoomcover:480:480.avif';"/>
-      <div class=overlay>
-        <div class=meta>
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@lukasgreyy/video/7583506615089761550" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
+        <div class=rank>#1</div>
+        <img class=cover loading="lazy" src="assets/covers/91290bd9a457e4be69878427.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oofp1tRBE9DPaewErBFcqIAyD4AOQgCog8ASjA~tplv-photomode-zoomcover:480:480.avif';"/>
+      </a>
+      <div class=info>
+        <div class=left>
+          <div class=handle>@lukasgreyy</div>
+          <div class=subline>Views 4,600,000 · 2025-12-14</div>
+        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7583506615089761550" type="button">Copy link</button>
+      </div>
+    </div>
+    
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@philsmypharmacist/video/7584248903583665463" target="_blank" rel="noopener" aria-label="open tiktok philsmypharmacist">
+        <div class=rank>#2</div>
+        <img class=cover loading="lazy" src="assets/covers/ecedf14dd5b0f0ae7ecc6a59.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/ogaAvAA7kE4UdBki7ViIqiBAIEqtBTagCawMA~tplv-photomode-zoomcover:480:480.avif';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@philsmypharmacist</div>
-          <div class=right>
-            <div class=views>Views 1,600,000</div>
-            <div class=date>2025-12-16</div>
-          </div>
+          <div class=subline>Views 1,600,000 · 2025-12-16</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@philsmypharmacist/video/7584248903583665463" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@philsmypharmacist/video/7584248903583665463" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@shopbyjake/video/7587500968560954655" target="_blank" rel="noopener" aria-label="open tiktok shopbyjake">
-      <div class=rank>#3</div>
-      <img class=cover loading="lazy" src="assets/covers/6d89a5405e7f9a05a233e40a.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/ocTIEvSIMZMDQC1OAfqAGfETFIAjdCm2kFmfcI~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@shopbyjake/video/7587500968560954655" target="_blank" rel="noopener" aria-label="open tiktok shopbyjake">
+        <div class=rank>#3</div>
+        <img class=cover loading="lazy" src="assets/covers/6d89a5405e7f9a05a233e40a.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/ocTIEvSIMZMDQC1OAfqAGfETFIAjdCm2kFmfcI~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@shopbyjake</div>
-          <div class=right>
-            <div class=views>Views 589,500</div>
-            <div class=date>2025-12-25</div>
-          </div>
+          <div class=subline>Views 589,500 · 2025-12-25</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@shopbyjake/video/7587500968560954655" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@shopbyjake/video/7587500968560954655" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@daniella_britt/video/7587191583640947999" target="_blank" rel="noopener" aria-label="open tiktok daniella_britt">
-      <div class=rank>#4</div>
-      <img class=cover loading="lazy" src="assets/covers/ef4ce445868596f380b40034.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oQiepAN0pA72i7kAix4YBIHBKILvIsEACXrAEB.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@daniella_britt/video/7587191583640947999" target="_blank" rel="noopener" aria-label="open tiktok daniella_britt">
+        <div class=rank>#4</div>
+        <img class=cover loading="lazy" src="assets/covers/ef4ce445868596f380b40034.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oQiepAN0pA72i7kAix4YBIHBKILvIsEACXrAEB.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@daniella_britt</div>
-          <div class=right>
-            <div class=views>Views 516,500</div>
-            <div class=date>2025-12-24</div>
-          </div>
+          <div class=subline>Views 516,500 · 2025-12-24</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@daniella_britt/video/7587191583640947999" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@daniella_britt/video/7587191583640947999" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@estibalizoficial/video/7589434067490262286" target="_blank" rel="noopener" aria-label="open tiktok estibalizoficial">
-      <div class=rank>#5</div>
-      <img class=cover loading="lazy" src="assets/covers/f609673c0abe67d5947a18a4.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oAMTBLfBpIwBIY0COFRv9qKYTAjAcisoiBdUIw~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@estibalizoficial/video/7589434067490262286" target="_blank" rel="noopener" aria-label="open tiktok estibalizoficial">
+        <div class=rank>#5</div>
+        <img class=cover loading="lazy" src="assets/covers/f609673c0abe67d5947a18a4.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oAMTBLfBpIwBIY0COFRv9qKYTAjAcisoiBdUIw~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@estibalizoficial</div>
-          <div class=right>
-            <div class=views>Views 303,700</div>
-            <div class=date>2025-12-30</div>
-          </div>
+          <div class=subline>Views 303,700 · 2025-12-30</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@estibalizoficial/video/7589434067490262286" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@estibalizoficial/video/7589434067490262286" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@autumnmarys/video/7583470692495068471" target="_blank" rel="noopener" aria-label="open tiktok autumnmarys">
-      <div class=rank>#6</div>
-      <img class=cover loading="lazy" src="assets/covers/5b74ae6482df4c2cf0b0ddff.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oEAERA6DEFARieAAIG6DIIgpeg5Aa2k9nOefJo~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@autumnmarys/video/7583470692495068471" target="_blank" rel="noopener" aria-label="open tiktok autumnmarys">
+        <div class=rank>#6</div>
+        <img class=cover loading="lazy" src="assets/covers/5b74ae6482df4c2cf0b0ddff.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oEAERA6DEFARieAAIG6DIIgpeg5Aa2k9nOefJo~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@autumnmarys</div>
-          <div class=right>
-            <div class=views>Views 300,700</div>
-            <div class=date>2025-12-14</div>
-          </div>
+          <div class=subline>Views 300,700 · 2025-12-14</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@autumnmarys/video/7583470692495068471" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@autumnmarys/video/7583470692495068471" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@shopbyjake/video/7582368493190925599" target="_blank" rel="noopener" aria-label="open tiktok shopbyjake">
-      <div class=rank>#7</div>
-      <img class=cover loading="lazy" src="assets/covers/ef52108e4a76c8f8d160f4c6.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oMIfbGGRgQAeCgjnOkxAcQSAUFLI2e5GfpvZLA~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@shopbyjake/video/7582368493190925599" target="_blank" rel="noopener" aria-label="open tiktok shopbyjake">
+        <div class=rank>#7</div>
+        <img class=cover loading="lazy" src="assets/covers/ef52108e4a76c8f8d160f4c6.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oMIfbGGRgQAeCgjnOkxAcQSAUFLI2e5GfpvZLA~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@shopbyjake</div>
-          <div class=right>
-            <div class=views>Views 298,900</div>
-            <div class=date>2025-12-11</div>
-          </div>
+          <div class=subline>Views 298,900 · 2025-12-11</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@shopbyjake/video/7582368493190925599" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@shopbyjake/video/7582368493190925599" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@alignedwithkay/video/7579880819867651358" target="_blank" rel="noopener" aria-label="open tiktok alignedwithkay">
-      <div class=rank>#8</div>
-      <img class=cover loading="lazy" src="assets/covers/3ba061baa5d33d08497b8aab.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/owCaBJEAKRAi5iJJAPIU5mfgALBgiBAIUAZ0mx.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@alignedwithkay/video/7579880819867651358" target="_blank" rel="noopener" aria-label="open tiktok alignedwithkay">
+        <div class=rank>#8</div>
+        <img class=cover loading="lazy" src="assets/covers/3ba061baa5d33d08497b8aab.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/owCaBJEAKRAi5iJJAPIU5mfgALBgiBAIUAZ0mx.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@alignedwithkay</div>
-          <div class=right>
-            <div class=views>Views 242,600</div>
-            <div class=date>2025-12-04</div>
-          </div>
+          <div class=subline>Views 242,600 · 2025-12-04</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@alignedwithkay/video/7579880819867651358" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@alignedwithkay/video/7579880819867651358" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@lukasgreyy/video/7597767288208608567" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
-      <div class=rank>#9</div>
-      <img class=cover loading="lazy" src="assets/covers/cc16709e6b6c0433e3afd5bb.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/o0QACSDIfEWAMAj6xPgAHLIHJxGfF4AtwekVKk.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@lukasgreyy/video/7597767288208608567" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
+        <div class=rank>#9</div>
+        <img class=cover loading="lazy" src="assets/covers/cc16709e6b6c0433e3afd5bb.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/o0QACSDIfEWAMAj6xPgAHLIHJxGfF4AtwekVKk.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@lukasgreyy</div>
-          <div class=right>
-            <div class=views>Views 221,500</div>
-            <div class=date>2026-01-21</div>
-          </div>
+          <div class=subline>Views 221,500 · 2026-01-21</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7597767288208608567" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7597767288208608567" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@janettesoberanes/video/7583884317462400286" target="_blank" rel="noopener" aria-label="open tiktok janettesoberanes">
-      <div class=rank>#10</div>
-      <img class=cover loading="lazy" src="assets/covers/9b11231ebcb747c113788526.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/os0EZxFPvIDWl9CA2kTAfUE2pfQnRgTEVVq1XB~tplv-photomode-zoomcover:480:480.avif';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@janettesoberanes/video/7583884317462400286" target="_blank" rel="noopener" aria-label="open tiktok janettesoberanes">
+        <div class=rank>#10</div>
+        <img class=cover loading="lazy" src="assets/covers/9b11231ebcb747c113788526.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/os0EZxFPvIDWl9CA2kTAfUE2pfQnRgTEVVq1XB~tplv-photomode-zoomcover:480:480.avif';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@janettesoberanes</div>
-          <div class=right>
-            <div class=views>Views 156,000</div>
-            <div class=date>2025-12-15</div>
-          </div>
+          <div class=subline>Views 156,000 · 2025-12-15</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@janettesoberanes/video/7583884317462400286" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@janettesoberanes/video/7583884317462400286" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@lukasgreyy/video/7594971915291200823" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
-      <div class=rank>#11</div>
-      <img class=cover loading="lazy" src="assets/covers/3a149b4fa5b875c8eac3ec03.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oAfsmAQPYkA4eIISBzLeHEAyPwWAWQEMjAGFId.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@lukasgreyy/video/7594971915291200823" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
+        <div class=rank>#11</div>
+        <img class=cover loading="lazy" src="assets/covers/3a149b4fa5b875c8eac3ec03.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oAfsmAQPYkA4eIISBzLeHEAyPwWAWQEMjAGFId.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@lukasgreyy</div>
-          <div class=right>
-            <div class=views>Views 152,500</div>
-            <div class=date>2026-01-14</div>
-          </div>
+          <div class=subline>Views 152,500 · 2026-01-14</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7594971915291200823" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7594971915291200823" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@janettesoberanes/video/7588304421482728735" target="_blank" rel="noopener" aria-label="open tiktok janettesoberanes">
-      <div class=rank>#12</div>
-      <img class=cover loading="lazy" src="assets/covers/3f269f4a2e3c3553350b0745.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/o8sibl0IP5GBhAxEARqs4fijiCAI9Dp5WkAvkI~tplv-photomode-zoomcover:480:480.avif';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@janettesoberanes/video/7588304421482728735" target="_blank" rel="noopener" aria-label="open tiktok janettesoberanes">
+        <div class=rank>#12</div>
+        <img class=cover loading="lazy" src="assets/covers/3f269f4a2e3c3553350b0745.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/o8sibl0IP5GBhAxEARqs4fijiCAI9Dp5WkAvkI~tplv-photomode-zoomcover:480:480.avif';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@janettesoberanes</div>
-          <div class=right>
-            <div class=views>Views 142,000</div>
-            <div class=date>2025-12-27</div>
-          </div>
+          <div class=subline>Views 142,000 · 2025-12-27</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@janettesoberanes/video/7588304421482728735" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@janettesoberanes/video/7588304421482728735" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@alydoill/video/7600442950811766047" target="_blank" rel="noopener" aria-label="open tiktok alydoill">
-      <div class=rank>#13</div>
-      <img class=cover loading="lazy" src="assets/covers/2d25f9656cb25cae22e85956.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oIIIAKSI6sFDGESMAtqqjfE9FIAjBAe12evCAE~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@alydoill/video/7600442950811766047" target="_blank" rel="noopener" aria-label="open tiktok alydoill">
+        <div class=rank>#13</div>
+        <img class=cover loading="lazy" src="assets/covers/2d25f9656cb25cae22e85956.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oIIIAKSI6sFDGESMAtqqjfE9FIAjBAe12evCAE~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@alydoill</div>
-          <div class=right>
-            <div class=views>Views 134,200</div>
-            <div class=date>2026-01-29</div>
-          </div>
+          <div class=subline>Views 134,200 · 2026-01-29</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@alydoill/video/7600442950811766047" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@alydoill/video/7600442950811766047" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@clarissattshop/video/7591728402286087455" target="_blank" rel="noopener" aria-label="open tiktok clarissattshop">
-      <div class=rank>#14</div>
-      <img class=cover loading="lazy" src="assets/covers/c791bf9591ee69ddc1bf75bf.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oo3KVP8s0kjAibFpcIRCaBNEVS7IA1uBiPQRs~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@clarissattshop/video/7591728402286087455" target="_blank" rel="noopener" aria-label="open tiktok clarissattshop">
+        <div class=rank>#14</div>
+        <img class=cover loading="lazy" src="assets/covers/c791bf9591ee69ddc1bf75bf.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oo3KVP8s0kjAibFpcIRCaBNEVS7IA1uBiPQRs~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@clarissattshop</div>
-          <div class=right>
-            <div class=views>Views 129,300</div>
-            <div class=date>2026-01-05</div>
-          </div>
+          <div class=subline>Views 129,300 · 2026-01-05</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@clarissattshop/video/7591728402286087455" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@clarissattshop/video/7591728402286087455" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@rphreviews/video/7598351813825400095" target="_blank" rel="noopener" aria-label="open tiktok rphreviews">
-      <div class=rank>#15</div>
-      <img class=cover loading="lazy" src="assets/covers/d97c4a2f6b281c16abf2c817.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/ogMeE8LdAbqPK3ZyIAGAIm5SjeSAxEBIAYIWe2.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@rphreviews/video/7598351813825400095" target="_blank" rel="noopener" aria-label="open tiktok rphreviews">
+        <div class=rank>#15</div>
+        <img class=cover loading="lazy" src="assets/covers/d97c4a2f6b281c16abf2c817.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/ogMeE8LdAbqPK3ZyIAGAIm5SjeSAxEBIAYIWe2.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@rphreviews</div>
-          <div class=right>
-            <div class=views>Views 122,800</div>
-            <div class=date>2026-01-23</div>
-          </div>
+          <div class=subline>Views 122,800 · 2026-01-23</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@rphreviews/video/7598351813825400095" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@rphreviews/video/7598351813825400095" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@estibalizoficial/video/7585275705408228663" target="_blank" rel="noopener" aria-label="open tiktok estibalizoficial">
-      <div class=rank>#16</div>
-      <img class=cover loading="lazy" src="assets/covers/dea3c0f1fcf7fdfa0c6b0fbd.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/o0AzpQJeSHdQUfHXAMCCNFuiXBwIkI8jCIPgEf~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@estibalizoficial/video/7585275705408228663" target="_blank" rel="noopener" aria-label="open tiktok estibalizoficial">
+        <div class=rank>#16</div>
+        <img class=cover loading="lazy" src="assets/covers/dea3c0f1fcf7fdfa0c6b0fbd.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/o0AzpQJeSHdQUfHXAMCCNFuiXBwIkI8jCIPgEf~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@estibalizoficial</div>
-          <div class=right>
-            <div class=views>Views 100,900</div>
-            <div class=date>2025-12-19</div>
-          </div>
+          <div class=subline>Views 100,900 · 2025-12-19</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@estibalizoficial/video/7585275705408228663" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@estibalizoficial/video/7585275705408228663" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@lukasgreyy/video/7600519184182676766" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
-      <div class=rank>#17</div>
-      <img class=cover loading="lazy" src="assets/covers/1856b4271676ed94553f9b4d.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oEqDWAEAEDcAQfFASywAB7OfEf8jE8I90IIcIg.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@lukasgreyy/video/7600519184182676766" target="_blank" rel="noopener" aria-label="open tiktok lukasgreyy">
+        <div class=rank>#17</div>
+        <img class=cover loading="lazy" src="assets/covers/1856b4271676ed94553f9b4d.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oEqDWAEAEDcAQfFASywAB7OfEf8jE8I90IIcIg.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@lukasgreyy</div>
-          <div class=right>
-            <div class=views>Views 94,100</div>
-            <div class=date>2026-01-29</div>
-          </div>
+          <div class=subline>Views 94,100 · 2026-01-29</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7600519184182676766" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@lukasgreyy/video/7600519184182676766" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@kymieann/video/7576476292451749175" target="_blank" rel="noopener" aria-label="open tiktok kymieann">
-      <div class=rank>#18</div>
-      <img class=cover loading="lazy" src="assets/covers/2fb82e91dff1c24c02eddd91.jpeg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/osA6IiIQVS4oBDBgKUual1EDN17UMD91OIiPS~tplv-tiktokx-cropcenter-q:300:400:q72.jpeg';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@kymieann/video/7576476292451749175" target="_blank" rel="noopener" aria-label="open tiktok kymieann">
+        <div class=rank>#18</div>
+        <img class=cover loading="lazy" src="assets/covers/2fb82e91dff1c24c02eddd91.jpeg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/osA6IiIQVS4oBDBgKUual1EDN17UMD91OIiPS~tplv-tiktokx-cropcenter-q:300:400:q72.jpeg';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@kymieann</div>
-          <div class=right>
-            <div class=views>Views 77,400</div>
-            <div class=date>2025-11-25</div>
-          </div>
+          <div class=subline>Views 77,400 · 2025-11-25</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@kymieann/video/7576476292451749175" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@kymieann/video/7576476292451749175" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@loganwalter05/video/7601456860268432670" target="_blank" rel="noopener" aria-label="open tiktok loganwalter05">
-      <div class=rank>#19</div>
-      <img class=cover loading="lazy" src="assets/covers/79c2a9831920be355f3f193a.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oEE9IAQAGzfeAUGlDLBGeeGZknARrIAAUs5PJs~tplv-tiktokx-origin.image';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@loganwalter05/video/7601456860268432670" target="_blank" rel="noopener" aria-label="open tiktok loganwalter05">
+        <div class=rank>#19</div>
+        <img class=cover loading="lazy" src="assets/covers/79c2a9831920be355f3f193a.jpg" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oEE9IAQAGzfeAUGlDLBGeeGZknARrIAAUs5PJs~tplv-tiktokx-origin.image';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@loganwalter05</div>
-          <div class=right>
-            <div class=views>Views 74,400</div>
-            <div class=date>2026-01-31</div>
-          </div>
+          <div class=subline>Views 74,400 · 2026-01-31</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@loganwalter05/video/7601456860268432670" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@loganwalter05/video/7601456860268432670" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
     
-    <a class=tile href="https://www.tiktok.com/@janettesoberanes/video/7581705076108987679" target="_blank" rel="noopener" aria-label="open tiktok janettesoberanes">
-      <div class=rank>#20</div>
-      <img class=cover loading="lazy" src="assets/covers/0332619e97376f2b617f4cab.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oIAi7olKE47CKFmBF3qBvidIgqAiAAeAAoR0IE~tplv-photomode-zoomcover:480:480.avif';"/>
-      <div class=overlay>
-        <div class=meta>
+    
+    
+    <div class=tile>
+      <a class=thumblink href="https://www.tiktok.com/@janettesoberanes/video/7581705076108987679" target="_blank" rel="noopener" aria-label="open tiktok janettesoberanes">
+        <div class=rank>#20</div>
+        <img class=cover loading="lazy" src="assets/covers/0332619e97376f2b617f4cab.avif" alt="cover" onerror="this.onerror=null;this.src='https://s.500fd.com/tt_video/oIAi7olKE47CKFmBF3qBvidIgqAiAAeAAoR0IE~tplv-photomode-zoomcover:480:480.avif';"/>
+      </a>
+      <div class=info>
+        <div class=left>
           <div class=handle>@janettesoberanes</div>
-          <div class=right>
-            <div class=views>Views 72,600</div>
-            <div class=date>2025-12-09</div>
-          </div>
+          <div class=subline>Views 72,600 · 2025-12-09</div>
         </div>
-        <div class=actions>
-          <button class=copy data-copy="https://www.tiktok.com/@janettesoberanes/video/7581705076108987679" type="button">Copy link</button>
-        </div>
+        <button class=copy data-copy="https://www.tiktok.com/@janettesoberanes/video/7581705076108987679" type="button">Copy link</button>
       </div>
-    </a>
+    </div>
+    
     
     </div>
   </div>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anua · Fastmoss Dashboard</title>
+  <style>
+    :root{--bg:#f6f7fb;--panel:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--shadow:0 1px 2px rgba(15,23,42,.06),0 10px 25px rgba(15,23,42,.06);} 
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+    header{background:#fff;border-bottom:1px solid var(--line);}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 16px;}
+    h1{margin:0;font-size:20px;letter-spacing:-0.01em;}
+    .sub{margin-top:6px;color:var(--muted);font-size:13px;}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;}
+    @media (max-width: 720px){.grid{grid-template-columns:1fr;}}
+    .card{background:var(--panel);border:1px solid rgba(226,232,240,.9);border-radius:16px;padding:14px;box-shadow:var(--shadow);}
+    .title{font-weight:800;font-size:14px;}
+    .desc{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.35;}
+    a.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;padding:8px 10px;border-radius:10px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#ffffff,#f8fafc);color:var(--accent);text-decoration:none;font-size:12px;font-weight:800;}
+    a.btn:hover{filter:brightness(.98);}
+    .note{margin-top:12px;color:var(--muted);font-size:12px;}
+    code{background:#fff;border:1px solid var(--line);border-radius:8px;padding:2px 6px;}
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <h1>Anua · Fastmoss Dashboard</h1>
+    <div class="sub">Channel page (clean/public). We’ll drop the Anua panels here.</div>
+  </div></header>
+
+  <div class="wrap">
+    <div class="grid">
+      <div class="card">
+        <div class="title">Status</div>
+        <div class="desc">This is a clean placeholder page. Next step: generate the Anua cards (products/creators/GMV trend) and publish into this channel folder.</div>
+        <a class="btn" href="../">Back to Home →</a>
+        <div class="note">Path: <code>/anuafastmoss/</code></div>
+      </div>
+
+      <div class="card">
+        <div class="title">What will appear here</div>
+        <div class="desc">
+          • Top products (with cover)<br/>
+          • GMV/day 90d trend flip chart<br/>
+          • Direct TikTok links + copy link button<br/>
+          • Weekly snapshots
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

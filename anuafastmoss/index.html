@@ -3,40 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anua · Fastmoss 看板（Top20 GMV 28D）</title>
+  <title>Anua 单品视频看板 · Top20 (GMV28)</title>
   <style>
-    :root{--bg:#0b1020;--panel:#0f172a;--card:#111c33;--text:#e5e7eb;--muted:#94a3b8;--line:#1f2a44;--accent:#60a5fa;}
+    :root{--bg:#0b1020;--panel:#0f172a;--card:#111c33;--text:#e5e7eb;--muted:#94a3b8;--line:#1f2a44;--accent:#60a5fa;--accent2:#34d399;}
     body{margin:0;background:linear-gradient(180deg,#070a14,#0b1020 30%,#070a14);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
-    .wrap{max-width:1100px;margin:0 auto;padding:18px 14px 40px;}
+    .wrap{max-width:1120px;margin:0 auto;padding:18px 14px 40px;}
     header{position:sticky;top:0;background:rgba(11,16,32,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10;}
-    h1{margin:0;font-size:18px;letter-spacing:-.01em;}
+    h1{margin:0;font-size:16px;letter-spacing:-.01em;}
     .sub{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.35;}
-    .row{display:flex;gap:10px;align-items:center;justify-content:space-between;}
-    a.back{color:var(--accent);text-decoration:none;font-weight:700;font-size:12px;}
+    .row{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;}
+    a.back{color:var(--accent);text-decoration:none;font-weight:800;font-size:12px;white-space:nowrap;}
 
     .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px;}
     .card{display:grid;grid-template-columns:140px 1fr;gap:12px;background:rgba(17,28,51,.72);border:1px solid rgba(31,42,68,.9);border-radius:16px;overflow:hidden;}
     @media (max-width:720px){.card{grid-template-columns:1fr;}}
 
-    .rank{position:absolute;margin:10px;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:800;}
+    .rank{position:absolute;margin:10px;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:900;}
     .thumb{position:relative;display:block;background:#0a1225;}
     .thumb img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;display:block;}
 
     .meta{padding:12px 12px 12px 0;}
     @media (max-width:720px){.meta{padding:12px;}}
 
-    .topline{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
-    .handle{font-weight:900;}
-    .date{color:var(--muted);font-size:12px;white-space:nowrap;}
-    .nums{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;}
+    .topline{display:flex;flex-direction:column;gap:8px;}
+    .handle{font-weight:950;}
+    .nums{display:flex;gap:14px;flex-wrap:wrap;}
     .nums div{display:flex;gap:6px;align-items:baseline;}
     .nums span{color:var(--muted);font-size:11px;}
     .nums b{font-size:13px;}
-    .desc{margin-top:8px;color:#cbd5e1;font-size:12px;line-height:1.35;max-height:3.9em;overflow:hidden;}
+    .desc{margin-top:2px;color:#cbd5e1;font-size:12px;line-height:1.35;max-height:3.9em;overflow:hidden;}
     .actions{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
-    .btn,.btn2{border-radius:10px;padding:7px 10px;font-size:12px;font-weight:800;}
+    .btn,.btn2,.btn3{border-radius:10px;padding:7px 10px;font-size:12px;font-weight:900;}
     .btn{background:linear-gradient(180deg,#1d4ed8,#1e40af);color:white;text-decoration:none;border:1px solid rgba(255,255,255,.12);}
+    .btn3{background:linear-gradient(180deg,#059669,#047857);color:white;text-decoration:none;border:1px solid rgba(255,255,255,.12);}
     .btn2{background:transparent;color:var(--accent);border:1px solid rgba(96,165,250,.35);}
+
+    .meta2{margin-top:10px;padding:10px 12px;border:1px solid rgba(31,42,68,.9);border-radius:14px;background:rgba(15,23,42,.35);color:var(--muted);font-size:12px;line-height:1.35;}
+    code{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);padding:1px 6px;border-radius:8px;}
   </style>
 </head>
 <body>
@@ -44,10 +47,13 @@
     <div class=wrap>
       <div class=row>
         <div>
-          <h1>Anua · Fastmoss 看板（Top20 · GMV 28D）</h1>
-          <div class=sub>干净版（仅静态页面）。口径：从现有 Anua 数据里按 GMV 排前 20（去重）。</div>
+          <h1>Anua 单品视频 Gallery（Top20 · GMV 28D）</h1>
+          <div class=sub>Product: <code>1729492703002465761</code> · 口径：Fastmoss /api/goods/v3/video · date_type=28 · 排序：GMV( sale_amount ) desc · 共抓取 79 条视频</div>
         </div>
         <a class=back href="../">← Home</a>
+      </div>
+      <div class=meta2>
+        Fastmoss: <a href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener" style="color:var(--accent2);text-decoration:none;font-weight:900">open detail ↗</a>
       </div>
     </div>
   </header>
@@ -55,6 +61,446 @@
   <div class=wrap>
     <div class=grid>
       
+      <div class=card>
+        <div class=rank>#1</div>
+        <a class=thumb href="https://www.tiktok.com/@giniglow/video/7605361659061800206" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/okAAPErAgiICCh7LKaBN4kPslExYAukNBiSEm.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@giniglow</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$806</b></div>
+              <div><span>Views</span><b>14,000</b></div>
+            </div>
+          </div>
+          <div class=desc>🩵✨A TikTok Exclusive🧖‍♀️✨#anua #anuaskincare #pdrnserum #serummist #tiktokshopcreatorpicks</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@giniglow/video/7605361659061800206" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@giniglow/video/7605361659061800206">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#2</div>
+        <a class=thumb href="https://www.tiktok.com/@luckylynndee/video/7606982890836086029" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/ooXZZvAEECing6RBQAubtaikB1A4PFEACIa1I~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@luckylynndee</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$433</b></div>
+              <div><span>Views</span><b>5,291</b></div>
+            </div>
+          </div>
+          <div class=desc>ANUA PDRN SET 💧 #TikTokShopStockUp #LiftingDuo #Wrinklecare #antiaging #glassSkin</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@luckylynndee/video/7606982890836086029" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@luckylynndee/video/7606982890836086029">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#3</div>
+        <a class=thumb href="https://www.tiktok.com/@thepenahome2.0/video/7606987477093485854" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/ogC9Actk0FCAjEXAEpEDfufKIAxoALq7EVRsQR.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@thepenahome2.0</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$275</b></div>
+              <div><span>Views</span><b>8,602</b></div>
+            </div>
+          </div>
+          <div class=desc>This is a dream combo for that gorgeous Korean glass glow! @Anua Store US #tiktokshoploveatfirstfind #tiktokshopstockup #tiktokshopcreatorpicks #anuapdrn #koreanskincare</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@thepenahome2.0/video/7606987477093485854" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@thepenahome2.0/video/7606987477093485854">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#4</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7604966598826331405" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/oYuiHKEIIDgphbiffRFSKE6TBQQbjEA4DBkRDi~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$98</b></div>
+              <div><span>Views</span><b>4,598</b></div>
+            </div>
+          </div>
+          <div class=desc>Two products that changed my skin #tiktokshopcreatorpicks #pdrn #anua #skincare #koreanskincare @Anua Store US @anua_global</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7604966598826331405" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7604966598826331405">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#5</div>
+        <a class=thumb href="https://www.tiktok.com/@mjvillafradez/video/7607298235299843341" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/ockB4AaSA7OwYZ7VgAiBtZwNEtACjKNIEvi8h.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@mjvillafradez</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$55</b></div>
+              <div><span>Views</span><b>1,126</b></div>
+            </div>
+          </div>
+          <div class=desc>Caí en la onda ANUA y ahora entiendo todo 😭✨ Primera vez usando este combo y mi piel se sintió como después de un facial 🩵 Y ni hablemos del preciooo 🤯 #anua #anuaskincare #TikTokShopStockUp #liftingduo #wrinklecare *results may vary *oferta limitada</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@mjvillafradez/video/7607298235299843341" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@mjvillafradez/video/7607298235299843341">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#6</div>
+        <a class=thumb href="https://www.tiktok.com/@theotherwife/video/7607245056889589006" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/og0PikXCiAA76gSA4EABzGalJBIxPmiVLESdZ.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@theotherwife</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$55</b></div>
+              <div><span>Views</span><b>695</b></div>
+            </div>
+          </div>
+          <div class=desc>One thing I’m not gonna do is get injections. With this duo from @Anua Store US I can now skip the aesthetician office. #tiktokshopstockup #kbeautyskincare #anua #pdrn</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@theotherwife/video/7607245056889589006" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@theotherwife/video/7607245056889589006">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#7</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7607243475225955597" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/oMQfLFTIA3ZjwD0mQstHfsQCsfEIJT7kAJCkQL~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$55</b></div>
+              <div><span>Views</span><b>1,212</b></div>
+            </div>
+          </div>
+          <div class=desc>Two easy steps in skincare #tiktokshopcreatorpicks #anua #anuaskincare #finelines #wrinkles @anua_global @Anua Store US</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7607243475225955597" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7607243475225955597">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#8</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7607238713239670029" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/oUSLpiB3ICBTJI9fWSiElrAAVBCw24W8y0vxAS~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$55</b></div>
+              <div><span>Views</span><b>1,154</b></div>
+            </div>
+          </div>
+          <div class=desc>Whats skin care without ANUA?? ##tiktokshopcreatorpicks##anua##anuaskincare##koreanskincare##finelines@@anua_global@@Anua Store US</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7607238713239670029" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7607238713239670029">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#9</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7606753660265106701" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/o4QIQWTvTCBBHPMUQ8rz6kGAQanKaIeteebAjk~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$54</b></div>
+              <div><span>Views</span><b>1,030</b></div>
+            </div>
+          </div>
+          <div class=desc>Taking my skincare serious all 2026🫧✨ #tiktokshopcreatorpicks #anua #finelines #wrinkles #glowyskin @anua_global @Anua Store US</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7606753660265106701" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7606753660265106701">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#10</div>
+        <a class=thumb href="https://www.tiktok.com/@diannabananaz/video/7606920505865587998" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/oEleIjpIAvnjAQHeTAgJjULZILIEqme1EFAwGA.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@diannabananaz</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$54</b></div>
+              <div><span>Views</span><b>738</b></div>
+            </div>
+          </div>
+          <div class=desc>The end result is stunning! Anua anti aging that actually works. We finally have the spray and moisturizer in a duo here on TikTok! #anua#anuaskincare#pdrn#antiaging#kbeauty</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@diannabananaz/video/7606920505865587998" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@diannabananaz/video/7606920505865587998">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#11</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7606756971240475917" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/okmBWCS1IEEFpPavY4aiBQBUUAing9ZjLcoAh~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$54</b></div>
+              <div><span>Views</span><b>915</b></div>
+            </div>
+          </div>
+          <div class=desc>Anua Everyday!!!! Literally saved my skin #tiktokshopcreatorpicks #anua #skincare #skincareroutine #koreanskincare @Anua Store US @anua_global</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7606756971240475917" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7606756971240475917">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#12</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7606755531948035342" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/oYeVPTnkICHL53yQEQvcf4AWKQ4AfTjnGIjhI8~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$54</b></div>
+              <div><span>Views</span><b>1,131</b></div>
+            </div>
+          </div>
+          <div class=desc>two skin care products I’ll always swear by #tiktokshopcreatorpicks #anua #anuaserum #glowyskin #koreanskincare @Anua Store US @anua_global</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7606755531948035342" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7606755531948035342">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#13</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7605259815304039693" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/oUzLL6gifAI5YfCVEBRpJ6BxTiDSiEXZv0xII4~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$49</b></div>
+              <div><span>Views</span><b>1,121</b></div>
+            </div>
+          </div>
+          <div class=desc>My holy grail for skincare ✨🫧 #tiktokshopcreatorpicks #anua #anuaskincare #moisturizer @Anua Store US @anua_global</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7605259815304039693" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7605259815304039693">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#14</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7605270328557751565" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/ooPkoiZIBgALiDLCa8EU6a4W91EYITNUOB3tj~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$49</b></div>
+              <div><span>Views</span><b>1,196</b></div>
+            </div>
+          </div>
+          <div class=desc>Good skin will get you foundation claims 🤌🏼🫧✨ #tiktokshopcreatorpicks #anua #wrinkles #moisturizer #koreanskincare @Anua Store US @anua_global</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7605270328557751565" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7605270328557751565">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#15</div>
+        <a class=thumb href="https://www.tiktok.com/@chavonsade/video/7604964794294177037" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/owfT1fjKISDFGKREaQFfmIM1HlZwIAC3HTDkzA~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@chavonsade</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$49</b></div>
+              <div><span>Views</span><b>2,444</b></div>
+            </div>
+          </div>
+          <div class=desc>Anua for glowy beautiful skin ✨🫧🤌🏼 #tiktokshopcreatorpicks #anua #pdrn #glowyskin #skincare @anua_global @Anua Store US</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@chavonsade/video/7604964794294177037" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@chavonsade/video/7604964794294177037">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#16</div>
+        <a class=thumb href="https://www.tiktok.com/@robinwight/video/7607204352335351071" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/oMBaKi0BtIOyZiaCyqNfmuwCobttAIAaS0ERAi~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@robinwight</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$0</b></div>
+              <div><span>Views</span><b>539</b></div>
+            </div>
+          </div>
+          <div class=desc>@Anua Store US #tiktokshopstockup</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@robinwight/video/7607204352335351071" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@robinwight/video/7607204352335351071">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#17</div>
+        <a class=thumb href="https://www.tiktok.com/@diannabananaz/video/7607838707915181343" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/okfo8CAQElDAlVvFHHC0Ep8koA0EREAAIskHfH.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@diannabananaz</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$0</b></div>
+              <div><span>Views</span><b>604</b></div>
+            </div>
+          </div>
+          <div class=desc>this gives you can instant plump and glow. PDRN is truly that girl. #glassskin#kbeauty#glassskinroutine#glowyskin#tiktokshopstockup</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@diannabananaz/video/7607838707915181343" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@diannabananaz/video/7607838707915181343">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#18</div>
+        <a class=thumb href="https://www.tiktok.com/@julesuncut/video/7606692673407208718" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/ocKSEDAFTQfxqRJgOHEkRaQG7iZ7DfgBSsOpYQ~tplv-photomode-zoomcover:480:480.avif" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@julesuncut</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$0</b></div>
+              <div><span>Views</span><b>475</b></div>
+            </div>
+          </div>
+          <div class=desc>Anua’s rejuvenating essentials set will moisturize your skin, renew your texture and hydrate your skin with PDRN and hyaluronic acid capsule mist and hundred percent moisturizer. Sensitive skin friendly.</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@julesuncut/video/7606692673407208718" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@julesuncut/video/7606692673407208718">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#19</div>
+        <a class=thumb href="https://www.tiktok.com/@julesuncut/video/7606688820834143502" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/o89GfQICwAdw8QIzR9zfYYAEGeA5LOAieJAmYI~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@julesuncut</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$0</b></div>
+              <div><span>Views</span><b>643</b></div>
+            </div>
+          </div>
+          <div class=desc>The rejuvenating essential set by Anua. PDRN with hyaluronic acid capsule and the hundred percent moisturizer.</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@julesuncut/video/7606688820834143502" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@julesuncut/video/7606688820834143502">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class=card>
+        <div class=rank>#20</div>
+        <a class=thumb href="https://www.tiktok.com/@julesuncut/video/7606603101952347405" target="_blank" rel="noopener">
+          <img loading="lazy" src="https://s.500fd.com/tt_video/ooPUhEBtR2AAA4ABC4gIFikjwTQXGaEECVZAi~tplv-tiktokx-origin.image" alt="cover" />
+        </a>
+        <div class=meta>
+          <div class=topline>
+            <div class=handle>@julesuncut</div>
+            <div class=nums>
+              <div><span>GMV28</span><b>$0</b></div>
+              <div><span>Views</span><b>697</b></div>
+            </div>
+          </div>
+          <div class=desc>This PDRN moisture rejuvenation essentials set.</div>
+          <div class=actions>
+            <a class=btn href="https://www.tiktok.com/@julesuncut/video/7606603101952347405" target="_blank" rel="noopener">TikTok ↗</a>
+            <a class=btn3 href="https://www.fastmoss.com/e-commerce/detail/1729492703002465761" target="_blank" rel="noopener">Fastmoss ↗</a>
+            <button class=btn2 data-copy="https://www.tiktok.com/@julesuncut/video/7606603101952347405">Copy link</button>
+          </div>
+        </div>
+      </div>
+    
     </div>
   </div>
 

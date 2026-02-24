@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Growth Picks Dashboard</title>
+<style>
+:root{--bg:#f6f7fb;--panel:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--shadow:0 1px 2px rgba(15,23,42,.06),0 10px 25px rgba(15,23,42,.06);}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.wrap{max-width:1200px;margin:0 auto;padding:18px 16px;}
+header{background:#fff;border-bottom:1px solid var(--line);}
+h1{margin:0;font-size:20px;letter-spacing:-0.01em;}
+.subttl{margin-top:6px;color:var(--muted);font-size:13px;}
+small{color:var(--muted);}
+.section{margin-top:18px;}
+.h2{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+.h2 h2{margin:0;font-size:16px;letter-spacing:-0.01em;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+@media (max-width: 980px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width: 720px){.grid{grid-template-columns:1fr;}}
+.card{background:var(--panel);border:1px solid rgba(226,232,240,.9);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:320px;box-shadow:var(--shadow);transition:transform .12s ease, box-shadow .12s ease;}
+.card:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(15,23,42,.08),0 18px 40px rgba(15,23,42,.10);}
+
+/* Flip */
+.flip{perspective:1000px;cursor:pointer;}
+.flip:focus{outline:2px solid rgba(37,99,235,.25);outline-offset:2px;}
+.inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
+.flip.isFlipped .inner{transform:rotateY(180deg);}
+.front,.back{backface-visibility:hidden;position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;}
+.back{transform:rotateY(180deg);padding-top:2px;}
+
+.chartWrap{height:150px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;overflow:hidden;}
+.chartWrap svg{width:100%;height:100%;flex:1;}
+.xaxis{display:flex;justify-content:space-between;gap:8px;padding:6px 10px 8px;color:var(--muted);font-size:11px;}
+.backTitle{font-weight:700;font-size:13px;letter-spacing:-0.01em;}
+.hint{margin-top:auto;color:var(--muted);font-size:11px;}
+
+.imgWrap{height:150px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+@media (max-width: 720px){
+  .wrap{padding:14px 12px;}
+  /* keep height for flip cards; JS will set exact height */
+  .imgWrap{height:170px;}
+  .pill{padding:6px 10px;font-size:12px;}
+  .links a{font-size:13px;}
+}
+.imgWrap img{max-width:100%;max-height:100%;object-fit:contain;}
+.title{font-weight:650;font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:4.8em;}
+.sub{font-size:11px;color:var(--muted);line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.4em;}
+.row{display:flex;flex-wrap:wrap;gap:6px;}
+.pill{font-size:11px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#f8fafc,#ffffff);border-radius:999px;padding:2px 8px;color:#0f172a;font-weight:600;letter-spacing:-0.005em;}
+.meta{font-size:11px;color:var(--muted);margin-top:auto;}
+.links{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;align-items:center;}
+.btnlink{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 10px;border-radius:10px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#ffffff,#f8fafc);color:var(--accent);text-decoration:none;font-size:12px;font-weight:700;}
+.btnlink:hover{text-decoration:none;filter:brightness(.98);}
+button.btnlink{cursor:pointer;}
+.linkHint{color:var(--muted);font-size:11px;line-height:1.2;}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(15,23,42,.92);color:#fff;padding:10px 12px;border-radius:12px;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .15s ease;}
+.toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header><div class='wrap'>
+  <h1>Growth Picks Dashboard</h1>
+  <div class='subttl'>Weekly picks</div>
+</div></header>
+
+<div class='wrap'>
+  <div class='section'>
+    <div class='h2'><h2>Recommended</h2></div>
+    <div class='grid'>
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732133243308052507.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair">[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair</div>
+              <div class='sub'>1732133243308052507</div>
+              <div class='row'><span class='pill'>Rating 4.6</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 25,199</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732133243308052507' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732133243308052507'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 68.00 L 8.79 68.00 L 11.57 68.00 L 14.36 68.00 L 17.15 68.00 L 19.93 68.00 L 22.72 68.00 L 25.51 68.00 L 28.29 68.00 L 31.08 68.00 L 33.87 68.00 L 36.65 68.00 L 39.44 68.00 L 42.22 68.00 L 45.01 68.00 L 47.80 68.00 L 50.58 68.00 L 53.37 68.00 L 56.16 68.00 L 58.94 68.00 L 61.73 68.00 L 64.52 68.00 L 67.30 68.00 L 70.09 68.00 L 72.88 68.00 L 75.66 68.00 L 78.45 68.00 L 81.24 68.00 L 84.02 68.00 L 86.81 68.00 L 89.60 68.00 L 92.38 68.00 L 95.17 68.00 L 97.96 68.00 L 100.74 68.00 L 103.53 68.00 L 106.31 68.00 L 109.10 68.00 L 111.89 68.00 L 114.67 68.00 L 117.46 68.00 L 120.25 68.00 L 123.03 68.00 L 125.82 68.00 L 128.61 68.00 L 131.39 68.00 L 134.18 68.00 L 136.97 68.00 L 139.75 68.00 L 142.54 68.00 L 145.33 68.00 L 148.11 68.00 L 150.90 67.93 L 153.69 67.54 L 156.47 67.44 L 159.26 67.38 L 162.04 67.72 L 164.83 67.72 L 167.62 67.82 L 170.40 67.65 L 173.19 67.48 L 175.98 67.19 L 178.76 67.16 L 181.55 67.18 L 184.34 67.16 L 187.12 67.01 L 189.91 66.76 L 192.70 65.43 L 195.48 62.38 L 198.27 58.76 L 201.06 57.23 L 203.84 59.08 L 206.63 60.65 L 209.42 59.41 L 212.20 58.86 L 214.99 52.35 L 217.78 47.41 L 220.56 38.59 L 223.35 39.90 L 226.13 41.51 L 228.92 44.27 L 231.71 42.69 L 234.49 41.29 L 237.28 36.98 L 240.07 27.74 L 242.85 16.24 L 245.64 11.01 L 248.43 10.80 L 251.21 16.49 L 254.00 17.39' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span>
+  <span>60d</span>
+  <span>30d</span>
+  <span>Now</span>
+</div>
+</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732133297298182171.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr.Melaxin Official] CACTOX V-LIFTING MEWING BAND with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair">[Dr.Melaxin Official] CACTOX V-LIFTING MEWING BAND with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair</div>
+              <div class='sub'>1732133297298182171</div>
+              <div class='row'><span class='pill'>Rating 4.3</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 25,977</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732133297298182171' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732133297298182171'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 68.00 L 8.79 68.00 L 11.57 68.00 L 14.36 68.00 L 17.15 68.00 L 19.93 68.00 L 22.72 68.00 L 25.51 68.00 L 28.29 68.00 L 31.08 68.00 L 33.87 68.00 L 36.65 68.00 L 39.44 68.00 L 42.22 68.00 L 45.01 68.00 L 47.80 68.00 L 50.58 68.00 L 53.37 68.00 L 56.16 68.00 L 58.94 68.00 L 61.73 68.00 L 64.52 68.00 L 67.30 68.00 L 70.09 68.00 L 72.88 68.00 L 75.66 68.00 L 78.45 68.00 L 81.24 68.00 L 84.02 68.00 L 86.81 68.00 L 89.60 68.00 L 92.38 68.00 L 95.17 68.00 L 97.96 68.00 L 100.74 68.00 L 103.53 68.00 L 106.31 68.00 L 109.10 68.00 L 111.89 68.00 L 114.67 68.00 L 117.46 68.00 L 120.25 68.00 L 123.03 68.00 L 125.82 68.00 L 128.61 68.00 L 131.39 68.00 L 134.18 68.00 L 136.97 68.00 L 139.75 68.00 L 142.54 68.00 L 145.33 68.00 L 148.11 68.00 L 150.90 68.00 L 153.69 68.00 L 156.47 68.00 L 159.26 68.00 L 162.04 67.45 L 164.83 67.31 L 167.62 66.68 L 170.40 66.76 L 173.19 66.18 L 175.98 66.16 L 178.76 65.77 L 181.55 61.79 L 184.34 54.05 L 187.12 49.07 L 189.91 46.95 L 192.70 48.23 L 195.48 45.50 L 198.27 43.03 L 201.06 40.64 L 203.84 44.34 L 206.63 45.87 L 209.42 41.98 L 212.20 41.91 L 214.99 36.65 L 217.78 36.09 L 220.56 35.28 L 223.35 38.97 L 226.13 44.70 L 228.92 41.74 L 231.71 40.94 L 234.49 38.50 L 237.28 35.95 L 240.07 25.44 L 242.85 19.50 L 245.64 15.84 L 248.43 22.37 L 251.21 27.51 L 254.00 29.63' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span>
+  <span>60d</span>
+  <span>30d</span>
+  <span>Now</span>
+</div>
+</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732164626458252048.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Hismile iD Stain Whitening Mouthwash for White Teeth, Freshens Breath with Essential Oils 237ml">Hismile iD Stain Whitening Mouthwash for White Teeth, Freshens Breath with Essential Oils 237ml</div>
+              <div class='sub'>1732164626458252048</div>
+              <div class='row'><span class='pill'>Rating 4.5</span><span class='pill'>Commission 20.0%</span></div>
+              <div class='meta'>Lifetime sales: 14,429</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732164626458252048' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732164626458252048'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 68.00 L 8.79 68.00 L 11.57 68.00 L 14.36 68.00 L 17.15 68.00 L 19.93 68.00 L 22.72 68.00 L 25.51 68.00 L 28.29 68.00 L 31.08 68.00 L 33.87 68.00 L 36.65 68.00 L 39.44 68.00 L 42.22 68.00 L 45.01 68.00 L 47.80 68.00 L 50.58 68.00 L 53.37 68.00 L 56.16 68.00 L 58.94 68.00 L 61.73 68.00 L 64.52 68.00 L 67.30 68.00 L 70.09 68.00 L 72.88 68.00 L 75.66 68.00 L 78.45 68.00 L 81.24 68.00 L 84.02 68.00 L 86.81 68.00 L 89.60 68.00 L 92.38 68.00 L 95.17 68.00 L 97.96 68.00 L 100.74 68.00 L 103.53 68.00 L 106.31 68.00 L 109.10 68.00 L 111.89 68.00 L 114.67 68.00 L 117.46 68.00 L 120.25 68.00 L 123.03 68.00 L 125.82 68.00 L 128.61 68.00 L 131.39 68.00 L 134.18 68.00 L 136.97 68.00 L 139.75 68.00 L 142.54 68.00 L 145.33 68.00 L 148.11 68.00 L 150.90 68.00 L 153.69 68.00 L 156.47 68.00 L 159.26 68.00 L 162.04 68.00 L 164.83 68.00 L 167.62 68.00 L 170.40 68.00 L 173.19 67.07 L 175.98 66.75 L 178.76 65.84 L 181.55 66.10 L 184.34 63.31 L 187.12 64.22 L 189.91 60.94 L 192.70 44.05 L 195.48 44.05 L 198.27 34.57 L 201.06 53.63 L 203.84 53.63 L 206.63 66.46 L 209.42 66.71 L 212.20 66.69 L 214.99 66.87 L 217.78 67.28 L 220.56 57.58 L 223.35 40.69 L 226.13 33.77 L 228.92 34.84 L 231.71 38.01 L 234.49 29.68 L 237.28 17.67 L 240.07 23.47 L 242.85 33.43 L 245.64 45.45 L 248.43 36.61 L 251.21 29.27 L 254.00 22.86' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span>
+  <span>60d</span>
+  <span>30d</span>
+  <span>Now</span>
+</div>
+</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1730145325626134555.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr. Melaxin Official] Cemenrete Calcium Intense Cream | Anti-aging, Elasticity, Volume | Korean Cosmetic | 1.7 fl oz (50 ml)">[Dr. Melaxin Official] Cemenrete Calcium Intense Cream | Anti-aging, Elasticity, Volume | Korean Cosmetic | 1.7 fl oz (50 ml)</div>
+              <div class='sub'>1730145325626134555</div>
+              <div class='row'><span class='pill'>Rating 4.2</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 27,995</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1730145325626134555' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1730145325626134555'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 67.86 L 8.79 66.62 L 11.57 65.72 L 14.36 64.92 L 17.15 65.11 L 19.93 64.69 L 22.72 63.98 L 25.51 63.12 L 28.29 62.28 L 31.08 61.61 L 33.87 61.22 L 36.65 61.35 L 39.44 60.10 L 42.22 58.39 L 45.01 52.99 L 47.80 51.87 L 50.58 51.45 L 53.37 55.18 L 56.16 56.34 L 58.94 56.88 L 61.73 55.82 L 64.52 54.22 L 67.30 52.83 L 70.09 53.83 L 72.88 55.34 L 75.66 56.05 L 78.45 54.12 L 81.24 52.80 L 84.02 53.22 L 86.81 55.05 L 89.60 56.23 L 92.38 54.75 L 95.17 54.20 L 97.96 53.64 L 100.74 55.15 L 103.53 54.41 L 106.31 53.61 L 109.10 53.44 L 111.89 54.63 L 114.67 56.59 L 117.46 56.69 L 120.25 54.89 L 123.03 52.93 L 125.82 51.58 L 128.61 52.22 L 131.39 52.87 L 134.18 52.93 L 136.97 51.55 L 139.75 49.81 L 142.54 50.52 L 145.33 50.55 L 148.11 50.52 L 150.90 47.89 L 153.69 46.47 L 156.47 47.08 L 159.26 48.40 L 162.04 52.89 L 164.83 53.78 L 167.62 56.54 L 170.40 56.10 L 173.19 56.54 L 175.98 54.19 L 178.76 52.84 L 181.55 50.62 L 184.34 49.91 L 187.12 51.01 L 189.91 53.85 L 192.70 56.41 L 195.48 56.07 L 198.27 55.36 L 201.06 54.67 L 203.84 56.46 L 206.63 57.73 L 209.42 56.90 L 212.20 57.69 L 214.99 55.38 L 217.78 55.00 L 220.56 42.31 L 223.35 27.07 L 226.13 18.40 L 228.92 17.41 L 231.71 21.82 L 234.49 24.57 L 237.28 30.98 L 240.07 29.10 L 242.85 27.39 L 245.64 25.11 L 248.43 30.89 L 251.21 32.04 L 254.00 31.15' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span>
+  <span>60d</span>
+  <span>30d</span>
+  <span>Now</span>
+</div>
+</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731174836359172331.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[medicube] Salmon DNA Home Aesthetic Duo ㅣ Glass Glow Salmon DNA Facial Skincare Set with PDRN Exosome Shot + PDRN Pink Collagen Capsule Cream">[medicube] Salmon DNA Home Aesthetic Duo ㅣ Glass Glow Salmon DNA Facial Skincare Set with PDRN Exosome Shot + PDRN Pink Collagen Capsule Cream</div>
+              <div class='sub'>1731174836359172331</div>
+              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 18,988</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731174836359172331' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731174836359172331'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 62.61 L 8.79 63.40 L 11.57 63.70 L 14.36 60.43 L 17.15 59.15 L 19.93 55.71 L 22.72 56.59 L 25.51 52.48 L 28.29 55.39 L 31.08 56.93 L 33.87 58.73 L 36.65 56.63 L 39.44 55.28 L 42.22 54.04 L 45.01 47.51 L 47.80 40.05 L 50.58 30.37 L 53.37 37.64 L 56.16 46.55 L 58.94 58.33 L 61.73 59.96 L 64.52 61.06 L 67.30 63.32 L 70.09 64.70 L 72.88 65.21 L 75.66 66.01 L 78.45 65.31 L 81.24 65.52 L 84.02 65.70 L 86.81 66.26 L 89.60 66.22 L 92.38 65.03 L 95.17 64.49 L 97.96 62.48 L 100.74 62.48 L 103.53 61.53 L 106.31 62.60 L 109.10 62.72 L 111.89 64.23 L 114.67 65.26 L 117.46 65.84 L 120.25 65.52 L 123.03 65.38 L 125.82 65.80 L 128.61 65.28 L 131.39 65.49 L 134.18 65.14 L 136.97 64.70 L 139.75 64.05 L 142.54 64.12 L 145.33 64.86 L 148.11 65.75 L 150.90 65.84 L 153.69 65.94 L 156.47 65.75 L 159.26 65.64 L 162.04 66.17 L 164.83 65.96 L 167.62 66.08 L 170.40 65.75 L 173.19 64.63 L 175.98 62.44 L 178.76 61.36 L 181.55 62.37 L 184.34 64.02 L 187.12 64.42 L 189.91 64.00 L 192.70 64.07 L 195.48 64.09 L 198.27 64.23 L 201.06 64.28 L 203.84 65.12 L 206.63 66.01 L 209.42 66.36 L 212.20 66.91 L 214.99 66.05 L 217.78 66.01 L 220.56 65.08 L 223.35 64.64 L 226.13 62.09 L 228.92 53.88 L 231.71 48.65 L 234.49 35.61 L 237.28 34.13 L 240.07 29.74 L 242.85 33.79 L 245.64 23.73 L 248.43 21.64 L 251.21 20.59 L 254.00 27.89' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span>
+  <span>60d</span>
+  <span>30d</span>
+  <span>Now</span>
+</div>
+</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731937730983661577.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Volufiline 92% + Pal-Isoleucine 1%">Volufiline 92% + Pal-Isoleucine 1%</div>
+              <div class='sub'>1731937730983661577</div>
+              <div class='row'><span class='pill'>Rating 4.2</span><span class='pill'>Commission 10.0%</span></div>
+              <div class='meta'>Lifetime sales: 39,572</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731937730983661577' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731937730983661577'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 57.67 L 8.79 53.78 L 11.57 51.11 L 14.36 52.97 L 17.15 56.46 L 19.93 58.50 L 22.72 59.42 L 25.51 61.17 L 28.29 61.37 L 31.08 61.33 L 33.87 62.62 L 36.65 63.17 L 39.44 60.44 L 42.22 59.89 L 45.01 58.13 L 47.80 61.19 L 50.58 60.76 L 53.37 62.81 L 56.16 62.94 L 58.94 63.66 L 61.73 62.97 L 64.52 63.37 L 67.30 62.38 L 70.09 62.27 L 72.88 62.04 L 75.66 62.66 L 78.45 64.14 L 81.24 62.78 L 84.02 62.02 L 86.81 61.30 L 89.60 63.22 L 92.38 62.74 L 95.17 53.37 L 97.96 48.76 L 100.74 46.38 L 103.53 51.19 L 106.31 53.21 L 109.10 55.28 L 111.89 56.98 L 114.67 56.83 L 117.46 55.15 L 120.25 54.73 L 123.03 55.20 L 125.82 56.36 L 128.61 56.62 L 131.39 56.36 L 134.18 55.79 L 136.97 54.94 L 139.75 52.58 L 142.54 51.12 L 145.33 50.55 L 148.11 49.67 L 150.90 50.55 L 153.69 51.15 L 156.47 52.62 L 159.26 50.25 L 162.04 49.28 L 164.83 47.31 L 167.62 45.46 L 170.40 43.06 L 173.19 40.44 L 175.98 38.47 L 178.76 47.05 L 181.55 57.15 L 184.34 68.00 L 187.12 68.00 L 189.91 68.00 L 192.70 68.00 L 195.48 58.43 L 198.27 55.33 L 201.06 55.33 L 203.84 64.89 L 206.63 68.00 L 209.42 68.00 L 212.20 68.00 L 214.99 68.00 L 217.78 67.95 L 220.56 67.88 L 223.35 67.88 L 226.13 67.92 L 228.92 67.71 L 231.71 47.04 L 234.49 30.80 L 237.28 22.02 L 240.07 31.15 L 242.85 37.36 L 245.64 37.34 L 248.43 39.69 L 251.21 41.58 L 254.00 41.99' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span>
+  <span>60d</span>
+  <span>30d</span>
+  <span>Now</span>
+</div>
+</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731600678904959932.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="tarte tartelette lash curler">tarte tartelette lash curler</div>
+              <div class='sub'>1731600678904959932</div>
+              <div class='row'><span class='pill'>Rating 4.8</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 14,300</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731600678904959932' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731600678904959932'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1730935621882515865.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="GOPURE 30% Vitamin C Power Treatment">GOPURE 30% Vitamin C Power Treatment</div>
+              <div class='sub'>1730935621882515865</div>
+              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 20.0%</span></div>
+              <div class='meta'>Lifetime sales: 5,580</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1730935621882515865' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1730935621882515865'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732157257719255067.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr.Melaxin Official] Cactox &amp; Collagen Multi Pore Firming Duo with Cactus Cooling &amp; Eye Care Stick for Visible Pore Refining and Skin Repair">[Dr.Melaxin Official] Cactox &amp; Collagen Multi Pore Firming Duo with Cactus Cooling &amp; Eye Care Stick for Visible Pore Refining and Skin Repair</div>
+              <div class='sub'>1732157257719255067</div>
+              <div class='row'><span class='pill'>Rating 4.9</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 5,261</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732157257719255067' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732157257719255067'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731847951163953949.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Lilyeve Growturn Hair Growth Serum with Built in Brush for Hair Growth &amp; Thickening">Lilyeve Growturn Hair Growth Serum with Built in Brush for Hair Growth &amp; Thickening</div>
+              <div class='sub'>1731847951163953949</div>
+              <div class='row'><span class='pill'>Rating 4.6</span><span class='pill'>Commission 17.0%</span></div>
+              <div class='meta'>Lifetime sales: 9,771</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731847951163953949' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731847951163953949'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732262453239714550.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Sweet Pink Duo">Sweet Pink Duo</div>
+              <div class='sub'>1732262453239714550</div>
+              <div class='row'><span class='pill'>Rating 4.9</span><span class='pill'>Commission 12.0%</span></div>
+              <div class='meta'>Lifetime sales: 10,141</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732262453239714550' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732262453239714550'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731493782945435698.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Kitsch Smoothing Air Dry Cream">Kitsch Smoothing Air Dry Cream</div>
+              <div class='sub'>1731493782945435698</div>
+              <div class='row'><span class='pill'>Rating 4.2</span><span class='pill'>Commission 17.0%</span></div>
+              <div class='meta'>Lifetime sales: 25,263</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731493782945435698' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731493782945435698'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731650855243191203.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="6-color Dual - Ended Eraser Foundation Stick -Multi - Use Concealer &amp; Highlighter for Acne Marks , Nose Contour Flawless Makeup Finish - Versatile Cosmetic Tool , daily gift">6-color Dual - Ended Eraser Foundation Stick -Multi - Use Concealer &amp; Highlighter for Acne Marks , Nose Contour Flawless Makeup Finish - Versatile Cosmetic Tool , daily gift</div>
+              <div class='sub'>1731650855243191203</div>
+              <div class='row'><span class='pill'>Rating 4.4</span><span class='pill'>Commission 10.0%</span></div>
+              <div class='meta'>Lifetime sales: 32,819</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731650855243191203' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731650855243191203'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731567137054495089.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Jergens Shea Fusions Body Lotion 2 Pack Bundles - 14oz">Jergens Shea Fusions Body Lotion 2 Pack Bundles - 14oz</div>
+              <div class='sub'>1731567137054495089</div>
+              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 20.0%</span></div>
+              <div class='meta'>Lifetime sales: 37,397</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731567137054495089' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731567137054495089'>Copy link</button>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        </div>
+  </div>
+  <script>window.DATA = {"methodology": "Weekly-only picks based on this_week_sales / lifetime_total_sales (proxy for momentum), with gate: rating ≥ 4.1, commission ≥ 10.0%, lifetime total sales < 40,000.", "items": [{"product_id": "1732133243308052507", "product_name": "[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness & Pore Tightening for Visible Pore Care Skin Repair", "this_week_sales": 9093, "lifetime_total_sales": 25199, "share": null, "rating": 4.6, "commission_pct": 15.0, "ratio": 0.3608476526846303, "momentum": 0.3608476526846303, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732133243308052507", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 108.0, 567.0, 150.0, 192.0, 69.0, 150.0, 46.0, 324.0, 391.0, 475.0, 368.0, 368.0, 506.0, 575.0, 736.0, 2461.0, 5070.0, 6049.0, 4715.0, 2346.0, 3749.0, 6534.0, 3159.0, 13311.0, 13800.0, 16125.0, 11385.0, 11431.0, 12075.0, 13708.0, 13478.0, 18423.0, 27282.6, 30382.0, 26123.4, 27580.8, 22024.8]}, {"product_id": "1732133297298182171", "product_name": "[Dr.Melaxin Official] CACTOX V-LIFTING MEWING BAND with Cactus Cooling Reduce Puffiness & Pore Tightening for Visible Pore Care Skin Repair", "this_week_sales": 4338, "lifetime_total_sales": 25977, "share": null, "rating": 4.3, "commission_pct": 15.0, "ratio": 0.1669938792008315, "momentum": 0.1669938792008315, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732133297298182171", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 660.0, 171.0, 756.0, 560.0, 874.0, 780.0, 1026.0, 5662.0, 10081.0, 7021.0, 8211.0, 8534.0, 10302.0, 11186.0, 11407.0, 5848.0, 9350.0, 16082.0, 5933.0, 15674.0, 16762.0, 6902.0, 11237.0, 9877.0, 10455.0, 12206.0, 12801.0, 13525.2, 24847.2, 19935.9, 17931.6, 16998.3, 13754.7]}, {"product_id": "1732164626458252048", "product_name": "Hismile iD Stain Whitening Mouthwash for White Teeth, Freshens Breath with Essential Oils 237ml", "this_week_sales": 3359, "lifetime_total_sales": 14429, "share": null, "rating": 4.5, "commission_pct": 20.0, "ratio": 0.23279506549310416, "momentum": 0.23279506549310416, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732164626458252048", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 999.5, 339.83, 979.51, 719.64, 3338.33, 0.0, 4237.88, 21474.46, 0.0, 14418.88, 1011.08, 0.0, 637.42, 747.32, 21.98, 439.6, 307.72, 10440.5, 18573.1, 7736.96, 9297.54, 15166.2, 16682.82, 22188.9, 8935.53, 5997.0, 9275.36, 18430.3, 13881.35]}, {"product_id": "1730145325626134555", "product_name": "[Dr. Melaxin Official] Cemenrete Calcium Intense Cream | Anti-aging, Elasticity, Volume | Korean Cosmetic | 1.7 fl oz (50 ml)", "this_week_sales": 5652, "lifetime_total_sales": 27995, "share": null, "rating": 4.2, "commission_pct": 15.0, "ratio": 0.20189319521343096, "momentum": 0.20189319521343096, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1730145325626134555", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": [192.0, 288.0, 1472.0, 1088.0, 1088.0, 1280.0, 1504.0, 1792.0, 2144.0, 2336.0, 2464.0, 2528.0, 2208.0, 3712.0, 4224.0, 7584.0, 4832.0, 4640.0, 3872.0, 3680.0, 4096.0, 4928.0, 5280.0, 5472.0, 3936.0, 3776.0, 4768.0, 5856.0, 5088.0, 4352.0, 4032.0, 3916.8, 5824.0, 4576.0, 4480.0, 4320.0, 5312.0, 5280.0, 4480.0, 4128.0, 3328.0, 4384.0, 5920.0, 5280.0, 5728.0, 5280.0, 4640.0, 5664.0, 6656.0, 6368.0, 4960.0, 6624.0, 6400.0, 7584.0, 8032.0, 5798.0, 6266.0, 3562.0, 4914.0, 3510.0, 4004.0, 4472.0, 5850.0, 5356.0, 6682.0, 6552.0, 4264.0, 3848.0, 4004.0, 4608.0, 4550.4, 4694.4, 2822.4, 3283.2, 5529.6, 2028.0, 5590.0, 5902.0, 14664.0, 20774.0, 14534.0, 15652.0, 16380.0, 11793.6, 9266.4, 18252.0, 13501.8, 11536.2, 12495.6, 12355.2]}, {"product_id": "1731174836359172331", "product_name": "[medicube] Salmon DNA Home Aesthetic Duo ㅣ Glass Glow Salmon DNA Facial Skincare Set with PDRN Exosome Shot + PDRN Pink Collagen Capsule Cream", "this_week_sales": 4134, "lifetime_total_sales": 18988, "share": null, "rating": 4.7, "commission_pct": 15.0, "ratio": 0.21771645249631347, "momentum": 0.21771645249631347, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731174836359172331", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": [3312.0, 3243.0, 2001.0, 2829.0, 8556.0, 4071.0, 8418.0, 7125.2, 10763.6, 3676.3, 4623.8, 7845.3, 7087.3, 6822.0, 9854.0, 17699.3, 18950.0, 25582.5, 5874.5, 4472.2, 6443.0, 3221.5, 2690.9, 2766.7, 985.4, 1857.1, 1478.1, 2122.4, 1516.0, 1174.9, 1212.8, 1591.8, 3107.8, 2084.5, 4851.2, 3107.8, 3638.4, 3107.8, 2918.3, 1174.9, 1440.2, 1970.8, 1705.5, 1667.6, 1288.6, 2539.3, 1326.5, 1857.1, 3259.4, 2387.7, 1743.4, 2046.6, 947.5, 1591.8, 1890.0, 1250.7, 1781.3, 1023.3, 1591.8, 1591.8, 1553.9, 3411.0, 5154.4, 3297.3, 1781.3, 2463.5, 2653.0, 2463.5, 2349.8, 2628.0, 2232.0, 2268.0, 1260.0, 792.0, 1692.0, 360.0, 2196.0, 1764.0, 1857.1, 2918.3, 5912.4, 15197.9, 11412.0, 27108.0, 17604.0, 18540.0, 20532.96, 33942.24, 21929.76, 22244.04]}, {"product_id": "1731937730983661577", "product_name": "Volufiline 92% + Pal-Isoleucine 1%", "this_week_sales": 5472, "lifetime_total_sales": 39572, "share": null, "rating": 4.2, "commission_pct": 10.0, "ratio": 0.13827959163044576, "momentum": 0.13827959163044576, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731937730983661577", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": [3210.9, 9448.8, 13482.0, 8132.0, 6034.8, 7062.0, 4365.6, 4344.2, 3852.0, 4001.8, 4408.4, 1476.6, 2996.0, 9437.4, 2482.4, 6227.4, 3809.2, 3274.2, 2461.0, 3573.8, 1947.4, 3723.6, 2846.2, 3766.4, 3916.2, 3274.2, 2632.2, 1198.4, 5778.0, 4023.2, 2525.2, 2247.0, 4900.6, 19752.2, 10721.4, 9287.6, 10914.0, 6997.8, 5478.4, 7789.6, 7276.0, 8560.0, 8560.0, 6420.0, 6420.0, 8089.2, 6890.8, 7468.6, 9651.4, 11235.0, 10165.0, 10700.0, 12840.0, 8560.0, 9587.2, 10143.6, 12904.2, 11384.8, 13760.2, 16306.8, 15793.2, 18575.2, 19944.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 17590.8, 5713.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 85.6, 128.4, 0.0, 21.4, 513.6, 38006.4, 29895.8, 16649.2, 21228.8, 18468.2, 16692.0, 16906.0, 14980.0]}, {"product_id": "1731600678904959932", "product_name": "tarte tartelette lash curler", "this_week_sales": 12264, "lifetime_total_sales": 14300, "share": null, "rating": 4.8, "commission_pct": 15.0, "ratio": 0.8576223776223776, "momentum": 0.8576223776223776, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731600678904959932", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1730935621882515865", "product_name": "GOPURE 30% Vitamin C Power Treatment", "this_week_sales": 4314, "lifetime_total_sales": 5580, "share": null, "rating": 4.7, "commission_pct": 20.0, "ratio": 0.7731182795698924, "momentum": 0.7731182795698924, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1730935621882515865", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1732157257719255067", "product_name": "[Dr.Melaxin Official] Cactox & Collagen Multi Pore Firming Duo with Cactus Cooling & Eye Care Stick for Visible Pore Refining and Skin Repair", "this_week_sales": 3920, "lifetime_total_sales": 5261, "share": null, "rating": 4.9, "commission_pct": 15.0, "ratio": 0.7451054932522334, "momentum": 0.7451054932522334, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732157257719255067", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1731847951163953949", "product_name": "Lilyeve Growturn Hair Growth Serum with Built in Brush for Hair Growth & Thickening", "this_week_sales": 6834, "lifetime_total_sales": 9771, "share": null, "rating": 4.6, "commission_pct": 17.0, "ratio": 0.6994166410807492, "momentum": 0.6994166410807492, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731847951163953949", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1732262453239714550", "product_name": "Sweet Pink Duo", "this_week_sales": 4090, "lifetime_total_sales": 10141, "share": null, "rating": 4.9, "commission_pct": 12.0, "ratio": 0.40331328271373634, "momentum": 0.40331328271373634, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732262453239714550", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1731493782945435698", "product_name": "Kitsch Smoothing Air Dry Cream", "this_week_sales": 7184, "lifetime_total_sales": 25263, "share": null, "rating": 4.2, "commission_pct": 17.0, "ratio": 0.2843684439694415, "momentum": 0.2843684439694415, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731493782945435698", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1731650855243191203", "product_name": "6-color Dual - Ended Eraser Foundation Stick -Multi - Use Concealer & Highlighter for Acne Marks , Nose Contour Flawless Makeup Finish - Versatile Cosmetic Tool , daily gift", "this_week_sales": 4682, "lifetime_total_sales": 32819, "share": null, "rating": 4.4, "commission_pct": 10.0, "ratio": 0.1426612632926049, "momentum": 0.1426612632926049, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731650855243191203", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1731567137054495089", "product_name": "Jergens Shea Fusions Body Lotion 2 Pack Bundles - 14oz", "this_week_sales": 3367, "lifetime_total_sales": 37397, "share": null, "rating": 4.7, "commission_pct": 20.0, "ratio": 0.09003395994331095, "momentum": 0.09003395994331095, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731567137054495089", "pick_rating": null, "bucket": "Recommended", "reasons": [], "gmv_series": null}, {"product_id": "1732142588957462608", "product_name": "Luxe - Color Changing Foundation", "this_week_sales": 4927, "lifetime_total_sales": 22100, "share": null, "rating": 3.5, "commission_pct": 14.5, "ratio": 0.22294117647058823, "momentum": 0.22294117647058823, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732142588957462608", "pick_rating": null, "bucket": "Testable", "reasons": ["rating<4.1"], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 90.76, 45.38, 90.76, 45.38, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 45.38, 363.04, 726.08, 998.36, 408.42, 1043.74, 544.56, 947.94, 493.87, 683.82, 265.93, 417.89, 303.92, 569.85, 5341.14, 1153.95, 12445.76, 31452.6, 24392.42, 26635.87, 19619.99, 15321.6, 8118.4, 10558.24, 7943.52, 8180.64, 3834.0, 11618.88, 3408.6, 4890.6, 31922.28, 18587.8, 10840.28, 3186.48, 8654.88, 11085.36, 7617.48, 7676.76, 13604.76, 12834.12, 13433.48, 6798.0, 3399.0]}, {"product_id": "1732170101899432824", "product_name": "【CEELIKE】 Purple Teeth Whitening Strips  With Free Cheek Retractor - 7/21 Whitening Sessions -Nano-Hydroxyapatite Safe for Enamel - Non Sensitive Teeth Whitening - Peroxide-Free", "this_week_sales": 5201, "lifetime_total_sales": 36325, "share": null, "rating": 3.7, "commission_pct": 15.0, "ratio": 0.14317962835512732, "momentum": 0.14317962835512732, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732170101899432824", "pick_rating": null, "bucket": "Testable", "reasons": ["rating<4.1"], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 31.96, 134.48, 192.72, 269.62, 158.6, 1427.6, 11304.6, 4863.8, 4751.83, 1843.77, 4122.25, 4347.1, 4676.88, 5351.43, 8424.38, 13026.31, 7704.86, 7452.75, 20881.07, 13623.0, 20311.45, 25935.0, 28406.05, 17403.39, 14105.59, 11587.27, 13146.23, 13655.89, 9578.61, 11017.65, 7015.32, 11467.35, 2398.4, 13476.01, 12411.72, 9083.94, 9653.56, 7285.14, 7584.94, 7974.68, 6475.68, 8709.19, 13296.13, 10208.19, 11857.09, 7914.72, 8514.32]}, {"product_id": "1732256101227204705", "product_name": "Nourishing nail pen, correction pen, preventive care pen, nail care, hand and foot tools and accessories, nail art tools", "this_week_sales": 7343, "lifetime_total_sales": 23456, "share": null, "rating": 3.0, "commission_pct": 10.0, "ratio": 0.3130542291950887, "momentum": 0.3130542291950887, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732256101227204705", "pick_rating": null, "bucket": "Testable", "reasons": ["rating<4.1"], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7.35, 0.0, 36.75, 7.35, 0.0, 102.9, 124.95, 367.5, 1043.7, 1249.5, 11929.05, 6989.85, 5159.7, 8011.5, 7408.8, 10317.24, 4494.57, 5249.49, 18215.94]}, {"product_id": "1731837530211127427", "product_name": "PretiHom Fully Automatic Electric Curling Stick 32mm LargeCurling Tool for Comfortable Hair Care", "this_week_sales": 4836, "lifetime_total_sales": 5875, "share": null, "rating": 4.0, "commission_pct": 10.0, "ratio": 0.8231489361702128, "momentum": 0.8231489361702128, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731837530211127427", "pick_rating": null, "bucket": "Testable", "reasons": ["rating<4.1"], "gmv_series": null}, {"product_id": "1732162353228845369", "product_name": "LIMITED EDITION | CHAMPAGNE Glitz & Glam | 26pc Essentials Collection Brush Set | MU9682", "this_week_sales": 3426, "lifetime_total_sales": 4562, "share": null, "rating": 4.6, "commission_pct": 7.0, "ratio": 0.7509864094695309, "momentum": 0.7509864094695309, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732162353228845369", "pick_rating": null, "bucket": "Testable", "reasons": ["commission<10.0%"], "gmv_series": null}]};</script>
+</div>
+<script>
+(function(){
+  function fit(card){
+    try{
+      var front = card.querySelector('.front');
+      var back = card.querySelector('.back');
+      if(!front || !back) return;
+      var was = card.classList.contains('isFlipped');
+      card.classList.remove('isFlipped');
+      var h1 = front.scrollHeight || 0;
+      card.classList.add('isFlipped');
+      var h2 = back.scrollHeight || 0;
+      if(!was) card.classList.remove('isFlipped');
+      card.style.height = Math.max(h1, h2, 320) + 'px';
+    } catch(_e){}
+  }
+
+  function fitAll(){
+    document.querySelectorAll('.flip').forEach(fit);
+  }
+
+  function toggle(card){
+    card.classList.toggle('isFlipped');
+  }
+
+  window.addEventListener('load', function(){
+    // Defer to next frame so images/layout settle
+    requestAnimationFrame(function(){
+      fitAll();
+    });
+  });
+  window.addEventListener('resize', function(){
+    clearTimeout(window.__fitT);
+    window.__fitT = setTimeout(fitAll, 160);
+  });
+
+  document.addEventListener('click', function(e){
+    // copy button handled separately
+    if(e.target.closest && e.target.closest('.copyBtn')) return;
+    // don't flip when clicking an outgoing link
+    if(e.target.tagName === 'A') return;
+    var card = e.target.closest && e.target.closest('.flip');
+    if(!card) return;
+    toggle(card);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    var card = document.activeElement;
+    if(card && card.classList && card.classList.contains('flip')){
+      e.preventDefault();
+      toggle(card);
+    }
+  });
+
+  function toast(msg){
+    var el = document.querySelector('.toast');
+    if(!el) return;
+    el.textContent = msg;
+    el.classList.add('show');
+    clearTimeout(window.__toastT);
+    window.__toastT = setTimeout(function(){el.classList.remove('show');}, 1200);
+  }
+
+  async function copyText(text){
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        await navigator.clipboard.writeText(text);
+        toast('Copied');
+        return;
+      }
+    } catch(_e){}
+    // fallback
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      toast('Copied');
+    } catch(_e2){
+      toast('Copy failed');
+    }
+  }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.copyBtn');
+    if(!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var url = btn.getAttribute('data-copy') || '';
+    if(url) copyText(url);
+  });
+})();
+</script>
+<div class='toast'>Copied</div>
+</body>
+</html>

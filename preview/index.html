@@ -923,15 +923,18 @@ button.btnlink{cursor:pointer;}
   function fillStock(){
     try{
       var map = {};
-      (window.DATA && window.DATA.items || []).forEach(function(it){ map[it.product_id]=it.stock_show; });
+      (window.DATA && window.DATA.items || []).forEach(function(it){ map[String(it.product_id)] = it.stock_show; });
       document.querySelectorAll('.stockPill').forEach(function(sp){
-        var pid = sp.getAttribute('data-pid');
+        var pid = String(sp.getAttribute('data-pid') || '');
         var v = map[pid];
         if(v===undefined || v===null || v===''){
           sp.style.display='none';
         } else {
           sp.textContent = 'Stock ' + v;
         }
+      });
+    } catch(_e){}
+  }
       });
     } catch(_e){}
   }

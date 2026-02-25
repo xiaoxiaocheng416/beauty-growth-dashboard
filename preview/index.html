@@ -883,8 +883,10 @@ button.btnlink{cursor:pointer;}
   document.addEventListener('click', function(e){
     // copy button handled separately
     if(e.target.closest && e.target.closest('.copyBtn')) return;
-    // don't flip when clicking an outgoing link
-    if(e.target.tagName === 'A') return;
+    // don't flip when clicking any outgoing link (including nested elements inside it)
+    if(e.target.closest && e.target.closest('a')) return;
+    // don't flip when clicking video cards area
+    if(e.target.closest && e.target.closest('.vcard')) return;
     var card = e.target.closest && e.target.closest('.flip');
     if(!card) return;
     toggle(card);

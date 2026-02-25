@@ -112,6 +112,17 @@ function withinWindow(ts, days) {
   return ts >= (now - days*86400);
 }
 
+// Some shop feeds expose an older "launch_time" (e.g. first created) which makes
+// the 7d filter look empty. As a fallback, use the latest seen history timestamp.
+function effectiveTime(it) {
+  const ts = it.launch_time;
+  if (ts) return ts;
+  const pid = String(it.product_id || '');
+  const series = (HISTORY.products && HISTORY.products[pid] && HISTORY.products[pid].series) ? HISTORY.products[pid].series : [];
+  const last = series.length ? series[series.length-1] : null;
+  return last && last.ts ? last.ts : null;
+}
+
 function flattenItems(days, q, brandFilter, showZeros) {
   const shops = shopValues();
   const out = [];
@@ -122,7 +133,7 @@ function flattenItems(days, q, brandFilter, showZeros) {
     if (brandFilter && norm(brand) !== norm(brandFilter)) continue;
     const items = sh.items || [];
     for (const it of items) {
-      const ts = it.launch_time;
+      const ts = effectiveTime(it);
       if (!withinWindow(ts, days)) continue;
       const title = it.title || '';
       if (q && !norm(title).includes(norm(q))) continue;
@@ -268,7 +279,7 @@ function renderBrands() {
     const items = sh.items || [];
     let c=0;
     for (const it of items) {
-      if (!withinWindow(it.launch_time, days)) continue;
+      if (!withinWindow(effectiveTime(it), days)) continue;
       if (q && !norm(it.title||'').includes(norm(q))) continue;
       c++;
     }

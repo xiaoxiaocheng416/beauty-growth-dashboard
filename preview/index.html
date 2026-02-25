@@ -74,7 +74,7 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks · build 20260225-8</div>
+  <div class='subttl'>Weekly picks · build 20260225-9</div>
 </div></header>
 
 <div class='wrap'>
@@ -680,6 +680,56 @@ button.btnlink{cursor:pointer;}
     // iOS/Telegram webviews sometimes refuse to render <img src=".svg">.
     // Workaround: fetch the SVG and inline it as markup.
     (function(){
+      function zoomSparkline(svg){
+        try{
+          if(!svg) return;
+          var p = svg.querySelector('path');
+          if(!p) return;
+          var d = p.getAttribute('d') || '';
+          // parse all y values from path commands (M/L)
+          var nums = d.match(/[-+]?\d*\.?\d+/g);
+          if(!nums || nums.length < 6) return;
+          var ys = [];
+          for(var i=1;i<nums.length;i+=2){
+            ys.push(parseFloat(nums[i]));
+          }
+          if(ys.length < 6) return;
+          // ignore extreme spike so the rest isn't flat
+          var sorted = ys.slice().sort(function(a,b){return a-b;});
+          var lo = sorted[Math.floor(sorted.length*0.05)];
+          var hi = sorted[Math.floor(sorted.length*0.95)];
+          if(!(isFinite(lo) && isFinite(hi))) return;
+          if(Math.abs(hi-lo) < 2) return; // already flat, no point
+          var h = 140;
+          try{
+            var vb = (svg.getAttribute('viewBox')||'').split(/\s+/);
+            if(vb.length===4) h = parseFloat(vb[3]) || h;
+          } catch(_e){}
+          var padTop = 16, padBot = 18;
+          function clamp(v,a,b){ return Math.max(a, Math.min(b,v)); }
+          // rebuild path with rescaled y
+          var out = [];
+          var idx = 0;
+          var xys = [];
+          for(var j=0;j<nums.length-1;j+=2){
+            xys.push([parseFloat(nums[j]), parseFloat(nums[j+1])]);
+          }
+          var parts = d.split(/\s+/);
+          // simpler: reconstruct using original x's
+          var pts = xys;
+          if(!pts.length) return;
+          var dd = 'M ';
+          for(var k=0;k<pts.length;k++){
+            var x = pts[k][0];
+            var y = pts[k][1];
+            var yn = padTop + (h-padTop-padBot) * (1 - (clamp(y, lo, hi) - lo)/(hi-lo));
+            dd += x.toFixed(2) + ' ' + yn.toFixed(2);
+            if(k<pts.length-1) dd += ' L ';
+          }
+          p.setAttribute('d', dd);
+        } catch(_e){}
+      }
+
       try{
         var ua = (navigator.userAgent || '');
         var isIOS = /iP(hone|ad|od)/.test(ua);
@@ -696,6 +746,7 @@ button.btnlink{cursor:pointer;}
             var wrap = img.closest && img.closest('.chartWrap');
             if(!wrap) return;
             wrap.innerHTML = txt;
+            zoomSparkline(wrap.querySelector('svg'));
             var card = wrap.closest && wrap.closest('.flip');
             if(card) fit(card);
           }).catch(function(){});

@@ -663,12 +663,25 @@ button.btnlink{cursor:pointer;}
 
   function toggle(card){
     card.classList.toggle('isFlipped');
+    // Re-fit after flip; images in back side (charts/videos) may change height.
+    requestAnimationFrame(function(){ fit(card); });
   }
 
   window.addEventListener('load', function(){
     // Defer to next frame so images/layout settle
     requestAnimationFrame(function(){
       fitAll();
+    });
+    // Re-fit cards when any image finishes loading (product cover / curve svg / video covers)
+    document.querySelectorAll('.flip img').forEach(function(img){
+      img.addEventListener('load', function(){
+        var card = img.closest && img.closest('.flip');
+        if(card) fit(card);
+      });
+      img.addEventListener('error', function(){
+        var card = img.closest && img.closest('.flip');
+        if(card) fit(card);
+      });
     });
   });
   window.addEventListener('resize', function(){

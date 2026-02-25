@@ -31,6 +31,7 @@ small{color:var(--muted);}
 
 .chartWrap{height:190px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;overflow:hidden;}
 .chartWrap svg{width:100%;height:100%;flex:1;}
+.chartWrap svg path{stroke-width:3.6 !important;}
 .xaxis{display:flex;justify-content:space-between;gap:8px;padding:6px 10px 8px;color:var(--muted);font-size:11px;}
 .backTitle{font-weight:700;font-size:13px;letter-spacing:-0.01em;}
 .hint{margin-top:auto;color:var(--muted);font-size:11px;}
@@ -41,6 +42,7 @@ small{color:var(--muted);}
 .vcard{flex:0 0 auto;min-width:140px;max-width:140px;display:flex;flex-direction:column;gap:8px;padding:8px;border:1px solid rgba(226,232,240,.95);border-radius:14px;background:linear-gradient(180deg,#ffffff,#f8fafc);text-decoration:none;color:inherit;scroll-snap-align:start;}
 .vthumb{width:100%;height:170px;border-radius:12px;overflow:hidden;background:#eef2ff;display:flex;align-items:center;justify-content:center;}
 .vthumb img{width:100%;height:100%;object-fit:cover;}
+.vthumb .ph{font-size:12px;color:#64748b;font-weight:800;}
 .vmeta{min-width:0;display:flex;flex-direction:column;gap:4px;}
 .vnick{font-weight:800;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .vstat{color:var(--muted);font-size:11px;line-height:1.2;}
@@ -72,7 +74,7 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks</div>
+  <div class='subttl'>Weekly picks · build 20260225-7</div>
 </div></header>
 
 <div class='wrap'>
@@ -708,13 +710,21 @@ button.btnlink{cursor:pointer;}
         if(card) fit(card);
       });
       img.addEventListener('error', function(){
-        // iOS webviews sometimes fail to decode AVIF; try a couple fallbacks.
+        // iOS webviews sometimes fail to decode AVIF; try a quick fallback.
         try{
           var src = img.getAttribute('src') || '';
           if(src && src.indexOf('.avif') !== -1){
             img.setAttribute('src', src.replace('.avif', '.jpeg'));
             return;
           }
+        } catch(_e){}
+        // Give up: replace with placeholder.
+        try{
+          var ph = document.createElement('div');
+          ph.className = 'ph';
+          ph.textContent = 'No cover';
+          var p = img.parentNode;
+          if(p){ p.replaceChild(ph, img); }
         } catch(_e){}
         var card = img.closest && img.closest('.flip');
         if(card) fit(card);

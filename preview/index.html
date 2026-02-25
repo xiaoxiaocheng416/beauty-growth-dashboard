@@ -74,7 +74,7 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks · build 20260225-10</div>
+  <div class='subttl'>Weekly picks · build 20260225-11</div>
 </div></header>
 
 <div class='wrap'>
@@ -696,10 +696,15 @@ button.btnlink{cursor:pointer;}
           if(ys.length < 6) return;
           // ignore extreme spike so the rest isn't flat
           var sorted = ys.slice().sort(function(a,b){return a-b;});
-          var lo = sorted[Math.floor(sorted.length*0.05)];
-          var hi = sorted[Math.floor(sorted.length*0.95)];
+          var lo = sorted[Math.floor(sorted.length*0.20)];
+          var hi = sorted[Math.floor(sorted.length*0.80)];
           if(!(isFinite(lo) && isFinite(hi))) return;
-          if(Math.abs(hi-lo) < 2) return; // already flat, no point
+          // If the series is almost flat, still amplify a bit so it's visible on mobile.
+          if(Math.abs(hi-lo) < 8){
+            var mid = (hi + lo) / 2;
+            lo = mid - 4;
+            hi = mid + 4;
+          }
           var h = 140;
           try{
             var vb = (svg.getAttribute('viewBox')||'').split(/\s+/);
@@ -769,15 +774,23 @@ button.btnlink{cursor:pointer;}
             return;
           }
         } catch(_e){}
-        // Give up: replace with placeholder (video covers only).
+        // Give up: replace with placeholder.
         try{
           var isVideoThumb = img.closest && img.closest('.vthumb');
+          var isProdThumb = img.closest && img.closest('.imgWrap');
           if(isVideoThumb){
             var ph = document.createElement('div');
             ph.className = 'ph';
             ph.textContent = 'No cover';
             var p = img.parentNode;
             if(p){ p.replaceChild(ph, img); }
+          } else if(isProdThumb){
+            // product image missing
+            var ph2 = document.createElement('div');
+            ph2.className = 'ph';
+            ph2.textContent = 'No image';
+            var p2 = img.parentNode;
+            if(p2){ p2.replaceChild(ph2, img); }
           }
         } catch(_e){}
         var card = img.closest && img.closest('.flip');

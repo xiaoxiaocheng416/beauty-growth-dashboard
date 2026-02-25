@@ -672,6 +672,33 @@ button.btnlink{cursor:pointer;}
     requestAnimationFrame(function(){
       fitAll();
     });
+
+    // iOS/Telegram webviews sometimes refuse to render <img src=".svg">.
+    // Workaround: fetch the SVG and inline it as markup.
+    (function(){
+      try{
+        var ua = (navigator.userAgent || '');
+        var isIOS = /iP(hone|ad|od)/.test(ua);
+        var isTG = /Telegram/i.test(ua);
+        if(!(isIOS || isTG)) return;
+        document.querySelectorAll('.chartWrap img').forEach(function(img){
+          var src = (img.getAttribute('src') || '');
+          if(!src || !src.endsWith('.svg')) return;
+          // inline once
+          if(img.__inlined) return;
+          img.__inlined = true;
+          fetch(src, {cache: 'no-store'}).then(function(r){ return r.ok ? r.text() : ''; }).then(function(txt){
+            if(!txt || txt.indexOf('<svg') === -1) return;
+            var wrap = img.closest && img.closest('.chartWrap');
+            if(!wrap) return;
+            wrap.innerHTML = txt;
+            var card = wrap.closest && wrap.closest('.flip');
+            if(card) fit(card);
+          }).catch(function(){});
+        });
+      } catch(_e){}
+    })();
+
     // Re-fit cards when any image finishes loading (product cover / curve svg / video covers)
     document.querySelectorAll('.flip img').forEach(function(img){
       img.addEventListener('load', function(){

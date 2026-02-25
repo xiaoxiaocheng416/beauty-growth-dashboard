@@ -74,7 +74,7 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks · build 20260225-12</div>
+  <div class='subttl'>Weekly picks · build 20260225-13</div>
 </div></header>
 
 <div class='wrap'>
@@ -801,10 +801,7 @@ button.btnlink{cursor:pointer;}
       }
 
       try{
-        var ua = (navigator.userAgent || '');
-        var isIOS = /iP(hone|ad|od)/.test(ua);
-        var isTG = /Telegram/i.test(ua);
-        if(!(isIOS || isTG)) return;
+        // Apply to all platforms: some products have extreme spikes causing the line to look flat.
         document.querySelectorAll('.chartWrap img').forEach(function(img){
           var src = (img.getAttribute('src') || '');
           if(!src || !src.endsWith('.svg')) return;

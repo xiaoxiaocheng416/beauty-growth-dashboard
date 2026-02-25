@@ -74,7 +74,7 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks · build 20260225-7</div>
+  <div class='subttl'>Weekly picks · build 20260225-8</div>
 </div></header>
 
 <div class='wrap'>
@@ -718,13 +718,16 @@ button.btnlink{cursor:pointer;}
             return;
           }
         } catch(_e){}
-        // Give up: replace with placeholder.
+        // Give up: replace with placeholder (video covers only).
         try{
-          var ph = document.createElement('div');
-          ph.className = 'ph';
-          ph.textContent = 'No cover';
-          var p = img.parentNode;
-          if(p){ p.replaceChild(ph, img); }
+          var isVideoThumb = img.closest && img.closest('.vthumb');
+          if(isVideoThumb){
+            var ph = document.createElement('div');
+            ph.className = 'ph';
+            ph.textContent = 'No cover';
+            var p = img.parentNode;
+            if(p){ p.replaceChild(ph, img); }
+          }
         } catch(_e){}
         var card = img.closest && img.closest('.flip');
         if(card) fit(card);

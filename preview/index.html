@@ -74,7 +74,7 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks · build 20260225-11</div>
+  <div class='subttl'>Weekly picks · build 20260225-12</div>
 </div></header>
 
 <div class='wrap'>
@@ -735,6 +735,71 @@ button.btnlink{cursor:pointer;}
         } catch(_e){}
       }
 
+      function renderCanvas(svg, wrap){
+        try{
+          if(!svg || !wrap) return false;
+          var p = svg.querySelector('path');
+          if(!p) return false;
+          var d = p.getAttribute('d') || '';
+          var nums = d.match(/[-+]?\d*\.?\d+/g);
+          if(!nums || nums.length < 6) return false;
+          var pts = [];
+          for(var i=0;i<nums.length-1;i+=2){
+            pts.push([parseFloat(nums[i]), parseFloat(nums[i+1])]);
+          }
+          if(pts.length < 3) return false;
+
+          // size
+          var w = wrap.clientWidth || 320;
+          var h = wrap.clientHeight || 200;
+
+          // compute y range (after zoomSparkline, already clipped)
+          var ys = pts.map(function(x){return x[1];}).filter(function(v){return isFinite(v);});
+          if(!ys.length) return false;
+          var ymin = Math.min.apply(null, ys);
+          var ymax = Math.max.apply(null, ys);
+          if(!(isFinite(ymin) && isFinite(ymax)) || Math.abs(ymax-ymin) < 1) return false;
+
+          var canvas = document.createElement('canvas');
+          canvas.width = Math.floor(w * (window.devicePixelRatio || 1));
+          canvas.height = Math.floor(h * (window.devicePixelRatio || 1));
+          canvas.style.width = w + 'px';
+          canvas.style.height = h + 'px';
+          canvas.style.display = 'block';
+          canvas.style.borderRadius = '14px';
+
+          var ctx = canvas.getContext('2d');
+          if(!ctx) return false;
+          ctx.scale((window.devicePixelRatio || 1), (window.devicePixelRatio || 1));
+          ctx.clearRect(0,0,w,h);
+
+          // draw line
+          ctx.lineWidth = 3.4;
+          ctx.strokeStyle = 'rgba(37,99,235,.95)';
+          ctx.lineJoin = 'round';
+          ctx.lineCap = 'round';
+
+          // map x using svg viewBox width
+          var vb = (svg.getAttribute('viewBox')||'').split(/\s+/);
+          var vbw = 320;
+          if(vb.length===4) vbw = parseFloat(vb[2]) || vbw;
+          function xmap(x){ return (x / vbw) * w; }
+          function ymap(y){ return ((y - ymin) / (ymax - ymin)) * (h-14) + 7; }
+
+          ctx.beginPath();
+          ctx.moveTo(xmap(pts[0][0]), ymap(pts[0][1]));
+          for(var k=1;k<pts.length;k++) ctx.lineTo(xmap(pts[k][0]), ymap(pts[k][1]));
+          ctx.stroke();
+
+          // replace svg with canvas
+          wrap.innerHTML = '';
+          wrap.appendChild(canvas);
+          return true;
+        } catch(_e){
+          return false;
+        }
+      }
+
       try{
         var ua = (navigator.userAgent || '');
         var isIOS = /iP(hone|ad|od)/.test(ua);
@@ -751,7 +816,18 @@ button.btnlink{cursor:pointer;}
             var wrap = img.closest && img.closest('.chartWrap');
             if(!wrap) return;
             wrap.innerHTML = txt;
-            zoomSparkline(wrap.querySelector('svg'));
+            var svg = wrap.querySelector('svg');
+            zoomSparkline(svg);
+            // render to canvas for iOS/TG to avoid tiny/flat SVG rendering
+            var ok = renderCanvas(svg, wrap);
+            // visible marker so we know zoom/canvas ran
+            try{
+              var t = document.createElement('div');
+              t.className = 'xaxis';
+              t.style.padding = '6px 10px 2px';
+              t.textContent = ok ? 'Chart mode: canvas-zoom' : 'Chart mode: svg-zoom';
+              wrap.parentNode && wrap.parentNode.insertBefore(t, wrap.nextSibling);
+            } catch(_e){}
             var card = wrap.closest && wrap.closest('.flip');
             if(card) fit(card);
           }).catch(function(){});

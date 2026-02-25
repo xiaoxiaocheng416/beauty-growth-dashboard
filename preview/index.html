@@ -634,6 +634,32 @@ button.btnlink{cursor:pointer;}
   });
 })();
 </script>
+<script>
+// Patch: if embedded GMV series missing, fall back to pre-rendered curve SVGs.
+(function(){
+  function q(sel, root){ return (root||document).querySelector(sel); }
+  function qa(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+  qa('.card .back .empty').forEach(function(el){
+    try{
+      var card = el.closest('.card');
+      var pidEl = q('.sub', card);
+      var pid = pidEl ? (pidEl.textContent||'').trim() : '';
+      if(!pid) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'chartWrap';
+      var img = document.createElement('img');
+      img.src = 'assets/curve/' + pid + '.svg';
+      img.alt = '';
+      img.loading = 'lazy';
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.style.objectFit = 'contain';
+      wrap.appendChild(img);
+      el.parentNode.replaceChild(wrap, el);
+    } catch(_e){}
+  });
+})();
+</script>
 <div class='toast'>Copied</div>
 </body>
 </html>

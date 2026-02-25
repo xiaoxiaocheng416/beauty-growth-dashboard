@@ -27,17 +27,17 @@ small{color:var(--muted);}
 .inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
 .flip.isFlipped .inner{transform:rotateY(180deg);}
 .front,.back{backface-visibility:hidden;position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;}
-.back{transform:rotateY(180deg);padding-top:2px;}
+.back{transform:rotateY(180deg);padding-top:10px;padding-bottom:12px;}
 
-.chartWrap{height:190px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;overflow:hidden;}
+.chartWrap{height:200px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;overflow:hidden;margin:6px 0 10px;}
 .chartWrap svg{width:100%;height:100%;flex:1;}
 .chartWrap svg path{stroke-width:3.6 !important;}
 .xaxis{display:flex;justify-content:space-between;gap:8px;padding:6px 10px 8px;color:var(--muted);font-size:11px;}
-.backTitle{font-weight:700;font-size:13px;letter-spacing:-0.01em;}
-.hint{margin-top:auto;color:var(--muted);font-size:11px;}
+.backTitle{font-weight:800;font-size:13px;letter-spacing:-0.01em;margin:6px 0;}
+.hint{margin-top:auto;color:rgba(100,116,139,.85);font-size:11px;padding-top:8px;}
 
 /* Videos (back side) */
-.videosRow{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.videosRow{display:flex;gap:14px;overflow-x:auto;padding:6px 12px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
 .videosRow::-webkit-scrollbar{display:none;}
 .vcard{flex:0 0 auto;min-width:140px;max-width:140px;display:flex;flex-direction:column;gap:8px;padding:8px;border:1px solid rgba(226,232,240,.95);border-radius:14px;background:linear-gradient(180deg,#ffffff,#f8fafc);text-decoration:none;color:inherit;scroll-snap-align:start;}
 .vthumb{width:100%;height:170px;border-radius:12px;overflow:hidden;background:#eef2ff;display:flex;align-items:center;justify-content:center;}
@@ -74,7 +74,7 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks · build 20260225-9</div>
+  <div class='subttl'>Weekly picks · build 20260225-10</div>
 </div></header>
 
 <div class='wrap'>

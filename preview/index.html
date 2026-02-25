@@ -47,11 +47,11 @@ small{color:var(--muted);}
 .vnick{font-weight:800;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .vstat{color:var(--muted);font-size:11px;line-height:1.2;}
 
-.imgWrap{height:150px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.imgWrap{height:240px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:center;justify-content:center;overflow:hidden;}
 @media (max-width: 720px){
   .wrap{padding:14px 12px;}
   /* keep height for flip cards; JS will set exact height */
-  .imgWrap{height:210px;}
+  .imgWrap{height:280px;}
   .chartWrap{height:280px;}
   .pill{padding:6px 10px;font-size:12px;}
   .links a{font-size:13px;}
@@ -656,7 +656,7 @@ button.btnlink{cursor:pointer;}
       card.classList.add('isFlipped');
       var h2 = back.scrollHeight || 0;
       if(!was) card.classList.remove('isFlipped');
-      var minFront = 360;
+      var minFront = 420; // slightly taller front so product image is bigger
       var minBack = 560; // make back side tall enough for chart + videos
       var minH = card.classList.contains('isFlipped') ? minBack : minFront;
       card.style.height = Math.max(h1, h2, minH) + 'px';

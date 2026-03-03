@@ -3,7 +3,7 @@
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Growth Picks Dashboard</title>
+<title>Weekly Preview - Week 10 (Mar 3, 2026)</title>
 <style>
 :root{--bg:#f6f7fb;--panel:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--shadow:0 1px 2px rgba(15,23,42,.06),0 10px 25px rgba(15,23,42,.06);}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
@@ -20,23 +20,18 @@ small{color:var(--muted);}
 @media (max-width: 720px){.grid{grid-template-columns:1fr;}}
 .card{background:var(--panel);border:1px solid rgba(226,232,240,.9);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:560px;box-shadow:var(--shadow);transition:transform .12s ease, box-shadow .12s ease;}
 .card:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(15,23,42,.08),0 18px 40px rgba(15,23,42,.10);}
-
-/* Flip */
 .flip{perspective:1000px;cursor:pointer;}
 .flip:focus{outline:2px solid rgba(37,99,235,.25);outline-offset:2px;}
 .inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
 .flip.isFlipped .inner{transform:rotateY(180deg);}
 .front,.back{backface-visibility:hidden;position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;}
 .back{transform:rotateY(180deg);padding-top:10px;padding-bottom:12px;}
-
 .chartWrap{height:200px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;overflow:hidden;margin:6px 0 2px;}
 .chartWrap svg{width:100%;height:100%;flex:1;}
 .chartWrap svg path{stroke-width:3.6 !important;}
 .xaxis{display:flex;justify-content:space-between;gap:8px;padding:6px 10px 0;color:var(--muted);font-size:11px;margin-top:-4px;}
 .backTitle{font-weight:800;font-size:13px;letter-spacing:-0.01em;margin:6px 0;}
 .hint{margin-top:auto;color:rgba(100,116,139,.85);font-size:11px;padding-top:8px;}
-
-/* Videos (back side) */
 .videosRow{display:flex;gap:14px;overflow-x:auto;padding:6px 12px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
 .videosRow::-webkit-scrollbar{display:none;}
 .vcard{flex:0 0 auto;min-width:140px;max-width:140px;display:flex;flex-direction:column;gap:8px;padding:8px;border:1px solid rgba(226,232,240,.95);border-radius:14px;background:linear-gradient(180deg,#ffffff,#f8fafc);text-decoration:none;color:inherit;scroll-snap-align:start;}
@@ -46,11 +41,9 @@ small{color:var(--muted);}
 .vmeta{min-width:0;display:flex;flex-direction:column;gap:4px;}
 .vnick{font-weight:800;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .vstat{color:var(--muted);font-size:11px;line-height:1.2;}
-
 .imgWrap{height:300px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:center;justify-content:center;overflow:hidden;}
 @media (max-width: 720px){
   .wrap{padding:14px 12px;}
-  /* keep height for flip cards; JS will set exact height */
   .imgWrap{height:340px;}
   .chartWrap{height:280px;}
   .pill{padding:6px 10px;font-size:12px;}
@@ -58,7 +51,7 @@ small{color:var(--muted);}
 }
 .imgWrap img{max-width:100%;max-height:100%;object-fit:contain;}
 .title{font-weight:650;font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:4.8em;}
-.sub{display:none;} /* hide product_id on front */
+.sub{display:none;}
 .row{display:flex;flex-wrap:wrap;gap:6px;}
 .pill{font-size:10.5px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#f8fafc,#ffffff);border-radius:999px;padding:2px 7px;color:#0f172a;font-weight:650;letter-spacing:-0.005em;}
 .meta{font-size:11px;color:var(--muted);margin-top:auto;}
@@ -75,35 +68,144 @@ button.btnlink{cursor:pointer;}
 <body>
 <header><div class='wrap'>
   <h1>Growth Picks Dashboard</h1>
-  <div class='subttl'>Weekly picks · till 2026-W08 (week end)</div>
+  <div class='subttl'>Week 10 · Mar 3, 2026 · 7 picks</div>
 </div></header>
 
 <div class='wrap'>
   <div class='section'>
     <div class='h2'><h2>Recommended</h2></div>
     <div class='grid'>
+
         <div class='card flip' tabindex='0'>
           <div class='inner'>
             <div class='front'>
               <div class='imgWrap'>
-                <img src='assets/img/1732157257719255067.jpg' alt='' loading='lazy'/>
+                <img src='assets/img/prod_01.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[NEW] [COSRX Official] 5 PDRN Collagen Vitalizing Hydrogel Eye Patch (60pcs) - Dark Circle Eraser &amp; Anti-Wrinkle | 5 Types of PDRN + Vitamin C + Glutathione + Niacinamide | ALL IN ONE EYE PATCH">[NEW] [COSRX Official] 5 PDRN Collagen Vitalizing Hydrogel Eye Patch (60pcs) - Dark Circle Eraser &amp; Anti-Wrinkle | 5 Types of PDRN + Vitamin C + Glutathione + Niacinamide | ALL IN ONE EYE PATCH</div>
+              <div class='sub'>1729481318832247979</div>
+              <div class='row'><span class='pill'>Rating 4.90</span><span class='pill'>Commission 25.0%</span></div>
+              <div class='meta'>Lifetime sales: 3,509 · Creators (28d): 1.4K</div>
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1729481318832247979' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1729481318832247979'>Copy link</button>
+                
+                <span class='linkHint'>If TikTok doesn't open, copy &amp; paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'><img src='assets/charts/1729481318832247979.svg?v=1772575281' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
+              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@la_britney/video/7610669038070484254' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_01.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>La’Britney</div><div class='vstat'>Views 583.0K</div></div></a><a class='vcard' href='https://www.tiktok.com/@afomamedia/video/7606081891153825038' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_02.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Afoma | UGC &amp; Beauty</div><div class='vstat'>Views 411.9K</div></div></a><a class='vcard' href='https://www.tiktok.com/@anonymousally198/video/7608829476000058655' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_03.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Ally K</div><div class='vstat'>Views 508.6K</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/prod_02.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr.Melaxin Official] Kojic Acid Turmeric TX Toner Pad 70pads, Dark Spot &amp; Pigmentation Care for Uneven Skin Tone">[Dr.Melaxin Official] Kojic Acid Turmeric TX Toner Pad 70pads, Dark Spot &amp; Pigmentation Care for Uneven Skin Tone</div>
+              <div class='sub'>1732243946083160091</div>
+              <div class='row'><span class='pill'>Rating 4.80</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 3,393 · Creators (28d): 267</div>
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732243946083160091' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732243946083160091'>Copy link</button>
+                
+                <span class='linkHint'>If TikTok doesn't open, copy &amp; paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'><img src='assets/charts/1732243946083160091.svg?v=1772575281' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
+              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@mariposuhhh/video/7608780597007322398' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_04.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>mariposuhhh</div><div class='vstat'>Views 660.2K</div></div></a><a class='vcard' href='https://www.tiktok.com/@brendaglams/video/7607650998949137695' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_05.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BrendaGlams</div><div class='vstat'>Views 402.5K</div></div></a><a class='vcard' href='https://www.tiktok.com/@beautytokfinds/video/7611672100155247903' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_06.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>beautytokfinds</div><div class='vstat'>Views 522.2K</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/prod_03.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Lassi Lips Staining Lip Liner">Lassi Lips Staining Lip Liner</div>
+              <div class='sub'>1732265867381740340</div>
+              <div class='row'><span class='pill'>Rating 4.30</span><span class='pill'>Commission 12.0%</span></div>
+              <div class='meta'>Lifetime sales: 4,022 · Creators (28d): 161</div>
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732265867381740340' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732265867381740340'>Copy link</button>
+                
+                <span class='linkHint'>If TikTok doesn't open, copy &amp; paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'><img src='assets/charts/1732265867381740340.svg?v=1772575281' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
+              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@lexallynn/video/7607566900398247198' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_07.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>lexallynn</div><div class='vstat'>Views 428.2K</div></div></a><a class='vcard' href='https://www.tiktok.com/@lexallynn/video/7607522920713276702' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_08.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>lexallynn</div><div class='vstat'>Views 342.7K</div></div></a><a class='vcard' href='https://www.tiktok.com/@luvphoebeee/video/7607634440776453406' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_09.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Phoebe</div><div class='vstat'>Views 121.5K</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/prod_04.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="Khadlaj Panache Angel Dust for Women Extrait de Parfum Spray, 3.4 Ounce">Khadlaj Panache Angel Dust for Women Extrait de Parfum Spray, 3.4 Ounce</div>
+              <div class='sub'>1732271500056563740</div>
+              <div class='row'><span class='pill'>Rating 4.70</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 5,217 · Creators (28d): 129</div>
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732271500056563740' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732271500056563740'>Copy link</button>
+                
+                <span class='linkHint'>If TikTok doesn't open, copy &amp; paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'><img src='assets/charts/1732271500056563740.svg?v=1772575281' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
+              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@cjsmellsgood/video/7609337602801454366' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_10.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>CJ Smells Good ♡</div><div class='vstat'>Views 251.0K</div></div></a><a class='vcard' href='https://www.tiktok.com/@scentfromevan/video/7609469061868571934' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_11.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Scent From Evan</div><div class='vstat'>Views 155.2K</div></div></a><a class='vcard' href='https://www.tiktok.com/@noraknowsbeauty/video/7609701094532418829' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_12.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Noraknowsbeauty</div><div class='vstat'>Views 159.8K</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/prod_05.jpg' alt='' loading='lazy'/>
               </div>
               <div class='title' title="[Dr.Melaxin Official] Cactox &amp; Collagen Multi Pore Firming Duo with Cactus Cooling &amp; Eye Care Stick for Visible Pore Refining and Skin Repair">[Dr.Melaxin Official] Cactox &amp; Collagen Multi Pore Firming Duo with Cactus Cooling &amp; Eye Care Stick for Visible Pore Refining and Skin Repair</div>
               <div class='sub'>1732157257719255067</div>
-              <div class='row'><span class='pill'>Rating 4.9</span><span class='pill'>Commission 15.0%</span></div>
-              <div class='meta'>Lifetime sales: 5,261</div>
-              
+              <div class='row'><span class='pill'>Rating 4.60</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 12,423 · Creators (28d): 479</div>
               <div class='links'>
                 <a class='btnlink' href='https://shop.tiktok.com/view/product/1732157257719255067' target='_blank' rel='noreferrer noopener'>TikTok</a>
                 <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732157257719255067'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+                
+                <span class='linkHint'>If TikTok doesn't open, copy &amp; paste into Safari/Chrome.</span>
               </div>
             </div>
             <div class='back'>
               <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732157257719255067.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
+              <div class='chartWrap'><img src='assets/charts/1732157257719255067.svg?v=1772575281' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
               <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@midlife.nursing/video/7604627497753382174' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_18077317106.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Midlife Nursing Aesthetics</div><div class='vstat'>Views 229.59K</div></div></a><a class='vcard' href='https://www.tiktok.com/@thestephedition/video/7605059833884151053' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_390270839464.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>NurseHaus</div><div class='vstat'>Views 84.03K</div></div></a><a class='vcard' href='https://www.tiktok.com/@paypayfinds/video/7607252992823282975' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_35211139268.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>PayPay</div><div class='vstat'>Views 36.17K</div></div></a></div></div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@midlife.nursing/video/7604627497753382174' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_13.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Midlife Nursing Aesthetics</div><div class='vstat'>Views 3.6M</div></div></a><a class='vcard' href='https://www.tiktok.com/@thestephedition/video/7605059833884151053' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_14.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>NurseHaus</div><div class='vstat'>Views 1.4M</div></div></a><a class='vcard' href='https://www.tiktok.com/@paypayfinds/video/7607252992823282975' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_15.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>PayPay</div><div class='vstat'>Views 571.7K</div></div></a></div></div>
               <div class='hint'>Tap to flip back</div>
             </div>
           </div>
@@ -113,321 +215,51 @@ button.btnlink{cursor:pointer;}
           <div class='inner'>
             <div class='front'>
               <div class='imgWrap'>
-                <img src='assets/img/1729414752134665015.jpg' alt='' loading='lazy'/>
+                <img src='assets/img/prod_06.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Recommended by cardi B] SKINTIFIC Hydrating Brightening Lip Serum with Hyaluronic Acid &amp; Peptide for Radiant Lips Gentle Glossy Korean Beauty Makeup Balm Shea Smooth Moisture with Cooling Metal Roller Applicator">[Recommended by cardi B] SKINTIFIC Hydrating Brightening Lip Serum with Hyaluronic Acid &amp; Peptide for Radiant Lips Gentle Glossy Korean Beauty Makeup Balm Shea Smooth Moisture with Cooling Metal Roller Applicator</div>
+              <div class='sub'>1731832307922407544</div>
+              <div class='row'><span class='pill'>Rating 4.40</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 18,852 · Creators (28d): 185</div>
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731832307922407544' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731832307922407544'>Copy link</button>
+                
+                <span class='linkHint'>If TikTok doesn't open, copy &amp; paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'><img src='assets/charts/1731832307922407544.svg?v=1772575281' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
+              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@logantheempress/video/7610709091530345758' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_16.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Logan, The Influencer</div><div class='vstat'>Views 1.6M</div></div></a><a class='vcard' href='https://www.tiktok.com/@logantheempress/video/7608891365769923871' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_17.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Logan, The Influencer</div><div class='vstat'>Views 1.5M</div></div></a><a class='vcard' href='https://www.tiktok.com/@annejllian/video/7597553230385614110' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_18.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>anne-jillian</div><div class='vstat'>Views 2.1M</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/prod_07.jpg' alt='' loading='lazy'/>
               </div>
               <div class='title' title="ONE/SIZE Turn Up The Base Versatile Powder Foundation – Buildable Soft Matte Coverage, 12-Hour Wear, Blurring &amp; Multiuse Powder in 33 Inclusive Shades">ONE/SIZE Turn Up The Base Versatile Powder Foundation – Buildable Soft Matte Coverage, 12-Hour Wear, Blurring &amp; Multiuse Powder in 33 Inclusive Shades</div>
               <div class='sub'>1729414752134665015</div>
-              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 15.0%</span></div>
-              <div class='meta'>Lifetime sales: 5,264</div>
-              
+              <div class='row'><span class='pill'>Rating 4.70</span><span class='pill'>Commission 12.0%</span></div>
+              <div class='meta'>Lifetime sales: 7,949 · Creators (28d): 80</div>
               <div class='links'>
                 <a class='btnlink' href='https://shop.tiktok.com/view/product/1729414752134665015' target='_blank' rel='noreferrer noopener'>TikTok</a>
                 <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1729414752134665015'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+                
+                <span class='linkHint'>If TikTok doesn't open, copy &amp; paste into Safari/Chrome.</span>
               </div>
             </div>
             <div class='back'>
               <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1729414752134665015.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
+              <div class='chartWrap'><img src='assets/charts/1729414752134665015.svg?v=1772575281' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
               <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@giniglow/video/7609372634375097613' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_790074173850.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>🫧GiniGlow✨</div><div class='vstat'>Views 51.06K</div></div></a><a class='vcard' href='https://www.tiktok.com/@lilianaaa.005/video/7605018882419477774' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_870335171744.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>liliana🎱</div><div class='vstat'>Views 25.71K</div></div></a><a class='vcard' href='https://www.tiktok.com/@beautybytyrat/video/7608406214707301646' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_590712044089.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Beauty By Tyra T</div><div class='vstat'>Views 21.82K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732203813452157169.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="COLORGRAM NUDE BLUR TINT | K-Beauty Makeup | Soft Matte Lip Stain | Powdery Finish | 2-in-1 Lip &amp; Cheek | Lightweight &amp; Buildable">COLORGRAM NUDE BLUR TINT | K-Beauty Makeup | Soft Matte Lip Stain | Powdery Finish | 2-in-1 Lip &amp; Cheek | Lightweight &amp; Buildable</div>
-              <div class='sub'>1732203813452157169</div>
-              <div class='row'><span class='pill'>Rating 4.1</span><span class='pill'>Commission 10.0%</span></div>
-              <div class='meta'>Lifetime sales: 5,403</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732203813452157169' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732203813452157169'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732203813452157169.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@itsmekelsc/video/7602470783872552222' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_86619508073.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Kelsey Martinez</div><div class='vstat'>Views 183.81K</div></div></a><a class='vcard' href='https://www.tiktok.com/@danyanoemi/video/7602448367519616311' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_880500651286.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Danya Villalobos</div><div class='vstat'>Views 57.03K</div></div></a><a class='vcard' href='https://www.tiktok.com/@zarinascart/video/7603419526457199903' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_266788797726.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Zarina Briggs</div><div class='vstat'>Views 8.48K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732262453239714550.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="Sweet Pink Duo">Sweet Pink Duo</div>
-              <div class='sub'>1732262453239714550</div>
-              <div class='row'><span class='pill'>Rating 4.9</span><span class='pill'>Commission 12.0%</span></div>
-              <div class='meta'>Lifetime sales: 10,141</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732262453239714550' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732262453239714550'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732262453239714550.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@daniellamagee/video/7604996609683819790' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_16390136386.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Daniella Magee</div><div class='vstat'>Views 360.00K</div></div></a><a class='vcard' href='https://www.tiktok.com/@karinamichelle_/video/7604946904706845982' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_516863044493.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>KARINA MICHELLE ✨</div><div class='vstat'>Views 160.00K</div></div></a><a class='vcard' href='https://www.tiktok.com/@jennam4e/video/7607938434019216671' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_146024344568.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>jenna mae🗝️</div><div class='vstat'>Views 160.00K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732093977633264477.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="Glow-Tox Retinal Serum 150ml | 3x larger bottle for Face &amp; Body – Even Tone, Pores, Dark Spots – Gentle, Non-Irritating, Vegan | MEDITHERAPY">Glow-Tox Retinal Serum 150ml | 3x larger bottle for Face &amp; Body – Even Tone, Pores, Dark Spots – Gentle, Non-Irritating, Vegan | MEDITHERAPY</div>
-              <div class='sub'>1732093977633264477</div>
-              <div class='row'><span class='pill'>Rating 4.6</span><span class='pill'>Commission 10.0%</span></div>
-              <div class='meta'>Lifetime sales: 7,280</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732093977633264477' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732093977633264477'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732093977633264477.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@nnolanrealtor/video/7600529647570291999' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_229468912252.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Nancy Nolan</div><div class='vstat'>Views 63.62K</div></div></a><a class='vcard' href='https://www.tiktok.com/@lis_beautytips/video/7592346065416768798' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_475807649721.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>lis_beautytips</div><div class='vstat'>Views 45.05K</div></div></a><a class='vcard' href='https://www.tiktok.com/@nnolanrealtor/video/7601972168582237453' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_737556764258.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Nancy Nolan</div><div class='vstat'>Views 25.07K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732133243308052507.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair">[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair</div>
-              <div class='sub'>1732133243308052507</div>
-              <div class='row'><span class='pill'>Rating 4.6</span><span class='pill'>Commission 15.0%</span></div>
-              <div class='meta'>Lifetime sales: 25,199</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732133243308052507' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732133243308052507'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732133243308052507.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@alignedwithkay/video/7598430418408344862' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_804023645187.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Kayla</div><div class='vstat'>Views 590.00K</div></div></a><a class='vcard' href='https://www.tiktok.com/@therealandeerae/video/7603635834893372703' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_452545670543.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Andee Rae ✨</div><div class='vstat'>Views 350.27K</div></div></a><a class='vcard' href='https://www.tiktok.com/@alignedwithkay/video/7596688039741508895' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_46545397218.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Kayla</div><div class='vstat'>Views 250.00K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732156025868161841.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="Lopeie Aqua Sport Men&#x27;s Cologne - Upgraded Fresh Citrus Marine Scent, Long-Lasting Clean Fragrance, Ideal for Everyday Wear, 50ML Eau de Parfum">Lopeie Aqua Sport Men&#x27;s Cologne - Upgraded Fresh Citrus Marine Scent, Long-Lasting Clean Fragrance, Ideal for Everyday Wear, 50ML Eau de Parfum</div>
-              <div class='sub'>1732156025868161841</div>
-              <div class='row'><span class='pill'>Rating 4.4</span><span class='pill'>Commission 10.0%</span></div>
-              <div class='meta'>Lifetime sales: 5,685</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732156025868161841' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732156025868161841'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732156025868161841.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@jordan_olivia97/video/7600902901426441485' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_71881196384.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Jordan | Motherhood ✨</div><div class='vstat'>Views 79.02K</div></div></a><a class='vcard' href='https://www.tiktok.com/@roxie_3303/video/7604563281352674590' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_252504415485.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>ROXIE</div><div class='vstat'>Views 59.81K</div></div></a><a class='vcard' href='https://www.tiktok.com/@kimberkayeh/video/7602440025401249054' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_272593640615.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Kimber Kaye</div><div class='vstat'>Views 61.29K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732224555871080683.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="[NEW] [medicube] Rosemary PDRN Scalp-to-Hair Strengthening Set | Includes Shampoo, Conditioner, Scalp Serum | Hair Thinning Care Set for Dry &amp; Oily, Damaged, Frizzy Hair, Oily Flaky-looking Scalp | Korea Hair Care">[NEW] [medicube] Rosemary PDRN Scalp-to-Hair Strengthening Set | Includes Shampoo, Conditioner, Scalp Serum | Hair Thinning Care Set for Dry &amp; Oily, Damaged, Frizzy Hair, Oily Flaky-looking Scalp | Korea Hair Care</div>
-              <div class='sub'>1732224555871080683</div>
-              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 15.0%</span></div>
-              <div class='meta'>Lifetime sales: 8,384</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732224555871080683' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732224555871080683'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732224555871080683.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@kimkrecs/video/7604315174538906893' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_670137317402.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Kim Killian</div><div class='vstat'>Views 223.52K</div></div></a><a class='vcard' href='https://www.tiktok.com/@masteryoshishop/video/7605162718605085965' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_224210449179.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>MasterYoshi</div><div class='vstat'>Views 120.00K</div></div></a><a class='vcard' href='https://www.tiktok.com/@christianjohnson2022/video/7603472035506965791' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_680793330188.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Christian Johnson</div><div class='vstat'>Views 83.80K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732155713908936955.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="Lopeie Whipped Grass-Fed Beef Tallow Honey Balm - 4 Oz,Moisturizing Cream for Soft, Smooth Skin - Handmade All-Natural Moisturizer - Lavender,hydrating, comfort, moisture boost cream, luminous firming cream, body care, hydrating dry skin">Lopeie Whipped Grass-Fed Beef Tallow Honey Balm - 4 Oz,Moisturizing Cream for Soft, Smooth Skin - Handmade All-Natural Moisturizer - Lavender,hydrating, comfort, moisture boost cream, luminous firming cream, body care, hydrating dry skin</div>
-              <div class='sub'>1732155713908936955</div>
-              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 10.0%</span></div>
-              <div class='meta'>Lifetime sales: 7,560</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732155713908936955' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732155713908936955'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732155713908936955.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@escenciabonita/video/7593831674597608734' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_625491089218.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Jessyperez</div><div class='vstat'>Views 100.00K</div></div></a><a class='vcard' href='https://www.tiktok.com/@mery0792lo/video/7598366931422301471' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_600869527939.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>🦋🦋Mery Lopez 💙🩵🥰😘🦋💙</div><div class='vstat'>Views 32.01K</div></div></a><a class='vcard' href='https://www.tiktok.com/@mery0792lo/video/7600783793057811743' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_596340226646.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>🦋🦋Mery Lopez 💙🩵🥰😘🦋💙</div><div class='vstat'>Views 21.24K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1731493782945435698.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="Kitsch Smoothing Air Dry Cream">Kitsch Smoothing Air Dry Cream</div>
-              <div class='sub'>1731493782945435698</div>
-              <div class='row'><span class='pill'>Rating 4.2</span><span class='pill'>Commission 17.0%</span></div>
-              <div class='meta'>Lifetime sales: 25,263</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731493782945435698' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731493782945435698'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1731493782945435698.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@le.liliana/video/7607216416776817933' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_445465839558.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Liliana</div><div class='vstat'>Views 130.00K</div></div></a><a class='vcard' href='https://www.tiktok.com/@carolontts/video/7591679762356047135' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_415654514394.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Carol</div><div class='vstat'>Views 350.00K</div></div></a><a class='vcard' href='https://www.tiktok.com/@carolontts/video/7597888809946107166' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_346067975053.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Carol</div><div class='vstat'>Views 190.00K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1729482718909077294.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="Fenty Skin Butta Drop Hydrating Body Milk — Vanilla Dream">Fenty Skin Butta Drop Hydrating Body Milk — Vanilla Dream</div>
-              <div class='sub'>1729482718909077294</div>
-              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 15.0%</span></div>
-              <div class='meta'>Lifetime sales: 5,535</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1729482718909077294' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1729482718909077294'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1729482718909077294.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@jans.faves/video/7603631325773401374' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_865891022599.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Jan’s Faves 🤍</div><div class='vstat'>Views 245.86K</div></div></a><a class='vcard' href='https://www.tiktok.com/@jans.faves/video/7604282003818646814' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_750835012422.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Jan’s Faves 🤍</div><div class='vstat'>Views 170.60K</div></div></a><a class='vcard' href='https://www.tiktok.com/@jans.faves/video/7604279601518447903' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_743303032711.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Jan’s Faves 🤍</div><div class='vstat'>Views 101.83K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732046289708290457.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="Bare Anatomy Ultra Smoothing Hair Trio – Shampoo, Mask &amp; Serum">Bare Anatomy Ultra Smoothing Hair Trio – Shampoo, Mask &amp; Serum</div>
-              <div class='sub'>1732046289708290457</div>
-              <div class='row'><span class='pill'>Rating 4.8</span><span class='pill'>Commission 14.5%</span></div>
-              <div class='meta'>Lifetime sales: 9,557</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732046289708290457' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732046289708290457'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732046289708290457.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@tania.maripoza/video/7605016972102798605' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_370834859235.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>🦋Tania Maripoza🦋</div><div class='vstat'>Views 74.29K</div></div></a><a class='vcard' href='https://www.tiktok.com/@tiktok.sales8/video/7595918822813601038' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_385326484962.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>tiktok.sales8</div><div class='vstat'>Views 19.63K</div></div></a><a class='vcard' href='https://www.tiktok.com/@dayamirys23/video/7604587034300157197' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_821826143375.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Daya 23</div><div class='vstat'>Views 18.83K</div></div></a></div></div>
-              <div class='hint'>Tap to flip back</div>
-            </div>
-          </div>
-        </div>
-
-        <div class='card flip' tabindex='0'>
-          <div class='inner'>
-            <div class='front'>
-              <div class='imgWrap'>
-                <img src='assets/img/1732230992234123356.jpg' alt='' loading='lazy'/>
-              </div>
-              <div class='title' title="WaterBlur Talc-Free Setting Powder with Blur and Set Brush">WaterBlur Talc-Free Setting Powder with Blur and Set Brush</div>
-              <div class='sub'>1732230992234123356</div>
-              <div class='row'><span class='pill'>Rating 4.7</span><span class='pill'>Commission 12.0%</span></div>
-              <div class='meta'>Lifetime sales: 5,106</div>
-              
-              <div class='links'>
-                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732230992234123356' target='_blank' rel='noreferrer noopener'>TikTok</a>
-                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732230992234123356'>Copy link</button>
-                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
-              </div>
-            </div>
-            <div class='back'>
-              <div class='backTitle'>GMV per day (last 90d)</div>
-              <div class='chartWrap'><img src='assets/curve_png/1732230992234123356.png?v=20260225-30' alt='' loading='lazy' style='width:100%;height:100%;object-fit:contain'/></div>
-              <div class='xaxis'><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
-              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@ericataylor2347/video/7601956398309723422' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_368393486418.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Erica Taylor</div><div class='vstat'>Views 45.15K</div></div></a><a class='vcard' href='https://www.tiktok.com/@shesfuntho2/video/7603536201785593119' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_398959495833.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>shesfuntho | beauty + biohacks</div><div class='vstat'>Views 25.70K</div></div></a><a class='vcard' href='https://www.tiktok.com/@faithfessel/video/7598650416942877983' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/v_138532927402.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Faith Fess</div><div class='vstat'>Views 30.37K</div></div></a></div></div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@giniglow/video/7609372634375097613' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_19.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>🫧GiniGlow✨</div><div class='vstat'>Views 809.4K</div></div></a><a class='vcard' href='https://www.tiktok.com/@lilianaaa.005/video/7605018882419477774' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_20.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>liliana🎱</div><div class='vstat'>Views 265.7K</div></div></a><a class='vcard' href='https://www.tiktok.com/@beautybytyrat/video/7608406214707301646' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="assets/vcover/cover_21.jpg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Beauty By Tyra T</div><div class='vstat'>Views 261.4K</div></div></a></div></div>
               <div class='hint'>Tap to flip back</div>
             </div>
           </div>
@@ -442,7 +274,6 @@ button.btnlink{cursor:pointer;}
 (function(){
   console.log('flipjs ok');
   function toggle(card){ if(card) card.classList.toggle('isFlipped'); }
-
   async function copyText(text){
     try{ await navigator.clipboard.writeText(text); toast('Copied'); }
     catch(e){
@@ -457,24 +288,17 @@ button.btnlink{cursor:pointer;}
     clearTimeout(window.__toastT);
     window.__toastT=setTimeout(function(){ el.classList.remove('show'); }, 1200);
   }
-
   document.querySelectorAll('.copyBtn').forEach(function(btn){
     btn.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
+      e.preventDefault(); e.stopPropagation();
       var url = btn.getAttribute('data-copy') || '';
       if(url) copyText(url);
       try{
         var card = btn.closest && btn.closest('.card');
-        if(card){
-          card.classList.add('showHint');
-          clearTimeout(card.__hintT);
-          card.__hintT=setTimeout(function(){ card.classList.remove('showHint'); }, 2200);
-        }
+        if(card){ card.classList.add('showHint'); clearTimeout(card.__hintT); card.__hintT=setTimeout(function(){ card.classList.remove('showHint'); }, 2200); }
       }catch(_e){}
     });
   });
-
   document.addEventListener('click', function(e){
     if(e.target.closest && e.target.closest('a,button,.videosRow,.vcard,.links')) return;
     var card = e.target.closest && e.target.closest('.flip');

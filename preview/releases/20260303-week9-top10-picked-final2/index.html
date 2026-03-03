@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Growth Picks Dashboard</title>
+<style>
+:root{--bg:#f6f7fb;--panel:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--shadow:0 1px 2px rgba(15,23,42,.06),0 10px 25px rgba(15,23,42,.06);}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.wrap{max-width:1200px;margin:0 auto;padding:18px 16px;}
+header{background:#fff;border-bottom:1px solid var(--line);}
+h1{margin:0;font-size:20px;letter-spacing:-0.01em;}
+.subttl{margin-top:6px;color:var(--muted);font-size:13px;}
+small{color:var(--muted);}
+.section{margin-top:18px;}
+.h2{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+.h2 h2{margin:0;font-size:16px;letter-spacing:-0.01em;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+@media (max-width: 980px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width: 720px){.grid{grid-template-columns:1fr;}}
+.card{background:var(--panel);border:1px solid rgba(226,232,240,.9);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:320px;box-shadow:var(--shadow);transition:transform .12s ease, box-shadow .12s ease;}
+.card:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(15,23,42,.08),0 18px 40px rgba(15,23,42,.10);}
+
+/* Flip */
+.flip{perspective:1000px;cursor:pointer;}
+.flip:focus{outline:2px solid rgba(37,99,235,.25);outline-offset:2px;}
+.inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
+.flip.isFlipped .inner{transform:rotateY(180deg);}
+.front,.back{backface-visibility:hidden;position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;}
+.back{transform:rotateY(180deg);padding-top:2px;}
+
+.chartWrap{height:150px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;overflow:hidden;}
+.chartWrap svg{width:100%;height:100%;flex:1;}
+.xaxis{display:flex;justify-content:space-between;gap:8px;padding:6px 10px 8px;color:var(--muted);font-size:11px;}
+.backTitle{font-weight:700;font-size:13px;letter-spacing:-0.01em;}
+.hint{margin-top:auto;color:var(--muted);font-size:11px;}
+
+/* Videos (back side) */
+.videosRow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+@media (max-width: 720px){.videosRow{grid-template-columns:1fr;}}
+.vcard{display:flex;gap:8px;align-items:flex-start;padding:8px;border:1px solid rgba(226,232,240,.95);border-radius:12px;background:linear-gradient(180deg,#ffffff,#f8fafc);text-decoration:none;color:inherit;}
+.vthumb{width:64px;height:64px;border-radius:10px;overflow:hidden;flex:0 0 auto;background:#eef2ff;display:flex;align-items:center;justify-content:center;}
+.vthumb img{width:100%;height:100%;object-fit:cover;}
+.vmeta{min-width:0;display:flex;flex-direction:column;gap:4px;}
+.vnick{font-weight:700;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px;}
+.vstat{color:var(--muted);font-size:11px;line-height:1.2;}
+
+.imgWrap{height:150px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+@media (max-width: 720px){
+  .wrap{padding:14px 12px;}
+  /* keep height for flip cards; JS will set exact height */
+  .imgWrap{height:170px;}
+  .pill{padding:6px 10px;font-size:12px;}
+  .links a{font-size:13px;}
+}
+.imgWrap img{max-width:100%;max-height:100%;object-fit:contain;}
+.title{font-weight:650;font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:4.8em;}
+.sub{font-size:11px;color:var(--muted);line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.4em;}
+.row{display:flex;flex-wrap:wrap;gap:6px;}
+.pill{font-size:11px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#f8fafc,#ffffff);border-radius:999px;padding:2px 8px;color:#0f172a;font-weight:600;letter-spacing:-0.005em;}
+.meta{font-size:11px;color:var(--muted);margin-top:auto;}
+.links{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;align-items:center;}
+.btnlink{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 10px;border-radius:10px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#ffffff,#f8fafc);color:var(--accent);text-decoration:none;font-size:12px;font-weight:700;}
+.btnlink:hover{text-decoration:none;filter:brightness(.98);}
+button.btnlink{cursor:pointer;}
+.linkHint{color:var(--muted);font-size:11px;line-height:1.2;}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(15,23,42,.92);color:#fff;padding:10px 12px;border-radius:12px;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .15s ease;}
+.toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header><div class='wrap'>
+  <h1>Growth Picks Dashboard</h1>
+  <div class='subttl'>Weekly picks</div>
+</div></header>
+
+<div class='wrap'>
+  <div class='section'>
+    <div class='h2'><h2>Recommended</h2></div>
+    <div class='grid'>
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732133829067772139.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[NEW] [medicube] Mix &amp; Match Eye Serum Set | Brightening, Elasticity &amp; Puffiness Care for Smooth, Radiant &amp; Youthful-Looking Eyes | Korean Skincare, K-Beauty">[NEW] [medicube] Mix &amp; Match Eye Serum Set | Brightening, Elasticity &amp; Puffiness Care for Smooth, Radiant &amp; Youthful-Looking Eyes | Korean Skincare, K-Beauty</div>
+              <div class='sub'>1732133829067772139</div>
+              <div class='row'><span class='pill'>Rating 4.8</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 39,999</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732133829067772139' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732133829067772139'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1732133829067772139' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 68.00 L 8.79 68.00 L 11.57 68.00 L 14.36 68.00 L 17.15 68.00 L 19.93 68.00 L 22.72 68.00 L 25.51 68.00 L 28.29 68.00 L 31.08 68.00 L 33.87 68.00 L 36.65 68.00 L 39.44 68.00 L 42.22 68.00 L 45.01 68.00 L 47.80 68.00 L 50.58 68.00 L 53.37 68.00 L 56.16 68.00 L 58.94 68.00 L 61.73 68.00 L 64.52 68.00 L 67.30 68.00 L 70.09 68.00 L 72.88 68.00 L 75.66 68.00 L 78.45 68.00 L 81.24 68.00 L 84.02 68.00 L 86.81 68.00 L 89.60 68.00 L 92.38 67.23 L 95.17 55.86 L 97.96 49.40 L 100.74 41.55 L 103.53 42.51 L 106.31 40.62 L 109.10 37.53 L 111.89 37.18 L 114.67 38.40 L 117.46 43.62 L 120.25 46.80 L 123.03 49.15 L 125.82 50.76 L 128.61 53.20 L 131.39 52.07 L 134.18 49.11 L 136.97 49.54 L 139.75 49.17 L 142.54 51.09 L 145.33 49.48 L 148.11 47.50 L 150.90 48.28 L 153.69 48.76 L 156.47 50.83 L 159.26 51.07 L 162.04 46.78 L 164.83 38.57 L 167.62 28.15 L 170.40 19.22 L 173.19 17.94 L 175.98 15.29 L 178.76 17.16 L 181.55 15.24 L 184.34 14.90 L 187.12 11.68 L 189.91 9.28 L 192.70 8.19 L 195.48 8.58 L 198.27 14.27 L 201.06 19.71 L 203.84 25.67 L 206.63 24.67 L 209.42 26.05 L 212.20 28.92 L 214.99 36.58 L 217.78 43.47 L 220.56 41.91 L 223.35 45.22 L 226.13 33.10 L 228.92 29.88 L 231.71 16.27 L 234.49 19.51 L 237.28 23.08 L 240.07 22.23 L 242.85 23.08 L 245.64 14.79 L 248.43 15.71 L 251.21 11.26 L 254.00 13.89' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span><span>60d</span><span>30d</span><span>Now</span>
+</div>
+</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732133243308052507.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair">[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness &amp; Pore Tightening for Visible Pore Care Skin Repair</div>
+              <div class='sub'>1732133243308052507</div>
+              <div class='row'><span class='pill'>Rating 4.6</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 31,831</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732133243308052507' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732133243308052507'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1732133243308052507' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 68.00 L 8.79 68.00 L 11.57 68.00 L 14.36 68.00 L 17.15 68.00 L 19.93 68.00 L 22.72 68.00 L 25.51 68.00 L 28.29 68.00 L 31.08 68.00 L 33.87 68.00 L 36.65 68.00 L 39.44 68.00 L 42.22 68.00 L 45.01 68.00 L 47.80 68.00 L 50.58 68.00 L 53.37 68.00 L 56.16 68.00 L 58.94 68.00 L 61.73 68.00 L 64.52 68.00 L 67.30 68.00 L 70.09 68.00 L 72.88 68.00 L 75.66 68.00 L 78.45 68.00 L 81.24 68.00 L 84.02 68.00 L 86.81 68.00 L 89.60 68.00 L 92.38 68.00 L 95.17 68.00 L 97.96 68.00 L 100.74 68.00 L 103.53 68.00 L 106.31 68.00 L 109.10 68.00 L 111.89 68.00 L 114.67 68.00 L 117.46 68.00 L 120.25 68.00 L 123.03 68.00 L 125.82 68.00 L 128.61 68.00 L 131.39 68.00 L 134.18 68.00 L 136.97 68.00 L 139.75 68.00 L 142.54 68.00 L 145.33 68.00 L 148.11 68.00 L 150.90 67.93 L 153.69 67.54 L 156.47 67.44 L 159.26 67.38 L 162.04 67.72 L 164.83 67.72 L 167.62 67.82 L 170.40 67.65 L 173.19 67.48 L 175.98 67.19 L 178.76 67.16 L 181.55 67.18 L 184.34 67.16 L 187.12 67.01 L 189.91 66.76 L 192.70 65.43 L 195.48 62.38 L 198.27 58.76 L 201.06 57.23 L 203.84 59.08 L 206.63 60.65 L 209.42 59.41 L 212.20 58.86 L 214.99 52.35 L 217.78 47.41 L 220.56 38.59 L 223.35 39.90 L 226.13 41.51 L 228.92 44.27 L 231.71 42.69 L 234.49 41.29 L 237.28 36.98 L 240.07 27.74 L 242.85 16.24 L 245.64 11.01 L 248.43 10.80 L 251.21 16.49 L 254.00 17.39' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span><span>60d</span><span>30d</span><span>Now</span>
+</div>
+</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732170101899432824.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="【CEELIKE】 Purple Teeth Whitening Strips  With Free Cheek Retractor - 7/21 Whitening Sessions -Nano-Hydroxyapatite Safe for Enamel - Non Sensitive Teeth Whitening - Peroxide-Free">【CEELIKE】 Purple Teeth Whitening Strips  With Free Cheek Retractor - 7/21 Whitening Sessions -Nano-Hydroxyapatite Safe for Enamel - Non Sensitive Teeth Whitening - Peroxide-Free</div>
+              <div class='sub'>1732170101899432824</div>
+              <div class='row'><span class='pill'>Rating 4.1</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 39,999</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732170101899432824' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732170101899432824'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1732170101899432824' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 68.00 L 8.79 68.00 L 11.57 68.00 L 14.36 68.00 L 17.15 68.00 L 19.93 68.00 L 22.72 68.00 L 25.51 68.00 L 28.29 68.00 L 31.08 68.00 L 33.87 68.00 L 36.65 68.00 L 39.44 68.00 L 42.22 68.00 L 45.01 68.00 L 47.80 68.00 L 50.58 68.00 L 53.37 68.00 L 56.16 68.00 L 58.94 68.00 L 61.73 68.00 L 64.52 68.00 L 67.30 68.00 L 70.09 68.00 L 72.88 68.00 L 75.66 68.00 L 78.45 68.00 L 81.24 68.00 L 84.02 68.00 L 86.81 68.00 L 89.60 68.00 L 92.38 68.00 L 95.17 68.00 L 97.96 68.00 L 100.74 68.00 L 103.53 68.00 L 106.31 68.00 L 109.10 68.00 L 111.89 68.00 L 114.67 68.00 L 117.46 68.00 L 120.25 68.00 L 123.03 67.98 L 125.82 67.88 L 128.61 67.74 L 131.39 67.57 L 134.18 67.55 L 136.97 66.65 L 139.75 58.62 L 142.54 55.20 L 145.33 52.78 L 148.11 59.66 L 150.90 60.20 L 153.69 60.50 L 156.47 58.44 L 159.26 57.54 L 162.04 54.57 L 164.83 48.50 L 167.62 46.79 L 170.40 47.49 L 173.19 41.78 L 175.98 37.47 L 178.76 28.12 L 181.55 24.44 L 184.34 13.69 L 187.12 15.80 L 189.91 24.41 L 192.70 36.65 L 195.48 39.74 L 198.27 40.07 L 201.06 41.53 L 203.84 43.08 L 206.63 47.91 L 209.42 46.54 L 212.20 52.81 L 214.99 48.11 L 217.78 47.42 L 220.56 42.56 L 223.35 45.34 L 226.13 49.07 L 228.92 50.16 L 231.71 51.38 L 234.49 51.97 L 237.28 51.15 L 240.07 47.28 L 242.85 44.56 L 245.64 42.27 L 248.43 46.19 L 251.21 47.42 L 254.00 50.07' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span><span>60d</span><span>30d</span><span>Now</span>
+</div>
+</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732093549080055913.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Laka] Soothing Prep Lip Mask — Cooling peel-off lip mask for smoother lip prep and a hydrated feel">[Laka] Soothing Prep Lip Mask — Cooling peel-off lip mask for smoother lip prep and a hydrated feel</div>
+              <div class='sub'>1732093549080055913</div>
+              <div class='row'><span class='pill'>Rating 4.3</span><span class='pill'>Commission 20.0%</span></div>
+              <div class='meta'>Lifetime sales: 30,419</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732093549080055913' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732093549080055913'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1732093549080055913' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 68.00 L 8.79 68.00 L 11.57 68.00 L 14.36 68.00 L 17.15 68.00 L 19.93 68.00 L 22.72 68.00 L 25.51 68.00 L 28.29 68.00 L 31.08 68.00 L 33.87 68.00 L 36.65 68.00 L 39.44 68.00 L 42.22 68.00 L 45.01 68.00 L 47.80 68.00 L 50.58 68.00 L 53.37 68.00 L 56.16 68.00 L 58.94 68.00 L 61.73 68.00 L 64.52 68.00 L 67.30 68.00 L 70.09 68.00 L 72.88 68.00 L 75.66 67.70 L 78.45 67.45 L 81.24 67.42 L 84.02 66.87 L 86.81 66.18 L 89.60 63.71 L 92.38 62.61 L 95.17 59.76 L 97.96 59.32 L 100.74 61.28 L 103.53 62.66 L 106.31 61.53 L 109.10 53.79 L 111.89 50.47 L 114.67 50.28 L 117.46 54.45 L 120.25 54.84 L 123.03 57.96 L 125.82 55.92 L 128.61 48.76 L 131.39 42.34 L 134.18 40.68 L 136.97 36.87 L 139.75 26.08 L 142.54 17.24 L 145.33 15.87 L 148.11 22.15 L 150.90 20.62 L 153.69 17.91 L 156.47 17.13 L 159.26 22.03 L 162.04 28.46 L 164.83 27.60 L 167.62 28.40 L 170.40 31.70 L 173.19 33.24 L 175.98 34.93 L 178.76 32.38 L 181.55 28.28 L 184.34 24.39 L 187.12 27.33 L 189.91 32.29 L 192.70 34.31 L 195.48 32.79 L 198.27 29.22 L 201.06 23.21 L 203.84 24.15 L 206.63 28.66 L 209.42 32.00 L 212.20 36.94 L 214.99 28.82 L 217.78 22.94 L 220.56 8.68 L 223.35 18.96 L 226.13 26.47 L 228.92 37.48 L 231.71 32.41 L 234.49 37.35 L 237.28 39.54 L 240.07 40.92 L 242.85 38.61 L 245.64 37.42 L 248.43 38.94 L 251.21 37.95 L 254.00 35.15' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span><span>60d</span><span>30d</span><span>Now</span>
+</div>
+</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1729407768388080374.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="FORCHICS Eyelash Enhancing Serum with Powerful Peptides &amp; Plant Botanicals for Thinning Lashes 3ML Makeup Cosmetic">FORCHICS Eyelash Enhancing Serum with Powerful Peptides &amp; Plant Botanicals for Thinning Lashes 3ML Makeup Cosmetic</div>
+              <div class='sub'>1729407768388080374</div>
+              <div class='row'><span class='pill'>Rating 4.3</span><span class='pill'>Commission 20.0%</span></div>
+              <div class='meta'>Lifetime sales: 39,999</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1729407768388080374' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1729407768388080374'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1729407768388080374' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day (last 90d)</div>
+              <div class='chartWrap'>
+<svg viewBox='0 0 260.0 74.0' preserveAspectRatio='none' aria-hidden='true'>
+  <path d='M 6.00 65.89 L 8.79 65.88 L 11.57 65.41 L 14.36 65.59 L 17.15 66.01 L 19.93 67.03 L 22.72 66.82 L 25.51 67.08 L 28.29 66.35 L 31.08 67.00 L 33.87 66.40 L 36.65 66.95 L 39.44 66.13 L 42.22 65.23 L 45.01 64.30 L 47.80 63.84 L 50.58 62.26 L 53.37 62.20 L 56.16 62.64 L 58.94 65.14 L 61.73 65.64 L 64.52 65.58 L 67.30 64.54 L 70.09 65.25 L 72.88 65.00 L 75.66 64.76 L 78.45 64.76 L 81.24 64.81 L 84.02 66.09 L 86.81 65.27 L 89.60 65.41 L 92.38 65.16 L 95.17 65.37 L 97.96 65.65 L 100.74 66.18 L 103.53 65.99 L 106.31 65.95 L 109.10 65.97 L 111.89 66.23 L 114.67 66.18 L 117.46 66.04 L 120.25 64.97 L 123.03 65.07 L 125.82 64.26 L 128.61 63.91 L 131.39 63.40 L 134.18 64.35 L 136.97 65.72 L 139.75 65.67 L 142.54 65.60 L 145.33 65.58 L 148.11 65.62 L 150.90 63.26 L 153.69 61.36 L 156.47 60.02 L 159.26 60.13 L 162.04 57.21 L 164.83 39.06 L 167.62 28.73 L 170.40 15.06 L 173.19 22.38 L 175.98 24.83 L 178.76 30.60 L 181.55 29.47 L 184.34 23.69 L 187.12 28.45 L 189.91 32.16 L 192.70 40.59 L 195.48 42.41 L 198.27 45.60 L 201.06 45.43 L 203.84 46.97 L 206.63 47.85 L 209.42 47.81 L 212.20 52.06 L 214.99 44.46 L 217.78 46.24 L 220.56 38.34 L 223.35 34.89 L 226.13 29.26 L 228.92 32.01 L 231.71 41.46 L 234.49 42.35 L 237.28 39.24 L 240.07 34.71 L 242.85 37.89 L 245.64 27.15 L 248.43 28.74 L 251.21 22.30 L 254.00 29.71' fill='none' stroke='rgba(37,99,235,.95)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/>
+  <g stroke='rgba(148,163,184,.35)'>
+    <line x1='6.0' y1='68.0' x2='254.0' y2='68.0'/>
+    <line x1='88.584' y1='68.0' x2='88.584' y2='62.0'/>
+    <line x1='171.168' y1='68.0' x2='171.168' y2='62.0'/>
+  </g>
+</svg>
+<div class='xaxis'>
+  <span>90d ago</span><span>60d</span><span>30d</span><span>Now</span>
+</div>
+</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1732157257719255067.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr.Melaxin Official] Cactox &amp; Collagen Multi Pore Firming Duo with Cactus Cooling &amp; Eye Care Stick for Visible Pore Refining and Skin Repair">[Dr.Melaxin Official] Cactox &amp; Collagen Multi Pore Firming Duo with Cactus Cooling &amp; Eye Care Stick for Visible Pore Refining and Skin Repair</div>
+              <div class='sub'>1732157257719255067</div>
+              <div class='row'><span class='pill'>Rating 4.6</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 10,954</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1732157257719255067' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1732157257719255067'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1732157257719255067' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1729718097057910811.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="[Dr.Melaxin Official] Cemenrete Calcium Dark Spot Eye Cream | Dark Circle, Anti-aging, Sagging, Elasticity | Korean Cosmetics">[Dr.Melaxin Official] Cemenrete Calcium Dark Spot Eye Cream | Dark Circle, Anti-aging, Sagging, Elasticity | Korean Cosmetics</div>
+              <div class='sub'>1729718097057910811</div>
+              <div class='row'><span class='pill'>Rating 4.2</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 39,999</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1729718097057910811' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1729718097057910811'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1729718097057910811' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='card flip' tabindex='0'>
+          <div class='inner'>
+            <div class='front'>
+              <div class='imgWrap'>
+                <img src='assets/img/1731879234948338174.jpg' alt='' loading='lazy'/>
+              </div>
+              <div class='title' title="DRDENT Purple Teeth Whitening Strips - 7/21 Whitening Sessions - Safe for Enamel - Non Sensitive Teeth Whitening - Peroxide-Free">DRDENT Purple Teeth Whitening Strips - 7/21 Whitening Sessions - Safe for Enamel - Non Sensitive Teeth Whitening - Peroxide-Free</div>
+              <div class='sub'>1731879234948338174</div>
+              <div class='row'><span class='pill'>Rating 4.1</span><span class='pill'>Commission 15.0%</span></div>
+              <div class='meta'>Lifetime sales: 39,999</div>
+              
+              <div class='links'>
+                <a class='btnlink' href='https://shop.tiktok.com/view/product/1731879234948338174' target='_blank' rel='noreferrer noopener'>TikTok</a>
+                <button class='btnlink copyBtn' type='button' data-copy='https://shop.tiktok.com/view/product/1731879234948338174'>Copy link</button>
+                <a class='btnlink ghost' href='https://www.fastmoss.com/en/e-commerce/detail/1731879234948338174' target='_blank' rel='noreferrer noopener'>Fastmoss</a>
+                <span class='linkHint'>If TikTok doesn’t open, copy & paste into Safari/Chrome.</span>
+              </div>
+            </div>
+            <div class='back'>
+              <div class='backTitle'>GMV per day</div>
+              <div class='empty'>GMV chart unavailable</div>
+              <div class='videosBlock'><div class='backTitle' style='margin-top:10px'>Top 3 videos (28d sold)</div><div class='videosRow'><a class='vcard' href='https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>BargainBuddiez</div><div class='vstat'>Sold 1455 · Play 310.00M · GMV $1.27M</div></div></a><a class='vcard' href='https://www.tiktok.com/@chidsj/video/7389467357439216939' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Decsteamboy us</div><div class='vstat'>Sold 27 · Play 15.78M · GMV $237</div></div></a><a class='vcard' href='https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799' target='_blank' rel='noreferrer noopener'><div class='vthumb'><img src="https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image" alt="" loading="lazy"/></div><div class='vmeta'><div class='vnick'>Unboxing Happiness</div><div class='vstat'>Sold 14 · Play 2.78M · GMV $122</div></div></a></div></div>
+              <div class='hint'>Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+        </div>
+  </div>
+  <script>window.DATA = {"methodology": "Weekly-only picks based on this_week_sales / lifetime_total_sales (proxy for momentum), with gate: rating ≥ 4.1, commission ≥ 10.0%, lifetime total sales < 40,000.", "items": [{"product_id": "1732133829067772139", "product_name": "[NEW] [medicube] Mix & Match Eye Serum Set | Brightening, Elasticity & Puffiness Care for Smooth, Radiant & Youthful-Looking Eyes | Korean Skincare, K-Beauty", "this_week_sales": 6304, "lifetime_total_sales": 39999, "share": 0.129175, "rating": 4.8, "commission_pct": 15.0, "ratio": 0.15760394009850245, "momentum": 0.129175, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732133829067772139", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1732133829067772139", "pick_rating": 3.5, "bucket": "Recommended", "reasons": [], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1728.0, 25596.0, 14553.0, 19404.0, 23422.0, 18816.0, 26362.0, 24206.0, 16072.0, 14602.0, 17052.0, 10780.0, 10976.0, 11564.0, 13328.0, 17640.0, 10584.0, 14161.0, 13328.0, 14210.0, 18620.0, 11564.0, 13132.0, 13965.0, 11025.0, 22785.0, 32448.0, 34496.0, 42875.0, 35329.0, 40474.0, 38661.0, 39641.0, 41258.0, 45913.0, 45031.0, 43708.0, 45031.0, 32242.0, 31458.0, 31605.0, 34498.0, 28341.0, 25145.0, 17249.0, 12831.0, 28670.0, 9776.0, 40138.0, 35908.0, 40425.0, 32830.0, 27881.0, 42336.0, 30926.0, 46530.0, 40279.0, 40937.0], "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}, {"product_id": "1732133243308052507", "product_name": "[Dr.Melaxin Official] CACTOX PORE RELIEF MULTI BALM with Cactus Cooling Reduce Puffiness & Pore Tightening for Visible Pore Care Skin Repair", "this_week_sales": 6632, "lifetime_total_sales": 31831, "share": 0.20835, "rating": 4.6, "commission_pct": 15.0, "ratio": 0.20835035028745563, "momentum": 0.20835, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732133243308052507", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1732133243308052507", "pick_rating": 4.0, "bucket": "Recommended", "reasons": [], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 108.0, 567.0, 150.0, 192.0, 69.0, 150.0, 46.0, 324.0, 391.0, 475.0, 368.0, 368.0, 506.0, 575.0, 736.0, 2461.0, 5070.0, 6049.0, 4715.0, 2346.0, 3749.0, 6534.0, 3159.0, 13311.0, 13800.0, 16125.0, 11385.0, 11431.0, 12075.0, 13708.0, 13478.0, 18423.0, 27282.6, 30382.0, 26123.4, 27580.8, 22024.8], "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}, {"product_id": "1732170101899432824", "product_name": "【CEELIKE】 Purple Teeth Whitening Strips  With Free Cheek Retractor - 7/21 Whitening Sessions -Nano-Hydroxyapatite Safe for Enamel - Non Sensitive Teeth Whitening - Peroxide-Free", "this_week_sales": 6279, "lifetime_total_sales": 39999, "share": 0.147381, "rating": 4.1, "commission_pct": 15.0, "ratio": 0.15697892447311182, "momentum": 0.147381, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732170101899432824", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1732170101899432824", "pick_rating": 3.5, "bucket": "Recommended", "reasons": [], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 31.96, 134.48, 192.72, 269.62, 158.6, 1427.6, 11304.6, 4863.8, 4751.83, 1843.77, 4122.25, 4347.1, 4676.88, 5351.43, 8424.38, 13026.31, 7704.86, 7452.75, 20881.07, 13623.0, 20311.45, 25935.0, 28406.05, 17403.39, 14105.59, 11587.27, 13146.23, 13655.89, 9578.61, 11017.65, 7015.32, 11467.35, 2398.4, 13476.01, 12411.72, 9083.94, 9653.56, 7285.14, 7584.94, 7974.68, 6475.68, 8709.19, 13296.13, 10208.19, 11857.09, 7914.72, 8514.32], "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}, {"product_id": "1732093549080055913", "product_name": "[Laka] Soothing Prep Lip Mask — Cooling peel-off lip mask for smoother lip prep and a hydrated feel", "this_week_sales": 5802, "lifetime_total_sales": 30419, "share": 0.190736, "rating": 4.3, "commission_pct": 20.0, "ratio": 0.1907360531246918, "momentum": 0.190736, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732093549080055913", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1732093549080055913", "pick_rating": 4.0, "bucket": "Recommended", "reasons": [], "gmv_series": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 153.56, 125.64, 13.96, 432.76, 474.64, 1256.4, 991.16, 1912.52, 1479.76, 0.0, 1214.52, 2052.12, 3908.8, 2889.72, 2149.84, 1800.84, 2694.28, 572.36, 2833.88, 6309.92, 3811.08, 3671.48, 8236.4, 9255.48, 8136.0, 8928.0, 6084.0, 8910.0, 10296.0, 6480.0, 6435.0, 7050.0, 6915.0, 6030.0, 5385.0, 6135.0, 5175.0, 6675.0, 8205.0, 7140.0, 5190.0, 5700.0, 6120.0, 5956.65, 7505.1, 9151.2, 5482.35, 5231.25, 7463.25, 2985.3, 9332.55, 10434.6, 10185.0, 4140.0, 6645.0, 4626.0, 6696.0, 4154.0, 3518.5, 5998.5, 5322.25, 4117.5, 5230.75, 5825.5], "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}, {"product_id": "1729407768388080374", "product_name": "FORCHICS Eyelash Enhancing Serum with Powerful Peptides & Plant Botanicals for Thinning Lashes 3ML Makeup Cosmetic", "this_week_sales": 7772, "lifetime_total_sales": 39999, "share": 0.154821, "rating": 4.3, "commission_pct": 20.0, "ratio": 0.19430485762144054, "momentum": 0.154821, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1729407768388080374", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1729407768388080374", "pick_rating": 3.5, "bucket": "Recommended", "reasons": [], "gmv_series": [1356.41, 1103.52, 1241.46, 2023.12, 850.63, 643.72, 574.75, 1149.5, 275.88, 1609.3, 229.9, 1124.55, 824.67, 1399.44, 2399.04, 2149.14, 2049.18, 4648.14, 2224.11, 1424.43, 1099.56, 1524.39, 1499.4, 2573.97, 524.79, 1849.26, 2923.83, 524.79, 1774.29, 1099.56, 1699.32, 1574.37, 1449.42, 1399.44, 1174.53, 699.72, 1674.33, 1224.51, 674.73, 1299.48, 1299.48, 874.65, 2823.87, 1149.54, 2024.19, 3323.67, 1874.25, 674.73, 1374.45, 1949.22, 774.69, 1399.44, 1899.24, 4123.35, 4098.36, 3798.48, 3978.01, 8235.88, 29585.2, 18650.67, 27646.17, 19196.65, 15172.41, 19450.27, 20789.6, 23388.3, 12693.65, 15512.24, 11414.29, 10114.94, 10974.51, 11654.17, 7936.03, 9715.14, 11714.14, 1899.05, 20509.74, 9195.4, 13113.44, 25407.29, 17191.4, 9215.39, 11974.01, 15932.03, 13633.18, 18410.79, 11414.29, 28885.55, 16151.92, 20569.71], "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}, {"product_id": "1732157257719255067", "product_name": "[Dr.Melaxin Official] Cactox & Collagen Multi Pore Firming Duo with Cactus Cooling & Eye Care Stick for Visible Pore Refining and Skin Repair", "this_week_sales": 5693, "lifetime_total_sales": 10954, "share": 0.519719, "rating": 4.6, "commission_pct": 15.0, "ratio": 0.5197188241738178, "momentum": 0.519719, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1732157257719255067", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1732157257719255067", "pick_rating": 4.5, "bucket": "Recommended", "reasons": [], "gmv_series": null, "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}, {"product_id": "1729718097057910811", "product_name": "[Dr.Melaxin Official] Cemenrete Calcium Dark Spot Eye Cream | Dark Circle, Anti-aging, Sagging, Elasticity | Korean Cosmetics", "this_week_sales": 12826, "lifetime_total_sales": 39999, "share": 0.201006, "rating": 4.2, "commission_pct": 15.0, "ratio": 0.32065801645041125, "momentum": 0.201006, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1729718097057910811", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1729718097057910811", "pick_rating": 4.5, "bucket": "Recommended", "reasons": [], "gmv_series": null, "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}, {"product_id": "1731879234948338174", "product_name": "DRDENT Purple Teeth Whitening Strips - 7/21 Whitening Sessions - Safe for Enamel - Non Sensitive Teeth Whitening - Peroxide-Free", "this_week_sales": 53322, "lifetime_total_sales": 39999, "share": 0.12712, "rating": 4.1, "commission_pct": 15.0, "ratio": 1.333083327083177, "momentum": 0.12712, "category": "", "shop_name": "", "tiktok_url": "https://shop.tiktok.com/view/product/1731879234948338174", "fastmoss_url": "https://www.fastmoss.com/en/e-commerce/detail/1731879234948338174", "pick_rating": 3.0, "bucket": "Recommended", "reasons": [], "gmv_series": null, "videos": [{"video_id": "7386753614695386399", "unique_id": "bargain.buddiez", "nickname": "BargainBuddiez", "cover": "https://s.500fd.com/tt_video/oACZABCgPFCA7EwAEmEDhVfZIAiCAVfHEVDY2R.image", "desc": "These sunglasses can connect to your phone via bluetooth and can answer phone calls and play music #TikTokShop #dealsforyoudays #sunglasses  #bluetooth #smartglasses #bluetoothsunglasses", "sold_count": 1455, "sold_count_show": "1455", "play_count_show": "310.00M", "sale_amount_show": "$1.27M", "tiktok_url": "https://www.tiktok.com/@bargain.buddiez/video/7386753614695386399"}, {"video_id": "7389467357439216939", "unique_id": "chidsj", "nickname": "Decsteamboy us", "cover": "https://s.500fd.com/tt_video/okyEeqxWE4zIkoGCkM2DfHUjf9AFB7UAuzWNIr~c5_300x400.jpeg", "desc": "These bluetooth sunglasses are so cool! You can listen to music and answer phone calls without wearing earbuds! #bluetoothsunglasses #bluetooth #sunglasses #metaglasses #couponing#fyp #driver #tiktokshopdealsforyoudays #dealsfordays #usa_tiktok", "sold_count": 27, "sold_count_show": "27", "play_count_show": "15.78M", "sale_amount_show": "$237", "tiktok_url": "https://www.tiktok.com/@chidsj/video/7389467357439216939"}, {"video_id": "7388301242683968799", "unique_id": "unboxinghappiness_", "nickname": "Unboxing Happiness", "cover": "https://s.500fd.com/tt_video/oYc8IqFfAdVn6yLREADAQTivR4mACCEEAIEdfY.image", "desc": "My favorite thing all so far. Such a cool find. #bluetoothsunglasses #bluetooth #sunglasses #creatorsearchinsights #dealsforyoudays", "sold_count": 14, "sold_count_show": "14", "play_count_show": "2.78M", "sale_amount_show": "$122", "tiktok_url": "https://www.tiktok.com/@unboxinghappiness_/video/7388301242683968799"}]}]};</script>
+</div>
+<script>
+(function(){
+  function fit(card){
+    try{
+      var front = card.querySelector('.front');
+      var back = card.querySelector('.back');
+      if(!front || !back) return;
+      var was = card.classList.contains('isFlipped');
+      card.classList.remove('isFlipped');
+      var h1 = front.scrollHeight || 0;
+      card.classList.add('isFlipped');
+      var h2 = back.scrollHeight || 0;
+      if(!was) card.classList.remove('isFlipped');
+      card.style.height = Math.max(h1, h2, 320) + 'px';
+    } catch(_e){}
+  }
+
+  function fitAll(){
+    document.querySelectorAll('.flip').forEach(fit);
+  }
+
+  function toggle(card){
+    card.classList.toggle('isFlipped');
+  }
+
+  window.addEventListener('load', function(){
+    // Defer to next frame so images/layout settle
+    requestAnimationFrame(function(){
+      fitAll();
+    });
+  });
+  window.addEventListener('resize', function(){
+    clearTimeout(window.__fitT);
+    window.__fitT = setTimeout(fitAll, 160);
+  });
+
+  document.addEventListener('click', function(e){
+    // copy button handled separately
+    if(e.target.closest && e.target.closest('.copyBtn')) return;
+    // don't flip when clicking an outgoing link
+    if(e.target.tagName === 'A') return;
+    var card = e.target.closest && e.target.closest('.flip');
+    if(!card) return;
+    toggle(card);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    var card = document.activeElement;
+    if(card && card.classList && card.classList.contains('flip')){
+      e.preventDefault();
+      toggle(card);
+    }
+  });
+
+  function toast(msg){
+    var el = document.querySelector('.toast');
+    if(!el) return;
+    el.textContent = msg;
+    el.classList.add('show');
+    clearTimeout(window.__toastT);
+    window.__toastT = setTimeout(function(){el.classList.remove('show');}, 1200);
+  }
+
+  async function copyText(text){
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        await navigator.clipboard.writeText(text);
+        toast('Copied');
+        return;
+      }
+    } catch(_e){}
+    // fallback
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      toast('Copied');
+    } catch(_e2){
+      toast('Copy failed');
+    }
+  }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('.copyBtn');
+    if(!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var url = btn.getAttribute('data-copy') || '';
+    if(url) copyText(url);
+  });
+})();
+</script>
+<div class='toast'>Copied</div>
+</body>
+</html>

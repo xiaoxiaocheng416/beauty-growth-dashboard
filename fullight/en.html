@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Fullight Winning Pattern Report v24</title>
+<style>
+    :root {
+      --bg: #f4efe8;
+      --panel: rgba(255,252,247,0.97);
+      --ink: #2c241e;
+      --muted: #6d6258;
+      --line: #ddcfbf;
+      --accent: #8b4d2f;
+      --soft: #efe0d0;
+      --soft-2: #f8f2e9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Iowan Old Style", serif;
+      background:
+        radial-gradient(circle at top left, rgba(213,165,120,0.16), transparent 34%),
+        linear-gradient(180deg, #ece1d4 0%, var(--bg) 260px);
+      line-height: 1.45;
+    }
+    .wrap { max-width: 1420px; margin: 0 auto; padding: 28px 22px 72px; }
+    .hero-top {
+      display: grid;
+      grid-template-columns: 380px minmax(0, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .card, .video-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(78, 52, 29, 0.06);
+    }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.08; }
+    h1 { font-size: 42px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 20px; }
+    p, li, td, th { font-size: 16px; }
+    ul { margin: 0; padding-left: 20px; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .pill {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 13px;
+    }
+    .hero-copy p { margin: 0 0 12px; }
+    .thesis {
+      font-size: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fff4e9;
+      border: 1px solid #e8c9a8;
+      margin-bottom: 10px;
+    }
+    .hero-product {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-product img {
+      width: 100%;
+      max-width: 430px;
+      align-self: center;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: block;
+    }
+    .hero-caption {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .summary-band {
+      margin-bottom: 18px;
+      padding: 18px;
+    }
+    .family-board {
+      margin-bottom: 18px;
+      padding: 20px;
+    }
+    .family-top {
+      display: grid;
+      gap: 16px;
+    }
+    .family-summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .family-video-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .family-stage {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .family-video-shell video {
+      width: 100%;
+      max-height: 280px;
+      border-radius: 14px;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .family-copy p {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+    .family-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .family-opening {
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .family-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .family-link {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--soft);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .family-link.secondary {
+      background: #efe6d7;
+      color: #6b533f;
+    }
+    .family-insights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .summary-cell {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: #fffaf3;
+      border: 1px solid var(--line);
+    }
+    .summary-cell h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    .summary-cell p, .summary-cell li {
+      font-size: 14px;
+    }
+    .summary-cell ul {
+      padding-left: 18px;
+    }
+    .muted { color: var(--muted); }
+    .section-intro {
+      margin: 8px 0 18px;
+      padding: 0 6px;
+    }
+    .video-card { margin-bottom: 18px; padding: 20px; }
+    .video-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .creator-handle {
+      color: var(--muted);
+      font-size: 0.82em;
+      font-weight: 500;
+    }
+    .mini-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .mini-meta a, .footer-links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .video-layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .video-left {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+    }
+    .video-shell video {
+      width: 100%;
+      max-height: 640px;
+      border-radius: 18px;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .video-shell {
+      position: static;
+    }
+    .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .left-stack {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .insight-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffaf3;
+      padding: 14px;
+    }
+    .insight-card.strong {
+      background: #fff4e7;
+      border-color: #e4bf95;
+    }
+    .hook-note {
+      background: #fffdf9;
+    }
+    .insight-card p {
+      margin: 0;
+    }
+    .note-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .fact-row {
+      margin-bottom: 10px;
+    }
+    .fact-row:last-child {
+      margin-bottom: 0;
+    }
+    .fact-label {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .fact-value {
+      font-size: 14px;
+      line-height: 1.42;
+    }
+    .meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .meta-badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: #efe6d7;
+      color: #6b533f;
+      font-size: 14px;
+    }
+    .segment-pills {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+    }
+    .seg-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+      line-height: 1.1;
+      cursor: pointer;
+      color: #fff;
+      background: #7b5b44;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+    .table-intro {
+      margin-bottom: 10px;
+    }
+    .table-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffcf8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 920px;
+    }
+    thead th {
+      background: #f7efe4;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+    th, td {
+      border-top: 1px solid var(--line);
+      padding: 14px 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+    .time-col { width: 96px; }
+    .what-col { width: 56%; }
+    .logic-col { width: 28%; }
+    .time-link {
+      border: 0;
+      background: transparent;
+      color: var(--accent);
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .time-end {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .beat-name {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .sell-head {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .sell-why {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .support-list li { margin-bottom: 8px; }
+    .playground {
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0 16px;
+    }
+    .rule-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffaf3;
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+    .playground-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .compare-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+    }
+    .compare-card-head h3 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .compare-card-video video {
+      width: 100%;
+      max-height: 360px;
+      border-radius: 14px;
+      background: #000;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .compare-card-points {
+      display: grid;
+      gap: 10px;
+    }
+    .point-row {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .point-row span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+    .point-row p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .point-row.strong {
+      padding-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+    .idea-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .idea-mini {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffaf3;
+      padding: 14px;
+    }
+    .idea-mini-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .idea-mini p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .borrow-section {
+      margin-top: 18px;
+    }
+    .borrow-summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .borrow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+      justify-content: start;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .borrow-video-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+    }
+    .borrow-video-shell video {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: #000;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .borrow-video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .borrow-video-copy p {
+      margin: 6px 0 0;
+      font-size: 14px;
+    }
+    .borrow-link {
+      margin: 14px 0 0;
+    }
+    .borrow-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .lego-section {
+      margin-top: 18px;
+    }
+    .lego-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .lego-card h3 {
+      font-size: 22px;
+    }
+    .lego-step {
+      width: 90px;
+      white-space: nowrap;
+    }
+    .lego-details {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+    .lego-details summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 700;
+      list-style: none;
+    }
+    .lego-details summary::-webkit-details-marker {
+      display: none;
+    }
+    .lego-details summary::after {
+      content: "Expand";
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-left: 10px;
+    }
+    .lego-details[open] summary::after {
+      content: "Collapse";
+    }
+    @media (max-width: 1180px) {
+      .hero-top, .summary-grid, .video-layout, .grid-2, .insight-grid, .family-summary, .family-grid, .family-insights, .playground-compare-grid, .rule-grid, .idea-mini-grid, .borrow-summary, .borrow-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-header {
+        flex-direction: column;
+      }
+      .video-left {
+        position: static;
+      }
+      .point-row {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 34px; }
+    }
+    @media (max-width: 760px) {
+      .wrap { padding: 14px 12px 44px; }
+      .card, .video-card { padding: 16px; border-radius: 20px; }
+      .hero-top { gap: 14px; margin-bottom: 14px; }
+      h1 { font-size: 30px; }
+      h2 { font-size: 22px; }
+      h3 { font-size: 18px; }
+      p, li, td, th { font-size: 15px; }
+      .summary-grid, .family-summary, .family-grid, .family-insights, .playground-compare-grid, .rule-grid, .idea-mini-grid, .borrow-summary, .borrow-grid {
+        gap: 10px;
+      }
+      .hero-product img,
+      .family-video-shell video,
+      .compare-card-video video,
+      .borrow-video-shell video {
+        max-height: 240px;
+      }
+      .video-layout { gap: 12px; }
+      .meta-badges, .borrow-video-meta { gap: 8px; }
+      .meta-badge { padding: 8px 12px; font-size: 13px; }
+      .segment-pills {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: visible;
+        gap: 6px;
+      }
+      .seg-btn {
+        width: 100%;
+        text-align: left;
+        padding: 10px 12px;
+      }
+      .table-wrap {
+        overflow: visible;
+        border: 0;
+        background: transparent;
+      }
+      .beat-table,
+      .beat-table thead,
+      .beat-table tbody,
+      .beat-table tr,
+      .beat-table th,
+      .beat-table td {
+        display: block;
+        width: 100%;
+      }
+      .beat-table {
+        min-width: 0;
+      }
+      .beat-table thead {
+        display: none;
+      }
+      .beat-table tbody {
+        display: grid;
+        gap: 12px;
+      }
+      .beat-table tr {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fffcf8;
+        padding: 12px;
+      }
+      .beat-table td {
+        border-top: 0;
+        padding: 0;
+        margin-bottom: 10px;
+      }
+      .beat-table td:last-child {
+        margin-bottom: 0;
+      }
+      .beat-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .time-col, .what-col, .logic-col {
+        width: auto;
+      }
+      .time-link {
+        font-weight: 700;
+      }
+      .time-end {
+        display: inline;
+        margin-left: 6px;
+      }
+      .fact-row {
+        margin-bottom: 8px;
+      }
+    }
+    @media (max-width: 520px) {
+      h1 { font-size: 27px; }
+      h2 { font-size: 20px; }
+      .eyebrow, .mini-kicker, .note-label, .family-label {
+        font-size: 11px;
+      }
+      .card, .video-card { padding: 14px; }
+      .family-link {
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero-top">
+<article class="card hero-product">
+<div class="eyebrow">Product Image</div>
+<h1>Flimeal Core 7-Pack</h1>
+<img alt="Flimeal Core 7-Pack product hero" src="assets/flimeal_core7_overview_hero.webp"/>
+</article>
+<article class="card summary-band">
+<div class="eyebrow">Top 5 Key Points</div>
+<div class="summary-grid">
+<div class="summary-cell full">
+<h3>Core Assessment</h3>
+<p>In the first few seconds, prove 3 things: what it is, why it's different, and when to drink it.</p>
+</div>
+<div class="summary-cell">
+<h3>Product Snapshot</h3>
+<p>This is a protein shake in a pouch. Just add water or milk, shake, and drink. It contains crunchy bits, so it's not just a standard liquid shake.</p>
+</div>
+<div class="summary-cell">
+<h3>ICP</h3>
+<p>Best for: People who want protein on the go but prioritize taste, convenience, and zero mess.</p>
+<ul><li>Breakfast Replacement</li><li>Post-workout</li><li>On the commute</li><li>Try the flavors before committing to a bulk buy</li></ul>
+</div>
+<div class="summary-cell">
+<h3>Most Helpful Tips</h3>
+<ul>
+<li>Show the product in the first few seconds; don't just talk about it.</li>
+<li>Make sure the audience sees or hears the 'crunch'.</li>
+<li>Clearly state if it's for breakfast, post-workout, or a quick protein boost.</li>
+<li>For first-time orders, it's better to promote the variety pack.</li>
+</ul>
+</div>
+<div class="summary-cell">
+<h3>Comment Insights</h3>
+<ul><li>Many customers buy the variety pack first before deciding on larger sizes.</li><li>No chalkiness, no clumping, and no shaker bottle to wash are the real selling points.</li><li>Texture is a hero feature for the right audience, but a dealbreaker for the wrong one.</li><li>When calories seem too low, users may question the 'meal replacement' claim.</li><li>Choosing between water or milk and picking the first flavor are still barriers to purchase.</li></ul>
+</div>
+</div>
+</article>
+</section>
+<section class="card family-board" id="hungry-korea-family">
+<div class="eyebrow">Analyze the Pattern, then the Individual Video</div>
+<h2>hungry.boyyyy: How the 'Koreans do everything better' pattern evolved</h2>
+<div class="family-top">
+<div class="family-summary">
+<div class="summary-cell">
+<h3>The Pattern in a Nutshell</h3>
+<p>These 3 videos aren't random; they are iterations of the same template. The core remains: start with a 'Korea' comparison hook, show the pouch immediately, and frame traditional protein powder as a chalky, annoying alternative.</p>
+</div>
+<div class="summary-cell">
+<h3>The Winning Sales Sequence</h3>
+<ul><li>Step 1: Use a provocative opening to stop the scroll while bringing the pouch front and center.</li><li>Step 2: Do an immediate prep demo so the audience doesn't have to guess how to use it.</li><li>Step 3: Quickly contrast it with the 'annoying' old way: washing shakers, chalky texture, and hassle.</li><li>Finally, frame the variety pack, shipping, and sales as an easy path to purchase.</li></ul>
+</div>
+</div>
+<div class="family-grid">
+<article class="family-video-card">
+<div class="family-stage">Variant 1</div>
+<div class="family-video-shell">
+<video controls="" preload="metadata" src="videos/7597583396218457358.mp4"></video>
+</div>
+<div class="family-metrics">
+<span class="meta-badge">335K Views</span>
+<span class="meta-badge">Date: 2026-01-20</span>
+</div>
+<div class="family-copy">
+<div class="family-label">Opening</div>
+<p class="family-opening">Why the fuck do Koreans do everything better than us?</p>
+<div class="family-label">Key Changes This Time</div>
+<p>Used the milk tea flavor for taste proof and ended with a sale + free shipping CTA.</p>
+</div>
+<div class="family-links">
+<a class="family-link" href="https://www.tiktok.com/@hungry.boyyyy/video/7597583396218457358" rel="noreferrer" target="_blank">Original TikTok</a>
+</div>
+</article>
+<article class="family-video-card">
+<div class="family-stage">Variant 2</div>
+<div class="family-video-shell">
+<video controls="" preload="metadata" src="videos/7598270519867100429.mp4"></video>
+</div>
+<div class="family-metrics">
+<span class="meta-badge">533K Views</span>
+<span class="meta-badge">Date: 2026-01-22</span>
+</div>
+<div class="family-copy">
+<div class="family-label">Opening</div>
+<p class="family-opening">Why the fuck do Koreans do everything better than us?</p>
+<div class="family-label">Key Changes This Time</div>
+<p>Moved the pouch demo earlier and emphasized the 'no shaker to wash' contrast against inferior alternatives.</p>
+</div>
+<div class="family-links">
+<a class="family-link" href="https://www.tiktok.com/@hungry.boyyyy/video/7598270519867100429" rel="noreferrer" target="_blank">Original TikTok</a>
+<a class="family-link secondary" href="#video-detail-7598270519867100429">Detailed Breakdown</a>
+</div>
+</article>
+<article class="family-video-card">
+<div class="family-stage">Variant 3</div>
+<div class="family-video-shell">
+<video controls="" preload="metadata" src="videos/7601289359173651725.mp4"></video>
+</div>
+<div class="family-metrics">
+<span class="meta-badge">203K Views</span>
+<span class="meta-badge">Date: 2026-01-30</span>
+</div>
+<div class="family-copy">
+<div class="family-label">Opening</div>
+<p class="family-opening">Those fucking Koreans do everything better than us. God damn it.</p>
+<div class="family-label">Key Changes This Time</div>
+<p>Used the matcha flavor for proof and clarified the 'water or milk' options and clean ingredients.</p>
+</div>
+<div class="family-links">
+<a class="family-link" href="https://www.tiktok.com/@hungry.boyyyy/video/7601289359173651725" rel="noreferrer" target="_blank">Original TikTok</a>
+<a class="family-link secondary" href="#video-detail-7601289359173651725">Detailed Breakdown</a>
+</div>
+</article>
+</div>
+</div>
+<div class="family-insights">
+<div class="summary-cell">
+<h3>The Consistent Framework</h3>
+<ul><li>Every video starts with the provocative 'Koreans do everything better' verbal hook.</li><li>The pouch is shown in the first few seconds; the product isn't just talked about.</li><li>The middle section quickly pivots to convenience: no shaker needed, perfect for on-the-go.</li></ul>
+</div>
+<div class="summary-cell">
+<h3>What's Evolving in This Pattern</h3>
+<ul><li>The hooks change first: opening wording, intensity of language, and dramatic actions in the first second.</li><li>The visual hook evolves: from simply pouring into the bag to shaking it vigorously and tasting it immediately.</li><li>The first proof after the hook changes: which flavor to lead with, and whether to focus on taste or convenience first.</li></ul>
+</div>
+<div class="summary-cell">
+<h3>What to Test Next</h3>
+<ul><li>Copy the framework, not the profanity.</li><li>Change only one obvious variable at a time; don't rewrite the whole script.</li><li>Test the hook next, not the middle or end sections.</li></ul>
+</div>
+</div>
+</section>
+<section class="section-intro">
+<div class="eyebrow">Hungry Boy Pattern Breakdown</div>
+<h2>Breaking down the 2 most valuable videos in this pattern</h2>
+</section>
+<article class="video-card" id="video-detail-7598270519867100429">
+<div class="video-header">
+<div>
+<div class="mini-kicker">Provocative 'Korea' angle + 'no dishes' contrast</div>
+<h3>7598270519867100429 <span class="creator-handle">@hungry.boyyyy</span></h3>
+</div>
+<p class="mini-meta"><a href="https://www.tiktok.com/@hungry.boyyyy/video/7598270519867100429" rel="noreferrer" target="_blank">Original TikTok</a></p>
+</div>
+<div class="video-layout">
+<div class="video-left">
+<div class="video-shell">
+<video controls="" id="video-7598270519867100429" preload="metadata" src="videos/7598270519867100429.mp4"></video>
+</div>
+</div>
+<div class="video-right">
+<div class="meta-badges">
+<span class="meta-badge">GMV $5,135.95</span>
+<span class="meta-badge">109 Orders</span>
+<span class="meta-badge">Date: 2026-01-22</span>
+</div>
+<div class="segment-pills"><button class="seg-btn" data-start="0.00" data-target="video-7598270519867100429">0s-5s · Pattern interrupt + show product</button><button class="seg-btn" data-start="5.24" data-target="video-7598270519867100429">5s-16s · How-to + worse alternative</button><button class="seg-btn" data-start="15.64" data-target="video-7598270519867100429">16s-23s · Taste proof + objection handling</button><button class="seg-btn" data-start="23.08" data-target="video-7598270519867100429">23s-28s · Path to purchase + friction reduction</button></div>
+<div class="insight-grid">
+<div class="insight-card hook-note"><div class="note-label">Opening Hook</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">While speaking, he pours milk into the Black Sesame pouch and pushes the product toward the camera.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">22g protein / FLIMEAL BLACK SESAME visible on pack</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">Why the fuck do Koreans do everything better than us? This is Korea's number one protein brand and it's fucking insane.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Sound of pouring liquid paired with a very direct, aggressive tone.</div></div><div class="fact-row"><div class="fact-label">Why It Stops the Scroll</div><div class="fact-value">What really stops people isn't just the provocative hook, but the fact that the product demo happens simultaneously.</div></div></div>
+<div class="insight-card strong">
+<div class="note-label">Key Takeaway</div>
+<p>The opening is strong not just because of the provocative line, but because it happens alongside the pouch demo.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">Target Audience</div>
+<p><strong>Taste-driven consumers who hate boring protein and washing shaker bottles.</strong><br/>He is not looking for the most hardcore fitness nutrition. He wants a protein option that feels more interesting and less annoying.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">What to Replicate Next</div>
+<p><strong>Must-haves:</strong>真正值得抄的是 hook 里一定要带产品 demo，以及后面对旧方案烦感的对比。不要把它磨平为 generic protein ad。<br/><strong>Note:</strong>This pattern is powerful, but the tone depends on the creator. The structure is transferable; the specific profanity is not.</p>
+</div>
+</div>
+<div class="table-intro">
+<div class="table-title">Breakdown by Key Beats</div>
+</div>
+<div class="table-wrap">
+<table class="beat-table">
+<thead>
+<tr>
+<th>Time</th>
+<th>What happened in this segment</th>
+<th>Why this segment sells</th>
+</tr>
+</thead>
+<tbody><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="0.00" data-target="video-7598270519867100429">0.0s<br/><span class="time-end">5.24s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Provocative 'Korea' angle + live product demo</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Pouring milk into the bag and bringing it close to the camera makes the packaging itself the proof.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">22g protein / FLIMEAL BLACK SESAME on the pouch front</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">Why the fuck do Koreans do everything better than us? This is Korea's number one protein brand and it's fucking insane.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">The sound of pouring milk layered with a strong opening voiceover.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">The real hook works on two levels: the provocative tension of the 'Korea' angle and a product demo that looks nothing like standard protein powder.</div><div class="sell-why">Neither half is strong enough alone. The voiceover stops the scroll, while the demo proves it's not just empty talk.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="5.24" data-target="video-7598270519867100429">5.24s<br/><span class="time-end">15.64s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Drink/Shake demo + 'no dishes' contrast</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Drinking directly from the pouch, shaking it, and then tossing away an old shaker bottle.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">Just pour your liquid of choice, shake it up, and you're gonna do it. This stuff is super convenient if you're somebody who's always on the go or you hate washing dishes or you hate washing these things.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">The sound of liquid sloshing in the pouch, followed by the plastic thud of the shaker bottle being tossed.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment sells 'effort removal' rather than just protein. The pouch demo is the proof, while tossing the shaker frames the old routine as a nuisance.</div><div class="sell-why">He doesn't ask you to imagine convenience; he shows the inferior old way and literally throws it away.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="15.64" data-target="video-7598270519867100429">15.64s<br/><span class="time-end">23.08s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Clean ingredients + anti-chalky taste proof</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Fanning out multiple flavors while keeping the main Black Sesame pouch in the frame.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">The ingredients are also really clean and I have not found a flavor that I don't like. It also tastes way better than traditional protein powders that have that chalky, nasty aftertaste.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Slight sound of packaging rustling.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment addresses the two most common objections: taste and clean ingredients.</div><div class="sell-why">This gives the strong opening a solid foundation. Without it, the video would have energy but no reassurance.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="23.08" data-target="video-7598270519867100429">23.08s<br/><span class="time-end">28.32s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Variety pack restock + shipping close</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Holding the pouch steady and pointing down to show what's available to buy.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">FLIMEAL BLACK SESAME still visible on pack</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">The variety pack just restock on the TikTok shop and they also have three-day shipping. So I'm gonna link it down below if you're interested.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Ending with a direct voiceover, no extra visual gimmicks.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This isn't a generic CTA. It uses the variety pack to lower choice risk and shipping to reduce wait-time friction.</div><div class="sell-why">It closes on the path to purchase rather than just empty hype.</div></td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+<article class="video-card" id="video-detail-7601289359173651725">
+<div class="video-header">
+<div>
+<div class="mini-kicker">Provocative 'Korea' angle + Matcha lead + no dishes</div>
+<h3>7601289359173651725 <span class="creator-handle">@hungry.boyyyy</span></h3>
+</div>
+<p class="mini-meta"><a href="https://www.tiktok.com/@hungry.boyyyy/video/7601289359173651725" rel="noreferrer" target="_blank">Original TikTok</a></p>
+</div>
+<div class="video-layout">
+<div class="video-left">
+<div class="video-shell">
+<video controls="" id="video-7601289359173651725" preload="metadata" src="videos/7601289359173651725.mp4"></video>
+</div>
+</div>
+<div class="video-right">
+<div class="meta-badges">
+<span class="meta-badge">GMV $1,922.91</span>
+<span class="meta-badge">43 Orders</span>
+<span class="meta-badge">Date: 2026-01-30</span>
+</div>
+<div class="segment-pills"><button class="seg-btn" data-start="0.00" data-target="video-7601289359173651725">0s-3s · Pattern interrupt + show product</button><button class="seg-btn" data-start="3.22" data-target="video-7601289359173651725">3s-11s · Prep demo + flavor proof</button><button class="seg-btn" data-start="11.28" data-target="video-7601289359173651725">11s-25s · Pain relief + taste contrast</button><button class="seg-btn" data-start="24.56" data-target="video-7601289359173651725">25s-35s · Path to purchase + trust close</button></div>
+<div class="insight-grid">
+<div class="insight-card hook-note"><div class="note-label">Opening Hook</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Immediately pouring milk into the green pouch, shaking it vigorously, and tasting it right away.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">Those fucking Koreans do everything better than us. God damn it.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">First the pouring sound, then a loud shaking sound.</div></div><div class="fact-row"><div class="fact-label">Why It Stops the Scroll</div><div class="fact-value">What stops people is the strong opening combined with an incredibly direct prep demo, not just the profanity.</div></div></div>
+<div class="insight-card strong">
+<div class="note-label">Key Takeaway</div>
+<p>This isn't just a reshoot; it keeps the same opening but adds Matcha flavor, 'water or milk' options, and clean ingredients earlier.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">Target Audience</div>
+<p><strong>Convenience buyers who want better-tasting protein but hate washing shaker bottles.</strong><br/>They aren't looking for hardcore supplements; they want a protein option that tastes like a treat and isn't a hassle.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">What to Replicate Next</div>
+<p><strong>Must-haves:</strong>Keep the provocative opening, pouch prep demo, and 'no dishes' pain point. Test middle variables like flavor lead, water vs. milk, and clean ingredients.<br/><strong>Note:</strong>Don't mistake the profanity for the winning element. The stable factors are the opening structure, prep demo, and contrast with inferior alternatives.</p>
+</div>
+</div>
+<div class="table-intro">
+<div class="table-title">Breakdown by Key Beats</div>
+</div>
+<div class="table-wrap">
+<table class="beat-table">
+<thead>
+<tr>
+<th>Time</th>
+<th>What happened in this segment</th>
+<th>Why this segment sells</th>
+</tr>
+</thead>
+<tbody><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="0.00" data-target="video-7601289359173651725">0.0s<br/><span class="time-end">3.22s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Korea angle + pour-in-pouch prep demo</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Pouring milk directly into the green pouch so the usage is understood instantly.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">Those fucking Koreans do everything better than us. God damn it.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Sound of pouring milk.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment sells through pattern interrupt and format novelty, not just a provocative line.</div><div class="sell-why">The audience is stopped by the hook and immediately realizes this isn't a standard tub of protein powder.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="3.22" data-target="video-7601289359173651725">3.22s<br/><span class="time-end">11.28s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Shake + taste reaction + Matcha proof</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Shaking the pouch vigorously, taking a sip, and bringing it close to the camera to discuss the flavor.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">It literally tastes like macho. This is crunchy Korean protein powder, and it is fucking delectable.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Loud shaking sound, followed by the sound of tasting.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This links ease of use with sensory proof: it's easy to prep and doesn't taste like chalky protein.</div><div class="sell-why">He doesn't start with nutrition; he establishes that 'this actually tastes great' first.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="11.28" data-target="video-7601289359173651725">11.28s<br/><span class="time-end">24.56s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">No dishes + 'sweet treat' vs. traditional powder</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Gesturing with the pouch to keep the format in view, reinforcing why it's convenient.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">This is super convenient if you're somebody who's always on the go. Or you fucking hate washing dishes like I do. Or even if you want, effortless way to get your protein in that does not taste like traditional protein powder. This stuff is literally a sweet treat. Also, you can use water or milk. I like milk. It brings like a rich creamy flavor.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Continuous voiceover, no extra sound effects.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This hits two core points: the convenience of fewer dishes and the fact it doesn't taste bad like traditional protein.</div><div class="sell-why">This is the 'objection + worse alternative' strategy. Instead of just praising the product, make the old way look more annoying.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="24.56" data-target="video-7601289359173651725">24.56s<br/><span class="time-end">35.12s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Variety pack for flavors + clean ingredients + sale close</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Showing different flavors, flipping the pouch to show clean ingredients, and closing with on-screen arrows.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">Red arrow pointing down</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">I got the variety pack. They've all tasted great, but so far my favorite is the black sesame. Literally out of this world. The ingredient list is also pretty clean, which I'm a really big fan of. I think they're on sale with free shipping right now, so if you're interested, I'll leave a link down below for you.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Direct voiceover close.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment resolves first-buy risk, ingredient trust, and price incentives all at once.</div><div class="sell-why">It's not a hard pivot to CTA; it explains the safest way to buy, then adds clean ingredients and sale/shipping info.</div></td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+<section class="card family-board" id="macro-crunch-pattern">
+<div class="eyebrow">This isn't just one creator</div>
+<h2>Cross-creator pattern: Specific use case + Macros + Crunch proof</h2>
+<div class="family-top">
+<div class="family-summary">
+<div class="summary-cell">
+<h3>The Pattern in a Nutshell</h3>
+<p>This pattern doesn't rely on a single creator's personality. Different creators use the same framework: introduce a specific life scenario, establish credibility with macros, prove taste with crunch/flavor, and clarify the first-time purchase path.</p>
+</div>
+<div class="summary-cell">
+<h3>The Winning Sales Sequence</h3>
+<ul><li>Step 1: Define a specific moment: post-workout, busy times, a quick meal, or before commuting.</li><li>Step 2: Quickly provide macros so the product looks legitimate, not like a gimmick snack.</li><li>Step 3: Use crunch/flavor to make the taste real, so it doesn't seem like boring protein.</li><li>Step 4: Clarify the variety pack or first-buy path to make the initial order less risky.</li></ul>
+</div>
+</div>
+<div class="family-grid">
+<article class="family-video-card">
+<div class="family-stage">Workout lead</div>
+<div class="family-video-shell">
+<video controls="" preload="metadata" src="videos/7603181518701202701.mp4"></video>
+</div>
+<div class="family-metrics">
+<span class="meta-badge">1.1M Views</span>
+<span class="meta-badge">Date: 2026-02-04</span>
+</div>
+<div class="family-copy">
+<div class="family-label">Opening</div>
+<p class="family-opening">I just worked out, let's have a protein shake, today we're doing 17 grain.</p>
+<div class="family-label">Key Changes This Time</div>
+<p>Opened with a post-workout scenario + chewing sounds + macros.</p>
+</div>
+<div class="family-links">
+<a class="family-link" href="https://www.tiktok.com/@clarahyee/video/7603181518701202701" rel="noreferrer" target="_blank">Original TikTok</a>
+</div>
+</article>
+<article class="family-video-card">
+<div class="family-stage">Fallback meal lead</div>
+<div class="family-video-shell">
+<video controls="" preload="metadata" src="videos/7604539384553131295.mp4"></video>
+</div>
+<div class="family-metrics">
+<span class="meta-badge">448K Views</span>
+<span class="meta-badge">Date: 2026-02-08</span>
+</div>
+<div class="family-copy">
+<div class="family-label">Opening</div>
+<p class="family-opening">This is what I eat whenever I don't want to have an actual meal, but don't want to touch anything unhealthy.</p>
+<div class="family-label">Key Changes This Time</div>
+<p>Started with the pour-in-pouch demo and framed it as a healthy fallback meal.</p>
+</div>
+<div class="family-links">
+<a class="family-link" href="https://www.tiktok.com/@tho_ph25/video/7604539384553131295" rel="noreferrer" target="_blank">Original TikTok</a>
+</div>
+</article>
+<article class="family-video-card">
+<div class="family-stage">Pilates + comment-led lead</div>
+<div class="family-video-shell">
+<video controls="" preload="metadata" src="videos/7590648642298531085.mp4"></video>
+</div>
+<div class="family-metrics">
+<span class="meta-badge">507K Views</span>
+<span class="meta-badge">Date: 2026-01-02</span>
+</div>
+<div class="family-copy">
+<div class="family-label">Opening</div>
+<p class="family-opening">22 grams of protein, 160 calories and only two grams of sugar. I just got back from Pilates.</p>
+<div class="family-label">Key Changes This Time</div>
+<p>Started with a Pilates scenario and Black Sesame hype, then connected crunch, variety, and portability.</p>
+</div>
+<div class="family-links">
+<a class="family-link" href="https://www.tiktok.com/@clarahyee/video/7590648642298531085" rel="noreferrer" target="_blank">Original TikTok</a>
+</div>
+</article>
+</div>
+</div>
+<div class="family-insights">
+<div class="summary-cell">
+<h3>The Consistent Framework</h3>
+<ul><li>The opening quickly identifies the scenario: post-workout, busy, quick meal, or a shake while parenting.</li><li>Protein, calories, and sugar counts are given early to establish product credibility.</li><li>Crunch/flavor must appear so it's not just nutritional talk.</li></ul>
+</div>
+<div class="summary-cell">
+<h3>What's Evolving in This Pattern</h3>
+<ul><li>The hook changes first: chewing/crunching, pouring into the pouch, or interrupting with a lifestyle scene like parenting.</li><li>The verbal hook evolves: 'I just worked out' vs. 'This is what I eat when...' vs. busy life scenarios.</li><li>Only after the hook is working do you keep changing the macro order, satiety framing, fallback-meal framing, and the variety close.</li></ul>
+</div>
+<div class="summary-cell">
+<h3>What to Test Next</h3>
+<ul><li>This pattern should also test the hook first, not the middle or the close.</li><li>Test visual hooks first: chewing/crunching, pouring into the pouch, or using a clear lifestyle scene to stop the scroll.</li><li>Test verbal hooks first: workout scenario vs. healthy fallback meal vs. busy situations.</li></ul>
+</div>
+</div>
+</section>
+<section class="section-intro">
+<div class="eyebrow">Cross-Creator Pattern Breakdown</div>
+<h2>Breaking down 2 representative cross-creator videos</h2>
+</section>
+<article class="video-card" id="video-detail-7603181518701202701">
+<div class="video-header">
+<div>
+<div class="mini-kicker">Post-workout entry + taste first + macros as backup</div>
+<h3>7603181518701202701 <span class="creator-handle">@clarahyee</span></h3>
+</div>
+<p class="mini-meta"><a href="https://www.tiktok.com/@clarahyee/video/7603181518701202701" rel="noreferrer" target="_blank">Original TikTok</a></p>
+</div>
+<div class="video-layout">
+<div class="video-left">
+<div class="video-shell">
+<video controls="" id="video-7603181518701202701" preload="metadata" src="videos/7603181518701202701.mp4"></video>
+</div>
+</div>
+<div class="video-right">
+<div class="meta-badges">
+<span class="meta-badge">GMV $16,362.20</span>
+<span class="meta-badge">346 Orders</span>
+<span class="meta-badge">Date: 2026-02-04</span>
+</div>
+<div class="segment-pills"><button class="seg-btn" data-start="0.00" data-target="video-7603181518701202701">0s-18s · Hook + show product + macros</button><button class="seg-btn" data-start="18.20" data-target="video-7603181518701202701">18s-35s · Flavor proof + crunch differentiator</button><button class="seg-btn" data-start="35.20" data-target="video-7603181518701202701">35s-47s · Use case + scenario fit</button><button class="seg-btn" data-start="47.40" data-target="video-7603181518701202701">47s-66s · Path to purchase + risk reduction</button></div>
+<div class="insight-grid">
+<div class="insight-card hook-note"><div class="note-label">Opening Hook</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Before explaining, she is already chewing with the pouch near her mouth and the camera, making the product look effective and edible.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">Korean Protein Shake / 17 Grains with crunchy protein balls</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">I just worked out, let's have a protein shake, today we're doing 17 grain.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Clear chewing/crunching sounds from the start.</div></div><div class="fact-row"><div class="fact-label">Why It Stops the Scroll</div><div class="fact-value">The chewing sound makes a liquid pouch drink seem surprisingly tasty, and the 'post-workout' line immediately defines the use case.</div></div></div>
+<div class="insight-card strong">
+<div class="note-label">Key Takeaway</div>
+<p>This opening works because the crunch, post-workout scenario, and nutritional numbers all land within the first 20 seconds.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">Target Audience</div>
+<p><strong>People who want post-workout protein but hate boring, chalky shakes.</strong><br/>She's looking for something nutritionally valid that isn't as dull as traditional protein powder.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">What to Replicate Next</div>
+<p><strong>Must-haves:</strong>Replicate the post-workout entry, macro credibility, and sensory proof. Be cautious about framing it as a universal meal replacement.<br/><strong>Note:</strong>The real risk isn't the crunch; it's calling 166 calories a 'universal meal replacement'.</p>
+</div>
+</div>
+<div class="table-intro">
+<div class="table-title">Breakdown by Key Beats</div>
+</div>
+<div class="table-wrap">
+<table class="beat-table">
+<thead>
+<tr>
+<th>Time</th>
+<th>What happened in this segment</th>
+<th>Why this segment sells</th>
+</tr>
+</thead>
+<tbody><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="0.00" data-target="video-7603181518701202701">0.0s<br/><span class="time-end">18.2s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Post-workout entry + macros for credibility</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Chewing for the camera, drinking from the pouch, then zooming in on the nutritional facts.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">Korean Protein Shake / 17 Grains with crunchy protein balls. Later, the pouch macros are visible while she points.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">I just worked out, let's have a protein shake, today we're doing 17 grain, which is Korean misutgaru flavor. These are my favorite Korean protein shake pouches, it has 20 grams of protein, 166 calories, 1 gram of sugar, and 2.6 grams of fiber.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Chewing sounds followed by drinking and swallowing sounds.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment grabs attention with sensory interest, then immediately validates the product with macros.</div><div class="sell-why">Order matters: crunch stops the scroll, macros ensure it doesn't look like just a novelty snack.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="18.20" data-target="video-7603181518701202701">18.2s<br/><span class="time-end">35.2s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Multi-flavor spread + crunch differentiator</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Showing multiple flavors while pointing to the crunchy elements on the packaging.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">I love them because number one, they taste so good, all of these amazing flavors. Chocolate green tea, black sesame milk tea, and number two, every flavor has a crunchy element, they all have crunchy protein balls, and like an added element based on the flavor. This one has brown rice puffs, and strawberry one has fresh dry strawberries.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Mainly voiceover with slight packaging rustle.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">The real selling point isn't just 'many flavors,' but that it's different from smooth shakes due to its chewable texture.</div><div class="sell-why">She's not selling generic nutrition; she's selling something people actually look forward to drinking.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="35.20" data-target="video-7603181518701202701">35.2s<br/><span class="time-end">47.4s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Busy morning / post-workout scenario fit</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Holding the pouch while gesturing toward herself and the workout setting to keep the product in a real-life context.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">Number three, the macros are so good, they're really good. It's a meal replacement, like especially in the morning when you're busy, just like bringing this pouch so easy, and if you drink it after workout, it helps you gain so much muscle like they are the best.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Talking directly to the camera, no extra demo needed.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment moves the product from 'novelty' to 'routine,' showing exactly where it fits in life.</div><div class="sell-why">The 'busy morning' and 'post-workout' bridge is effective. The 'meal replacement' claim is a driver but also a risk.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="47.40" data-target="video-7603181518701202701">47.4s<br/><span class="time-end">65.6s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Variety pack as the first-buy path</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Displaying multiple pouches to keep the variety pack concept front and center.</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">You have to try the variety pack because it comes with all 7 flavors, you can try them all, and then you can start getting them in bulk once you find the flavors that you like. The variety pack helps you not get tired of the flavors, like I can choose different flavors every day, because during the repetition, you can get tired of it, but with this, you don't get tired of it.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Sound of pouches hitting the table and slight rustling.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment sells the path to purchase: try 7 flavors first, then buy your favorite in bulk.</div><div class="sell-why">It lowers first-purchase flavor risk instead of asking someone to blindly buy a large size right away.</div></td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+<article class="video-card" id="video-detail-7604539384553131295">
+<div class="video-header">
+<div>
+<div class="mini-kicker">Direct pour-in-pouch hook + healthy fallback meal</div>
+<h3>7604539384553131295 <span class="creator-handle">@tho_ph25</span></h3>
+</div>
+<p class="mini-meta"><a href="https://www.tiktok.com/@tho_ph25/video/7604539384553131295" rel="noreferrer" target="_blank">Original TikTok</a></p>
+</div>
+<div class="video-layout">
+<div class="video-left">
+<div class="video-shell">
+<video controls="" id="video-7604539384553131295" preload="metadata" src="videos/7604539384553131295.mp4"></video>
+</div>
+</div>
+<div class="video-right">
+<div class="meta-badges">
+<span class="meta-badge">GMV $5,611.40</span>
+<span class="meta-badge">122 Orders</span>
+<span class="meta-badge">Date: 2026-02-08</span>
+</div>
+<div class="segment-pills"><button class="seg-btn" data-start="0.00" data-target="video-7604539384553131295">0s-10s · Hook + show product + problem fit</button><button class="seg-btn" data-start="10.32" data-target="video-7604539384553131295">10s-19s · How-to + friction removal + crunch proof</button><button class="seg-btn" data-start="18.88" data-target="video-7604539384553131295">19s-28s · Taste proof + macro proof + repeat use</button></div>
+<div class="insight-grid">
+<div class="insight-card hook-note"><div class="note-label">Opening Hook</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">The video starts with milk being poured into the pouch, so the audience doesn't have to guess how it works.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">my favorite way to increase my protein intake!!</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">This is what I eat whenever I don't want to have an actual meal, but don't want to touch anything unhealthy.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Clear sound of milk pouring into the pouch.</div></div><div class="fact-row"><div class="fact-label">Why It Stops the Scroll</div><div class="fact-value">You understand the format before she explains it, and captions frame it as a daily protein habit rather than a random novelty snack.</div></div></div>
+<div class="insight-card strong">
+<div class="note-label">Key Takeaway</div>
+<p>This hook succeeds because the pouring action, captions, and healthy fallback scenario all work together.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">Target Audience</div>
+<p><strong>Busy consumers who don't want junk food but are too lazy to cook a full meal.</strong><br/>She addresses the convenience gap for quick meals, ideally without blenders or cleanup.</p>
+</div>
+<div class="insight-card">
+<div class="note-label">What to Replicate Next</div>
+<p><strong>Must-haves:</strong>Keep the early prep demo, fill-line tip, and on-the-go close. Be careful not to overpromise on satiety.<br/><strong>Note:</strong>The risk isn't convenience; it's how much of a 'meal' you claim it is.</p>
+</div>
+</div>
+<div class="table-intro">
+<div class="table-title">Breakdown by Key Beats</div>
+</div>
+<div class="table-wrap">
+<table class="beat-table">
+<thead>
+<tr>
+<th>Time</th>
+<th>What happened in this segment</th>
+<th>Why this segment sells</th>
+</tr>
+</thead>
+<tbody><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="0.00" data-target="video-7604539384553131295">0.0s<br/><span class="time-end">10.32s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Pour-in-pouch + healthy fallback scenario</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Pouring milk into the pouch and holding it up so you know exactly what it is.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">my favorite way to increase my protein intake!!</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">This is what I eat whenever I don't want to have an actual meal, but don't want to touch anything unhealthy. This is a protein shake and you literally just add water or milk to it.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Pouring sound followed by steady voiceover.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">The hook itself is a prep demo: format, use case, and healthy fallback framing all in one.</div><div class="sell-why">She doesn't just describe convenience; she demonstrates it.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="10.32" data-target="video-7604539384553131295">10.32s<br/><span class="time-end">18.88s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Fill-line tip + shake + crunch reveal</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Pointing out the fill line, explaining consistency, shaking the pouch, and pointing to the cereal-ball visuals.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">dissolve in seconds</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">Fill my up to here because I don't want it to be too thick. It's so genius. I just need to shake it. It is like cereal balls inside so it's crunchy.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Sound of liquid and contents sloshing while shaking.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">This segment removes prep friction and turns texture into proof.</div><div class="sell-why">She makes it look easy to use, then explains why it's different from smooth shakes.</div></td></tr><tr><td class="time-col" data-label="时间"><button class="time-link" data-start="18.88" data-target="video-7604539384553131295">18.88s<br/><span class="time-end">28.16s</span></button></td><td class="what-col" data-label="这一段发生了什么"><div class="beat-name">Tasting reaction + 21g protein + daily staple</div><div class="fact-row"><div class="fact-label">Action / Visuals</div><div class="fact-value">Tasting, reacting positively, pointing to the 21g protein count, and screwing the cap back on.</div></div><div class="fact-row"><div class="fact-label">On-screen Text</div><div class="fact-value">So good!!!</div></div><div class="fact-row"><div class="fact-label">Original Script/Voiceover</div><div class="fact-value">And the best part is you get 21 grams of proteins. This is perfect for people who are on the go. It's a staple in my household.</div></div><div class="fact-row"><div class="fact-label">Audio</div><div class="fact-value">Drinking sound followed by a closing voiceover.</div></div></td><td class="logic-col" data-label="这一段为什么能卖"><div class="sell-head">The taste reaction dispels doubt, while the 21g protein and on-the-go aspect make it look like a repeat purchase.</div><div class="sell-why">It's not just 'drinkable'; it looks like something she'd keep as a long-term staple.</div></td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+<section class="card playground">
+<div class="eyebrow">How to Build the Next Video</div>
+<h2>Compare the two proven patterns to answer one question: How to build the next one?</h2>
+<p class="muted">Look at common patterns, see how the top videos won, and use inspiration cards/building blocks for the next split test.</p>
+<div class="rule-grid">
+<article class="rule-card">
+<strong>Win the Hook First</strong>
+<p>If the first second doesn't land, the rest doesn't matter.</p>
+</article>
+<article class="rule-card">
+<strong>A Hook is More Than a Sentence</strong>
+<p>Visuals, vocals, and text must work together to stop the scroll.</p>
+</article>
+<article class="rule-card">
+<strong>Proof Must Be Visible</strong>
+<p>Consistent proof means showing the product and sensory evidence, not just listing features.</p>
+</article>
+<article class="rule-card">
+<strong>End with the Path to Purchase</strong>
+<p>Variety packs, sales, and shipping all reduce purchase friction.</p>
+</article>
+</div>
+<div class="playground-compare-grid">
+<article class="compare-card">
+<div class="compare-card-head">
+<h3>Korea shock + no-dishes relief</h3>
+</div>
+<div class="compare-card-video">
+<video controls="" preload="metadata" src="videos/7598270519867100429.mp4"></video>
+</div>
+<div class="compare-card-points">
+<div class="point-row"><span>Why It Sells</span><p>Stop them with a provocative opening, use the pouch demo to make it feel real, and frame the old way as a nuisance.</p></div>
+<div class="point-row"><span>What to Watch in the First Second</span><p>Sharper verbal hooks and more dramatic pouring/shaking/tasting actions.</p></div>
+<div class="point-row"><span>Most Reliable Mid-section Selling Points</span><p>No shaker to wash, on-the-go convenience, and less hassle than traditional protein.</p></div>
+<div class="point-row"><span>Why the Ending Converts</span><p>Variety, sales, and shipping lower the barrier to purchase.</p></div>
+<div class="point-row strong"><span>What to Test Next</span><p>Test the drama of verbal, visual, and text hooks first.</p></div>
+</div>
+</article>
+<article class="compare-card">
+<div class="compare-card-head">
+<h3>Life scene + macro legitimacy + crunch proof</h3>
+</div>
+<div class="compare-card-video">
+<video controls="" preload="metadata" src="videos/7603181518701202701.mp4"></video>
+</div>
+<div class="compare-card-points">
+<div class="point-row"><span>Why It Sells</span><p>Use a specific scenario to draw people in, establish credibility with macros, and prove it's not boring with crunch/flavor.</p></div>
+<div class="point-row"><span>What to Watch in the First Second</span><p>Clearer scene entry followed by faster macro or crunch proof.</p></div>
+<div class="point-row"><span>Most Reliable Mid-section Selling Points</span><p>Macros provide credibility, while crunch/flavor ensures it doesn't feel like boring protein.</p></div>
+<div class="point-row"><span>Why the Ending Converts</span><p>Variety packs, 'try flavors first,' and portability clarify the first-buy path.</p></div>
+<div class="point-row strong"><span>What to Test Next</span><p>Test scene entry clarity first, then test whether macros or crunch should come first.</p></div>
+</div>
+</article>
+</div>
+<div class="idea-mini-grid">
+<article class="idea-mini">
+<div class="idea-mini-title">Inspiration 1</div>
+<p>Apply the 'Korea shock' to life scenarios: use a sharper verbal hook, then pivot immediately to a real-life scene.</p>
+</article>
+<article class="idea-mini">
+<div class="idea-mini-title">Inspiration 2</div>
+<p>Apply life scenes to the 'Korea' pattern: keep the provocative opening but be more specific about 'why I'm drinking this now'.</p>
+</article>
+<article class="idea-mini">
+<div class="idea-mini-title">Inspiration 3</div>
+<p>Same hook, different proof order: one version leads with macros, the other with crunch.</p>
+</article>
+<article class="idea-mini">
+<div class="idea-mini-title">Inspiration 4</div>
+<p>Same framework, different first-buy path: one version leads with variety, the other with sales/shipping.</p>
+</article>
+</div>
+<div class="lego-section">
+<details class="lego-details">
+<summary>Building Blocks Breakdown</summary>
+<div class="lego-stack">
+<article class="card lego-card">
+<div class="eyebrow">Building Blocks Area</div>
+<h3>Pattern 1：Korea shock + no-dishes relief</h3>
+<p class="muted">Don't rewrite every time. Keep the framework and change only one hook or proof variable at a time.</p>
+<div class="table-wrap">
+<table class="lego-table">
+<thead>
+<tr>
+<th class="lego-step">Steps</th>
+<th>Purpose of this section</th>
+<th>Keep these consistent</th>
+<th>Variables to change</th>
+<th>Actual lines / actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="lego-step">Block 1</td>
+<td>Stop the scroll in the first second</td>
+<td>The provocative 'Korea comparison' premise + the pouch appearing immediately.</td>
+<td>Intensity of language, opening wording, pouring vs. tasting, and whether to add on-screen text.</td>
+<td>“Why the fuck do Koreans do everything better than us?” / “Those fucking Koreans do everything better than us.”</td>
+</tr>
+<tr>
+<td class="lego-step">Block 2</td>
+<td>Immediately prove how to use it</td>
+<td>Don't just talk; show that it's not a standard protein tub.</td>
+<td>Pouring milk first, shaking first, zooming in first, or drinking directly first.</td>
+<td>pour into pouch / shake / sip / push pouch toward camera</td>
+</tr>
+<tr>
+<td class="lego-step">Block 3</td>
+<td>Frame the old way as a nuisance</td>
+<td>Traditional protein powder or shaker bottles must be shown as inferior alternatives.</td>
+<td>Focus on 'hating dishes,' 'on-the-go,' or 'chalky aftertaste' first.</td>
+<td>“if you hate washing dishes” / “if you're always on the go” / “does not taste like traditional protein powder”</td>
+</tr>
+<tr>
+<td class="lego-step">Block 4</td>
+<td>Smooth out the path to purchase</td>
+<td>The ending isn't just a CTA; it's the safest way to buy.</td>
+<td>Lead with variety vs. sales/free shipping/restock.</td>
+<td>variety pack / free shipping / restock / link below</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+<article class="card lego-card">
+<div class="eyebrow">Building Blocks Area</div>
+<h3>Pattern 2：Life scene + macro legitimacy + crunch proof</h3>
+<p class="muted">Don't write a new script every time. Keep the persuasion order: scenario first, then credibility, then taste.</p>
+<div class="table-wrap">
+<table class="lego-table">
+<thead>
+<tr>
+<th class="lego-step">Steps</th>
+<th>Purpose of this section</th>
+<th>Keep these consistent</th>
+<th>Variables to change</th>
+<th>Actual lines / actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="lego-step">Block 1</td>
+<td>Bring people into a specific moment</td>
+<td>The opening must be a real scenario, not abstract nutrition.</td>
+<td>Post-workout, busy breakfast, healthy fallback meal, post-Pilates, or before commuting.</td>
+<td>“I just worked out...” / “This is what I eat when I don't want an actual meal...” / “I just got back from Pilates...”</td>
+</tr>
+<tr>
+<td class="lego-step">Block 2</td>
+<td>Establish product credibility</td>
+<td>Macros like protein, calories, and sugar should appear early.</td>
+<td>Lead with protein vs. calories vs. 'not heavy'.</td>
+<td>20g protein / 166 calories / 1g sugar / 2.6g fiber</td>
+</tr>
+<tr>
+<td class="lego-step">Block 3</td>
+<td>Make the taste real</td>
+<td>Crunch/flavor proof must appear, or it feels like boring protein.</td>
+<td>Chewing first, showing crunchy balls first, flavor first, or the freeze hack.</td>
+<td>crunchy protein balls / tastes like a matcha latte / rich like chocolate ice cream</td>
+</tr>
+<tr>
+<td class="lego-step">Block 4</td>
+<td>Lower first-order risk</td>
+<td>The path to purchase must be clear at the end.</td>
+<td>Promote variety vs. portability vs. why it's a staple.</td>
+<td>try the variety pack first / staple in my household / easy to bring in your bag</td>
+</tr>
+</tbody>
+</table>
+</div>
+</article>
+</div>
+</details>
+</div>
+</section>
+<section class="card borrow-section">
+<div class="eyebrow">Ideas worth borrowing for other products</div>
+<h2>Ideas worth borrowing: The Duo Pack 'K-pop / snacky / not heavy' line</h2>
+<p class="muted">This isn't the main Hero SKU pattern, but it's worth borrowing. The value isn't in the word 'K-pop,' but in: curiosity about ideal body types + snack conflict + snackability proof (pouch/crunch) + 'not heavy/cravings' framing.</p>
+<div class="borrow-summary">
+<article class="summary-cell">
+<h3>Most valuable takeaways</h3>
+<ul><li>Stop the scroll with identity/ideal-state curiosity, then position the product as the answer.</li><li>Frame the pouch as a snack/treat, not just liquid protein.</li><li>Bring 'not heavy/not bloated/cravings' talk to the front.</li></ul>
+</article>
+<article class="summary-cell">
+<h3>What not to copy directly</h3>
+<ul><li>Don't treat 'K-pop' as a universal authority.</li><li>Don't frame 'snatched' as a guaranteed result.</li><li>The 'frozen dessert' hack might not apply directly to the Core 7-Pack.</li></ul>
+</article>
+</div>
+<div class="borrow-grid">
+<article class="borrow-video-card">
+<div class="borrow-video-shell">
+<video controls="" preload="metadata" src="videos/7601288310471904542.mp4"></video>
+</div>
+<div class="borrow-video-meta">
+<span class="meta-badge">1.4M Views</span>
+<span class="meta-badge">Date: 2026-01-30</span>
+</div>
+<div class="borrow-video-copy">
+<div class="family-label">K-pop idol + frozen dessert hack</div>
+<p class="family-opening">Ever wonder how K-pop idols stay so snatched but seem to snack all the time?</p>
+<p>Maximized the 'K-pop idol,' 'snack without feeling heavy,' and 'freeze hack' layers.</p>
+</div>
+</article>
+<article class="borrow-video-card">
+<div class="borrow-video-shell">
+<video controls="" preload="metadata" src="videos/7602398584750886175.mp4"></video>
+</div>
+<div class="borrow-video-meta">
+<span class="meta-badge">210K Views</span>
+<span class="meta-badge">Date: 2026-02-02</span>
+</div>
+<div class="borrow-video-copy">
+<div class="family-label">K-pop + not bloated + customization</div>
+<p class="family-opening">Ever wonder how K-pop idols stay so snatched but are literally always snacking?</p>
+<p>Focused faster on 'without feeling bloated' and fill-line customization.</p>
+</div>
+</article>
+<article class="borrow-video-card">
+<div class="borrow-video-shell">
+<video controls="" preload="metadata" src="videos/7606447878944378142.mp4"></video>
+</div>
+<div class="borrow-video-meta">
+<span class="meta-badge">113K Views</span>
+<span class="meta-badge">Date: 2026-02-13</span>
+</div>
+<div class="borrow-video-copy">
+<div class="family-label">Idols swear by it + authority close</div>
+<p class="family-opening">Ever wonder how K-pop idols snack all the time but still stay so snatched?</p>
+<p>More complete integration of authority, prep demo, and Olive Young close.</p>
+</div>
+</article>
+</div>
+<p class="borrow-link"><a href="duo-pack.html" rel="noreferrer" target="_blank">See the full independent analysis for this product</a></p>
+</section>
+</div>
+<script>
+    document.querySelectorAll('.time-link, .seg-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.target);
+        if (!target) return;
+        target.currentTime = Number(button.dataset.start || 0);
+        target.play();
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
+</body>
+</html>

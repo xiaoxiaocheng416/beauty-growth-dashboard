@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duo Pack Inspiration Report</title>
+  <style>
+    :root {
+      --bg: #f5efe8;
+      --panel: rgba(255,252,247,0.98);
+      --ink: #2c241e;
+      --muted: #6e6257;
+      --line: #dccfbe;
+      --accent: #8a4e31;
+      --soft: #f6ecdf;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #eadfd1 0, var(--bg) 240px);
+      color: var(--ink);
+      font-family: Georgia, "Iowan Old Style", serif;
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1480px; margin: 0 auto; padding: 28px 22px 72px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(78,52,29,0.06);
+    }
+    h1,h2,h3 { margin: 0 0 12px; line-height: 1.08; }
+    h1 { font-size: 44px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 18px; }
+    p, li, td, th { font-size: 16px; }
+    ul { margin: 0; padding-left: 20px; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffaf3;
+      padding: 14px;
+    }
+    .mini-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .hero-thesis {
+      font-size: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fff5ea;
+      border: 1px solid #e4c8a8;
+    }
+    .strip {
+      margin-bottom: 18px;
+    }
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .strip-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 12px;
+    }
+    .strip-card video, .video-col video {
+      width: 100%;
+      border-radius: 14px;
+      background: #000;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    .strip-title {
+      font-weight: 700;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+    .strip-sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    .section-intro {
+      margin: 6px 0 18px;
+      padding: 0 6px;
+    }
+    .video-card {
+      margin-bottom: 18px;
+    }
+    .video-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .handle { color: var(--muted); font-size: 0.82em; font-weight: 500; }
+    .link-pill {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 14px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .video-col {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+    }
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .metric {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: #efe6d8;
+      color: #684f3e;
+      font-size: 13px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffcf8;
+      margin-top: 12px;
+    }
+    table {
+      width: 100%;
+      min-width: 920px;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-top: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    thead th {
+      background: #f7efe4;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .time-col { width: 110px; }
+    @media (max-width: 1180px) {
+      .hero, .hero-grid, .strip-grid, .video-grid, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .video-col {
+        position: static;
+      }
+      h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <article class="card">
+        <div class="eyebrow">别的品值得借鉴的思路</div>
+        <h1>Duo Pack：K-pop snatched / snacky / not heavy / cravings 这条线值不值得借</h1>
+        <p class="hero-thesis">结论：值得借，但要当成 <strong>Cross-SKU inspiration</strong>，不是现在主页面里的第三个已验证 Pattern。它真正值钱的不是 `K-pop` 本身，而是：<strong>理想身材好奇心 + snack 矛盾感 + 挤袋 / 冻过 / crunch 的 snackability proof + not heavy / cravings framing</strong>。</p>
+        <div class="hero-grid">
+          <div class="mini-card">
+            <div class="mini-label">这条线在卖什么</div>
+            <p>不是在卖一个普通 protein shake，而是在卖一种“像零食、像甜点、不会太 heavy、还能让你觉得自己更像那类人”的高蛋白 snack 方案。</p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">为什么值得看</div>
+            <p>它不是主 Hero SKU 的已验证 pattern，但它给了一个很强的 hook 方向：<strong>先用身份 / 人群好奇心停住人，再把产品拍成那个谜题的可能答案。</strong></p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">最能借给 Core 7-Pack 的部件</div>
+            <ul>
+              <li>理想身材 / 理想生活方式的好奇心钩子</li>
+              <li>“明明在 snack 但状态很好”的矛盾感</li>
+              <li>挤袋、crunch、冻过后像甜点的 tactile proof</li>
+              <li>`not heavy / not bloated / curb cravings` 这种更贴近真实消费时刻的话</li>
+            </ul>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">不要直接照搬的部分</div>
+            <ul>
+              <li>不是每个 creator 都适合直接用 K-pop idol authority。</li>
+              <li>不要把 `snatched` 讲成身体结果承诺。</li>
+              <li>Duo Pack 里的 frozen dessert hack，不一定适合原样搬到主 Hero SKU。</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="eyebrow">这 3 条为什么能并排看</div>
+        <h2>它们不是重复拍而已，而是在重复同一条 curiosity-to-proof 骨架</h2>
+        <ul>
+          <li>第一秒都在回答一个问题：为什么 K-pop idol 明明会 snack，却还是那么 snatched。</li>
+          <li>开头都不是空讲，而是立刻用挤袋、吸袋、冻过后的画面把产品拍成 snack。</li>
+          <li>中段都把 `not heavy / not bloated / cravings` 和高蛋白站在一起说。</li>
+          <li>后面都用 crunch、fill lines、冻过后像 ice cream 这些细节把“这不是普通蛋白粉”讲实。</li>
+          <li>结尾再用 Olive Young / TikTok Shop exclusive / sale 收口，而不是只剩 hype。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card strip">
+      <div class="eyebrow">并排看它长什么样</div>
+      <h2>这条线最值得看的 3 条 Duo Pack 视频</h2>
+      <div class="strip-grid">
+        <article class="strip-card">
+          <video controls preload="metadata" src="videos/7601288310471904542.mp4"></video>
+          <div class="strip-meta">
+            <div class="strip-title">K-pop idol behind-the-scenes + frozen dessert hack</div>
+            <div class="strip-sub">2026-01-30 · $5,991.52 全量表 GMV</div>
+          </div>
+        </article>
+        
+        <article class="strip-card">
+          <video controls preload="metadata" src="videos/7602398584750886175.mp4"></video>
+          <div class="strip-meta">
+            <div class="strip-title">K-pop idol + not bloated + customization</div>
+            <div class="strip-sub">2026-02-02 · $1,027.51 全量表 GMV</div>
+          </div>
+        </article>
+        
+        <article class="strip-card">
+          <video controls preload="metadata" src="videos/7606447878944378142.mp4"></video>
+          <div class="strip-meta">
+            <div class="strip-title">K-pop idols swear by it + prep demo + authority close</div>
+            <div class="strip-sub">2026-02-13 · $626.25 全量表 GMV</div>
+          </div>
+        </article>
+        </div>
+    </section>
+
+    <section class="section-intro">
+      <div class="eyebrow">接下来是分析</div>
+      <h2>这条线背后的共同 framework</h2>
+      <p class="muted">不是“拍 K-pop 就行”，而是先让人对一种理想状态产生好奇，再把产品拍成那个状态背后的 snack / routine / texture 解释。真正让人停住的，是 <strong>身份好奇心 + 矛盾感 + snackability proof</strong> 叠在一起。</p>
+    </section>
+
+    
+    <section class="video-card card" id="video-7601288310471904542">
+      <div class="video-top">
+        <div>
+          <div class="eyebrow">K-pop idol behind-the-scenes + frozen dessert hack</div>
+          <h2>7601288310471904542 <span class="handle">@simplyforyouxo</span></h2>
+        </div>
+        <a class="link-pill" href="https://www.tiktok.com/@simplyforyouxo/video/7601288310471904542" target="_blank" rel="noreferrer">原始 TikTok</a>
+      </div>
+      <div class="video-grid">
+        <div class="video-col">
+          <video controls preload="metadata" src="videos/7601288310471904542.mp4"></video>
+          <div class="metrics">
+            <span class="metric">全量视频表 GMV $5,991.52</span>
+            <span class="metric">Shoppable GMV $8,723.63</span>
+            <span class="metric">全量订单 164</span>
+            <span class="metric">曝光 1,401,352</span>
+            <span class="metric">交易窗口 GMV $2,571.44</span>
+            <span class="metric">窗口订单 49</span>
+          </div>
+        </div>
+        <div class="analysis-col">
+          <div class="grid-2">
+            <div class="mini-card">
+              <div class="mini-label">开头钩子</div>
+              <p><strong>动作 / 画面：</strong>一上来就是把冻过的巧克力口味从袋子里挤出来，视觉上很像 soft-serve / 冰淇淋。</p>
+              <p><strong>屏幕文字：</strong>how kpop idols snack without feeling heavy</p>
+              <p><strong>原句口播：</strong>Ever wonder how K-pop idols stay so snatched but seem to snack all the time?</p>
+              <p><strong>为什么会停下：</strong>它不是普通营养 hook，而是“理想身材 + 明明在 snack”的矛盾感，再用冻过后的挤袋动作把这个产品立刻拍成一个像零食的答案。</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-label">这条主要变了什么</div>
+              <p>这条把 `K-pop idol`、`snack without feeling heavy`、`freeze hack` 三层一起拉满，所以最像完整母版。</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">这条为什么会卖的 framework</div>
+            <ul><li>先用 K-pop idol 这种 aspirational identity 把人停住。</li><li>再用 `明明在 snack 但还很 snatched` 这个矛盾感勾出好奇心。</li><li>马上用冻过后挤袋子的动作，把产品拍成 snack / dessert，而不是 boring shake。</li><li>再补上 21-22g protein、150-156 calories、not heavy 这些合理性。</li><li>最后把 craving control 和 TikTok Shop sale 接上，让它从好奇变成购买理由。</li></ul>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="time-col">时间</th>
+                  <th>这一段在做什么</th>
+                  <th>具体发生了什么</th>
+                  <th>为什么这一段有卖点</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+          <td class="time-col">0.0s-8.0s</td>
+          <td>身份好奇心 + 视觉反常识</td>
+          <td>冻过的产品从袋口被挤出来，同时出现 K-pop idol 和 `snatched but always snacking` 这个问题。</td>
+          <td>先让人停住，再让人觉得“这个东西可能就是答案的一部分”。</td>
+        </tr>
+        
+        <tr>
+          <td class="time-col">9.0s-21.0s</td>
+          <td>宏观营养站住 + not heavy</td>
+          <td>举出两个口味和营养数字，强调 21-22g protein、150-156 calories。</td>
+          <td>把刚才那个看起来像零食的东西重新讲成合理的高蛋白选择，不会只是 gimmick。</td>
+        </tr>
+        
+        <tr>
+          <td class="time-col">22.0s-58.0s</td>
+          <td>crunch + frozen hack + cravings</td>
+          <td>展示 crunchy balls、freeze hack、像 dessert 一样的口感，再讲夜里想吃冷冷小零食时会拿它代替 chips / candy。</td>
+          <td>真正强的是把蛋白变成 `snack replacement`，而不是只卖 meal replacement。</td>
+        </tr>
+        </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="video-card card" id="video-7602398584750886175">
+      <div class="video-top">
+        <div>
+          <div class="eyebrow">K-pop idol + not bloated + customization</div>
+          <h2>7602398584750886175 <span class="handle">@simplyforyouxo</span></h2>
+        </div>
+        <a class="link-pill" href="https://www.tiktok.com/@simplyforyouxo/video/7602398584750886175" target="_blank" rel="noreferrer">原始 TikTok</a>
+      </div>
+      <div class="video-grid">
+        <div class="video-col">
+          <video controls preload="metadata" src="videos/7602398584750886175.mp4"></video>
+          <div class="metrics">
+            <span class="metric">全量视频表 GMV $1,027.51</span>
+            <span class="metric">Shoppable GMV $1,454.90</span>
+            <span class="metric">全量订单 28</span>
+            <span class="metric">曝光 209,946</span>
+            <span class="metric">交易窗口 GMV $1,031.16</span>
+            <span class="metric">窗口订单 20</span>
+          </div>
+        </div>
+        <div class="analysis-col">
+          <div class="grid-2">
+            <div class="mini-card">
+              <div class="mini-label">开头钩子</div>
+              <p><strong>动作 / 画面：</strong>绿色袋装被挤压并直接喝，视觉上更像真实 snack，而不是标准奶昔。</p>
+              <p><strong>屏幕文字：</strong>how k-pop idols snack without feeling bloated</p>
+              <p><strong>原句口播：</strong>Ever wonder how K-pop idols stay so snatched but are literally always snacking?</p>
+              <p><strong>为什么会停下：</strong>这条比上一条更直接地把 `bloated` 这个痛点讲出来，所以是更明确的 problem framing。</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-label">这条主要变了什么</div>
+              <p>这条的变化重点不是身份钩子，而是把 `without feeling bloated`、fill line customization、zero chalky aftertaste 往前讲得更清楚。</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">这条为什么会卖的 framework</div>
+            <ul><li>先用同一个 K-pop curiosity hook 停住人。</li><li>但更快把问题聚焦到 `snack without feeling bloated`。</li><li>再用 crunch、冻过后像 ice cream、fill lines 这些细节把产品讲得既好吃又好控制。</li><li>最后用 Olive Young No.1 和 TikTok Shop exclusive 做 authority close。</li></ul>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="time-col">时间</th>
+                  <th>这一段在做什么</th>
+                  <th>具体发生了什么</th>
+                  <th>为什么这一段有卖点</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+          <td class="time-col">0.0s-6.0s</td>
+          <td>K-pop aspiration + bloated pain</td>
+          <td>一边吸袋子一边问为什么 K-pop idol 老在 snack 还这么 snatched，同时字幕直接写 `without feeling bloated`。</td>
+          <td>这让视频从单纯好奇，变成对一个很具体痛点的回答。</td>
+        </tr>
+        
+        <tr>
+          <td class="time-col">13.0s-39.0s</td>
+          <td>crunch / frozen / fill line</td>
+          <td>展示 cap 里的 crunchy balls、冻过后像 ice cream、背面的 fill lines 和加水方式。</td>
+          <td>这不是一个卖点列表，而是在连续证明：它既有 treat 感，也很容易控制厚薄和入口体验。</td>
+        </tr>
+        
+        <tr>
+          <td class="time-col">40.0s-112.0s</td>
+          <td>taste objection + authority close</td>
+          <td>正面讲 chocolate 像 ice cream、green tea 像 matcha latte、没有 chalky aftertaste，最后接 Olive Young No.1。</td>
+          <td>把最常见的 protein objection 处理掉，再用韩国零售权威把信任补齐。</td>
+        </tr>
+        </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="video-card card" id="video-7606447878944378142">
+      <div class="video-top">
+        <div>
+          <div class="eyebrow">K-pop idols swear by it + prep demo + authority close</div>
+          <h2>7606447878944378142 <span class="handle">@simplyforyouxo</span></h2>
+        </div>
+        <a class="link-pill" href="https://www.tiktok.com/@simplyforyouxo/video/7606447878944378142" target="_blank" rel="noreferrer">原始 TikTok</a>
+      </div>
+      <div class="video-grid">
+        <div class="video-col">
+          <video controls preload="metadata" src="videos/7606447878944378142.mp4"></video>
+          <div class="metrics">
+            <span class="metric">全量视频表 GMV $626.25</span>
+            <span class="metric">Shoppable GMV $1,050.35</span>
+            <span class="metric">全量订单 21</span>
+            <span class="metric">曝光 112,886</span>
+            <span class="metric">交易窗口 GMV $920.91</span>
+            <span class="metric">窗口订单 18</span>
+          </div>
+        </div>
+        <div class="analysis-col">
+          <div class="grid-2">
+            <div class="mini-card">
+              <div class="mini-label">开头钩子</div>
+              <p><strong>动作 / 画面：</strong>冻过的内容物像软冰淇淋一样被挤出来，第一眼先让人感觉它是 snack。</p>
+              <p><strong>屏幕文字：</strong>the high-protein snack kpop idols swear by</p>
+              <p><strong>原句口播：</strong>Ever wonder how K-pop idols snack all the time but still stay so snatched?</p>
+              <p><strong>为什么会停下：</strong>这条 hook 比前两条更像 authority framing：不是问你一个抽象问题，而是直接说这是 idol swear by 的高蛋白 snack。</p>
+            </div>
+            <div class="mini-card">
+              <div class="mini-label">这条主要变了什么</div>
+              <p>这条把 authority、prep demo、Olive Young No.1 收得更完整，更像一个已经知道该怎么成交的版本。</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">这条为什么会卖的 framework</div>
+            <ul><li>先用 `idol swear by` 和软冰淇淋一样的挤袋画面停住人。</li><li>再用具体 idol behind-the-scenes clip 把这个说法落地。</li><li>接着用 not heavy、prep easy、crunchy texture 去处理功能和口感。</li><li>最后再用 Olive Young No.1 + sale close 做成交推动。</li></ul>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="time-col">时间</th>
+                  <th>这一段在做什么</th>
+                  <th>具体发生了什么</th>
+                  <th>为什么这一段有卖点</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+          <td class="time-col">0.0s-7.0s</td>
+          <td>authority hook + frozen squeeze</td>
+          <td>字幕先说 `the high-protein snack kpop idols swear by`，视觉上同时挤出冻过的内容物。</td>
+          <td>这让 authority 和 snackability 在同一秒成立。</td>
+        </tr>
+        
+        <tr>
+          <td class="time-col">14.0s-33.0s</td>
+          <td>not heavy + prep easy + crunch</td>
+          <td>讲 21-22g protein / 150-156 calories / keeps you full without feeling heavy，再演示倒奶、摇袋、crunchy balls。</td>
+          <td>把理性和感官证据一口气补齐，告诉你它不是纯 gimmick。</td>
+        </tr>
+        
+        <tr>
+          <td class="time-col">34.0s-106.0s</td>
+          <td>frozen dessert + Olive Young close</td>
+          <td>展示 freezer hack、像 dessert 的口感、zero chalky aftertaste，最后接 `Olive Young No.1` 和 TikTok Shop sale。</td>
+          <td>把欲望、口感 objection、市场权威和 CTA 收在一条线里。</td>
+        </tr>
+        </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+</body>
+</html>

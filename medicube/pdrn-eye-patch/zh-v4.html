@@ -73,7 +73,7 @@
       color: var(--muted);
       margin: 0;
     }
-    .summary-band, .family-board {
+    .summary-band, .key-actions-board, .family-board {
       margin-bottom: 18px;
       padding: 18px;
     }
@@ -90,6 +90,69 @@
     }
     .summary-cell h3 { font-size: 15px; margin-bottom: 8px; }
     .summary-cell p, .summary-cell li { font-size: 14px; }
+    .key-actions-intro {
+      max-width: 980px;
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 15px;
+    }
+    .key-action-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .key-action-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+    }
+    .key-action-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .key-action-head h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+    .key-action-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .key-action-frame-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .key-action-frame {
+      margin: 0;
+      display: grid;
+      gap: 6px;
+    }
+    .key-action-frame img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #f1ece8;
+      display: block;
+    }
+    .key-action-frame figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .key-action-frame a {
+      color: var(--accent);
+      text-decoration: none;
+    }
     .family-top { display: grid; gap: 16px; }
     .family-grid {
       display: grid;
@@ -352,7 +415,10 @@
     .lego-step { width: 90px; white-space: nowrap; }
     .borrow-section { margin-bottom: 18px; }
     @media (max-width: 1180px) {
-      .hero-top, .summary-grid, .video-layout, .family-summary, .family-grid, .family-insights, .rule-grid, .playground-compare-grid, .idea-mini-grid, .borrow-summary {
+      .hero-top, .summary-grid, .key-action-grid, .video-layout, .family-summary, .family-grid, .family-insights, .rule-grid, .playground-compare-grid, .idea-mini-grid, .borrow-summary {
+        grid-template-columns: 1fr;
+      }
+      .key-action-frame-grid {
         grid-template-columns: 1fr;
       }
       .video-header { flex-direction: column; }
@@ -382,6 +448,190 @@
           <div class='summary-cell'><h3>买前会担心什么</h3><ul><li>现在最明确的负面点是：贴完有点黏，有残留。</li><li>这也解释了为什么 winner 一直在补：不会滑、贴得住、很润但还能正常做事。</li><li>评论里也会提 60 片更划算，所以量和价格感要讲清楚。</li><li>很多人还会问到底贴哪里、早上还是晚上贴、能不能搭 eye cream。</li></ul></div>
         </div>
       </article>
+    </section>
+
+    <section class="card key-actions-board">
+      <div class="eyebrow">先看重复出现的关键动作</div>
+      <h2>这些动作在高卖视频里反复出现</h2>
+      <p class="key-actions-intro">我现在还没有接到 Medicube 的逐秒 CTR / CTOR 后台导出，所以这里不是“哪一秒点击最高”的硬对照板。这里先做的是 Top 15 spoken winners 里反复出现的前段动作。你一眼先看这些动作，就更容易明白大家到底在重复拍什么。</p>
+      <div class="key-action-grid">
+        
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>先拍罐子里很润的那一下</h3>
+        <span class="meta-badge">4/15 条 spoken winners</span>
+      </div>
+      <p>这一下会让人马上觉得它不是普通眼贴，而是精华很多、看起来更值钱的那种。</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7611448594528341279_0008.jpg" alt="先拍罐子里很润的那一下 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@leigha_chrstine/video/7611448594528341279" target="_blank" rel="noreferrer">@leigha_chrstine</a>
+                <span>0.8s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613938667698146574_0008.jpg" alt="先拍罐子里很润的那一下 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@susanluckhardt/video/7613938667698146574" target="_blank" rel="noreferrer">@susanluckhardt</a>
+                <span>0.8s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7611563695285603614_0048.jpg" alt="先拍罐子里很润的那一下 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@sydneyyallisonn/video/7611563695285603614" target="_blank" rel="noreferrer">@sydneyyallisonn</a>
+                <span>4.8s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>贴法先做得不一样</h3>
+        <span class="meta-badge">5/15 条 spoken winners</span>
+      </div>
+      <p>眉上、上眼皮、法令纹这些位置一出来，人很快就知道这不是普通贴片，而是一个更具体的用法。</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613798295839739150_0008.jpg" alt="贴法先做得不一样 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">@kctiktokshopfinds</a>
+                <span>0.8s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613874676242107679_0060.jpg" alt="贴法先做得不一样 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@therealandeerae/video/7613874676242107679" target="_blank" rel="noreferrer">@therealandeerae</a>
+                <span>6.0s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7611563695285603614_0150.jpg" alt="贴法先做得不一样 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@sydneyyallisonn/video/7611563695285603614" target="_blank" rel="noreferrer">@sydneyyallisonn</a>
+                <span>15.0s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>先把问题拍出来</h3>
+        <span class="meta-badge">6/15 条 spoken winners</span>
+      </div>
+      <p>高卖视频不是先背成分，而是先让人看见 bags、texture、hooded eye、morning puffiness 这种具体烦恼。</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613938667698146574_0038.jpg" alt="先把问题拍出来 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@susanluckhardt/video/7613938667698146574" target="_blank" rel="noreferrer">@susanluckhardt</a>
+                <span>3.8s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613874676242107679_0008.jpg" alt="先把问题拍出来 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@therealandeerae/video/7613874676242107679" target="_blank" rel="noreferrer">@therealandeerae</a>
+                <span>0.8s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7610525695340514591_0056.jpg" alt="先把问题拍出来 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@joliolioliver/video/7610525695340514591" target="_blank" rel="noreferrer">@joliolioliver</a>
+                <span>5.6s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>把 patch 压上去，证明它不会滑</h3>
+        <span class="meta-badge">2/15 条 spoken winners</span>
+      </div>
+      <p>这类动作虽然没有前几类多，但一旦出现就很值钱，因为它直接在拆评论区最真实的担心。</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7612139848618560798_0230.jpg" alt="把 patch 压上去，证明它不会滑 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@cicihaskill/video/7612139848618560798" target="_blank" rel="noreferrer">@cicihaskill</a>
+                <span>23.0s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7612139848618560798_0270.jpg" alt="把 patch 压上去，证明它不会滑 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@cicihaskill/video/7612139848618560798" target="_blank" rel="noreferrer">@cicihaskill</a>
+                <span>27.0s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7610401812423642399_0340.jpg" alt="把 patch 压上去，证明它不会滑 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@mandirecommends/video/7610401812423642399" target="_blank" rel="noreferrer">@mandirecommends</a>
+                <span>34.0s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>before 图或拿掉以后给结果</h3>
+        <span class="meta-badge">5/15 条 spoken winners</span>
+      </div>
+      <p>结果不能只靠嘴说。高卖视频会直接给 before、拿掉以后、或者现在看起来更平更亮的画面。</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613798295839739150_0045.jpg" alt="before 图或拿掉以后给结果 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">@kctiktokshopfinds</a>
+                <span>4.5s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7611664488957316366_0450.jpg" alt="before 图或拿掉以后给结果 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@celinesfavoritefinds/video/7611664488957316366" target="_blank" rel="noreferrer">@celinesfavoritefinds</a>
+                <span>45.0s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7610558301666807070_0310.jpg" alt="before 图或拿掉以后给结果 frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@theresebyron/video/7610558301666807070" target="_blank" rel="noreferrer">@theresebyron</a>
+                <span>31.0s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+      </div>
     </section>
 
     

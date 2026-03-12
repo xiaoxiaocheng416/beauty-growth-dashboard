@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicube Reports</title>
+  <style>
+    :root {
+      --bg: #f4f1ef;
+      --card: #fffaf7;
+      --text: #1f1714;
+      --muted: #6e625b;
+      --line: #dccfc6;
+      --accent: #e56f93;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: radial-gradient(circle at top, #fff7fb 0%, var(--bg) 42%, #efe7e3 100%);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 56px 20px 72px;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 0.94;
+    }
+    .sub {
+      max-width: 640px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .card {
+      background: color-mix(in srgb, var(--card) 88%, white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 48px rgba(58, 36, 25, 0.07);
+    }
+    .report-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .report-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .report-title {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+    .report-desc {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .report-cta {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="eyebrow">Weekly Chengbeta</div>
+    <h1>Medicube</h1>
+    <p class="sub">按品牌归档的静态分析页。当前先上线眼贴这一个 SKU，后面这个目录可以继续挂别的 Medicube report。</p>
+
+    <section class="card">
+      <a class="report-link" href="./pdrn-eye-patch/zh.html">
+        <div class="report-meta">
+          <span>Report</span>
+          <span>Chinese</span>
+          <span>Eye Patch</span>
+        </div>
+        <h2 class="report-title">PDRN Pink Caffeine Collagen Eye Patch</h2>
+        <p class="report-desc">Fullight-style winning pattern report，包含 top summary、pattern family board、代表作精拆、compare / playground 和 copy handoff。</p>
+        <div class="report-cta">Open report -></div>
+      </a>
+    </section>
+  </main>
+</body>
+</html>

@@ -81,6 +81,11 @@
       color: var(--accent);
       font-weight: 700;
       font-size: 14px;
+      margin: 8px 0 0;
+    }
+    .report-cta a {
+      color: inherit;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -91,16 +96,15 @@
     <p class="sub">按品牌归档的静态分析页。当前先上线眼贴这一个 SKU，后面这个目录可以继续挂别的 Medicube report。</p>
 
     <section class="card">
-      <a class="report-link" href="./pdrn-eye-patch/zh.html">
-        <div class="report-meta">
-          <span>Report</span>
-          <span>Chinese</span>
-          <span>Eye Patch</span>
-        </div>
-        <h2 class="report-title">PDRN Pink Caffeine Collagen Eye Patch</h2>
-        <p class="report-desc">Fullight-style winning pattern report，包含 top summary、pattern family board、代表作精拆、compare / playground 和 copy handoff。</p>
-        <div class="report-cta">Open report -></div>
-      </a>
+      <div class="report-meta">
+        <span>Report</span>
+        <span>Chinese</span>
+        <span>Eye Patch</span>
+      </div>
+      <h2 class="report-title">PDRN Pink Caffeine Collagen Eye Patch</h2>
+      <p class="report-desc">同一条 SKU 现在有两个版本。`v1` 是当前线上老版，`v2` 是这轮做过去重和白话收口后的新版。</p>
+      <p class="report-cta"><a href="./pdrn-eye-patch/zh.html">Open v1 -></a></p>
+      <p class="report-cta"><a href="./pdrn-eye-patch/zh-v2.html">Open v2 -></a></p>
     </section>
   </main>
 </body>

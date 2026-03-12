@@ -1,0 +1,1237 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicube Winning Pattern Report v3</title>
+  <style>
+    :root {
+      --bg: #f5eee9;
+      --panel: rgba(255, 251, 246, 0.97);
+      --ink: #2c221f;
+      --muted: #6a5b56;
+      --line: #e0d0c6;
+      --accent: #b64d63;
+      --soft: #fdecef;
+      --soft-2: #f8f2e9;
+      --soft-3: #f3f8f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Iowan Old Style", serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 125, 152, 0.16), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(110, 151, 146, 0.14), transparent 18%),
+        linear-gradient(180deg, #efe4de 0%, var(--bg) 260px);
+      line-height: 1.45;
+    }
+    .wrap { max-width: 1420px; margin: 0 auto; padding: 28px 22px 72px; }
+    .hero-top {
+      display: grid;
+      grid-template-columns: 380px minmax(0, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .card, .video-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(78, 52, 29, 0.06);
+    }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.08; }
+    h1 { font-size: 42px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 20px; }
+    p, li, td, th { font-size: 16px; }
+    ul { margin: 0; padding-left: 20px; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .hero-product {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-product img {
+      width: 100%;
+      max-width: 430px;
+      align-self: center;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: block;
+    }
+    .hero-caption {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .summary-band, .family-board {
+      margin-bottom: 18px;
+      padding: 18px;
+    }
+    .summary-grid, .family-summary, .family-insights, .borrow-summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .summary-cell {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: #fffaf3;
+      border: 1px solid var(--line);
+    }
+    .summary-cell h3 { font-size: 15px; margin-bottom: 8px; }
+    .summary-cell p, .summary-cell li { font-size: 14px; }
+    .family-top { display: grid; gap: 16px; }
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .family-video-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .family-stage, .family-label, .mini-kicker, .note-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .family-video-shell video, .compare-card-video video, .borrow-video-shell video {
+      width: 100%;
+      max-height: 280px;
+      border-radius: 14px;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .family-opening {
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .family-copy p { margin: 0 0 10px; font-size: 14px; }
+    .family-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .family-link {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--soft);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .meta-badge {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 13px;
+    }
+    .section-intro {
+      margin: 8px 0 18px;
+      padding: 0 6px;
+    }
+    .video-card { margin-bottom: 18px; padding: 20px; }
+    .video-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .creator-handle { color: var(--muted); font-size: 0.82em; font-weight: 500; }
+    .mini-meta a, .family-link, .borrow-link a { color: var(--accent); text-decoration: none; }
+    .video-layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .video-left {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+    }
+    .video-shell video {
+      width: 100%;
+      max-height: 640px;
+      border-radius: 18px;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .segment-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 14px;
+    }
+    .seg-btn, .time-link {
+      cursor: pointer;
+      border: 1px solid rgba(182, 77, 99, 0.24);
+      background: var(--soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font: inherit;
+    }
+    .seg-btn {
+      padding: 9px 12px;
+      font-size: 13px;
+    }
+    .time-link {
+      width: 100%;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 13px;
+    }
+    .time-end { color: var(--muted); font-size: 11px; }
+    .insight-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .insight-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffaf3;
+      padding: 14px;
+    }
+    .hook-note { background: linear-gradient(135deg, #fff3f5 0%, #fffaf2 100%); }
+    .strong { background: linear-gradient(135deg, #fff3f5 0%, #f5fbfb 100%); }
+    .fact-row {
+      display: grid;
+      grid-template-columns: 106px 1fr;
+      gap: 10px;
+      padding: 7px 0;
+      border-top: 1px solid rgba(224, 208, 198, 0.85);
+    }
+    .fact-row:first-of-type { border-top: 0; }
+    .fact-label { color: var(--muted); font-size: 13px; }
+    .fact-value { font-size: 14px; }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffefb;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 920px;
+    }
+    th, td {
+      padding: 14px 16px;
+      vertical-align: top;
+      border-top: 1px solid var(--line);
+    }
+    th {
+      border-top: 0;
+      text-align: left;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: #fbf6ef;
+    }
+    .time-col { width: 110px; }
+    .what-col { width: 48%; }
+    .logic-col { width: 28%; }
+    .beat-name {
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .sell-head {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .sell-why {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .playground {
+      margin-bottom: 18px;
+      padding: 20px;
+    }
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .rule-card, .idea-mini {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fffaf3;
+    }
+    .playground-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .compare-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fffaf3;
+      padding: 16px;
+    }
+    .compare-card-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .point-row {
+      display: grid;
+      grid-template-columns: 126px 1fr;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(224, 208, 198, 0.85);
+    }
+    .point-row span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .point-row p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .point-row.strong {
+      background: linear-gradient(135deg, rgba(253, 236, 239, 0.72) 0%, rgba(243, 248, 248, 0.72) 100%);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .idea-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .idea-mini-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .lego-section { margin-top: 18px; }
+    .lego-details { border-top: 1px solid var(--line); padding-top: 14px; }
+    .lego-details summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 700;
+      list-style: none;
+    }
+    .lego-details summary::-webkit-details-marker { display: none; }
+    .lego-details summary::after {
+      content: "展开";
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-left: 10px;
+    }
+    .lego-details[open] summary::after { content: "收起"; }
+    .lego-stack { display: grid; gap: 14px; margin-top: 14px; }
+    .lego-table th, .lego-table td { font-size: 14px; }
+    .lego-step { width: 90px; white-space: nowrap; }
+    .borrow-section { margin-bottom: 18px; }
+    @media (max-width: 1180px) {
+      .hero-top, .summary-grid, .video-layout, .family-summary, .family-grid, .family-insights, .rule-grid, .playground-compare-grid, .idea-mini-grid, .borrow-summary {
+        grid-template-columns: 1fr;
+      }
+      .video-header { flex-direction: column; }
+      .video-left { position: static; }
+      .point-row, .fact-row { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero-top">
+      <article class="card hero-product">
+        <div class="eyebrow">产品图</div>
+        <h1>Medicube PDRN Pink Caffeine Collagen Eye Patch</h1>
+        <img src="assets/medicube_pdrn_eye_patch_packshot.png" alt="Medicube PDRN Eye Patch hero">
+        <p class="hero-caption">hero 已切成产品 packshot，避免顶部继续像视频缩略图。</p>
+      </article>
+      <article class="card summary-band">
+        <div class="eyebrow">先看这 6 点</div>
+        <div class="summary-grid">
+          <div class='summary-cell'><h3>核心判断</h3><p>前几秒要让人马上看懂 3 件事：眼下哪里有问题、这片怎么贴、它为什么不像普通眼贴。这样观众才会觉得这不是随手保养，而是一个更对的办法。</p></div>
+          <div class='summary-cell'><h3>产品快照</h3><p>这是一盒粉色眼贴。真正让人下单的，不是成分名字本身，而是它看起来很润、贴上去不乱滑、早上很好用，所以会更像一个正经眼周护理。60 片也让它更好下单。</p></div>
+          <div class='summary-cell'><h3>谁会买</h3><p>会买的人，通常已经知道自己眼下有问题，正在找一个更快、更省事、看起来更靠谱的办法。</p><ul><li>眼下急救</li><li>妆前</li><li>在意质地</li><li>先看怎么用</li></ul></div>
+          <div class='summary-cell'><h3>拍的时候别丢</h3><ul><li>前几秒就拍到产品，不要只剩嘴上在说。</li><li>一定拍清楚贴的位置，不然人不会觉得自己也能照着做。</li><li>一定拍出很润或不会滑，不然它会看起来像普通贴片。</li><li>先说问题，再说品牌和成分。</li></ul></div>
+          <div class='summary-cell'><h3>为什么买</h3><ul><li>大家买的是眼下急救，不是先买成分。</li><li>大家想看到的是去肿、变亮、看起来没那么累，因为这才是她们马上在乎的。</li><li>最自然的使用场景是早上，不是复杂夜间护理。</li><li>60 片这个量，也会帮人更快下单，因为会显得更划算。</li></ul></div>
+          <div class='summary-cell'><h3>买前担心什么</h3><ul><li>现在最明确的负面点是：贴完有点黏，有残留。</li><li>所以视频里一定要补：不会滑、贴着能做事、怎么贴。</li><li>很多人也会问能不能贴上眼皮、法令纹，早上还是晚上贴。</li><li>这版先看 3 类视频，再看 4 条精拆。</li></ul></div>
+        </div>
+      </article>
+    </section>
+
+    
+    <section class="card family-board" id="problem-led-family">
+      <div class="eyebrow">先看这一类视频</div>
+      <h2>先说眼下哪里有问题</h2>
+      <div class="family-top">
+        <div class="family-summary">
+          <div class='summary-cell'><h3>这类视频在干嘛</h3><p>先说眼下哪里不对，再马上把眼贴贴上去。人一下就会觉得：这不是普通保湿贴片，是专门来救眼下的。</p></div>
+          <div class='summary-cell'><h3>它为什么能卖</h3><ul><li>先让人觉得：她说的就是我。</li><li>再让人觉得：这片像是专门治这个的。</li><li>最后用结果感、质地和 60 片把下单门槛压低。</li></ul></div>
+        </div>
+        <div class="family-grid">
+          
+            <article class="family-video-card">
+              <div class="family-stage">异常贴法</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7613798295839739150.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 973,463</span>
+                <span class="meta-badge">日期 2026-03-05</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">Why is it anyone wearing these have eye bags or textures around their eye area?</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>用怪贴法和 before 图，把问题一下说实。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">旧办法太麻烦</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7611598219314826509.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 512,652</span>
+                <span class="meta-badge">日期 2026-02-28</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">I don&#x27;t have to cut these in half anymore and put them under my eyes.</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>先说旧办法麻烦，再让专门的眼贴显得更对。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@rachelcbee/video/7611598219314826509" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">先拍很润的质地</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7613938667698146574.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 207,955</span>
+                <span class="meta-badge">日期 2026-03-06</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">Have you ever seen eye patches that are this juicy?</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>保留问题切入，但把很润这件事拍成主卖点。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@susanluckhardt/video/7613938667698146574" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+        </div>
+      </div>
+      <div class="family-insights">
+        <div class='summary-cell'><h3>人为什么会信</h3><ul><li>先说问题，观众才会觉得这条和自己有关。</li><li>前几秒就看到眼贴或罐子，东西才不会只停在嘴上。</li><li>最后都在收一个意思：这片不是普通贴片，是真的在管眼下这件事。</li></ul></div><div class='summary-cell'><h3>下一条先测什么</h3><ul><li>先测开头，不先改后半段。</li><li>先试这 3 种开头：怪贴法、旧办法太麻烦、先拍很润。</li><li>问题一定要具体，不要只写去肿、提亮这种空话。</li></ul></div>
+      </div>
+    </section>
+    
+    <section class="card family-board" id="new-drop-family">
+      <div class="eyebrow">这类更吃品牌</div>
+      <h2>Medicube 终于出了眼贴</h2>
+      <div class="family-top">
+        <div class="family-summary">
+          <div class='summary-cell'><h3>这类视频在干嘛</h3><p>这类视频不用先教人 Medicube 是谁。它在卖的是：Medicube 终于出了这个，而且看起来很新、很润、很像一个值得马上试的新品。</p></div>
+          <div class='summary-cell'><h3>它为什么能卖</h3><ul><li>先借 Medicube 这层现成信任。</li><li>再用很润的质地，让新品看起来更贵、更像真的有效。</li><li>最后再用缺货感把犹豫的人往前推一步。</li></ul></div>
+        </div>
+        <div class="family-grid">
+          
+            <article class="family-video-card">
+              <div class="family-stage">先拍质地</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7611448594528341279.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 1,600,000</span>
+                <span class="meta-badge">日期 2026-02-27</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">Medicube finally gave us under eye patches...</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>先给很润的质地和声音，再讲新品。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@leigha_chrstine/video/7611448594528341279" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">先推赶紧买</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7611411253877165325.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 1,004,628</span>
+                <span class="meta-badge">日期 2026-02-27</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">Add to cart. You&#x27;re gonna wanna add to cart before they sell out.</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>把新品和快没货连到一起，走最短成交路线。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@confettiletsgo1/video/7611411253877165325" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">顺手带出套组</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7611679909806738718.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 85,600</span>
+                <span class="meta-badge">日期 2026-02-28</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">Medicube finally dropped their PDRN eye patches that everyone&#x27;s been waiting for.</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>保留 finally dropped，但更早带出清凉感和一起买的机会。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@kellylandsman/video/7611679909806738718" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+        </div>
+      </div>
+      <div class="family-insights">
+        <div class='summary-cell'><h3>人为什么会信</h3><ul><li>很早就会提 Medicube，因为信任本来就在。</li><li>很早就会说 finally、new、just dropped，因为它卖的是“终于有了”。</li><li>如果没有质地近景，这类视频就只剩 announcement，不够想买。</li></ul></div><div class='summary-cell'><h3>下一条先测什么</h3><ul><li>保留 Medicube 这层信任，不要磨成普通护肤开场。</li><li>先试：先拍质地，还是先讲新品来了。</li><li>如果要更能转，先补怎么用，不是补更多成分话术。</li></ul></div>
+      </div>
+    </section>
+    
+    <section class="card family-board" id="method-family">
+      <div class="eyebrow">这类更偏方法</div>
+      <h2>教人怎么贴、贴哪里</h2>
+      <div class="family-top">
+        <div class="family-summary">
+          <div class='summary-cell'><h3>这类视频在干嘛</h3><p>这类视频不是只说它好，而是直接教人怎么贴。位置和顺序越清楚，人越会觉得：这不是随便一片眼贴，而是一个更对的做法。</p></div>
+          <div class='summary-cell'><h3>它为什么能卖</h3><ul><li>先说你哪里做错了，或你现在最烦哪里。</li><li>马上拍清楚贴的位置，让人知道自己照着做就行。</li><li>再把不会滑、贴多久、早晚怎么用说清楚，观众才敢买。</li></ul></div>
+        </div>
+        <div class="family-grid">
+          
+            <article class="family-video-card">
+              <div class="family-stage">搭眼霜一起用</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7612139848618560798.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 972,400</span>
+                <span class="meta-badge">日期 2026-03-01</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">If you aren&#x27;t pairing your eye masks with your eye cream, you&#x27;re doing yourself a disservice.</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>把一起用讲成更对的做法，不是硬加购。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@cicihaskill/video/7612139848618560798" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">上眼皮也能贴</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7613874676242107679.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 244,550</span>
+                <span class="meta-badge">日期 2026-03-06</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">Really not feeling like going in and having it cut out quite yet.</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>把 hooded eye 这个问题拍得很具体，位置感最强。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@therealandeerae/video/7613874676242107679" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">不只贴眼下</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7611563695285603614.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">播放 206,100</span>
+                <span class="meta-badge">日期 2026-02-28</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening</div>
+                <p class="family-opening">Look at all that serum goodness.</p>
+                <div class="family-label">这次主要改了什么</div>
+                <p>除了眼下，还把法令纹也拉进来。</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@sydneyyallisonn/video/7611563695285603614" target="_blank" rel="noreferrer">原始 TikTok</a>
+              </div>
+            </article>
+            
+        </div>
+      </div>
+      <div class="family-insights">
+        <div class='summary-cell'><h3>人为什么会信</h3><ul><li>很快就会拍到贴在哪里，人不用自己猜。</li><li>会把早上、晚上、妆前或先后顺序说清楚。</li><li>它更像在教一个方法，不只是说这个牌子好。</li></ul></div><div class='summary-cell'><h3>下一条先测什么</h3><ul><li>先测位置演示，不先补成分。</li><li>把不会滑放更前面，因为这正是很多人最担心的。</li><li>套组逻辑单独开，不要混进大盘视频。</li></ul></div>
+      </div>
+    </section>
+    
+
+    <section class="section-intro">
+      <div class="eyebrow">4 条代表作精拆</div>
+      <h2>再拆这 4 条最值得学的代表作</h2>
+    </section>
+
+    
+    <article class="video-card" id="video-detail-7613798295839739150">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">怪贴法 + before 图 + 真的有用</div>
+          <h3>7613798295839739150 <span class="creator-handle">@kctiktokshopfinds</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">原始 TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7613798295839739150" controls preload="metadata" src="videos/7613798295839739150.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $17,492.1</span><span class='meta-badge'>订单 879</span><span class='meta-badge'>播放 973,463</span><span class='meta-badge'>日期 2026-03-05</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7613798295839739150' data-start='0.00'>0s-4s · 怪贴法 + 具体问题</button><button class='seg-btn' data-target='video-7613798295839739150' data-start='3.54'>4s-6s · before 图</button><button class='seg-btn' data-target='video-7613798295839739150' data-start='6.18'>6s-14s · 成分 + 质地</button><button class='seg-btn' data-target='video-7613798295839739150' data-start='14.46'>14s-23s · 60 片 + 下单</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note"><div class="note-label">开头为什么能停人</div><p>人会停下，不只是因为这句问话，而是因为她先让你觉得这个贴法很不一样，再让你觉得她说的就是你的问题。</p></div>
+            <div class="insight-card strong"><div class="note-label">这条最值钱的地方</div><p>最值钱的不是贴眉毛本身，而是它让这片眼贴一下子从“普通保湿贴片”变成“像是专门治这个的东西”。</p></div>
+            <div class="insight-card"><div class="note-label">这条在卖给谁</div><p>眼下浮肿、暗沉、纹理明显，已经在找更靠谱做法的人。</p></div>
+            <div class="insight-card"><div class="note-label">别删什么</div><p>别删怪贴法、before 图和“这片是真的在管眼下”这层感觉。</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">按有意义的 beat 来拆</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>时间</th><th>这一段发生了什么</th><th>这一段为什么能卖</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="0.00">0.0s<br><span class="time-end">3.5s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">先用怪贴法把人停住</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">把粉色眼贴贴到眉上和眼下。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">I was influenced, &amp; they work 👁️</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">Why is it anyone wearing these have eye bags or textures around their eye area?</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这段不是只在问问题，它先用怪贴法把眼贴拍得很不一样。</div>
+                <div class="sell-why">人先觉得这不是普通眼贴，才会继续听她到底在说什么问题。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="3.54">3.5s<br><span class="time-end">6.2s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">before 图把问题拍实</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">画面插入一张 before 图，能看到疲态和纹理。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">I was influenced, &amp; they work 👁️</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">These are what my eyes look like in the morning about 6 months ago.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">before 图把这件事从“听起来像有用”变成“看起来像真的在管这个问题”。</div>
+                <div class="sell-why">没有这张图，观众知道她在卖眼贴，但不知道她到底在救什么。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="6.18">6.2s<br><span class="time-end">14.5s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">边说成分，边拍质地</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">拍罐子和里面很润的眼贴质地。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">medicube PDRN PINK CAFFEINE COLLAGEN EYE PATCH</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">These Korean skincare eye patches by medicube are packed full of PDRN, collagen and caffeine. It&#x27;s gonna be great for brightening, tightening and depuffing.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这里不是在上成分课，而是在让这片眼贴看起来更像一个正经护理产品。</div>
+                <div class="sell-why">她一边说成分，一边让人看到很润的质地，所以这东西会显得更认真、更像真的有效。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="14.46">14.5s<br><span class="time-end">23.3s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">用量和结果一起收尾</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">拿起眼贴，拍罐子里的量，再拍贴完后的眼下。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">You get 60 in a pack... if you&#x27;ve been on the hunt for ones that actually work, I&#x27;ll have these ones down below for you.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">最后不是空喊下单，而是把“值得买”说完整。</div>
+                <div class="sell-why">60 片让人觉得更划算，“真的有用”让人觉得终于找到对的那种了。</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <article class="video-card" id="video-detail-7611448594528341279">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">很润的质地 + 终于出了 + 日常抗老</div>
+          <h3>7611448594528341279 <span class="creator-handle">@leigha_chrstine</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@leigha_chrstine/video/7611448594528341279" target="_blank" rel="noreferrer">原始 TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7611448594528341279" controls preload="metadata" src="videos/7611448594528341279.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $16,696.1</span><span class='meta-badge'>订单 839</span><span class='meta-badge'>播放 1,600,000</span><span class='meta-badge'>日期 2026-02-27</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7611448594528341279' data-start='0.00'>0s-5s · 很润的开头 + 新品</button><button class='seg-btn' data-target='video-7611448594528341279' data-start='4.70'>5s-11s · 贴法 + 熟龄语境</button><button class='seg-btn' data-target='video-7611448594528341279' data-start='10.80'>11s-17s · 成分让它更像真的</button><button class='seg-btn' data-target='video-7611448594528341279' data-start='16.70'>17s-25s · 品牌信任 + 收尾</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note"><div class="note-label">开头为什么能停人</div><p>人停下，不是因为 finally 这句话本身，而是因为一开头就看见它很润、很新，看起来不像普通新品开箱。</p></div>
+            <div class="insight-card strong"><div class="note-label">这条最值钱的地方</div><p>这条最值钱的地方，是它不只在说“Medicube 出新品了”，而是在说“Medicube 出了一个看起来就很好的新品”。</p></div>
+            <div class="insight-card"><div class="note-label">这条在卖给谁</div><p>已经认识 Medicube，也愿意为熟龄眼周护理花钱的人。</p></div>
+            <div class="insight-card"><div class="note-label">别删什么</div><p>别删很润的罐子镜头、湿润声音和 finally 这层“终于等到”的感觉。</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">按有意义的 beat 来拆</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>时间</th><th>这一段发生了什么</th><th>这一段为什么能卖</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="0.00">0.0s<br><span class="time-end">4.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">一开头就要近、润、好看</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">近拍粉色眼贴倒回罐子里。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">NEW Medicube PDRN Pink Caffeine Collagen Eye Patches</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">Medicube finally gave us under eye patches, and these are soaked with PDRN and caffeine.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">湿润的挤压声</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">新品要站住，先得让人看见它不是随便出的东西。</div>
+                <div class="sell-why">如果只有 finally，没有这层质地，观众会知道它是新的，但不会特别想买。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="4.70">4.7s<br><span class="time-end">10.8s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">把它放进日常熟龄护理里</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">用小勺把眼贴贴到眼下和法令纹位置。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">The first signs of aging...</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">Our skin is the first place to show signs of aging.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这里不是教程，它是在给这片眼贴一个更像“正经护理”的位置。</div>
+                <div class="sell-why">她把它放进日常抗老，不是只讲放松享受，所以新品会显得更有分量。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="10.80">10.8s<br><span class="time-end">16.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">成分不是主角，只是让它更认真</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">继续贴眼贴，屏幕上同时出现成分列表。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">Ingredient list</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">The skincare that you use on a daily basis has a bigger impact than you think.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">成分在这里不是主角，而是在帮这片眼贴看起来更靠谱。</div>
+                <div class="sell-why">观众未必会记住每个词，但会觉得这不是随便做做的新品。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="16.70">16.7s<br><span class="time-end">25.1s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">最后靠品牌信任收</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">拿着罐子，对着镜头拍清标签。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">There&#x27;s a reason why even the ladies in their 50s swear by medicube... I&#x27;m gonna drop the link for you right on this video.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">最后靠信任收，不靠硬催单。</div>
+                <div class="sell-why">这类品牌型视频，真正让人点进去的，往往不是催得多凶，而是觉得这个牌子做这个应该不会差。</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <article class="video-card" id="video-detail-7612139848618560798">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">你做错了 + 眼霜一起用 + 不会滑</div>
+          <h3>7612139848618560798 <span class="creator-handle">@cicihaskill</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@cicihaskill/video/7612139848618560798" target="_blank" rel="noreferrer">原始 TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7612139848618560798" controls preload="metadata" src="videos/7612139848618560798.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $7,343.1</span><span class='meta-badge'>订单 369</span><span class='meta-badge'>播放 972,400</span><span class='meta-badge'>日期 2026-03-01</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7612139848618560798' data-start='0.00'>0s-5s · 你做错了</button><button class='seg-btn' data-target='video-7612139848618560798' data-start='4.98'>5s-22s · 先上眼霜，再说一起用</button><button class='seg-btn' data-target='video-7612139848618560798' data-start='22.14'>22s-32s · 不会滑 + 贴住</button><button class='seg-btn' data-target='video-7612139848618560798' data-start='32.10'>32s-46s · 结果 + 年龄代入</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note"><div class="note-label">开头为什么能停人</div><p>这条能停人，是因为它不是只说你做错了，而是马上把更对的做法演出来，让人有一种“我现在就能学会”的感觉。</p></div>
+            <div class="insight-card strong"><div class="note-label">这条最值钱的地方</div><p>它不是在硬卖套组，而是在把两样东西拍成一个更对的做法，所以观众更不容易反感加购。</p></div>
+            <div class="insight-card"><div class="note-label">这条在卖给谁</div><p>已经有护肤习惯，愿意为了更对的做法多买一步的人。</p></div>
+            <div class="insight-card"><div class="note-label">别删什么</div><p>别删你做错了、先上眼霜、不会滑和最后结果，这几步一起才像一个完整做法。</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">按有意义的 beat 来拆</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>时间</th><th>这一段发生了什么</th><th>这一段为什么能卖</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="0.00">0.0s<br><span class="time-end">5.0s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">一开头就演更对的做法</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">把眼贴直接贴在粉色眼霜上面。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">You&#x27;re probably doing this wrong with your eye masks</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">If you aren&#x27;t pairing your eye masks with your eye cream, you&#x27;re doing yourself a disservice.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">Direct spoken voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这段好，不只是因为它说你做错了，而是因为它立刻给了一个更好的答案。</div>
+                <div class="sell-why">观众不会只觉得被说教，还会觉得自己马上学到了一招。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="4.98">5.0s<br><span class="time-end">22.1s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">先讲做法，再讲套组</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">先拿起产品，再把厚厚的眼霜涂到眼下。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">Medicube just launched these... It pairs perfectly with the PDRN Peptide Eye Cream. We&#x27;re gonna apply that first.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这里最重要的是顺序。</div>
+                <div class="sell-why">先讲做法，再讲一起用，观众会觉得这是在教方法，不是在硬卖两样东西。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="22.14">22.1s<br><span class="time-end">32.1s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">把最真实的担心拆掉</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">把眼贴贴到眼霜上，再把它按平。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">These ones are not gonna slide down your face. We&#x27;re gonna seal that eye cream in...</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这一步在处理最真实的问题：会不会滑，怎么搭。</div>
+                <div class="sell-why">她不是空讲吸收，而是把最容易让人犹豫的地方直接拍掉。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="32.10">32.1s<br><span class="time-end">45.8s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">先给结果，再说 39 岁</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">揭下眼贴，拍贴完后的眼下状态。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">It&#x27;s been about 20 minutes... as soon as I turned 39, the crows feet started crows feeding.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这段让前面的做法看起来更可信。</div>
+                <div class="sell-why">先有结果，再说 39 岁，观众会更容易相信这不是年轻皮的假象。</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <article class="video-card" id="video-detail-7613874676242107679">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">hooded eye 问题 + 上眼皮贴法 + 先不动手术</div>
+          <h3>7613874676242107679 <span class="creator-handle">@therealandeerae</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@therealandeerae/video/7613874676242107679" target="_blank" rel="noreferrer">原始 TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7613874676242107679" controls preload="metadata" src="videos/7613874676242107679.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $4,338.2</span><span class='meta-badge'>订单 218</span><span class='meta-badge'>播放 244,550</span><span class='meta-badge'>日期 2026-03-06</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7613874676242107679' data-start='0.00'>0s-4s · 先不动手术</button><button class='seg-btn' data-target='video-7613874676242107679' data-start='3.69'>4s-14s · 上下都贴</button><button class='seg-btn' data-target='video-7613874676242107679' data-start='13.67'>14s-32s · 新品 + 早晚怎么用</button><button class='seg-btn' data-target='video-7613874676242107679' data-start='32.43'>32s-54s · 10 分钟会怎么样</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note"><div class="note-label">开头为什么能停人</div><p>人会停下，是因为这句“我还不想去割”一下把问题说重了，让这条视频看起来不是在讲小保养，而是在讲一个真的烦恼。</p></div>
+            <div class="insight-card strong"><div class="note-label">这条最值钱的地方</div><p>这条最值钱的地方，是把眼贴拍成一个很具体的贴法，所以它看起来像个小技巧，不像普通抗老品。</p></div>
+            <div class="insight-card"><div class="note-label">这条在卖给谁</div><p>在意 hooded eye、上眼皮松、妆前提拉的人。</p></div>
+            <div class="insight-card"><div class="note-label">别删什么</div><p>别删 hooded eye 这个问题、上下都贴和 10 分钟这层做法，不然这条就会变普通。</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">按有意义的 beat 来拆</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>时间</th><th>这一段发生了什么</th><th>这一段为什么能卖</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="0.00">0.0s<br><span class="time-end">3.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">先把问题说重</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">用手把上眼皮往上提，给人看她在烦什么。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">Really not feeling like going in and having it cut out quite yet.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这条开头先把问题说重了。</div>
+                <div class="sell-why">她不是先说好处，而是先让人感觉到这个问题有多烦。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="3.69">3.7s<br><span class="time-end">13.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">最值钱的是这个贴法</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">把粉色眼贴贴到上眼皮和下眼皮。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">I do this before I put my makeup on. I take a eye patch that has caffeine in it. Put one on the top, I put one on the bottom.</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">最值钱的不是 caffeine 这个词，是上下都贴这个动作。</div>
+                <div class="sell-why">这一步会让人觉得：原来它还能这么用，它不是只给眼下用的普通眼贴。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="13.67">13.7s<br><span class="time-end">32.4s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">新品是为了这个做法服务</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">近拍罐子，再边按眼贴边说早晚怎么用、能不能搭眼霜。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">These are actually brand new from medicube... I use them in the morning and the night. At night, I usually just put them under my eye, and I put my retinol eye cream under it...</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">轻微拿罐子的声音</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">这里提新品，不是为了热闹。</div>
+                <div class="sell-why">它是在说：她终于找到一个更适合这个问题的工具，而不是又试一个普通产品。</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="32.43">32.4s<br><span class="time-end">53.8s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">把结果说成一个清楚的做法</div>
+                <div class="fact-row"><div class="fact-label">动作 / 视觉</div><div class="fact-value">还贴着眼贴时，指着眼周解释这招会带来什么变化。</div></div>
+                <div class="fact-row"><div class="fact-label">屏幕文字</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">原句口播</div><div class="fact-value">Just leave these on for about 10 minutes, and it really tightens up my skin...</div></div>
+                <div class="fact-row"><div class="fact-label">声音</div><div class="fact-value">口播</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">最后不是讲抽象抗老，而是讲一个很清楚的 10 分钟做法。</div>
+                <div class="sell-why">她把价值锁在妆前提拉和上眼皮变紧这件事上，所以这招会显得更能马上试。</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+
+    <section class="card playground">
+      <div class="eyebrow">下一条怎么搭</div>
+      <h2>把 4 个已验证方向放在一起看，最后只回答一件事：下一条先怎么搭</h2>
+      <p class="muted">先看共同规律，再看每一类视频最值钱的地方。这里不重写脚本，只决定下一条先改哪一块，哪一块先别动。</p>
+
+      <div class="rule-grid">
+        <article class="rule-card"><strong>先赢开头</strong><p>第一秒站不住，后面再好也没人看到。</p></article>
+        <article class="rule-card"><strong>开头不只是一句话</strong><p>画面、口播、字卡、贴法一起上，人才会真的停住。</p></article>
+        <article class="rule-card"><strong>卖点要拍出来</strong><p>最稳的是拍到眼贴、罐子、精华很多、不会滑，因为这些会让人更信。</p></article>
+        <article class="rule-card"><strong>最后要落到怎么用</strong><p>早上用、贴 10 到 20 分钟、怎么搭着用，这些都会让人更敢下单。</p></article>
+      </div>
+
+      <div class="playground-compare-grid">
+        
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>先说清眼下问题</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7613798295839739150.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>为什么会卖</span><p>它能卖，是因为人会先觉得“这说的就是我”，再觉得“这片像是真的在管这个问题”。</p></div>
+        <div class="point-row"><span>第一秒最该看什么</span><p>先看贴法够不够怪，问题够不够具体。</p></div>
+        <div class="point-row"><span>中段最稳的卖点</span><p>中段最稳的是 before 和结果，因为这会让人更信。</p></div>
+        <div class="point-row"><span>结尾为什么能转</span><p>最后用 60 片和“真的有用”收单，因为人会觉得终于找到对的了。</p></div>
+        <div class="point-row strong"><span>下一轮先测</span><p>先测开头的问题和贴法，不先改后半段。</p></div>
+      </div>
+    </article>
+    
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>新品来了，而且看起来很润</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7611448594528341279.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>为什么会卖</span><p>它能卖，不只是因为新品来了，而是因为新品一出来就看起来很像好东西。</p></div>
+        <div class="point-row"><span>第一秒最该看什么</span><p>先看罐子和质地能不能在 5 秒里把人停住。</p></div>
+        <div class="point-row"><span>中段最稳的卖点</span><p>中段只要补日常抗老和认真感，不用讲太深。</p></div>
+        <div class="point-row"><span>结尾为什么能转</span><p>结尾靠信任收，因为这类视频更吃“这个牌子做这个应该不会差”。</p></div>
+        <div class="point-row strong"><span>下一轮先测</span><p>先试质地在前，还是 finally 在前。</p></div>
+      </div>
+    </article>
+    
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>赶紧买，不然会没</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7611411253877165325.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>为什么会卖</span><p>它走最短路：先把人往购物车推，再让人担心晚了就没了。</p></div>
+        <div class="point-row"><span>第一秒最该看什么</span><p>先看催单和产品近景是不是一起出现。</p></div>
+        <div class="point-row"><span>中段最稳的卖点</span><p>中段不用太长，补一个理由就够。</p></div>
+        <div class="point-row"><span>结尾为什么能转</span><p>这类视频靠缺货感，不靠长解释。</p></div>
+        <div class="point-row strong"><span>下一轮先测</span><p>先测催单强度，再测要不要补一个快用理由。</p></div>
+      </div>
+    </article>
+    
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>教你怎么贴才对</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7612139848618560798.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>为什么会卖</span><p>这条不是在硬卖套组，而是在让人觉得“这样搭着用才更对”。</p></div>
+        <div class="point-row"><span>第一秒最该看什么</span><p>先看“你做错了”和正确动作有没有一起出现。</p></div>
+        <div class="point-row"><span>中段最稳的卖点</span><p>中段最稳的是不会滑、怎么搭、先后顺序，因为这些正好在拆犹豫。</p></div>
+        <div class="point-row"><span>结尾为什么能转</span><p>结果和年龄代入，比硬 CTA 更重要。</p></div>
+        <div class="point-row strong"><span>下一轮先测</span><p>先测开头怎么说，再测不会滑放哪里。</p></div>
+      </div>
+    </article>
+    
+      </div>
+
+      <div class="idea-mini-grid">
+        <article class="idea-mini"><div class="idea-mini-title">灵感 1</div><p>把新品视频和问题视频合在一起：先说 Medicube 终于出了，再马上点眼下问题。</p></article>
+        <article class="idea-mini"><div class="idea-mini-title">灵感 2</div><p>把很润的质地借给方法视频：一开始先拍眼霜或眼贴很润。</p></article>
+        <article class="idea-mini"><div class="idea-mini-title">灵感 3</div><p>同一类问题视频，换第一层证据：一版先上 before 图，一版先上不会滑。</p></article>
+        <article class="idea-mini"><div class="idea-mini-title">灵感 4</div><p>同一个大方向，换人群：一版讲普通眼下问题，一版讲上眼皮和熟龄问题。</p></article>
+      </div>
+
+      <div class="lego-section">
+        <details class="lego-details">
+          <summary>展开看怎么搭积木</summary>
+          <div class="lego-stack">
+            
+    <article class="card lego-card">
+      <div class="eyebrow">搭积木区</div>
+      <h3>第 1 类：先说清眼下问题</h3>
+      <p class="muted">先把问题拍具体，再让眼贴看起来像一个更对的办法。</p>
+      <div class="table-wrap">
+        <table class="lego-table">
+          <thead><tr><th class="lego-step">步骤</th><th>这一块负责什么</th><th>尽量别动的</th><th>可以换的变量</th><th>真实句子 / 真实做法</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="lego-step">第 1 步</td>
+              <td>第一秒停住人</td>
+              <td>具体问题 + 明确贴法</td>
+              <td>浮肿、暗沉、纹理、早上肿</td>
+              <td>问题越具体越好</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 2 步</td>
+              <td>马上拍到产品</td>
+              <td>罐子、眼贴、before 图尽早出现</td>
+              <td>before 图先上，还是罐子先上</td>
+              <td>不要让人猜产品长什么样</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 3 步</td>
+              <td>让人觉得它靠谱</td>
+              <td>成分早点说，但别讲太深</td>
+              <td>先说去肿、变亮，还是先说成分</td>
+              <td>成分只是帮忙，不是主角</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 4 步</td>
+              <td>把下单理由收顺</td>
+              <td>60 片、划算、真的有用</td>
+              <td>催单强一点还是弱一点</td>
+              <td>最后别收成空话</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </article>
+    
+    <article class="card lego-card">
+      <div class="eyebrow">搭积木区</div>
+      <h3>第 2 类：Medicube 终于出了眼贴</h3>
+      <p class="muted">先让人觉得 Medicube 终于补上了这块，再用质地把新品拍得很想试。</p>
+      <div class="table-wrap">
+        <table class="lego-table">
+          <thead><tr><th class="lego-step">步骤</th><th>这一块负责什么</th><th>尽量别动的</th><th>可以换的变量</th><th>真实句子 / 真实做法</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="lego-step">第 1 步</td>
+              <td>先说新品来了</td>
+              <td>finally、new、just dropped</td>
+              <td>终于出了、赶紧买、大家等很久了</td>
+              <td>品牌这层信任要保留</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 2 步</td>
+              <td>靠质地停人</td>
+              <td>很润的近景</td>
+              <td>罐子回倒、近拍单片、拉丝感</td>
+              <td>新品要先看起来让人想试</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 3 步</td>
+              <td>让它看起来更认真</td>
+              <td>熟龄护理、日常护理、清凉感</td>
+              <td>更像熟龄护理，还是更像日常保养</td>
+              <td>不要在这里讲太深</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 4 步</td>
+              <td>把下单推一把</td>
+              <td>快没货、点链接、先买到再说</td>
+              <td>缺货感强一点还是弱一点</td>
+              <td>如果要更能转，先补怎么用</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </article>
+    
+    <article class="card lego-card">
+      <div class="eyebrow">搭积木区</div>
+      <h3>第 3 类：教人怎么贴、贴哪里</h3>
+      <p class="muted">把眼贴从单品变成做法，让人看懂怎么用、为什么这样用。</p>
+      <div class="table-wrap">
+        <table class="lego-table">
+          <thead><tr><th class="lego-step">步骤</th><th>这一块负责什么</th><th>尽量别动的</th><th>可以换的变量</th><th>真实句子 / 真实做法</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="lego-step">第 1 步</td>
+              <td>先说哪里做错了</td>
+              <td>你做错了、hooded eye、旧办法太麻烦</td>
+              <td>开头说重一点还是轻一点</td>
+              <td>先让人觉得现在的方法不够对</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 2 步</td>
+              <td>把位置演出来</td>
+              <td>眼下、上眼皮、法令纹、先上眼霜</td>
+              <td>贴哪里、先后顺序</td>
+              <td>方法视频不能只有嘴</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 3 步</td>
+              <td>解决最真实的问题</td>
+              <td>不会滑、贴多久、早上还是晚上</td>
+              <td>清凉、紧一点、早晚顺序</td>
+              <td>评论里的问题要在视频里拆掉</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">第 4 步</td>
+              <td>把结果落到日常里</td>
+              <td>妆前、熟龄问题、一直用</td>
+              <td>鱼尾纹、hooded eye、暗沉</td>
+              <td>不要让套组逻辑盖过大盘版本</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </article>
+    
+          </div>
+        </details>
+      </div>
+    </section>
+
+    
+    <section class="card borrow-section">
+      <div class="eyebrow">最后给 copy 和测试的人</div>
+      <h2>写下一条时，先记住这几件事</h2>
+      <p class="muted">这一块只留真的要用的东西：先写哪种、买前会担心什么、哪些东西不能丢。</p>
+      <div class="borrow-summary"><article class='summary-cell'><h3>先写哪种</h3><ul><li>先写问题很具体的那种。</li><li>第二支再写 Medicube 终于出了这个。</li><li>强催单版本单独开。</li><li>方法型和套组型不要混进大盘版本。</li></ul></article><article class='summary-cell'><h3>买前会担心什么</h3><ul><li>怎么贴，薄的一头朝哪。</li><li>能不能贴上眼皮或法令纹。</li><li>早上贴还是晚上贴。</li><li>要贴多久。</li><li>会不会往下滑。</li><li>为什么官网还没有。</li></ul></article><article class='summary-cell'><h3>一定要留</h3><ul><li>前 3 到 5 秒一定要看到产品。</li><li>一定要拍清楚贴的位置。</li><li>一定要拍质地或不会滑。</li><li>成分可以早说，但别讲太深。</li><li>一定要说清楚它适合什么时候用。</li></ul></article><article class='summary-cell'><h3>别这样写</h3><ul><li>不要写成普通护肤广告。</li><li>不要只剩“终于出了”。</li><li>不要只讲放松和自我宠爱。</li><li>不要完全不讲怎么用。</li><li>不要把所有版本都写成套组视频。</li></ul></article></div>
+    </section>
+    
+  </div>
+  <script>
+    document.querySelectorAll('.time-link, .seg-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.target);
+        if (!target) return;
+        target.currentTime = Number(button.dataset.start || 0);
+        target.play();
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
+</body>
+</html>

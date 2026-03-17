@@ -1,0 +1,1500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicube Winning Pattern Report v8</title>
+  <style>
+    :root {
+      --bg: #f5eee9;
+      --panel: rgba(255, 251, 246, 0.97);
+      --ink: #2c221f;
+      --muted: #6a5b56;
+      --line: #e0d0c6;
+      --accent: #b64d63;
+      --soft: #fdecef;
+      --soft-2: #f8f2e9;
+      --soft-3: #f3f8f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Iowan Old Style", serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 125, 152, 0.16), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(110, 151, 146, 0.14), transparent 18%),
+        linear-gradient(180deg, #efe4de 0%, var(--bg) 260px);
+      line-height: 1.45;
+    }
+    .wrap { max-width: 1420px; margin: 0 auto; padding: 28px 22px 72px; }
+    .hero-top {
+      display: grid;
+      grid-template-columns: 380px minmax(0, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .card, .video-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(78, 52, 29, 0.06);
+    }
+    h1, h2, h3 { margin: 0 0 12px; line-height: 1.08; }
+    h1 { font-size: 42px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 20px; }
+    p, li, td, th { font-size: 16px; }
+    ul { margin: 0; padding-left: 20px; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .hero-product {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-product img {
+      width: 100%;
+      max-width: 430px;
+      align-self: center;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: #fff;
+      display: block;
+    }
+    .hero-caption {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .summary-band, .key-actions-board, .stack-board, .family-board {
+      margin-bottom: 18px;
+      padding: 18px;
+    }
+    .summary-grid, .family-summary, .borrow-summary {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .family-insights {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .summary-cell {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: #fffaf3;
+      border: 1px solid var(--line);
+    }
+    .summary-cell h3 { font-size: 15px; margin-bottom: 8px; }
+    .summary-cell p, .summary-cell li { font-size: 14px; }
+    .key-actions-intro {
+      max-width: 980px;
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 15px;
+    }
+    .key-action-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .key-action-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+    }
+    .key-action-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .key-action-head h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+    .key-action-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .key-action-frame-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .key-action-frame {
+      margin: 0;
+      display: grid;
+      gap: 6px;
+    }
+    .key-action-frame img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #f1ece8;
+      display: block;
+    }
+    .key-action-frame figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .key-action-frame a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .stack-intro {
+      max-width: 1020px;
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 15px;
+    }
+    .stack-combo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .stack-combo-card, .stack-row-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 14px;
+    }
+    .stack-combo-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .stack-combo-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .stack-combo-psych {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(224, 208, 198, 0.9);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .stack-matrix-grid {
+      display: grid;
+      gap: 14px;
+    }
+    .stack-row-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .stack-row-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .stack-row-anchor {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .stack-video-shell {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #000;
+      max-width: 280px;
+    }
+    .stack-video-shell video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
+      background: #000;
+    }
+    .stack-block-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .stack-frame-grid-wide {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .stack-block-card, .stack-frame-card {
+      border: 1px solid rgba(224, 208, 198, 0.9);
+      border-radius: 14px;
+      background: #fff;
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+    }
+    .stack-proof-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+    .stack-proof-label {
+      display: inline-block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .stack-time-link {
+      border: 1px solid rgba(214, 120, 146, 0.22);
+      background: #fff3f6;
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .stack-frame-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #f1ece8;
+      display: block;
+    }
+    .stack-proof-evidence, .stack-proof-psych {
+      margin: 0;
+      font-size: 14px;
+    }
+    .stack-proof-psych {
+      color: var(--muted);
+    }
+    .family-top { display: grid; gap: 20px; }
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .family-insights .summary-cell {
+      min-height: 160px;
+      padding: 18px 20px;
+    }
+    .family-insights .summary-cell h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+    .family-insights .summary-cell li {
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .family-video-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffaf3;
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .family-stage, .family-label, .mini-kicker, .note-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .family-video-shell video, .compare-card-video video, .borrow-video-shell video {
+      width: 100%;
+      max-height: 280px;
+      border-radius: 14px;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .family-opening {
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .family-copy p { margin: 0 0 10px; font-size: 14px; }
+    .family-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .family-link {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--soft);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .meta-badge {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 13px;
+    }
+    .section-intro {
+      margin: 8px 0 18px;
+      padding: 0 6px;
+    }
+    .video-card { margin-bottom: 18px; padding: 20px; }
+    .video-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .creator-handle { color: var(--ink); font-size: 1em; font-weight: 700; }
+    .mini-meta a, .family-link, .borrow-link a { color: var(--accent); text-decoration: none; }
+    .video-layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .video-left {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+    }
+    .video-shell video {
+      width: 100%;
+      max-height: 640px;
+      border-radius: 18px;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .segment-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 14px;
+    }
+    .seg-btn, .time-link {
+      cursor: pointer;
+      border: 1px solid rgba(182, 77, 99, 0.24);
+      background: var(--soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font: inherit;
+    }
+    .seg-btn {
+      padding: 9px 12px;
+      font-size: 13px;
+    }
+    .time-link {
+      width: 100%;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 13px;
+    }
+    .time-end { color: var(--muted); font-size: 11px; }
+    .insight-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .insight-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffaf3;
+      padding: 14px;
+    }
+    .hook-note { background: linear-gradient(135deg, #fff3f5 0%, #fffaf2 100%); }
+    .strong { background: linear-gradient(135deg, #fff3f5 0%, #f5fbfb 100%); }
+    .fact-row {
+      display: grid;
+      grid-template-columns: 106px 1fr;
+      gap: 10px;
+      padding: 7px 0;
+      border-top: 1px solid rgba(224, 208, 198, 0.85);
+    }
+    .fact-row:first-of-type { border-top: 0; }
+    .fact-label { color: var(--muted); font-size: 13px; }
+    .fact-value { font-size: 14px; }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fffefb;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 920px;
+    }
+    th, td {
+      padding: 14px 16px;
+      vertical-align: top;
+      border-top: 1px solid var(--line);
+    }
+    th {
+      border-top: 0;
+      text-align: left;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: #fbf6ef;
+    }
+    .time-col { width: 110px; }
+    .what-col { width: 48%; }
+    .logic-col { width: 28%; }
+    .beat-name {
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .sell-head {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .sell-why {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .playground {
+      margin-bottom: 18px;
+      padding: 20px;
+    }
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .rule-card, .idea-mini {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fffaf3;
+    }
+    .playground-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .compare-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fffaf3;
+      padding: 16px;
+    }
+    .compare-card-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .point-row {
+      display: grid;
+      grid-template-columns: 126px 1fr;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(224, 208, 198, 0.85);
+    }
+    .point-row span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .point-row p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .point-row.strong {
+      background: linear-gradient(135deg, rgba(253, 236, 239, 0.72) 0%, rgba(243, 248, 248, 0.72) 100%);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .idea-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .idea-mini-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .lego-section { margin-top: 18px; }
+    .lego-details { border-top: 1px solid var(--line); padding-top: 14px; }
+    .lego-details summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 700;
+      list-style: none;
+    }
+    .lego-details summary::-webkit-details-marker { display: none; }
+    .lego-details summary::after {
+      content: "Open";
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-left: 10px;
+    }
+    .lego-details[open] summary::after { content: "Close"; }
+    .lego-stack { display: grid; gap: 14px; margin-top: 14px; }
+    .lego-table th, .lego-table td { font-size: 14px; }
+    .lego-step { width: 90px; white-space: nowrap; }
+    .borrow-section { margin-bottom: 18px; }
+    @media (max-width: 1180px) {
+      .hero-top, .summary-grid, .key-action-grid, .stack-combo-grid, .stack-block-grid, .stack-frame-grid-wide, .video-layout, .family-summary, .family-grid, .family-insights, .rule-grid, .playground-compare-grid, .idea-mini-grid, .borrow-summary {
+        grid-template-columns: 1fr;
+      }
+      .key-action-frame-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-header { flex-direction: column; }
+      .video-left { position: static; }
+      .point-row, .fact-row { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero-top">
+      <article class="card hero-product">
+        <div class="eyebrow">Product Shot</div>
+        <h1>Medicube PDRN Pink Caffeine Collagen Eye Patch</h1>
+        <img src="assets/medicube_pdrn_eye_patch_packshot.png" alt="Medicube PDRN Eye Patch hero">
+      </article>
+      <article class="card summary-band">
+        <div class="eyebrow">Start With 6 Things</div>
+        <div class="summary-grid">
+          <div class='summary-cell'><h3>Core Take</h3><p>In the first few seconds, the video needs to prove 3 things fast: what eye-area problem it helps, why it is not just a basic wet patch, and how to use it.</p></div>
+          <div class='summary-cell'><h3>Product Snapshot</h3><p>This is a hydrogel eye patch with PDRN, collagen, and caffeine. The ingredient names make it feel more serious, but people really buy because the placement is clear, the texture looks juicy, it stays in place, it fits easily into a morning depuff routine, and 60 patches feels like good value.</p></div>
+          <div class='summary-cell'><h3>Who Buys This</h3><p>Most buyers already know they have an under-eye problem. They want something faster, easier, and more believable.</p><ul><li>quick under-eye fix</li><li>before makeup</li><li>cares about texture</li><li>wants to see how to use it first</li></ul></div>
+          <div class='summary-cell'><h3>What The Video Must Show</h3><ul><li>Show the patch, jar, or serum in the first few seconds. Do not rely on talking only.</li><li>Show clearly where the patch goes.</li><li>Make people see that it looks juicy but does not slide.</li><li>Bring the ingredients in early, but do not turn it into a lesson.</li><li>Start with the specific problem first. Bring in brand, new-drop energy, and routine later.</li></ul></div>
+          <div class='summary-cell'><h3>Why People Buy</h3><ul><li>The reason people buy is very direct: they want a fast fix for tired eyes, not a science lesson.</li><li>The strongest result words are depuff, brighter, wide awake, and lighter-looking bags or dark circles.</li><li>The strongest feel words are cooling, hydrating, and smooth. The video needs to make people see that and almost feel it.</li><li>Its most natural buying moment is a morning routine, not a complicated night treatment.</li></ul></div>
+          <div class='summary-cell'><h3>What People Worry About</h3><ul><li>The clearest downside right now is that it can feel a little sticky and leave residue.</li><li>That also explains why winning videos keep proving the same thing: it does not slide, it stays on, and it feels juicy without getting in the way.</li><li>People also talk about 60 patches feeling like a good deal, so quantity and value should be clear.</li><li>A lot of people also ask where to place it, whether to use it in the morning or at night, and whether it works with eye cream.</li></ul></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card key-actions-board">
+      <div class="eyebrow">Repeated Key Actions</div>
+      <h2>These actions show up again and again in high-selling videos</h2>
+      <p class="key-actions-intro">I still do not have Medicube's second-by-second CTR or CTOR export, so this is not a hard board of the best click second. This is a board of the repeated early actions from the top 15 spoken winners. One quick look makes it easier to see what creators keep repeating.</p>
+      <div class="key-action-grid">
+        
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>Show the juicy jar / patch first</h3>
+        <span class="meta-badge">4/15 spoken winners</span>
+      </div>
+      <p>This makes it feel less like a basic eye patch and more like a richer, more premium product.</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7611448594528341279_0008.jpg" alt="Show the juicy jar / patch first frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@leigha_chrstine/video/7611448594528341279" target="_blank" rel="noreferrer">@leigha_chrstine</a>
+                <span>0.8s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613938667698146574_0008.jpg" alt="Show the juicy jar / patch first frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@susanluckhardt/video/7613938667698146574" target="_blank" rel="noreferrer">@susanluckhardt</a>
+                <span>0.8s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>Show it in places people do not expect</h3>
+        <span class="meta-badge">2 clearest examples</span>
+      </div>
+      <p>As soon as people see it on the brow bone, upper lid, or smile lines, they understand this is not a basic eye patch. It looks like a more specific use case.</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613798295839739150_0008.jpg" alt="Show it in places people do not expect frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">@kctiktokshopfinds</a>
+                <span>0.8s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613874676242107679_0060.jpg" alt="Show it in places people do not expect frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@therealandeerae/video/7613874676242107679" target="_blank" rel="noreferrer">@therealandeerae</a>
+                <span>6.0s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>Show a before image or compare frame early</h3>
+        <span class="meta-badge">2 clearest examples</span>
+      </div>
+      <p>These frames lock in the problem or result first. They do not explain first. They show the difference first.</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613798295839739150_0045.jpg" alt="Show a before image or compare frame early frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">@kctiktokshopfinds</a>
+                <span>4.5s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7613938667698146574_0038.jpg" alt="Show a before image or compare frame early frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@susanluckhardt/video/7613938667698146574" target="_blank" rel="noreferrer">@susanluckhardt</a>
+                <span>3.8s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+    <article class="key-action-card">
+      <div class="key-action-head">
+        <h3>Show the result after taking it off</h3>
+        <span class="meta-badge">2 clearest examples</span>
+      </div>
+      <p>The result cannot live in words only. Strong videos show what changed right after the patch comes off.</p>
+      <div class="key-action-frame-grid">
+        
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7612139848618560798_0335.jpg" alt="Show the result after taking it off frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@cicihaskill/video/7612139848618560798" target="_blank" rel="noreferrer">@cicihaskill</a>
+                <span>33.5s</span>
+              </figcaption>
+            </figure>
+            
+            <figure class="key-action-frame">
+              <img src="assets/key_actions_v4/keyaction_7610558301666807070_0310.jpg" alt="Show the result after taking it off frame">
+              <figcaption>
+                <a href="https://www.tiktok.com/@theresebyron/video/7610558301666807070" target="_blank" rel="noreferrer">@theresebyron</a>
+                <span>31.0s</span>
+              </figcaption>
+            </figure>
+            
+      </div>
+    </article>
+    
+      </div>
+    </section>
+
+    <section class="section-intro">
+      <div class="eyebrow">Pattern View</div>
+      <h2>3 full-video patterns that show up most often</h2>
+    </section>
+
+    
+    <section class="card family-board" id="problem-led-family">
+      <div class="eyebrow">Pattern 1</div>
+      <h2>Start with a clear eye-area problem, then make it obvious this patch is for that</h2>
+      <div class="family-top">
+        <div class="family-summary">
+          <div class='summary-cell'><h3>What this pattern is doing</h3><p>This pattern is not selling vague skincare. It is selling a very specific eye-area fix. It starts with a clear problem like bags, texture, hooded eyes, or upper lids, then quickly shows the patch in a clear placement so people know this is not a basic wet patch.</p></div>
+          <div class='summary-cell'><h3>Why it sells</h3><ul><li>Step 1: make the viewer recognize their own problem, not memorize ingredients.</li><li>Step 2: show the patch, jar, or before image right away so the product does not stay in words only.</li><li>Step 3: use placement and texture to prove it feels like a real fix.</li><li>Then make the quantity, value, and path to buy feel clear.</li></ul></div>
+        </div>
+        <div class="family-grid">
+          
+            <article class="family-video-card">
+              <div class="family-stage">Unusual placement first</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7613798295839739150.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">Views 973,463</span>
+                <span class="meta-badge">Date 2026-03-05</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening hook</div>
+                <p class="family-opening">Why is it anyone wearing these have eye bags or textures around their eye area?</p>
+                <div class="family-label">What this version adds</div>
+                <p>It locks in both the problem and the result fast with brow placement and a before image.</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">Original TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">Lead with the hooded-eye problem</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7613874676242107679.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">Views 244,550</span>
+                <span class="meta-badge">Date 2026-03-06</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening hook</div>
+                <p class="family-opening">Really not feeling like going in and having it cut out quite yet.</p>
+                <div class="family-label">What this version adds</div>
+                <p>It puts the heavier hooded-eye problem on the table first, then makes the patch feel like the thing to try before anything more drastic.</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@therealandeerae/video/7613874676242107679" target="_blank" rel="noreferrer">Original TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">Lead with the upper-lid problem</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7614412964514336031.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">Views 125,800</span>
+                <span class="meta-badge">Date 2026-03-07</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening hook</div>
+                <p class="family-opening">Unless you want lids that look like this, you better be giving those upper lids just as much attention.</p>
+                <div class="family-label">What this version adds</div>
+                <p>It points out that upper lids need help too, then makes the patch feel like a fuller eye-area fix.</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@alignedwithkay/video/7614412964514336031" target="_blank" rel="noreferrer">Original TikTok</a>
+              </div>
+            </article>
+            
+        </div>
+      </div>
+      <div class="family-insights">
+        <div class='summary-cell'><h3>What these videos keep repeating</h3><ul><li>The specific problem comes first. No long PDRN lecture first.</li><li>The first few seconds show the jar, patch, or before image so the product is not trapped in talk.</li><li>They close on a concrete fix, not a vague anti-aging promise.</li></ul></div>
+      </div>
+    </section>
+    
+    <section class="card family-board" id="new-drop-family">
+      
+      <h2>Medicube finally has this, and it looks worth trying</h2>
+      <div class="family-top">
+        <div class="family-summary">
+          <div class='summary-cell'><h3>What this pattern is doing</h3><p>This pattern does not teach the brand from scratch. It leans on trust Medicube already has. The opening is not about explaining. It is about making people feel the new product is finally here and looks juicy, fresh, and worth trying right now.</p></div>
+          <div class='summary-cell'><h3>Why it sells</h3><ul><li>Step 1: announce the new drop while bringing the jar or patch close to camera.</li><li>Step 2: use juicy texture, lots of serum, and a more serious skincare feel to make the product look more valuable.</li><li>Step 3: pull brand trust forward so this does not feel like a random eye patch.</li><li>Then use sell-out, first-to-get-it, or link-below language to close.</li></ul></div>
+        </div>
+        <div class="family-grid">
+          
+            <article class="family-video-card">
+              <div class="family-stage">Lead with texture</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7611448594528341279.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">Views 1,600,000</span>
+                <span class="meta-badge">Date 2026-02-27</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening hook</div>
+                <p class="family-opening">Medicube finally gave us under eye patches...</p>
+                <div class="family-label">What this version adds</div>
+                <p>The gooey motion and wet sound as the lid and patch fall back into the jar give it stop power right away.</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@leigha_chrstine/video/7611448594528341279" target="_blank" rel="noreferrer">Original TikTok</a>
+              </div>
+            </article>
+            
+            <article class="family-video-card">
+              <div class="family-stage">Bring in the bundle naturally</div>
+              <div class="family-video-shell">
+                <video controls preload="metadata" src="videos/7611679909806738718.mp4"></video>
+              </div>
+              <div class="family-metrics">
+                <span class="meta-badge">Views 85,600</span>
+                <span class="meta-badge">Date 2026-02-28</span>
+              </div>
+              <div class="family-copy">
+                <div class="family-label">Opening hook</div>
+                <p class="family-opening">Medicube finally dropped their PDRN eye patches that everyone&#x27;s been waiting for.</p>
+                <div class="family-label">What this version adds</div>
+                <p>It keeps the finally dropped feeling, but brings in the cooling feel and bundle angle earlier.</p>
+              </div>
+              <div class="family-links">
+                <a class="family-link" href="https://www.tiktok.com/@kellylandsman/video/7611679909806738718" target="_blank" rel="noreferrer">Original TikTok</a>
+              </div>
+            </article>
+            
+        </div>
+      </div>
+      <div class="family-insights">
+        <div class='summary-cell'><h3>What these videos keep repeating</h3><ul><li>The Medicube brand name shows up early.</li><li>Words like new, finally, and just launched often open the video.</li><li>Without a close shot of the jar or texture, this pattern gets much weaker.</li></ul></div>
+      </div>
+    </section>
+    
+
+    <section class="section-intro">
+      <div class="eyebrow">4 Deep Dives</div>
+      <h2>Break down the 4 examples most worth learning from</h2>
+    </section>
+
+    
+    <article class="video-card" id="video-detail-7613798295839739150">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">Unusual placement + before photo + real problem-solving</div>
+          <h3><span class="creator-handle">@kctiktokshopfinds</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@kctiktokshopfinds/video/7613798295839739150" target="_blank" rel="noreferrer">Original TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7613798295839739150" controls preload="metadata" src="videos/7613798295839739150.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $17,492.1</span><span class='meta-badge'>Orders 879</span><span class='meta-badge'>Views 973,463</span><span class='meta-badge'>Date 2026-03-05</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7613798295839739150' data-start='0.00'>0s-4s · Pattern interrupt + specific problem</button><button class='seg-btn' data-target='video-7613798295839739150' data-start='3.54'>4s-6s · Before photo proof</button><button class='seg-btn' data-target='video-7613798295839739150' data-start='6.18'>6s-14s · Ingredient authority + texture proof</button><button class='seg-btn' data-target='video-7613798295839739150' data-start='14.46'>14s-23s · Value + CTA</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note">
+              <div class="note-label">Opening Hook</div>
+              <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">The patch goes on the brow and under-eye first, so people know in the first second that this is not a normal under-eye demo.</div></div>
+              <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">I was influenced, &amp; they work 👁️</div></div>
+              <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Why is it anyone wearing these have eye bags or textures around their eye area?</div></div>
+              <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Direct voiceover with no setup.</div></div>
+              <div class="fact-row"><div class="fact-label">Why It Stops People</div><div class="fact-value">What really stops people is not just the question. It is the unusual placement and the before image working together in the first few seconds.</div></div>
+            </div>
+            <div class="insight-card strong"><div class="note-label">Key Lesson</div><p>The most valuable thing here is not the brow placement by itself. It is how the video makes the problem specific first and then shows the result.</p></div>
+            <div class="insight-card"><div class="note-label">Who It's Talking To</div><p>People with tired, puffy, textured under-eyes who want a better fix without sitting through a long explanation.</p></div>
+            <div class="insight-card"><div class="note-label">What To Copy Next</div><p>Keep the unusual placement, the before image, and the feeling of 'these actually work.' Do not flatten it into a basic depuff ad.</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">Break It Down By Selling Beats</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>Time</th><th>What Happens Here</th><th>Why This Part Sells</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="0.00">0.0s<br><span class="time-end">3.5s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">Unusual brow + under-eye placement</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Creator applies pink patches to eyebrows and under-eyes.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">I was influenced, &amp; they work 👁️</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Why is it anyone wearing these have eye bags or textures around their eye area?</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">The hook works as a pattern interrupt, not just as a question.</div>
+                <div class="sell-why">The unusual placement stops people fast, then the specific problem turns the product from a generic eye mask into a targeted fix.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="3.54">3.5s<br><span class="time-end">6.2s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">The before photo makes the pain point real</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">A &#x27;before&#x27; photo appears as an inset showing tired eyes with texture.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">I was influenced, &amp; they work 👁️</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">These are what my eyes look like in the morning about 6 months ago.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This is not decorative proof. It makes the problem visible.</div>
+                <div class="sell-why">Without the before photo, this would be mostly unusual placement. With it, the viewer understands what she is trying to fix.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="6.18">6.2s<br><span class="time-end">14.5s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">The ingredient trio should come early, but not alone</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Shows the Medicube tub and the slimy texture of the patches inside.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">medicube PDRN PINK CAFFEINE COLLAGEN EYE PATCH</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">These Korean skincare eye patches by medicube are packed full of PDRN, collagen and caffeine. It&#x27;s gonna be great for brightening, tightening and depuffing.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This is not a science lecture. Ingredient authority is working together with texture proof.</div>
+                <div class="sell-why">People do not buy because they fully understand PDRN. They buy because she talks through ingredients while showing product quality.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613798295839739150" data-start="14.46">14.5s<br><span class="time-end">23.3s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">quantity / value / category close</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Creator peels off the patches and shows the quantity in the tub, then shows glowing skin.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">You get 60 in a pack... if you&#x27;ve been on the hunt for ones that actually work, I&#x27;ll have these ones down below for you.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This is not a generic CTA. It is closing quantity, value, and category replacement.</div>
+                <div class="sell-why">She is not just saying 'buy now.' She is moving the viewer from looking for any eye patch to looking for one that really works.</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <article class="video-card" id="video-detail-7611448594528341279">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">Juicy texture + finally here + everyday anti-aging</div>
+          <h3><span class="creator-handle">@leigha_chrstine</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@leigha_chrstine/video/7611448594528341279" target="_blank" rel="noreferrer">Original TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7611448594528341279" controls preload="metadata" src="videos/7611448594528341279.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $16,696.1</span><span class='meta-badge'>Orders 839</span><span class='meta-badge'>Views 1,600,000</span><span class='meta-badge'>Date 2026-02-27</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7611448594528341279' data-start='0.00'>0s-5s · Sensory reveal + new drop</button><button class='seg-btn' data-target='video-7611448594528341279' data-start='4.70'>5s-11s · Aging frame + application</button><button class='seg-btn' data-target='video-7611448594528341279' data-start='10.80'>11s-17s · Ingredient seriousness</button><button class='seg-btn' data-target='video-7611448594528341279' data-start='16.70'>17s-25s · Brand trust + CTA</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note">
+              <div class="note-label">Opening Hook</div>
+              <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Close-up of vibrant pink jelly patches pouring back into the jar.</div></div>
+              <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">NEW Medicube PDRN Pink Caffeine Collagen Eye Patches</div></div>
+              <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Medicube finally gave us under eye patches...</div></div>
+              <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Wet squishing sounds of the hydrogel patches.</div></div>
+              <div class="fact-row"><div class="fact-label">Why It Stops People</div><div class="fact-value">The stop power is not the word finally by itself. It is finally plus a product that already looks soaked, new, and worth paying for.</div></div>
+            </div>
+            <div class="insight-card strong"><div class="note-label">Key Lesson</div><p>The most valuable move is not the anti-aging logic. It is putting the new drop and the juicy texture on the same screen.</p></div>
+            <div class="insight-card"><div class="note-label">Who It's Talking To</div><p>People who already know Medicube and will pay for a more serious eye-care product.</p></div>
+            <div class="insight-card"><div class="note-label">What To Copy Next</div><p>Keep the gooey motion, the wet sound, and the just-dropped feeling. Do not flatten it into a normal unboxing.</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">Break It Down By Selling Beats</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>Time</th><th>What Happens Here</th><th>Why This Part Sells</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="0.00">0.0s<br><span class="time-end">4.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">The product must feel close, wet, and good-looking right away</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Pouring pink patches; extreme close-up.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">NEW Medicube PDRN Pink Caffeine Collagen Eye Patches</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Medicube finally gave us under eye patches, and these are soaked with PDRN and caffeine.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Wet squishing sounds</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This is the clearest version of 'new drop + sensory stop power.'</div>
+                <div class="sell-why">If it only said finally here without the gooey reveal, it would be much weaker. What stops people is the new drop and the product texture landing together.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="4.70">4.7s<br><span class="time-end">10.8s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">Place it inside an anti-aging frame</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Applying patches to eyes and smile lines using a spatula.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">The first signs of aging...</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Our skin is the first place to show signs of aging.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This is not just a tutorial. It tells the viewer why this new product matters right now.</div>
+                <div class="sell-why">She is not selling it as luxury pampering. She is selling it as a missing piece in a daily anti-aging habit.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="10.80">10.8s<br><span class="time-end">16.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">Ingredients create seriousness, not the main story</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Patch application continues while ingredient list stays on screen.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">Ingredient list</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">The skincare that you use on a daily basis has a bigger impact than you think.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">The job of the ingredient layer here is to create a serious-skincare feeling.</div>
+                <div class="sell-why">The viewer may not fact-check every ingredient, but she will read the video as 'this is not just some random eye patch launch.'</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7611448594528341279" data-start="16.70">16.7s<br><span class="time-end">25.1s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">Close with mature-skin trust</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Holding the jar, showing the label clearly.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">There&#x27;s a reason why even the ladies in their 50s swear by medicube... I&#x27;m gonna drop the link for you right on this video.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">It closes on trust transfer, not a loud CTA.</div>
+                <div class="sell-why">This kind of brand-demand video works better when it closes on mature-skin trust, not a hard sales tone.</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <article class="video-card" id="video-detail-7612139848618560798">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">You're doing it wrong + use with eye cream + no slip</div>
+          <h3><span class="creator-handle">@cicihaskill</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@cicihaskill/video/7612139848618560798" target="_blank" rel="noreferrer">Original TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7612139848618560798" controls preload="metadata" src="videos/7612139848618560798.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $7,343.1</span><span class='meta-badge'>Orders 369</span><span class='meta-badge'>Views 972,400</span><span class='meta-badge'>Date 2026-03-01</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7612139848618560798' data-start='0.00'>0s-5s · Doing it wrong hook</button><button class='seg-btn' data-target='video-7612139848618560798' data-start='4.98'>5s-22s · Product + base layer setup</button><button class='seg-btn' data-target='video-7612139848618560798' data-start='22.14'>22s-32s · No-slip + seal-in proof</button><button class='seg-btn' data-target='video-7612139848618560798' data-start='32.10'>32s-46s · Result + age relatability</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note">
+              <div class="note-label">Opening Hook</div>
+              <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Pink cream dots already on skin, patch directly laid over them.</div></div>
+              <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">You&#x27;re probably doing this wrong with your eye masks</div></div>
+              <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">If you aren&#x27;t pairing your eye masks with your eye cream, you&#x27;re doing yourself a disservice.</div></div>
+              <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Direct spoken voiceover</div></div>
+              <div class="fact-row"><div class="fact-label">Why It Stops People</div><div class="fact-value">This hook does not just say you are doing it wrong. It shows the better method at the same time.</div></div>
+            </div>
+            <div class="insight-card strong"><div class="note-label">Key Lesson</div><p>It is not hard-selling a bundle. It is teaching a better method, so the add-on feels easier to accept.</p></div>
+            <div class="insight-card"><div class="note-label">Who It's Talking To</div><p>People who already have a skincare routine and are willing to add one more step if it feels like the better method.</p></div>
+            <div class="insight-card"><div class="note-label">What To Copy Next</div><p>Keep the negative hook, the base layer, the no-slip proof, and the final result. Do not turn it into a bundle ad right away.</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">Break It Down By Selling Beats</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>Time</th><th>What Happens Here</th><th>Why This Part Sells</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="0.00">0.0s<br><span class="time-end">5.0s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">negative hook + immediate visual correction</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Applying patch over pink cream dots.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">You&#x27;re probably doing this wrong with your eye masks</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">If you aren&#x27;t pairing your eye masks with your eye cream, you&#x27;re doing yourself a disservice.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Direct spoken voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This hook works not because it sounds negative, but because the correction is already happening on screen.</div>
+                <div class="sell-why">The viewer is not just challenged. She feels like she is learning a better way to use it right away.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="4.98">5.0s<br><span class="time-end">22.1s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">Set up the method first, then bring in the bundle</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Holding jars, then applying thick eye cream to the under-eye.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Medicube just launched these... It pairs perfectly with the PDRN Peptide Eye Cream. We&#x27;re gonna apply that first.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Spoken voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">The order matters most here: first make the method clear, then make the bundle feel reasonable.</div>
+                <div class="sell-why">If she leads with the bundle, it feels like selling. If she leads with the base layer, it feels like teaching.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="22.14">22.1s<br><span class="time-end">32.1s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">Solve usage friction</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Applying patch over the cream and smoothing it into place.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">These ones are not gonna slide down your face. We&#x27;re gonna seal that eye cream in...</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Spoken voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This step is handling the real friction from the comments: will it slide, and how do you actually use it?</div>
+                <div class="sell-why">She is not just talking about penetration. She is removing usage uncertainty with the action.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7612139848618560798" data-start="32.10">32.1s<br><span class="time-end">45.8s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">Quick result + relatable age context</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Removing patch to show glowing under-eye skin.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">—</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">It&#x27;s been about 20 minutes... as soon as I turned 39, the crows feet started crows feeding.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Spoken voiceover</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This part turns the duo logic into a more believable solution for a mature concern.</div>
+                <div class="sell-why">The result makes the method feel real, and the age reference shows who the video is talking to.</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <article class="video-card" id="video-detail-7613874676242107679">
+      <div class="video-header">
+        <div>
+          <div class="mini-kicker">Hooded-eye problem + upper-lid placement + not surgery yet</div>
+          <h3><span class="creator-handle">@therealandeerae</span></h3>
+        </div>
+        <p class="mini-meta"><a href="https://www.tiktok.com/@therealandeerae/video/7613874676242107679" target="_blank" rel="noreferrer">Original TikTok</a></p>
+      </div>
+      <div class="video-layout">
+        <div class="video-left">
+          <div class="video-shell">
+            <video id="video-7613874676242107679" controls preload="metadata" src="videos/7613874676242107679.mp4"></video>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="meta-badges"><span class='meta-badge'>GMV $4,338.2</span><span class='meta-badge'>Orders 218</span><span class='meta-badge'>Views 244,550</span><span class='meta-badge'>Date 2026-03-06</span></div>
+          <div class='segment-pills'><button class='seg-btn' data-target='video-7613874676242107679' data-start='0.00'>0s-4s · Surgery-avoidance hook</button><button class='seg-btn' data-target='video-7613874676242107679' data-start='3.69'>4s-14s · Upper + lower lid demo</button><button class='seg-btn' data-target='video-7613874676242107679' data-start='13.67'>14s-32s · Product reveal + routine synergy</button><button class='seg-btn' data-target='video-7613874676242107679' data-start='32.43'>32s-54s · Result summary + 10-minute slot</button></div>
+          <div class="insight-grid">
+            <div class="insight-card hook-note">
+              <div class="note-label">Opening Hook</div>
+              <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Creator physically lifts the hooded eyelid skin before showing the patch trick.</div></div>
+              <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">My hooded eye trick...</div></div>
+              <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Really not feeling like going in and having it cut out quite yet.</div></div>
+              <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Spoken voice</div></div>
+              <div class="fact-row"><div class="fact-label">Why It Stops People</div><div class="fact-value">What stops people is not the patch by itself. It is the line about not wanting surgery yet, which makes the stakes feel real.</div></div>
+            </div>
+            <div class="insight-card strong"><div class="note-label">Key Lesson</div><p>The most valuable thing here is making the eye patch feel like a very specific method, not a generic anti-aging product.</p></div>
+            <div class="insight-card"><div class="note-label">Who It's Talking To</div><p>People who care about hooded eyes, looser upper lids, and a lifted look before makeup.</p></div>
+            <div class="insight-card"><div class="note-label">What To Copy Next</div><p>Keep the hooded-eye problem, the top-and-bottom placement, and the 10-minute method. Do not flatten it into a simple brightening ad.</p></div>
+          </div>
+          <div class="table-intro"><div class="table-title">Break It Down By Selling Beats</div></div>
+          <div class="table-wrap">
+            <table class="beat-table">
+              <thead><tr><th>Time</th><th>What Happens Here</th><th>Why This Part Sells</th></tr></thead>
+              <tbody>
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="0.00">0.0s<br><span class="time-end">3.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">high-stakes pain point</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Creator pulls her eyelid skin toward her eyebrow.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Really not feeling like going in and having it cut out quite yet.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Spoken voice</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">This hook raises the stakes right away, so people want to see what the trick is.</div>
+                <div class="sell-why">She does not lead with a benefit. She leads with a sharper problem and a heavier alternative.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="3.69">3.7s<br><span class="time-end">13.7s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">The method gets its value from placement</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Creator applies pink patches to the top and bottom of her right eye.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">I do this before I put my makeup on. I take a eye patch that has caffeine in it. Put one on the top, I put one on the bottom.</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Spoken voice</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">The most valuable part is not the word caffeine. It is the demo of placing it on both the top and bottom.</div>
+                <div class="sell-why">Now the viewer understands this is not a normal under-eye patch. It is a more specific method.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="13.67">13.7s<br><span class="time-end">32.4s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">The new drop is framed as part of the method</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Creator holds jar close, then taps patches into place while talking about morning/night and eye cream.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">These are actually brand new from medicube... I use them in the morning and the night. At night, I usually just put them under my eye, and I put my retinol eye cream under it...</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Subtle jar handling sound</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">Here the new-drop angle is not just hype. It helps the viewer feel she found a better tool for this problem.</div>
+                <div class="sell-why">Brand new, morning/night use, and eye cream pairing all support a more specific mature-eye method.</div>
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="time-col"><button class="time-link" data-target="video-7613874676242107679" data-start="32.43">32.4s<br><span class="time-end">53.8s</span></button></td>
+              <td class="what-col">
+                <div class="beat-name">The tightening result needs to land in a routine people can actually do</div>
+                <div class="fact-row"><div class="fact-label">Action / Visual</div><div class="fact-value">Creator points to her eye area with patches still on and explains what the trick does.</div></div>
+                <div class="fact-row"><div class="fact-label">On-Screen Text</div><div class="fact-value">My hooded eye trick...</div></div>
+                <div class="fact-row"><div class="fact-label">Spoken Line</div><div class="fact-value">Just leave these on for about 10 minutes, and it really tightens up my skin...</div></div>
+                <div class="fact-row"><div class="fact-label">Sound</div><div class="fact-value">Spoken voice</div></div>
+              </td>
+              <td class="logic-col">
+                <div class="sell-head">It does not end on abstract anti-aging. It ends on a clear 10-minute trick.</div>
+                <div class="sell-why">It locks the value of the patch into a specific payoff: a more lifted look before makeup and tighter-looking upper lids.</div>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+
+    <section class="card playground">
+      <div class="eyebrow">How To Build The Next One</div>
+      <h2>Put the tested directions side by side and answer one thing: what should the next video be built around?</h2>
+      <p class="muted">Start with the shared rules, then compare the most valuable opening, proof, and close in each direction. This is not for rewriting. It is for choosing the main control and deciding what to change next.</p>
+
+      <div class="rule-grid">
+        <article class="rule-card"><strong>Win the hook first</strong><p>If the first second does not hold, nobody sees the rest.</p></article>
+        <article class="rule-card"><strong>A hook is not just one sentence</strong><p>The visual, spoken line, on-screen text, and placement have to work together to stop people.</p></article>
+        <article class="rule-card"><strong>Proof must be visible</strong><p>The safest proof is seeing the patch, jar, serum, and no-slip feel, not just hearing benefits.</p></article>
+        <article class="rule-card"><strong>Close by showing how to use it</strong><p>Morning use, wear time, routine order, stock, and link details are what lower the barrier to buy.</p></article>
+      </div>
+
+      <div class="playground-compare-grid">
+        
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>Lead with the eye-area problem</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7613798295839739150.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>Why it sells</span><p>It stops people with a specific eye-area problem and unusual placement, then locks the problem in with a before image and targeted placement.</p></div>
+        <div class="point-row"><span>What matters most in the first second</span><p>First, watch whether the placement feels unusual enough and whether the problem line is specific enough.</p></div>
+        <div class="point-row"><span>Strongest middle proof</span><p>The strongest middle proof is before/result framing, not ingredient education.</p></div>
+        <div class="point-row"><span>Why the close converts</span><p>It closes with quantity, value, and the feeling that this is the eye patch that actually works.</p></div>
+        <div class="point-row strong"><span>Test first</span><p>Test the exact pain point and unusual placement in the hook before changing the middle or end.</p></div>
+      </div>
+    </article>
+    
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>Lead with the juicy new drop</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7611448594528341279.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>Why it sells</span><p>The new drop is not enough by itself. What sells is the gooey reveal, the wet sound, and the trust Medicube already has.</p></div>
+        <div class="point-row"><span>What matters most in the first second</span><p>First, watch whether the jar motion or patch texture makes the product feel rich within 5 seconds.</p></div>
+        <div class="point-row"><span>Strongest middle proof</span><p>The strongest middle is an anti-aging frame plus ingredient seriousness, but it does not need deep explanation.</p></div>
+        <div class="point-row"><span>Why the close converts</span><p>Close with mature-skin trust, not a hard CTA.</p></div>
+        <div class="point-row strong"><span>Test first</span><p>Test whether the sensory reveal or the finally-here line should come first before adding more words.</p></div>
+      </div>
+    </article>
+    
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>Lead with urgency</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7611411253877165325.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>Why it sells</span><p>It connects the new drop and scarcity in the shortest way. This works best in promo windows or hard-conversion moments.</p></div>
+        <div class="point-row"><span>What matters most in the first second</span><p>First, watch whether the command-style CTA and the in-your-face product shot land together.</p></div>
+        <div class="point-row"><span>Strongest middle proof</span><p>The middle should stay short. One small benefit is enough.</p></div>
+        <div class="point-row"><span>Why the close converts</span><p>The sell-out frame matters more than a long explanation.</p></div>
+        <div class="point-row strong"><span>Test first</span><p>Test CTA strength first, then test whether to add a quick-use reason.</p></div>
+      </div>
+    </article>
+    
+    <article class="compare-card">
+      <div class="compare-card-head"><h3>Lead with how to use it</h3></div>
+      <div class="compare-card-video"><video controls preload="metadata" src="videos/7612139848618560798.mp4"></video></div>
+      <div class="compare-card-points">
+        <div class="point-row"><span>Why it sells</span><p>This video turns the bundle into the better method, so people accept the routine logic more easily.</p></div>
+        <div class="point-row"><span>What matters most in the first second</span><p>First, watch whether the doing-it-wrong line and the base-layer visual happen at the same time.</p></div>
+        <div class="point-row"><span>Strongest middle proof</span><p>The strongest middle proof is no-slip, seal-in, and step order.</p></div>
+        <div class="point-row"><span>Why the close converts</span><p>The result reveal and age relatability matter more than a hard CTA.</p></div>
+        <div class="point-row strong"><span>Test first</span><p>Test the negative-hook wording and where the no-slip proof lands.</p></div>
+      </div>
+    </article>
+    
+      </div>
+
+      <div class="idea-mini-grid">
+        <article class="idea-mini"><div class="idea-mini-title">Idea 1</div><p>Borrow the problem angle for a new-drop video: keep the finally-here feeling, but make the first line a specific eye-area problem.</p></article>
+        <article class="idea-mini"><div class="idea-mini-title">Idea 2</div><p>Borrow the juicy texture for a method video: bring in gooey / juicy proof before the base-layer explanation.</p></article>
+        <article class="idea-mini"><div class="idea-mini-title">Idea 3</div><p>For the same specific problem angle, test a different first proof: one version leads with a before image, another leads with no-slip proof.</p></article>
+        <article class="idea-mini"><div class="idea-mini-title">Idea 4</div><p>Keep the same main control and change the audience: one broad under-eye version, one mature-concern / upper-lid version.</p></article>
+      </div>
+
+      <div class="lego-section">
+        <details class="lego-details">
+          <summary>Open the block view</summary>
+          <div class="lego-stack">
+            
+    <article class="card lego-card">
+      <div class="eyebrow">Block View</div>
+      <h3>Direction 1: lead with the eye-area problem</h3>
+      <p class="muted">Make the problem specific first, then show that this patch is for that exact problem.</p>
+      <div class="table-wrap">
+        <table class="lego-table">
+          <thead><tr><th class="lego-step">Step</th><th>Job</th><th>Keep</th><th>Variables To Test</th><th>Real Line / Real Move</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="lego-step">Block 1</td>
+              <td>Stop the viewer in the first second</td>
+              <td>A specific problem + unusual or very clear placement</td>
+              <td>bags / texture / dark circles / morning puffiness</td>
+              <td>The more specific the problem, the better. Do not fall back to generic anti-aging.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 2</td>
+              <td>Show the product right away</td>
+              <td>Show the jar, patch, or before image very early</td>
+              <td>Test whether the before image, quantity, or jar tilt should come first</td>
+              <td>The viewer should not have to guess what the product looks like.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 3</td>
+              <td>Make it feel serious</td>
+              <td>Bring in the ingredient trio early, but do not turn it into a lecture</td>
+              <td>The order of brighten / tighten / depuff</td>
+              <td>Ingredients support the sale. They are not the main story.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 4</td>
+              <td>Make the reason to buy feel clear</td>
+              <td>value / quantity / actually works</td>
+              <td>CTA strength and price/value wording</td>
+              <td>Close on category replacement, not vague hype.</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </article>
+    
+    <article class="card lego-card">
+      <div class="eyebrow">Block View</div>
+      <h3>Direction 2: lead with the juicy new drop</h3>
+      <p class="muted">First make people feel Medicube finally added this product, then use texture to make it feel more valuable.</p>
+      <div class="table-wrap">
+        <table class="lego-table">
+          <thead><tr><th class="lego-step">Step</th><th>Job</th><th>Keep</th><th>Variables To Test</th><th>Real Line / Real Move</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="lego-step">Block 1</td>
+              <td>Announce the new drop</td>
+              <td>finally / brand new / just launched</td>
+              <td>finally here、add to cart、we&#x27;ve been waiting</td>
+              <td>Keep the built-in brand demand. Do not flatten it.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 2</td>
+              <td>Use texture to stop people</td>
+              <td>gooey reveal / single-patch close-up</td>
+              <td>jar pour-back / jar tilt / single-patch close-up</td>
+              <td>A new drop feels much stronger when texture is visible.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 3</td>
+              <td>Make it look serious</td>
+              <td>ingredient seriousness + anti-aging frame</td>
+              <td>mature-skin trust / clinical-backed / refresh-cooling</td>
+              <td>Do not turn this part into a science debate.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 4</td>
+              <td>Give the sale a push</td>
+              <td>sell out / link below / first to get it</td>
+              <td>scarcity strength and coupon / stock wording</td>
+              <td>If you want a harder close, add usage clarity first.</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </article>
+    
+    <article class="card lego-card">
+      <div class="eyebrow">Block View</div>
+      <h3>Direction 3: lead with how to use it</h3>
+      <p class="muted">Turn the patch from a single product into a method people can understand and copy.</p>
+      <div class="table-wrap">
+        <table class="lego-table">
+          <thead><tr><th class="lego-step">Step</th><th>Job</th><th>Keep</th><th>Variables To Test</th><th>Real Line / Real Move</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="lego-step">Block 1</td>
+              <td>Challenge the current method</td>
+              <td>doing it wrong / hooded eye / old hack</td>
+              <td>negative hook wording、pain point stakes</td>
+              <td>Make the viewer feel their current method is not quite right</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 2</td>
+              <td>Show the placement clearly</td>
+              <td>upper lid / lower lid / smile lines / cream first</td>
+              <td>placement mix and duo order</td>
+              <td>A method video cannot live in words only. It needs action.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 3</td>
+              <td>Solve the real friction</td>
+              <td>no-slip / seal in / 10-20 minutes</td>
+              <td>tightening、cooling、morning/night</td>
+              <td>The how-to questions from the comments need to be answered in the video.</td>
+            </tr>
+            
+            <tr>
+              <td class="lego-step">Block 4</td>
+              <td>Land the result inside a routine</td>
+              <td>before makeup / consistency / mature concern</td>
+              <td>crows feet、hooded eye、dark circles</td>
+              <td>Do not let bundle logic take over the broad control.</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </article>
+    
+          </div>
+        </details>
+      </div>
+    </section>
+
+    
+    <section class="card borrow-section">
+      <div class="eyebrow">For copy and testing</div>
+      <h2>What the next script should lead with, and what proof cannot be lost</h2>
+      <p class="muted">This section is not for more analysis. It is just the practical handoff: which direction to write first, what people really worry about, what must stay, and what to avoid.</p>
+      <div class="borrow-summary"><article class='summary-cell'><h3>Control Order</h3><ul><li>Write the problem-led targeted fix first.</li><li>Write the new-drop / brand-demand version second.</li><li>Keep the strong CTA / stock-pressure version separate for promo windows.</li><li>Do not mix the routine / bundle version into the broad control.</li></ul></article><article class='summary-cell'><h3>Real Frictions</h3><ul><li>How to place it, and which side goes where.</li><li>Whether it can be used on the upper lid or smile lines.</li><li>Morning or night.</li><li>How long to leave it on.</li><li>Whether it slides.</li><li>Why it is not on the main site yet, and why TikTok Shop gets it first.</li></ul></article><article class='summary-cell'><h3>Must Keep</h3><ul><li>The first 3 to 5 seconds must show the product and the patch.</li><li>Keep at least one clear placement action.</li><li>Keep at least one texture / serum / no-slip proof.</li><li>Bring in the ingredient trio early, but do not overdo the science.</li><li>Give it a clear routine slot, not just benefits.</li></ul></article><article class='summary-cell'><h3>Avoid</h3><ul><li>Do not turn it into a generic skincare landing page.</li><li>Do not let it become only a 'finally here' announcement.</li><li>Do not sell only the luxury / self-care feeling.</li><li>Do not skip usage clarity.</li><li>Do not let bundle logic take over every version.</li></ul></article></div>
+    </section>
+    
+  </div>
+  <script>
+    document.querySelectorAll('.time-link, .seg-btn').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.target);
+        if (!target) return;
+        target.currentTime = Number(button.dataset.start || 0);
+        target.play();
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
+</body>
+</html>

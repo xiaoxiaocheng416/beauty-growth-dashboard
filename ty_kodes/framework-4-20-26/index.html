@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@ty_kodes Framework Board</title>
+<style>
+:root{--bg:#f6f7fb;--panel:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--accent2:#0f766e;--warn:#b45309;--shadow:0 1px 2px rgba(15,23,42,.06),0 10px 25px rgba(15,23,42,.06);}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;}
+.wrap{max-width:1200px;margin:0 auto;padding:18px 16px;}
+.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;}
+h1{margin:0;font-size:20px;letter-spacing:0;}
+.subttl{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.4;}
+.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.btnlink{display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border-radius:10px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#ffffff,#f8fafc);color:var(--accent);font-size:12px;font-weight:800;}
+.btnlink:hover{text-decoration:none;filter:brightness(.985)}
+.section{margin-top:18px;}
+.h2{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;}
+.h2 h2{margin:0;font-size:17px;letter-spacing:0;}
+.count{color:var(--muted);font-size:12px;font-weight:800;}
+.panel,.card{background:var(--panel);border:1px solid rgba(226,232,240,.9);border-radius:16px;box-shadow:var(--shadow);}
+.intro{display:grid;grid-template-columns:1.18fr .82fr;gap:14px;margin-top:12px;}
+.intro .panel{padding:16px;}
+.bigline{font-size:27px;line-height:1.08;letter-spacing:0;font-weight:900;margin:0;max-width:780px;}
+.smallcopy{color:#334155;font-size:14px;line-height:1.55;margin:12px 0 0;max-width:780px}
+.ruleGrid{display:grid;gap:8px;margin-top:12px}
+.ruleItem{display:flex;gap:10px;align-items:flex-start;border:1px solid rgba(226,232,240,.95);border-radius:12px;padding:9px 10px;background:linear-gradient(180deg,#ffffff,#f8fafc)}
+.num{width:24px;height:24px;border-radius:999px;background:rgba(37,99,235,.1);color:#1d4ed8;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;flex:0 0 auto}
+.ruleItem b{font-size:13px}
+.ruleItem span{display:block;color:var(--muted);font-size:12px;line-height:1.35;margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.grid.two{grid-template-columns:repeat(2,1fr);}
+.grid.five{grid-template-columns:repeat(5,1fr);}
+@media (max-width: 1060px){.grid,.grid.two,.grid.five,.intro{grid-template-columns:repeat(2,1fr)}}
+@media (max-width: 720px){.wrap{padding:14px 12px}.topbar{flex-direction:column}.nav{justify-content:flex-start}.grid,.grid.two,.grid.five,.intro{grid-template-columns:1fr}.bigline{font-size:24px}}
+.card{padding:12px;display:flex;flex-direction:column;gap:10px;}
+.cardTitle{font-weight:900;font-size:15px;letter-spacing:0;line-height:1.2;margin:0}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent2);font-weight:900}
+.muted{color:var(--muted);font-size:12px;line-height:1.4}
+.pillRow{display:flex;gap:6px;flex-wrap:wrap}
+.pill{font-size:10.5px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#f8fafc,#ffffff);border-radius:999px;padding:3px 8px;color:#0f172a;font-weight:800;letter-spacing:0;}
+.pill.blue{border-color:rgba(37,99,235,.25);background:rgba(37,99,235,.08);color:#1d4ed8}
+.pill.green{border-color:rgba(15,118,110,.25);background:rgba(15,118,110,.08);color:#0f766e}
+.pill.orange{border-color:rgba(245,158,11,.28);background:rgba(245,158,11,.10);color:#92400e}
+.quote{border:1px solid rgba(226,232,240,.95);border-radius:13px;background:#f8fafc;padding:10px;color:#0f172a;font-size:12px;line-height:1.45}
+.quote b{display:block;font-size:13px;margin-bottom:4px}
+.videoLinks{display:grid;gap:7px}
+.videoLink{display:block;border:1px solid rgba(226,232,240,.95);border-radius:12px;background:#fff;padding:8px 9px;font-size:12px;line-height:1.35}
+.videoLink strong{display:block;color:#0f172a;margin-bottom:2px}
+.familyStack{display:grid;gap:14px}
+.familyCard{padding:14px}
+.familyTop{display:block}
+.familyDetails{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:10px;margin-top:12px}
+.detailBox{border:1px solid rgba(226,232,240,.95);border-radius:14px;background:#fff;padding:10px}
+.detailBox h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#0f766e}
+.codeLines{white-space:pre-line;font-size:12px;line-height:1.5;color:#0f172a;background:#f8fafc;border:1px solid rgba(226,232,240,.95);border-radius:12px;padding:9px}
+.lineBank{display:flex;flex-wrap:wrap;gap:6px}
+.lineBank span{border:1px solid rgba(226,232,240,.95);border-radius:999px;background:#f8fafc;padding:4px 8px;font-size:11px;font-weight:750;color:#0f172a}
+.breakdown{width:100%;border-collapse:separate;border-spacing:0;border:1px solid rgba(226,232,240,.9);border-radius:12px;overflow:hidden;font-size:11.5px}
+.breakdown th,.breakdown td{padding:7px 8px;border-bottom:1px solid rgba(226,232,240,.85);vertical-align:top;text-align:left}
+.breakdown tr:last-child td{border-bottom:none}
+.breakdown th{background:#f8fafc;color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}
+@media (max-width: 980px){.familyDetails{grid-template-columns:1fr}}
+.whyGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width: 820px){.whyGrid{grid-template-columns:1fr}}
+.whyBox{padding:14px}
+.bullets{margin:0;padding-left:18px;color:#334155;font-size:13px;line-height:1.55}
+.bullets li{margin:5px 0}
+.deepCard{display:grid;grid-template-columns:310px 1fr;gap:0;overflow:hidden;padding:0}
+@media (max-width: 860px){.deepCard{grid-template-columns:1fr}}
+.frame{background:#111827;min-height:330px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.frame img,.frame video{width:100%;height:100%;object-fit:cover}
+.frame video{display:block;background:#111827}
+.deepBody{padding:14px;display:flex;flex-direction:column;gap:11px}
+.sentenceTable{width:100%;border-collapse:separate;border-spacing:0;border:1px solid rgba(226,232,240,.9);border-radius:12px;overflow:hidden;font-size:12px}
+.sentenceTable th,.sentenceTable td{padding:8px 9px;border-bottom:1px solid rgba(226,232,240,.85);vertical-align:top;text-align:left}
+.sentenceTable tr:last-child td{border-bottom:none}
+.sentenceTable th{background:#f8fafc;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.sentence{font-weight:850;color:#0f172a}
+.meaning{color:#475569}
+.templateGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+@media (max-width: 980px){.templateGrid{grid-template-columns:1fr}}
+.templateCard{padding:12px}
+.templateCode{white-space:pre-wrap;font-size:12px;line-height:1.55;color:#0f172a;background:#f8fafc;border:1px solid rgba(226,232,240,.95);border-radius:12px;padding:10px;margin-top:10px}
+.productInput{display:grid;grid-template-columns:330px 1fr;gap:14px;margin-top:16px}
+@media (max-width: 900px){.productInput{grid-template-columns:1fr}}
+.productPhoto{background:#fff;border:1px solid rgba(226,232,240,.9);border-radius:16px;box-shadow:var(--shadow);padding:12px;display:flex;flex-direction:column;gap:10px}
+.productPhotoBox{height:330px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:#f8fafc;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.productPhotoBox img{width:100%;height:100%;object-fit:contain}
+.inputGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (max-width: 720px){.inputGrid{grid-template-columns:1fr}}
+.inputBox{border:1px solid rgba(226,232,240,.9);border-radius:14px;background:#fff;padding:10px}
+.inputBox h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#0f766e}
+.inputBox ul{margin:0;padding-left:18px;color:#334155;font-size:12px;line-height:1.45}
+.inputBox li{margin:3px 0}
+.moduleTabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.moduleTab{display:inline-flex;align-items:center;justify-content:center;padding:8px 11px;border-radius:999px;border:1px solid rgba(226,232,240,.95);background:#fff;color:#0f172a;font-size:12px;font-weight:850;cursor:pointer}
+.moduleTab.active{background:rgba(37,99,235,.1);border-color:rgba(37,99,235,.25);color:#1d4ed8}
+.modulePanel{display:none}
+.modulePanel.active{display:block}
+.moduleGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (max-width: 720px){.moduleGrid{grid-template-columns:1fr}.frame{min-height:360px}}
+.moduleItem{border:1px solid rgba(226,232,240,.9);background:#fff;border-radius:14px;padding:10px}
+.moduleItem b{display:block;font-size:13px;margin-bottom:5px}
+.moduleItem p{margin:0;color:var(--muted);font-size:12px;line-height:1.35}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap topbar">
+    <div>
+      <h1>@ty_kodes Video Structure Board</h1>
+      <div class="subttl">Framework-only preview · Apr 20, 2026 · winning videos, repeatable structures, reusable lines</div>
+    </div>
+    <nav class="nav" aria-label="Page sections">
+      <a class="btnlink" href="#families">Winning Types</a>
+      <a class="btnlink" href="#control-why">What To Copy</a>
+      <a class="btnlink" href="#deep">3 Video Breakdowns</a>
+      <a class="btnlink" href="#soap-input">Product Input</a>
+      <a class="btnlink" href="#modules">Lines To Swap</a>
+      <a class="btnlink" href="../product-4-20-26/index.html">Product Picks</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <div class="panel">
+      <div class="eyebrow">How To Use This</div>
+      <h2 class="bigline">Start from the videos that already worked. Then change the smallest useful part.</h2>
+    </div>
+    <div class="panel">
+      <div class="eyebrow">Plain Terms</div>
+      <div class="ruleGrid">
+        <div class="ruleItem"><div class="num">1</div><div><b>Video Type</b><span>which kind of winning video this is</span></div></div>
+        <div class="ruleItem"><div class="num">2</div><div><b>Copy Structure</b><span>the order to copy first</span></div></div>
+        <div class="ruleItem"><div class="num">3</div><div><b>Swap Line</b><span>the sentence we can change</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="families">
+    <div class="h2">
+      <h2>Winning Video Types</h2>
+    </div>
+    <div class="familyStack">
+      <article class="card familyCard">
+        <div class="familyTop">
+          <div>
+            <div class="eyebrow">Type 1</div>
+            <h3 class="cardTitle">Before / Now First</h3>
+            <div class="videoLinks">
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7597639142125735198" target="_blank" rel="noreferrer noopener"><strong>7597639142125735198</strong>“This is 3 weeks ago. This is now.”</a>
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7598828315583073567" target="_blank" rel="noreferrer noopener"><strong>7598828315583073567</strong>“This was two weeks ago. This is now.”</a>
+            </div>
+          </div>
+        </div>
+        <div class="familyDetails">
+          <div class="detailBox">
+            <h4>Structure</h4>
+            <div class="codeLines">before / now
+-> specific viewer
+-> dark marks
+-> product job
+-> proof
+-> stock / link line</div>
+          </div>
+          <div class="detailBox">
+            <h4>Lines To Reuse</h4>
+            <div class="lineBank">
+              <span>before / now</span><span>melanated people</span><span>chocolate to medium tone people</span><span>dark stains after every pimple</span><span>dark spot laser remover in a tube</span><span>if the link is there, it is in stock</span>
+            </div>
+          </div>
+          <div class="detailBox">
+            <h4>What Each Part Does</h4>
+            <table class="breakdown">
+              <tr><th>Step</th><th>What happens</th><th>Why it works</th></tr>
+              <tr><td>1</td><td>before / now</td><td>Proof arrives before explanation.</td></tr>
+              <tr><td>2</td><td>specific viewer</td><td>The right viewer feels like this is about them.</td></tr>
+              <tr><td>3</td><td>pimple leaves marks</td><td>Separates acne from the dark marks left behind.</td></tr>
+              <tr><td>4</td><td>product description</td><td>Product becomes a tool, not a random cream.</td></tr>
+              <tr><td>5</td><td>proof / link line</td><td>Ask for the click after proof.</td></tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="card familyCard">
+        <div class="familyTop">
+          <div>
+            <div class="eyebrow">Type 2</div>
+            <h3 class="cardTitle">If You Have This</h3>
+            <div class="videoLinks">
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7581268088889396511" target="_blank" rel="noreferrer noopener"><strong>7581268088889396511</strong>“If you have this, use tranexamic acid.”</a>
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7591274665813773599" target="_blank" rel="noreferrer noopener"><strong>7591274665813773599</strong>“If you got these chocolate drops...”</a>
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7488894337007357215" target="_blank" rel="noreferrer noopener"><strong>7488894337007357215</strong>“If you got that muffin top...”</a>
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7520116936307461406" target="_blank" rel="noreferrer noopener"><strong>7520116936307461406</strong>“If you have hip boobs. Fix your gut.”</a>
+            </div>
+          </div>
+        </div>
+        <div class="familyDetails">
+          <div class="detailBox">
+            <h4>Structure</h4>
+            <div class="codeLines">If you have [visible problem]
+-> name the fix
+-> explain why the old fix failed
+-> expand symptom / location
+-> product reveal
+-> proof
+-> link line</div>
+          </div>
+          <div class="detailBox">
+            <h4>Lines To Reuse</h4>
+            <div class="lineBank">
+              <span>If you have this, use tranexamic acid</span><span>If you got these chocolate drops</span><span>If you got that muffin top</span><span>If you have hip boobs, fix your gut</span><span>digestive health is probably trash</span><span>acne clears, but marks stay</span><span>face / ass / wherever</span><span>if you see it down here, they have it in stock</span>
+            </div>
+          </div>
+          <div class="detailBox">
+            <h4>What Each Part Does</h4>
+            <table class="breakdown">
+              <tr><th>Step</th><th>What happens</th><th>Why it works</th></tr>
+              <tr><td>1</td><td>if you have this / if you got this</td><td>Viewer checks if the problem is theirs.</td></tr>
+              <tr><td>2</td><td>use this / fix this</td><td>Turns the video into a direct fix.</td></tr>
+              <tr><td>3</td><td>old fix failed</td><td>Explains why they have not solved it yet.</td></tr>
+              <tr><td>4</td><td>symptom / location expansion</td><td>Adds more buying use cases.</td></tr>
+              <tr><td>5</td><td>product reveal + proof</td><td>The product enters after the reason to buy.</td></tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="card familyCard">
+        <div class="familyTop">
+          <div>
+            <div class="eyebrow">Type 3</div>
+            <h3 class="cardTitle">Call Out The Wrong Idea</h3>
+            <div class="videoLinks">
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7576878639132839198" target="_blank" rel="noreferrer noopener"><strong>7576878639132839198</strong>“Please stop falling for the scam...”</a>
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7592806157530483998" target="_blank" rel="noreferrer noopener"><strong>7592806157530483998</strong>“What the hell is this?”</a>
+            </div>
+          </div>
+        </div>
+        <div class="familyDetails">
+          <div class="detailBox">
+            <h4>Structure</h4>
+            <div class="codeLines">outside wrong claim
+-> blunt reaction
+-> correction
+-> how it works
+-> worse alternative
+-> product job
+-> proof / link line</div>
+          </div>
+          <div class="detailBox">
+            <h4>Lines To Reuse</h4>
+            <div class="lineBank">
+              <span>Please stop falling for the scam</span><span>What the hell is this?</span><span>I thought the dark spots would wipe away</span><span>before you say it is just product</span><span>sticky clumps / fibers grab buildup</span><span>scrubs can destroy or dry out skin</span>
+            </div>
+          </div>
+          <div class="detailBox">
+            <h4>What Each Part Does</h4>
+            <table class="breakdown">
+              <tr><th>Step</th><th>What happens</th><th>Why it works</th></tr>
+              <tr><td>1</td><td>wrong claim</td><td>Uses what people are already confused about.</td></tr>
+              <tr><td>2</td><td>blunt reaction</td><td>Builds trust: he is not forcing the sale.</td></tr>
+              <tr><td>3</td><td>correction</td><td>Removes fake instant-result expectation.</td></tr>
+              <tr><td>4</td><td>how it works</td><td>The product stops feeling like magic.</td></tr>
+              <tr><td>5</td><td>proof / link line</td><td>Sell only after trust is rebuilt.</td></tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <article class="card familyCard">
+        <div class="familyTop">
+          <div>
+            <div class="eyebrow">Type 4</div>
+            <h3 class="cardTitle">Name The Body Areas</h3>
+            <div class="videoLinks">
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7571546743838412063" target="_blank" rel="noreferrer noopener"><strong>7571546743838412063</strong>“If you got chest acne, back acne, booty acne...”</a>
+              <a class="videoLink" href="https://www.tiktok.com/@ty_kodes/video/7578982456158719263" target="_blank" rel="noreferrer noopener"><strong>7578982456158719263</strong>“If you have these dark spots on your face, your back, your ass...”</a>
+            </div>
+          </div>
+        </div>
+        <div class="familyDetails">
+          <div class="detailBox">
+            <h4>Structure</h4>
+            <div class="codeLines">body-area roll call
+-> trigger
+-> use instruction
+-> visual proof
+-> answer doubt early
+-> how it works
+-> frequency / link line</div>
+          </div>
+          <div class="detailBox">
+            <h4>Lines To Reuse</h4>
+            <div class="lineBank">
+              <span>chest acne, back acne, booty acne</span><span>especially ingrown hairs</span><span>spray it where you have spots and bumps</span><span>dead skin / dirt / sweat</span><span>before you say it is just product</span><span>gym / work / sweat / hot</span>
+            </div>
+          </div>
+          <div class="detailBox">
+            <h4>What Each Part Does</h4>
+            <table class="breakdown">
+              <tr><th>Step</th><th>What happens</th><th>Why it works</th></tr>
+              <tr><td>1</td><td>name the body areas</td><td>The viewer hears the exact place they care about.</td></tr>
+              <tr><td>2</td><td>trigger</td><td>Shaving / sweat makes the problem feel logical.</td></tr>
+              <tr><td>3</td><td>use instruction</td><td>Reduces “how do I use this?” friction.</td></tr>
+              <tr><td>4</td><td>proof / objection</td><td>Handles doubt before the link line.</td></tr>
+              <tr><td>5</td><td>frequency</td><td>Turns it into routine, not one try.</td></tr>
+            </table>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section" id="control-why">
+    <div class="h2">
+      <h2>What To Copy</h2>
+      <div class="count">Why we do not start from a blank script</div>
+    </div>
+    <div class="whyGrid">
+      <div class="panel whyBox">
+        <div class="eyebrow">Definition</div>
+        <h3 class="cardTitle">Copy the order before changing the idea.</h3>
+        <p class="smallcopy">Start with one winning video. Keep the order. Change only one line or one proof point at a time.</p>
+      </div>
+      <div class="panel whyBox">
+        <div class="eyebrow">Why Ty Needs It</div>
+        <ul class="bullets">
+          <li>It reduces back and forth before filming.</li>
+          <li>It keeps the product job clear.</li>
+          <li>It tells him which lines must stay and which can change.</li>
+          <li>It makes output faster because every post is not a new idea.</li>
+          <li>It lets us review what failed: opening, proof, product, or link line.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="deep">
+    <div class="h2">
+      <h2>3 Video Breakdowns</h2>
+      <div class="count">Exact order, proof, gatekeep, stock</div>
+    </div>
+
+    <article class="card deepCard">
+      <div class="frame">
+        <video controls playsinline preload="metadata" poster="frames/7597639142125735198_1s.jpg">
+          <source src="videos/7597639142125735198.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="deepBody">
+        <div>
+          <div class="eyebrow">Example A · Before / Now First</div>
+          <h3 class="cardTitle">TX Cream Before / Now First</h3>
+          <p class="muted"><a href="https://www.tiktok.com/@ty_kodes/video/7597639142125735198" target="_blank" rel="noreferrer noopener">Watch video</a> · Product: Dr.Melaxin TX Cream</p>
+        </div>
+        <table class="sentenceTable">
+          <tr><th>Original Line</th><th>Skeleton To Reuse</th></tr>
+          <tr><td class="sentence">“This is 3 weeks ago. This is now.”</td><td class="meaning">This is [time] ago. This is now.</td></tr>
+          <tr><td class="sentence">“This was 2 weeks ago. And this is now.”</td><td class="meaning">This was [time] ago. And this is now.</td></tr>
+          <tr><td class="sentence">“for all of us melanated people”</td><td class="meaning">for all of us [viewer] people</td></tr>
+          <tr><td class="sentence">“annoying dark stains after every pimple”</td><td class="meaning">[pain] after every [trigger]</td></tr>
+          <tr><td class="sentence">“dark spot laser remover in a tube”</td><td class="meaning">[clear product metaphor] in a [format]</td></tr>
+          <tr><td class="sentence">“this TX cream is what I’ve been using”</td><td class="meaning">this [product] is what I’ve been using</td></tr>
+          <tr><td class="sentence">“stops new ones from even coming in”</td><td class="meaning">stops [future problem] from even coming in</td></tr>
+          <tr><td class="sentence">“I checked reviews”</td><td class="meaning">I checked [reviews / comments / proof]</td></tr>
+          <tr><td class="sentence">“uneven to even”</td><td class="meaning">[before state] to [after state]</td></tr>
+          <tr><td class="sentence">“cactus legs, rug burn face, 5 o’clock shadow”</td><td class="meaning">[specific use case 1], [specific use case 2], [specific use case 3]</td></tr>
+          <tr><td class="sentence">“I waited 3 weeks to get this”</td><td class="meaning">I waited [time] to get this</td></tr>
+          <tr><td class="sentence">“if the link is there, it is in stock”</td><td class="meaning">if the link is there, it is [available / in stock / on sale]</td></tr>
+          <tr><td class="sentence">“If you don’t, sorry, I ran out.”</td><td class="meaning">If you don’t see it, [stock/access reason]</td></tr>
+        </table>
+      </div>
+    </article>
+
+    <article class="card deepCard">
+      <div class="frame">
+        <video controls playsinline preload="metadata" poster="frames/7581268088889396511_1s.jpg">
+          <source src="videos/7581268088889396511.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="deepBody">
+        <div>
+          <div class="eyebrow">Example B · If You Have This</div>
+          <h3 class="cardTitle">TX Cream If You Have This</h3>
+          <p class="muted"><a href="https://www.tiktok.com/@ty_kodes/video/7581268088889396511" target="_blank" rel="noreferrer noopener">Watch video</a> · Product: Dr.Melaxin TX Cream</p>
+        </div>
+        <table class="sentenceTable">
+          <tr><th>Original Line</th><th>Skeleton To Reuse</th></tr>
+          <tr><td class="sentence">“If you have this...”</td><td class="meaning">If you have [visible problem]...</td></tr>
+          <tr><td class="sentence">“use tranexamic acid”</td><td class="meaning">use [ingredient / product type]</td></tr>
+          <tr><td class="sentence">Repeats the command 3 times</td><td class="meaning">If you got this, use [fix]. Definitely.</td></tr>
+          <tr><td class="sentence">“because it’s horrible”</td><td class="meaning">because it’s [emotional description]</td></tr>
+          <tr><td class="sentence">“you clear up your acne, but you still look like you have acne”</td><td class="meaning">you fix [surface problem], but you still look like you have [problem]</td></tr>
+          <tr><td class="sentence">“all these dark spots are left behind”</td><td class="meaning">all these [leftover marks / symptoms] are left behind</td></tr>
+          <tr><td class="sentence">“tranexamic acid is made to clear up those dark spots”</td><td class="meaning">[ingredient] is made to help with [specific problem]</td></tr>
+          <tr><td class="sentence">“on your ass, your face, wherever”</td><td class="meaning">whether it’s on your [area 1], [area 2], wherever</td></tr>
+          <tr><td class="sentence">“I’ve been gatekeeping this for a minute”</td><td class="meaning">I’ve been gatekeeping [this product / this fix] for [time]</td></tr>
+          <tr><td class="sentence">“people been asking me how my skin look clear”</td><td class="meaning">people keep asking me how my [result] looks like this</td></tr>
+          <tr><td class="sentence">“This secret right here.”</td><td class="meaning">This [secret / product / step] right here.</td></tr>
+          <tr><td class="sentence">“when I send them the link... it’s usually sold out”</td><td class="meaning">when I send people the link, it’s usually [sold out / gone]</td></tr>
+          <tr><td class="sentence">“if you see it somewhere down here...”</td><td class="meaning">if you see it [down here / linked], that means [availability]</td></tr>
+          <tr><td class="sentence">“act fast before they sell out again”</td><td class="meaning">act fast before [stock / sale] is gone again</td></tr>
+        </table>
+      </div>
+    </article>
+
+    <article class="card deepCard">
+      <div class="frame">
+        <video controls playsinline preload="metadata" poster="frames/7576878639132839198_1s.jpg">
+          <source src="videos/7576878639132839198.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="deepBody">
+        <div>
+          <div class="eyebrow">Example C · Scam Correction</div>
+          <h3 class="cardTitle">Peel Shot Scam Correction</h3>
+          <p class="muted"><a href="https://www.tiktok.com/@ty_kodes/video/7576878639132839198" target="_blank" rel="noreferrer noopener">Watch video</a> · Product: Dr.Melaxin Peel Shot</p>
+        </div>
+        <table class="sentenceTable">
+          <tr><th>Original Line</th><th>Skeleton To Reuse</th></tr>
+          <tr><td class="sentence">“Please stop falling for the scam...”</td><td class="meaning">Please stop falling for [wrong claim / fake demo]</td></tr>
+          <tr><td class="sentence">“rubbing eyeshadow on their legs”</td><td class="meaning">people doing [specific wrong behavior]</td></tr>
+          <tr><td class="sentence">“this shit don’t peel hyperpigmentation off”</td><td class="meaning">this does not [fake result]</td></tr>
+          <tr><td class="sentence">“you’re gonna get scammed if you think...”</td><td class="meaning">you’re gonna get scammed if you think [wrong expectation]</td></tr>
+          <tr><td class="sentence">“what it actually does...”</td><td class="meaning">what it actually does is [real product job]</td></tr>
+          <tr><td class="sentence">“creates these peel shot balls”</td><td class="meaning">it creates [visible product action]</td></tr>
+          <tr><td class="sentence">“grabs anything that gets stuck to it”</td><td class="meaning">it [grabs / lifts / clears] [thing it removes]</td></tr>
+          <tr><td class="sentence">“whiteheads, blackheads, dirt, sebum oils”</td><td class="meaning">whether it’s [thing 1], [thing 2], [thing 3]</td></tr>
+          <tr><td class="sentence">“then after that, it starts lightening up the skin”</td><td class="meaning">then after that, it helps [second benefit]</td></tr>
+          <tr><td class="sentence">“kojic acid and turmeric”</td><td class="meaning">because it has [ingredient 1] and [ingredient 2]</td></tr>
+          <tr><td class="sentence">“face, inner legs, underarms”</td><td class="meaning">use it on [area 1], [area 2], [area 3]</td></tr>
+          <tr><td class="sentence">“my chest used to look like chocolate drops...”</td><td class="meaning">my [area] used to look like [visual pain]</td></tr>
+          <tr><td class="sentence">“now look at it”</td><td class="meaning">now look at [proof]</td></tr>
+          <tr><td class="sentence">“selling out like crazy every time I go to get more”</td><td class="meaning">it sells out every time I [try to get more / check stock]</td></tr>
+          <tr><td class="sentence">“act fast before they sell out again”</td><td class="meaning">act fast before [stock / sale] is gone again</td></tr>
+        </table>
+      </div>
+    </article>
+
+    <div class="h2" style="margin-top:16px">
+      <h2>3 Full Video Skeletons</h2>
+      <div class="count">13-15 line templates</div>
+    </div>
+    <div class="templateGrid">
+      <article class="card templateCard">
+        <div class="eyebrow">Template 1</div>
+        <h3 class="cardTitle">Receipt First</h3>
+        <div class="templateCode">1. This is [time] ago. This is now.
+2. This was [time] ago. And this is now.
+3. for all of us [viewer] people
+4. who get [pain] after every [trigger]
+5. this is [clear product metaphor] in a [format]
+6. this [product] is what I’ve been using for [specific problem]
+7. it helps [main benefit]
+8. and it stops [future problem] from even coming in
+9. I saw this / heard about this, so I checked [reviews / comments / proof]
+10. people are going from [before state] to [after state]
+11. if you have [specific use case 1], [specific use case 2], or [specific use case 3], this helps too
+12. I waited [time] to get this / I’ve been gatekeeping this for [time]
+13. if the link is there, it is [available / in stock / on sale]
+14. if you don’t see it, [stock / access reason]</div>
+      </article>
+
+      <article class="card templateCard">
+        <div class="eyebrow">Template 2</div>
+        <h3 class="cardTitle">If You Have This</h3>
+        <div class="templateCode">1. If you have [visible problem]...
+2. use [ingredient / product type]
+3. If you got this, use [fix]. Definitely.
+4. because it’s [emotional description]
+5. when you fix [surface problem], but still look like you have [same problem]
+6. that is because [leftover issue] is still there
+7. [ingredient / product type] is made to help with [specific problem]
+8. whether it’s on your [area 1], [area 2], [area 3], wherever
+9. this [product / step] is what I’ve been using
+10. I’ve been gatekeeping [this product / this fix] for [time]
+11. people keep asking me how my [result] looks like this
+12. this [secret / product / step] right here
+13. when I send people the link, it’s usually [sold out / gone]
+14. if you see it [down here / linked], that means [availability]
+15. act fast before [stock / sale] is gone again</div>
+      </article>
+
+      <article class="card templateCard">
+        <div class="eyebrow">Template 3</div>
+        <h3 class="cardTitle">Correction First</h3>
+        <div class="templateCode">1. Please stop falling for [wrong claim / fake demo]
+2. people are doing [specific wrong behavior]
+3. this does not [fake result]
+4. that is not how [problem / product] works
+5. you’re gonna get scammed if you think [wrong expectation]
+6. what it actually does is [real product job]
+7. when you use it, it creates / does [visible product action]
+8. it [grabs / lifts / clears / preps] [thing it works on]
+9. whether it’s [thing 1], [thing 2], [thing 3], whatever it is
+10. then after that, it helps [second benefit]
+11. because it has [ingredient 1] and [ingredient 2]
+12. use it on [area 1], [area 2], [area 3], wherever you want to [desired result]
+13. my [area] used to look like [visual pain]
+14. now look at [proof]
+15. if you see it linked, act fast before [stock / sale] is gone again</div>
+      </article>
+    </div>
+
+    <div class="h2" id="soap-input" style="margin-top:16px">
+      <h2>Product Input Sheet</h2>
+      <div class="count">Dr.Melaxin Serum Soap review inputs</div>
+    </div>
+    <div class="productInput">
+      <aside class="productPhoto">
+        <div class="productPhotoBox">
+          <img src="assets/dr_melaxin_serum_soap.jpeg" alt="Dr.Melaxin Kojic Acid Turmeric Serum Soap">
+        </div>
+        <div>
+          <div class="eyebrow">Product</div>
+          <h3 class="cardTitle">Dr.Melaxin Kojic Acid Turmeric Serum Soap</h3>
+          <p class="muted">Use these inputs to fill the full skeletons above.</p>
+        </div>
+      </aside>
+      <div class="inputGrid">
+        <div class="inputBox">
+          <h4>Visible Problems</h4>
+          <ul>
+            <li>dark spots from acne</li>
+            <li>hyperpigmentation</li>
+            <li>uneven skin tone</li>
+            <li>body marks</li>
+            <li>dull texture</li>
+          </ul>
+        </div>
+        <div class="inputBox">
+          <h4>Pain Lines</h4>
+          <ul>
+            <li>regular cleanser does not feel enough</li>
+            <li>body wash cleans you, but marks still stay</li>
+            <li>want deep clean without stripped skin</li>
+            <li>large body areas need a shower step</li>
+            <li>dark marks make skin look uneven after acne clears</li>
+          </ul>
+        </div>
+        <div class="inputBox">
+          <h4>Weird Product Feature</h4>
+          <ul>
+            <li>stretchy</li>
+            <li>gooey / slimy</li>
+            <li>pizza cheese texture</li>
+            <li>magnetic viscosity</li>
+            <li>sticky serum lather</li>
+            <li>takes a bit to rinse off</li>
+            <li>stays on skin more than liquid cleanser</li>
+          </ul>
+        </div>
+        <div class="inputBox">
+          <h4>Product Job</h4>
+          <ul>
+            <li>daily cleanser step</li>
+            <li>shower entry step</li>
+            <li>tone-care soap</li>
+            <li>kojic / turmeric cleanse step</li>
+            <li>first step before a fade step</li>
+          </ul>
+        </div>
+        <div class="inputBox">
+          <h4>Review Proof</h4>
+          <ul>
+            <li>deeply cleansed</li>
+            <li>super soft</li>
+            <li>smooth</li>
+            <li>no dryness</li>
+            <li>not stripped</li>
+            <li>residue free</li>
+            <li>orange / grapefruit / floral smell</li>
+            <li>thick bar, lasts long</li>
+          </ul>
+        </div>
+        <div class="inputBox">
+          <h4>Objections</h4>
+          <ul>
+            <li>strong smell</li>
+            <li>weird sticky texture</li>
+            <li>harder to rinse</li>
+            <li>big bar / messy / wasteful</li>
+            <li>pricey for soap</li>
+            <li>unsure about fading yet</li>
+            <li>use SPF if used on face</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="modules">
+    <div class="h2">
+      <h2>Lines To Swap</h2>
+      <div class="count">These are the parts we swap</div>
+    </div>
+    <div class="moduleTabs" role="tablist">
+      <button class="moduleTab active" type="button" data-tab="opening">Openings</button>
+      <button class="moduleTab" type="button" data-tab="pain">Pain Lines</button>
+      <button class="moduleTab" type="button" data-tab="audience">Viewer Lines</button>
+      <button class="moduleTab" type="button" data-tab="belief">Wrong Ideas</button>
+      <button class="moduleTab" type="button" data-tab="role">Product Job</button>
+      <button class="moduleTab" type="button" data-tab="proof">Proof</button>
+      <button class="moduleTab" type="button" data-tab="cta">Link Lines</button>
+    </div>
+
+    <div class="modulePanel active" id="tab-opening">
+      <div class="moduleGrid">
+        <div class="moduleItem"><b>“This is [time] ago. This is now.”</b><p>Before / after videos with real proof.</p></div>
+        <div class="moduleItem"><b>“If you have [problem], use [ingredient].”</b><p>If-you-have-this videos.</p></div>
+        <div class="moduleItem"><b>“If you got [visible thing], fix [root problem].”</b><p>Gut and internal-health videos.</p></div>
+        <div class="moduleItem"><b>“If your [body / gut / skin] looks like this...”</b><p>Visual check before diagnosis.</p></div>
+        <div class="moduleItem"><b>“You’re not [wrong label].”</b><p>Correction before product.</p></div>
+        <div class="moduleItem"><b>“That’s not [surface problem].”</b><p>Works when he reframes acne, marks, or gut.</p></div>
+        <div class="moduleItem"><b>“Stop using [wrong fix] for [problem].”</b><p>Correction videos.</p></div>
+        <div class="moduleItem"><b>“If you got [area 1], [area 2], [area 3]...”</b><p>Body-area roll call.</p></div>
+        <div class="moduleItem"><b>“Does [ingredient] bleach your skin?”</b><p>Question-based correction.</p></div>
+        <div class="moduleItem"><b>“Please stop falling for [wrong claim].”</b><p>Anti-scam / myth correction.</p></div>
+      </div>
+    </div>
+    <div class="modulePanel" id="tab-pain">
+      <div class="moduleGrid">
+        <div class="moduleItem"><b>“acne clears, but dark spots stay”</b><p>TX Cream / TX Toner Pad.</p></div>
+        <div class="moduleItem"><b>“skin goes clear, bad, clear again”</b><p>Gut / internal-health bridge.</p></div>
+        <div class="moduleItem"><b>“acne keeps going away and coming back”</b><p>Use when product explains recurrence.</p></div>
+        <div class="moduleItem"><b>“dark spots on your face, back, ass, or body”</b><p>Dark spot products with body use cases.</p></div>
+        <div class="moduleItem"><b>“body wash is not helping these marks”</b><p>Serum Soap.</p></div>
+        <div class="moduleItem"><b>“chest / back / booty acne leaves marks”</b><p>Serum Soap / Almond / Peel Shot.</p></div>
+        <div class="moduleItem"><b>“ingrowns leave dark marks”</b><p>Almond / Serum Soap.</p></div>
+        <div class="moduleItem"><b>“underarm / inner thigh / butt marks”</b><p>Summer body-care lane.</p></div>
+        <div class="moduleItem"><b>“muffin top / love handles / morning skinny”</b><p>Gut lane.</p></div>
+        <div class="moduleItem"><b>“bad bloating / bad farts / clogged up”</b><p>Digestive products.</p></div>
+        <div class="moduleItem"><b>“viral demo makes product look fake”</b><p>Peel Shot.</p></div>
+      </div>
+    </div>
+    <div class="modulePanel" id="tab-audience">
+      <div class="moduleGrid">
+        <div class="moduleItem"><b>“melanated people”</b><p>Dark spot videos.</p></div>
+        <div class="moduleItem"><b>“chocolate to medium tone people”</b><p>Receipt proof videos.</p></div>
+        <div class="moduleItem"><b>“people with darker skin marks”</b><p>TX / kojic / turmeric products.</p></div>
+        <div class="moduleItem"><b>“people with post-acne marks”</b><p>TX Cream / Toner Pad.</p></div>
+        <div class="moduleItem"><b>“people with body-area marks”</b><p>Serum Soap / Almond / Peel Shot.</p></div>
+        <div class="moduleItem"><b>“people who shave / sweat / go to gym”</b><p>Body-care products.</p></div>
+        <div class="moduleItem"><b>“people with chest, back, or booty acne”</b><p>Body acne lane.</p></div>
+        <div class="moduleItem"><b>“people with ingrowns after shaving”</b><p>Spray / serum / body cleanser.</p></div>
+        <div class="moduleItem"><b>“people whose acne keeps coming back”</b><p>Gut / probiotic lane.</p></div>
+        <div class="moduleItem"><b>“men with low energy or performance problems”</b><p>Only if we bring men’s health back.</p></div>
+      </div>
+    </div>
+    <div class="modulePanel" id="tab-belief">
+      <div class="moduleGrid">
+        <div class="moduleItem"><b>“you’re just fat”</b><p>Gut correction.</p></div>
+        <div class="moduleItem"><b>“it’s genetics”</b><p>Gut / love-handle / skin correction.</p></div>
+        <div class="moduleItem"><b>“it’s just acne”</b><p>Reframe toward marks or gut.</p></div>
+        <div class="moduleItem"><b>“skincare alone will fix it”</b><p>Gut lane.</p></div>
+        <div class="moduleItem"><b>“this wipes off dark marks instantly”</b><p>Use for Peel Shot correction.</p></div>
+        <div class="moduleItem"><b>“regular body wash should fix body marks”</b><p>Use for Serum Soap correction.</p></div>
+        <div class="moduleItem"><b>“scrubbing harder fixes body acne marks”</b><p>Use for Mandelic / body-care correction.</p></div>
+        <div class="moduleItem"><b>“any toner works before dark-spot cream”</b><p>Use for TX Toner Pad.</p></div>
+        <div class="moduleItem"><b>“glutathione bleaches your skin”</b><p>Ingredient correction.</p></div>
+        <div class="moduleItem"><b>“probiotics are all the same”</b><p>Health product correction.</p></div>
+      </div>
+    </div>
+    <div class="modulePanel" id="tab-role">
+      <div class="moduleGrid">
+        <div class="moduleItem"><b>TX Cream = “fade step”</b><p>Keep this job clear.</p></div>
+        <div class="moduleItem"><b>Serum Soap = “daily shower cleanser step”</b><p>Entry step, not final fade miracle.</p></div>
+        <div class="moduleItem"><b>TX Toner Pad = “prep / TX routine step”</b><p>Do not sell it as final result alone.</p></div>
+        <div class="moduleItem"><b>Peel Shot = “exfoliation / buildup step”</b><p>Correction before the link line.</p></div>
+        <div class="moduleItem"><b>Mandelic Serum = “body acne treatment step”</b><p>Specific body use cases.</p></div>
+        <div class="moduleItem"><b>Kojic / turmeric = “tone support step”</b><p>Use when the product has this ingredient story.</p></div>
+        <div class="moduleItem"><b>Probiotic = “daily gut support”</b><p>Not a one-time cleanse.</p></div>
+        <div class="moduleItem"><b>Digestive enzyme = “digestion support”</b><p>Use for bloat / after-meal pain.</p></div>
+        <div class="moduleItem"><b>Shilajit / sea moss = “energy support”</b><p>Only for the men’s side lane.</p></div>
+        <div class="moduleItem"><b>Beef liver = “nutrient support”</b><p>Health side lane only.</p></div>
+      </div>
+    </div>
+    <div class="modulePanel" id="tab-proof">
+      <div class="moduleGrid">
+        <div class="moduleItem"><b>before / now</b><p>Only when the proof is real.</p></div>
+        <div class="moduleItem"><b>review proof</b><p>When the claim needs outside validation.</p></div>
+        <div class="moduleItem"><b>comment proof</b><p>When answering buyer-intent comments.</p></div>
+        <div class="moduleItem"><b>texture / buildup demo</b><p>Peel Shot / exfoliation products.</p></div>
+        <div class="moduleItem"><b>body-area use case</b><p>Serum Soap / Almond / Peel Shot.</p></div>
+        <div class="moduleItem"><b>personal reversal</b><p>“I used to...” or “my skin used to...”</p></div>
+        <div class="moduleItem"><b>side-by-side receipt</b><p>Before frame next to current frame.</p></div>
+        <div class="moduleItem"><b>ingredient reason</b><p>Short reason, not a lecture.</p></div>
+        <div class="moduleItem"><b>routine order</b><p>Cleanse -> exfoliate -> fade step.</p></div>
+        <div class="moduleItem"><b>reply comment</b><p>Use when the comment shows buyer intent.</p></div>
+      </div>
+    </div>
+    <div class="modulePanel" id="tab-cta">
+      <div class="moduleGrid">
+        <div class="moduleItem"><b>“if the link is there, it is in stock”</b><p>When it sells out fast.</p></div>
+        <div class="moduleItem"><b>“if you see it down here, act fast”</b><p>When people need to move fast.</p></div>
+        <div class="moduleItem"><b>“I will leave it down below”</b><p>Softer close.</p></div>
+        <div class="moduleItem"><b>“check if it is still available”</b><p>Safer scarcity.</p></div>
+        <div class="moduleItem"><b>“try this before you buy another [wrong product]”</b><p>Correction videos.</p></div>
+        <div class="moduleItem"><b>“before you buy another [wrong fix]...”</b><p>Good after correction.</p></div>
+        <div class="moduleItem"><b>“if it is still on sale, grab it”</b><p>Sale-based close.</p></div>
+        <div class="moduleItem"><b>“the exact one is linked”</b><p>Useful when there are many similar products.</p></div>
+        <div class="moduleItem"><b>“use it like this first”</b><p>Close with instruction, not hype.</p></div>
+        <div class="moduleItem"><b>“do not get the wrong one”</b><p>Product confusion close.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+const tabs = document.querySelectorAll('.moduleTab');
+const panels = document.querySelectorAll('.modulePanel');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.getElementById('tab-' + tab.dataset.tab);
+    if (panel) panel.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

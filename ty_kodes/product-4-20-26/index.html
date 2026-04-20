@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@ty_kodes Growth Picks Dashboard</title>
+<style>
+:root{--bg:#f6f7fb;--panel:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--shadow:0 1px 2px rgba(15,23,42,.06),0 10px 25px rgba(15,23,42,.06);}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.wrap{max-width:1200px;margin:0 auto;padding:18px 16px;}
+header{background:#fff;border-bottom:1px solid var(--line);}
+h1{margin:0;font-size:20px;letter-spacing:-0.01em;}
+.subttl{margin-top:6px;color:var(--muted);font-size:13px;}
+.section{margin-top:18px;}
+.h2{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+.h2 h2{margin:0;font-size:16px;letter-spacing:-0.01em;}
+.count{color:var(--muted);font-size:12px;font-weight:700;}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.filterBtn{display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border-radius:10px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#ffffff,#f8fafc);color:var(--accent);font:inherit;font-size:12px;font-weight:700;cursor:pointer;}
+.filterBtn.active{background:rgba(37,99,235,.10);border-color:rgba(37,99,235,.25);color:#1d4ed8;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+@media (max-width: 980px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width: 720px){.grid{grid-template-columns:1fr;}}
+.card{background:var(--panel);border:1px solid rgba(226,232,240,.9);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:500px;box-shadow:var(--shadow);transition:transform .12s ease, box-shadow .12s ease;}
+.card:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(15,23,42,.08),0 18px 40px rgba(15,23,42,.10);}
+.flip{perspective:1000px;cursor:pointer;}
+.flip:focus{outline:2px solid rgba(37,99,235,.25);outline-offset:2px;}
+.inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
+.flip.isFlipped .inner{transform:rotateY(180deg);}
+.front,.back{backface-visibility:hidden;position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;}
+.back{transform:rotateY(180deg);padding-top:10px;padding-bottom:12px;}
+.trendWrap{height:190px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:stretch;justify-content:stretch;overflow:hidden;margin:2px 0;}
+.trendWrap img{width:100%;height:100%;object-fit:contain;}
+.xaxis{display:flex;justify-content:space-between;gap:8px;padding:0 10px 2px;color:var(--muted);font-size:11px;}
+.backTitle{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:-0.01em;margin:6px 0;}
+.hint{margin-top:auto;color:rgba(100,116,139,.85);font-size:11px;padding-top:8px;}
+.videosBlock{margin-top:8px;}
+.videosRow{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 2px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.videosRow::-webkit-scrollbar{display:none;}
+.vcard{flex:0 0 auto;min-width:140px;max-width:140px;display:flex;flex-direction:column;gap:8px;padding:8px;border:1px solid rgba(226,232,240,.95);border-radius:14px;background:linear-gradient(180deg,#ffffff,#f8fafc);text-decoration:none;color:inherit;scroll-snap-align:start;}
+.vthumb{width:100%;height:160px;border-radius:12px;overflow:hidden;background:#eef2ff;display:flex;align-items:center;justify-content:center;}
+.vthumb img{width:100%;height:100%;object-fit:cover;}
+.vmeta{min-width:0;display:flex;flex-direction:column;gap:4px;}
+.vnick{font-weight:800;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.vstat{color:var(--muted);font-size:11px;line-height:1.2;}
+.imgWrap{height:300px;border:1px solid rgba(226,232,240,.9);border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfdff);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+@media (max-width: 720px){
+  .wrap{padding:14px 12px;}
+  .card{min-height:560px;}
+  .imgWrap{height:340px;}
+  .trendWrap{height:230px;}
+  .pill{padding:6px 10px;font-size:12px;}
+  .links a,.links button{font-size:13px;}
+}
+.imgWrap img{max-width:100%;max-height:100%;object-fit:contain;}
+.title{font-weight:650;font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:4.8em;}
+.sub{display:none;}
+.row{display:flex;flex-wrap:wrap;gap:6px;}
+.pill{font-size:10.5px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#f8fafc,#ffffff);border-radius:999px;padding:2px 7px;color:#0f172a;font-weight:650;letter-spacing:-0.005em;}
+.pill.push{border-color:rgba(37,99,235,.25);background:rgba(37,99,235,.08);color:#1d4ed8;}
+.pill.hold{border-color:rgba(245,158,11,.28);background:rgba(245,158,11,.10);color:#92400e;}
+.meta{font-size:11px;color:var(--muted);margin-top:auto;line-height:1.35;}
+.links{display:flex;gap:8px;margin-top:4px;flex-wrap:wrap;align-items:center;}
+.btnlink{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 10px;border-radius:10px;border:1px solid rgba(226,232,240,.95);background:linear-gradient(180deg,#ffffff,#f8fafc);color:var(--accent);text-decoration:none;font-size:12px;font-weight:700;}
+.btnlink:hover{text-decoration:none;filter:brightness(.98);}
+button.btnlink{cursor:pointer;}
+.linkHint{display:none;color:var(--muted);font-size:11px;line-height:1.2;}
+.card.showHint .linkHint{display:block;}
+.note{margin:12px 0 0;color:var(--muted);font-size:12px;line-height:1.4;}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(15,23,42,.92);color:#fff;padding:10px 12px;border-radius:12px;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .15s ease;}
+.toast.show{opacity:1;}
+.hidden{display:none!important;}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>@ty_kodes Growth Picks Dashboard</h1>
+  <div class="subttl">Preview · Apr 20, 2026 · 5 priority picks · 4 watchlist</div>
+</div></header>
+
+<div class="wrap">
+  <div class="section">
+    <div class="h2">
+      <h2>Recommended</h2>
+      <div class="count">Tap a card to see trend + top videos</div>
+    </div>
+    <div class="filters" aria-label="Category filter">
+      <button class="filterBtn" type="button" data-filter="push">Priority Picks</button>
+      <button class="filterBtn" type="button" data-filter="dark">Dark Spot / Hyperpigmentation</button>
+      <button class="filterBtn" type="button" data-filter="body">Body Acne / Body Marks</button>
+      <button class="filterBtn" type="button" data-filter="hold">Hold / Watchlist</button>
+    </div>
+    <div class="grid">
+
+      <div class="card flip" tabindex="0" data-category="push dark">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/dr_melaxin_serum_soap.jpeg" alt=""></div>
+            <div class="title" title="[Dr.Melaxin Official] Kojic Acid Turmeric Serum Soap formulated for Dark Spot Removal">[Dr.Melaxin Official] Kojic Acid Turmeric Serum Soap formulated for Dark Spot Removal</div>
+            <div class="sub">1729499157284099099</div>
+            <div class="row"><span class="pill push">Push</span><span class="pill">Rating 4.70</span><span class="pill">Commission 15.0%</span></div>
+            <div class="meta">Creators (28d): 78 · Videos (28d): 103</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1729499157284099099" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1729499157284099099?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1729499157284099099">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1729499157284099099.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@joy.shops.tt/video/7620623796675939614" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729499157284099099_7620623796675939614.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Joy TT Shops</div><div class="vstat">Views 530.3K</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@thatgirlyaesthetics/video/7616613868713823501" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729499157284099099_7616613868713823501.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Corina 🗝️</div><div class="vstat">Views 367.3K</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@victoriaxsanabria/video/7620121757592096013" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729499157284099099_7620121757592096013.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">victoriaxsanabria</div><div class="vstat">Views 304.4K</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="push body">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/some_by_mi_repair_set.webp" alt=""></div>
+            <div class="title" title="Full Body Miracle Repair Set - 3-Step Routine for Hyperpigmentation & Body Acne">Full Body Miracle Repair Set - 3-Step Routine for Hyperpigmentation &amp; Body Acne</div>
+            <div class="sub">1729479284790170643</div>
+            <div class="row"><span class="pill push">Push</span><span class="pill">Rating 4.70</span><span class="pill">Commission 20.0%</span></div>
+            <div class="meta">Creators (28d): 1.4K · Videos (28d): 2.0K</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1729479284790170643" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1729479284790170643?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1729479284790170643">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1729479284790170643.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@mackenziedaviz2/video/7608823613109587214" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729479284790170643_7608823613109587214.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">mackenziedaviz2</div><div class="vstat">Views 3.6M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@d1gitalgrl/video/7603266461649341709" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729479284790170643_7603266461649341709.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">quyen ☆</div><div class="vstat">Views 2.1M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@leilanii_02/video/7619128574393584910" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729479284790170643_7619128574393584910.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Leilani</div><div class="vstat">Views 1.8M</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="push body">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/almond_clear_serum.jpeg" alt=""></div>
+            <div class="title" title="Level 2 Mandelic Acid Serum | Body Acne, Folliculitis, Fungal Acne, Hyperpigmentation">Level 2 Mandelic Acid Serum | Body Acne, Folliculitis, Fungal Acne, Hyperpigmentation</div>
+            <div class="sub">1729666844449280302</div>
+            <div class="row"><span class="pill push">Push</span><span class="pill">Rating 4.50</span><span class="pill">Commission 15.0%</span></div>
+            <div class="meta">Creators (28d): 127 · Videos (28d): 266</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1729666844449280302" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1729666844449280302?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1729666844449280302">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1729666844449280302.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@gabbi7922/video/7613481781571947807" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729666844449280302_7613481781571947807.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Gabbi</div><div class="vstat">Views 1.8M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@kahiaaaxx/video/7619713241601690893" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729666844449280302_7619713241601690893.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Indy</div><div class="vstat">Views 1.3M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@divineshayla/video/7614162718987242782" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729666844449280302_7614162718987242782.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">DivineShayla</div><div class="vstat">Views 924.7K</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="push dark">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/dr_melaxin_toner_pad.jpeg" alt=""></div>
+            <div class="title" title="[Dr.Melaxin Official] Kojic Acid Turmeric TX Toner Pad 70pads, Dark Spot & Pigmentation Care">[Dr.Melaxin Official] Kojic Acid Turmeric TX Toner Pad 70pads, Dark Spot &amp; Pigmentation Care</div>
+            <div class="sub">1732243946083160091</div>
+            <div class="row"><span class="pill push">Push</span><span class="pill">Rating 4.50</span><span class="pill">Commission 15.0%</span></div>
+            <div class="meta">Creators (28d): 1.1K · Videos (28d): 1.3K</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1732243946083160091" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1732243946083160091?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1732243946083160091">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1732243946083160091.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@beautytokfinds/video/7611672100155247903" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732243946083160091_7611672100155247903.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">beautytokfinds</div><div class="vstat">Views 5.9M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@beautytokfinds/video/7619116169433255198" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732243946083160091_7619116169433255198.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">beautytokfinds</div><div class="vstat">Views 3.4M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@ajlittle0902/video/7614660018251500830" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732243946083160091_7614660018251500830.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Aaron</div><div class="vstat">Views 2.1M</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="push body">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/some_by_mi_body_cleanser.webp" alt=""></div>
+            <div class="title" title="AHA BHA PHA 30 Days Miracle Acne Clear Body Cleanser 13.5oz">AHA BHA PHA 30 Days Miracle Acne Clear Body Cleanser 13.5oz</div>
+            <div class="sub">1729703080476643347</div>
+            <div class="row"><span class="pill push">Push</span><span class="pill">Rating 4.50</span><span class="pill">Commission 20.0%</span></div>
+            <div class="meta">Creators (28d): 590 · Videos (28d): 756</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1729703080476643347" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1729703080476643347?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1729703080476643347">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1729703080476643347.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@leilanii_02/video/7605416833457360141" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729703080476643347_7605416833457360141.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Leilani</div><div class="vstat">Views 6M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@leilanii_02/video/7598661685792050487" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729703080476643347_7598661685792050487.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Leilani</div><div class="vstat">Views 5.2M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@mcjerbear/video/7617706076498103566" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1729703080476643347_7617706076498103566.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">mcjerbear</div><div class="vstat">Views 2.5M</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="hold dark">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/medicube_power_duo.jpeg" alt=""></div>
+            <div class="title" title="medicube Kojic Acid Turmeric Power Duo">medicube Kojic Acid Turmeric Power Duo</div>
+            <div class="sub">1731761697513836779</div>
+            <div class="row"><span class="pill hold">Hold</span><span class="pill">Rating 4.60</span><span class="pill">Commission 15.0%</span></div>
+            <div class="meta">Creators (28d): 315 · Videos (28d): 500</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1731761697513836779" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1731761697513836779?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1731761697513836779">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1731761697513836779.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@kendrabrowning1/video/7601084165534092557" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1731761697513836779_7601084165534092557.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">kendrabrowning1</div><div class="vstat">Views 19.7M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@kendrabrowning1/video/7615504780860984589" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1731761697513836779_7615504780860984589.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">kendrabrowning1</div><div class="vstat">Views 5M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@natiscart/video/7625771778790395167" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1731761697513836779_7625771778790395167.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">I have a shopping addiction</div><div class="vstat">Views 4M</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="hold dark body">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/medicube_peel_duo.jpeg" alt=""></div>
+            <div class="title" title="medicube Kojic Acid Turmeric Peel Shot Duo For Face & Body">medicube Kojic Acid Turmeric Peel Shot Duo For Face &amp; Body</div>
+            <div class="sub">1732182201234002155</div>
+            <div class="row"><span class="pill hold">Hold</span><span class="pill">Rating 4.60</span><span class="pill">Commission 15.0%</span></div>
+            <div class="meta">Creators (28d): 1.3K · Videos (28d): 1.6K</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1732182201234002155" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1732182201234002155?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1732182201234002155">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1732182201234002155.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@chryssyvsdream/video/7597294925289442573" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732182201234002155_7597294925289442573.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">ChryssyVsDream</div><div class="vstat">Views 4.5M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@shimmersmiles777/video/7626599682260602143" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732182201234002155_7626599682260602143.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Shimmer smiles</div><div class="vstat">Views 3.9M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@chryssyvsdream/video/7610922982067719437" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732182201234002155_7610922982067719437.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">ChryssyVsDream</div><div class="vstat">Views 2.1M</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="hold body">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/glo_melanin_oil.jpeg" alt=""></div>
+            <div class="title" title="Glo Melanin Brightening Body Oil with Turmeric, Grapeseed Oil & Vitamin E">Glo Melanin Brightening Body Oil with Turmeric, Grapeseed Oil &amp; Vitamin E</div>
+            <div class="sub">1731862440456589852</div>
+            <div class="row"><span class="pill hold">Hold</span><span class="pill">Rating 4.40</span><span class="pill">Commission 20.0%</span></div>
+            <div class="meta">Creators (28d): 107 · Videos (28d): 150</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1731862440456589852" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1731862440456589852?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1731862440456589852">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1731862440456589852.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@naturally.me.recipes/video/7606452546630126861" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1731862440456589852_7606452546630126861.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Naturally.me.recipes🥰</div><div class="vstat">Views 1.1M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@darlingdorestant0/video/7612379344312290574" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1731862440456589852_7612379344312290574.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">DarlingDorestant</div><div class="vstat">Views 466.3K</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@dalisindallas/video/7604967771079740702" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1731862440456589852_7604967771079740702.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Dallas</div><div class="vstat">Views 414.9K</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card flip" tabindex="0" data-category="hold body">
+        <div class="inner">
+          <div class="front">
+            <div class="imgWrap"><img src="assets/peach_slices_trifecta.webp" alt=""></div>
+            <div class="title" title="Peach Slices Trifecta Acne Kit">Peach Slices Trifecta Acne Kit</div>
+            <div class="sub">1732184703757292484</div>
+            <div class="row"><span class="pill hold">Hold</span><span class="pill">Rating 4.70</span><span class="pill">Commission 15.0%</span></div>
+            <div class="meta">Creators (28d): 234 · Videos (28d): 649</div>
+            <div class="links">
+              <a class="btnlink" href="https://www.fastmoss.com/zh/e-commerce/detail/1732184703757292484" target="_blank" rel="noreferrer noopener">FastMoss</a>
+              <a class="btnlink" href="https://shop.tiktok.com/view/product/1732184703757292484?region=US&local=en" target="_blank" rel="noreferrer noopener">TikTok</a>
+              <button class="btnlink copyBtn" type="button" data-copy="https://www.fastmoss.com/zh/e-commerce/detail/1732184703757292484">Copy link</button>
+              <span class="linkHint">Copied FastMoss link.</span>
+            </div>
+          </div>
+          <div class="back">
+            <div class="backTitle">90d trend</div>
+            <div class="trendWrap"><img src="assets/charts_trend/1732184703757292484.svg?v=20260420" alt=""></div>
+            <div class="xaxis"><span>90d ago</span><span>60d</span><span>30d</span><span>Now</span></div>
+            <div class="videosBlock">
+              <div class="backTitle" style="margin-top:10px">Top 3 videos</div>
+              <div class="videosRow">
+                <a class="vcard" href="https://www.tiktok.com/@kelsielew09/video/7610309298161274142" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732184703757292484_7610309298161274142.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Kelsie LewHoo | Beauty &amp; Skin</div><div class="vstat">Views 4.9M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@akbeautytips/video/7611689552213789982" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732184703757292484_7611689552213789982.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">akbeautytips</div><div class="vstat">Views 3.2M</div></div>
+                </a>
+                <a class="vcard" href="https://www.tiktok.com/@shopwith.claire/video/7617244094498163981" target="_blank" rel="noreferrer noopener">
+                  <div class="vthumb"><img src="assets/vcover/cover_1732184703757292484_7617244094498163981.jpg" alt=""></div>
+                  <div class="vmeta"><div class="vnick">Claire</div><div class="vstat">Views 2M</div></div>
+                </a>
+              </div>
+            </div>
+            <div class="hint">Tap to flip back</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  function toggle(card){ card.classList.toggle("isFlipped"); }
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ toast("Copied"); }).catch(function(){ fallbackCopy(text); });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+  function fallbackCopy(text){
+    try{ var ta=document.createElement("textarea"); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); toast("Copied"); }
+    catch(_e){ toast("Copy failed"); }
+  }
+  function toast(msg){
+    var el=document.querySelector(".toast");
+    if(!el) return;
+    el.textContent=msg; el.classList.add("show");
+    clearTimeout(window.__toastT);
+    window.__toastT=setTimeout(function(){ el.classList.remove("show"); }, 1200);
+  }
+  document.querySelectorAll(".copyBtn").forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      e.preventDefault(); e.stopPropagation();
+      var url = btn.getAttribute("data-copy") || "";
+      if(url) copyText(url);
+      var card = btn.closest && btn.closest(".card");
+      if(card){ card.classList.add("showHint"); clearTimeout(card.__hintT); card.__hintT=setTimeout(function(){ card.classList.remove("showHint"); }, 2200); }
+    });
+  });
+  document.querySelectorAll(".filterBtn").forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      e.preventDefault(); e.stopPropagation();
+      var current = btn.classList.contains("active") ? "" : (btn.getAttribute("data-filter") || "");
+      document.querySelectorAll(".filterBtn").forEach(function(item){ item.classList.remove("active"); });
+      if(current) btn.classList.add("active");
+      document.querySelectorAll(".card").forEach(function(card){
+        var categories = (card.getAttribute("data-category") || "").split(/\s+/);
+        card.classList.toggle("hidden", !!current && categories.indexOf(current) === -1);
+      });
+    });
+  });
+  document.addEventListener("click", function(e){
+    if(e.target.closest && e.target.closest("a,button,.links")) return;
+    var card = e.target.closest && e.target.closest(".flip");
+    if(card) toggle(card);
+  });
+})();
+</script>
+</body>
+</html>

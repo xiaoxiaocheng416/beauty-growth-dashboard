@@ -64,12 +64,6 @@ const scriptIdeaSections = [
     count: "1 skeleton",
     href: "#/script-idea/talking-head-01",
     note: "Before / after. Expert proof. One-serum replacement."
-  },
-  {
-    title: "Talking Head 02",
-    count: "coming next",
-    href: "#/script-idea/talking-head-02",
-    note: "Creator uses proof and product logic."
   }
 ];
 
@@ -233,7 +227,7 @@ function route() {
   } else if (path === "/script-idea/talking-head-01") {
     renderTalkingHeadScriptIdea(biohackingFineLinesSkeleton);
   } else if (path.startsWith("/script-idea/talking-head")) {
-    renderComingSoonScriptIdea(path);
+    renderScriptIdea();
   } else if (path === "/script-idea") {
     renderScriptIdea();
   } else {
@@ -544,22 +538,6 @@ function renderSkitScriptIdea() {
       </div>
 
       ${scriptSkitSkeletonCard(lanceSkitSkeleton)}
-    </section>
-  `;
-}
-
-function renderComingSoonScriptIdea(path) {
-  const title = path.includes("02") ? "Talking Head 02" : "Talking Head 01";
-  app.innerHTML = `
-    <section class="page script-page">
-      <a class="back-link" href="#/script-idea">← Back to Script Idea</a>
-      <div class="page-header">
-        <div>
-          <p class="eyebrow">Script Idea</p>
-          <h1>${title}</h1>
-        </div>
-        <p class="small-note">We will build this after the skit skeleton is locked.</p>
-      </div>
     </section>
   `;
 }

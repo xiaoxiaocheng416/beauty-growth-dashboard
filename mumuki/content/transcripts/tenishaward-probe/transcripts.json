@@ -1,0 +1,22 @@
+[
+  {
+    "video_id": "7446093862952815918",
+    "public_url": "https://www.tiktok.com/@tenishaward1/video/7446093862952815918",
+    "has_transcript": "no",
+    "method": "none",
+    "transcript": "",
+    "transcript_path": "/Users/borgrise/Desktop/codex/视频创作_重构版/01-内容生产/workspaces/MUMUKI_Creator_Reference_Hub/content/transcripts/tenishaward-probe/transcripts/7446093862952815918.txt",
+    "video_path": "/Users/borgrise/Desktop/codex/视频创作_重构版/01-内容生产/workspaces/MUMUKI_Creator_Reference_Hub/content/transcripts/tenishaward-probe/videos/7446093862952815918.mp4",
+    "error": "WARNING: [TikTok] The extractor is attempting impersonation, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies | asr_failed:"
+  },
+  {
+    "video_id": "7615701080982211853",
+    "public_url": "https://www.tiktok.com/@tenishaward1/video/7615701080982211853",
+    "has_transcript": "yes",
+    "method": "asr",
+    "transcript": "Pfff\n",
+    "transcript_path": "/Users/borgrise/Desktop/codex/视频创作_重构版/01-内容生产/workspaces/MUMUKI_Creator_Reference_Hub/content/transcripts/tenishaward-probe/transcripts/7615701080982211853.txt",
+    "video_path": "/Users/borgrise/Desktop/codex/视频创作_重构版/01-内容生产/workspaces/MUMUKI_Creator_Reference_Hub/content/transcripts/tenishaward-probe/videos/7615701080982211853.mp4",
+    "error": ""
+  }
+]

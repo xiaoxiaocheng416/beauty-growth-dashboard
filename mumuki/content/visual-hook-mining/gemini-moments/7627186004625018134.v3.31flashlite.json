@@ -1,0 +1,81 @@
+{
+  "video_id": "7627186004625018134",
+  "creator": "@zack.chug",
+  "title": "Banana vs t0x Hook",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 6.5,
+      "end_seconds": 9.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator is aggressively rubbing a banana peel directly onto his face, with mashed banana residue sticking to his skin.",
+      "on_screen_text": "WHEN YOU USE BANANA PEEL ON YOUR FACE?",
+      "spoken_evidence": "So what happens when you use banana peel on your face every day?",
+      "why_this_moment_matters": "High visual shock value; immediately establishes the DIY skincare angle with a relatable, slightly messy action.",
+      "mumuki_reuse_note": "Use this as a 'don't do this, do this instead' transition to introduce the MUMUKI ampoule as a cleaner, more effective alternative.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 17.0,
+      "end_seconds": 19.5,
+      "moment_bucket": "product_application",
+      "role_tag": "texture-shot",
+      "visual_evidence": "The creator pulls a thick, gooey, skin-like substance (representing the banana extract) away from his face, showing its sticky, viscous texture.",
+      "on_screen_text": "skin damage and ACNE",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The texture shot is highly satisfying and visually mimics the viscosity of a high-quality ampoule.",
+      "mumuki_reuse_note": "Replace the DIY mess with a close-up of the MUMUKI ampoule's texture being applied to the skin to highlight its premium consistency.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 26.5,
+      "end_seconds": 29.5,
+      "moment_bucket": "product_application",
+      "role_tag": "texture-shot",
+      "visual_evidence": "Close-up of the creator holding a thick, yellow, fibrous banana mash between his fingers, stretching it to show elasticity.",
+      "on_screen_text": "lock in moisture",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Focuses on the 'moisture' benefit through a tactile, visual demonstration.",
+      "mumuki_reuse_note": "Use this to demonstrate the hydrating properties of the MUMUKI ampoule by showing the product's 'stretch' and absorption on the skin.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 35.5,
+      "end_seconds": 38.5,
+      "moment_bucket": "product_application",
+      "role_tag": "application-shot",
+      "visual_evidence": "The creator is applying a piece of banana directly to his forehead and cheek, then wiping it off with a tissue to reveal the skin underneath.",
+      "on_screen_text": "exfoliate dead skin cells",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the 'exfoliation' benefit in a very direct, DIY way that viewers find intriguing.",
+      "mumuki_reuse_note": "Transition from the messy DIY wipe to a clean, professional wipe-off of the MUMUKI ampoule to show immediate skin brightening.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 42.5,
+      "end_seconds": 45.0,
+      "moment_bucket": "product_application",
+      "role_tag": "texture-shot",
+      "visual_evidence": "The creator peels a thick, mask-like layer of residue off his face, revealing the skin underneath.",
+      "on_screen_text": "it's potassium",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The 'peel-off' visual is a classic skincare trope that guarantees high retention.",
+      "mumuki_reuse_note": "Use this as a satisfying 'reveal' moment after applying the MUMUKI ampoule to show a glowing, clean complexion.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@zack.chug/video/7627186004625018134",
+  "local_video": "assets/videos/viral-zack.chug-7627186004625018134.mp4"
+}

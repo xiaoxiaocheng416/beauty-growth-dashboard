@@ -1,0 +1,81 @@
+{
+  "video_id": "7555933284388146454",
+  "creator": "@kriziaraso",
+  "title": "Honey Facial Glow",
+  "ingredient_focus": "honey / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 2.5,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator shows a split-screen comparison of her skin with acne (before) and her current clear, glowing skin.",
+      "on_screen_text": "My skin before:",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The dramatic before-and-after transformation immediately establishes credibility and high stakes for the viewer.",
+      "mumuki_reuse_note": "Use a similar split-screen format to show the immediate soothing effect of the MUMUKI ampoule on irritated skin.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 4.5,
+      "end_seconds": 7.5,
+      "moment_bucket": "product_application",
+      "role_tag": "visual-satisfaction",
+      "visual_evidence": "The creator uses a small spatula to drizzle thick, golden honey directly onto her cheek.",
+      "on_screen_text": "Using honey as a face mask",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The viscous, golden texture of the honey is visually satisfying and highlights the raw ingredient focus.",
+      "mumuki_reuse_note": "Replicate this 'drip' shot with the MUMUKI ampoule to emphasize its rich, concentrated texture.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 7.5,
+      "end_seconds": 10.0,
+      "moment_bucket": "product_application",
+      "role_tag": "visual-satisfaction",
+      "visual_evidence": "The creator spreads the honey across her face with her fingers, creating a glossy, reflective layer.",
+      "on_screen_text": "Antibacterial Calming",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the product coverage and the immediate 'glow' effect on the skin.",
+      "mumuki_reuse_note": "Show the application of the ampoule to demonstrate how it leaves a non-sticky, healthy glow.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 10.0,
+      "end_seconds": 12.5,
+      "moment_bucket": "product_application",
+      "role_tag": "visual-satisfaction",
+      "visual_evidence": "Close-up of the creator massaging the honey into her skin with both hands.",
+      "on_screen_text": "Antibacterial Calming Helps the skin heal faster",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The massage motion implies a self-care ritual, which is highly engaging for skincare audiences.",
+      "mumuki_reuse_note": "Use a close-up of the massage technique to highlight the absorption and soothing properties of the ampoule.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 12.5,
+      "end_seconds": 14.6,
+      "moment_bucket": "result_moment",
+      "role_tag": "payoff",
+      "visual_evidence": "The creator poses with her face fully coated in honey, looking directly at the camera with a confident expression.",
+      "on_screen_text": "Antibacterial Calming Helps the skin heal faster",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Final shot reinforces the 'DIY skincare' aesthetic and the confidence gained from the routine.",
+      "mumuki_reuse_note": "End with a 'glowing skin' reveal after using the MUMUKI ampoule to show the final result.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@kriziaraso/video/7555933284388146454",
+  "local_video": "assets/videos/viral-kriziaraso-7555933284388146454.mp4"
+}

@@ -1,0 +1,81 @@
+{
+  "video_id": "7330117596110392619",
+  "creator": "@victoria__benitez",
+  "title": "Banana for Skin Girlies",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 6.5,
+      "end_seconds": 10.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator is holding a banana peel and directly rubbing the inner side of it against her cheek.",
+      "on_screen_text": "",
+      "spoken_evidence": "Yeah, rub it on your face.",
+      "why_this_moment_matters": "This is the most shocking and attention-grabbing action in the video, creating immediate curiosity about the efficacy of banana peels on skin.",
+      "mumuki_reuse_note": "Use this as a 'don't do this' hook, transitioning to the professional, clean application of the MUMUKI Honey Banana BDRN Ampoule.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 13.0,
+      "end_seconds": 16.0,
+      "moment_bucket": "ingredient_focus",
+      "role_tag": "visual-proof",
+      "visual_evidence": "Close-up of the creator rubbing the banana peel across her forehead and under-eye area.",
+      "on_screen_text": "",
+      "spoken_evidence": "This is going to get you nice, tight, right, glowy, potassium baby.",
+      "why_this_moment_matters": "It highlights the 'banana for skin' trend and the specific desire for 'glowy' skin, which aligns with the product's benefits.",
+      "mumuki_reuse_note": "Can be used as a montage clip to show the popularity of banana-based skincare before introducing the product as the superior alternative.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 16.5,
+      "end_seconds": 19.5,
+      "moment_bucket": "ingredient_focus",
+      "role_tag": "visual-proof",
+      "visual_evidence": "The creator is aggressively rubbing the banana peel over her entire face, showing the texture of the peel against the skin.",
+      "on_screen_text": "",
+      "spoken_evidence": "Get her on your skin. Get it on there.",
+      "why_this_moment_matters": "Demonstrates the high level of interest in DIY banana skincare, proving the ingredient's appeal to the target audience.",
+      "mumuki_reuse_note": "Use to contrast the messy DIY approach with the refined, concentrated formula of the MUMUKI ampoule.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 21.0,
+      "end_seconds": 24.0,
+      "moment_bucket": "application_demo",
+      "role_tag": "visual-proof",
+      "visual_evidence": "The creator uses the banana peel as a makeshift tool to brush her eyebrows, showing a multi-use DIY approach.",
+      "on_screen_text": "",
+      "spoken_evidence": "Look, you can even use her as a eyebrow brush.",
+      "why_this_moment_matters": "Shows the creator's creative, albeit unconventional, use of the ingredient, which is highly engaging for social media viewers.",
+      "mumuki_reuse_note": "Not directly reusable for application, but highlights the 'banana' theme that can be bridged to the product's key ingredient.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 25.0,
+      "end_seconds": 28.0,
+      "moment_bucket": "skin_payoff",
+      "role_tag": "visual-proof",
+      "visual_evidence": "Close-up of the creator's face after the application, showing a natural, dewy skin finish.",
+      "on_screen_text": "",
+      "spoken_evidence": "My eyebrows have never been so brushed.",
+      "why_this_moment_matters": "The final shot shows the 'glowy' result the user is aiming for, which is the ultimate goal for the MUMUKI product as well.",
+      "mumuki_reuse_note": "Use as a 'result' shot, showing that while DIY is messy, the goal of 'glowy skin' is valid and achievable with the right product.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@victoria__benitez/video/7330117596110392619",
+  "local_video": "assets/videos/viral-victoria__benitez-7330117596110392619.mp4"
+}

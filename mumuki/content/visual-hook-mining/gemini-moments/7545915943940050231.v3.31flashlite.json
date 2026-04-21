@@ -1,0 +1,81 @@
+{
+  "video_id": "7545915943940050231",
+  "creator": "@jaimesskin",
+  "title": "Manuka Honey Face Mask",
+  "ingredient_focus": "honey / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 3.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "Close-up of the creator's face completely covered in a thick, golden, sticky honey mask, holding a wooden spoon with honey.",
+      "on_screen_text": "why/how I use just manuka honey on my skin",
+      "spoken_evidence": "After years of experience with manuka honey for skincare, this is how I give myself like new skin",
+      "why_this_moment_matters": "The immediate visual of a thick, sticky, golden mask on the face is highly arresting and signals a DIY skincare routine.",
+      "mumuki_reuse_note": "Use this as a high-impact hook for the MUMUKI ampoule, showing the product texture being applied similarly.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 12.5,
+      "end_seconds": 15.0,
+      "moment_bucket": "texture_shot",
+      "role_tag": "texture-appeal",
+      "visual_evidence": "Close-up of the wooden spoon dripping with thick, viscous manuka honey.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Highlights the premium, sticky, and rich texture of the ingredient, which is essential for selling a honey-based product.",
+      "mumuki_reuse_note": "Create a similar macro shot of the MUMUKI ampoule texture to emphasize its richness and quality.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 43.0,
+      "end_seconds": 45.5,
+      "moment_bucket": "application_shot",
+      "role_tag": "product-like application",
+      "visual_evidence": "Creator uses her fingers to spread the thick honey mask across her cheek, showing the sticky, glowing texture.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the tactile experience of applying a sticky, honey-based product, which is very satisfying to watch.",
+      "mumuki_reuse_note": "Film a similar application shot of the MUMUKI ampoule to show how it glides and adheres to the skin.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 54.5,
+      "end_seconds": 57.5,
+      "moment_bucket": "application_shot",
+      "role_tag": "skin glow",
+      "visual_evidence": "Creator is massaging the honey into her skin with both hands, showing the high-gloss, reflective finish on her face.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The 'glass skin' glow is the ultimate payoff for skincare videos and directly correlates to the desired result of the MUMUKI ampoule.",
+      "mumuki_reuse_note": "Use this to showcase the immediate 'glow' effect of the MUMUKI ampoule after application.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 10.0,
+      "end_seconds": 12.0,
+      "moment_bucket": "application_shot",
+      "role_tag": "skin payoff",
+      "visual_evidence": "Creator is rubbing her face with her fingers, showing the thick, sticky texture of the mask on her skin.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the physical interaction with the product, emphasizing the 'peeling' or 'renewing' sensation.",
+      "mumuki_reuse_note": "Can be used to demonstrate the massage technique for the MUMUKI ampoule to enhance absorption.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@jaimesskin/video/7545915943940050231",
+  "local_video": "assets/videos/viral-jaimesskin-7545915943940050231.mp4"
+}

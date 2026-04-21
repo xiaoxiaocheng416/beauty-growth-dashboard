@@ -1,0 +1,81 @@
+{
+  "video_id": "7561970033195257101",
+  "creator": "@thejenjones",
+  "title": "Banana Peel Natural t0x",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 3.5,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator holds a banana peel directly in front of the camera, showing the inside of the peel.",
+      "on_screen_text": "",
+      "spoken_evidence": "Organic banana peel, also known as natural botox.",
+      "why_this_moment_matters": "The immediate visual of a banana peel combined with the bold claim of 'natural botox' creates high curiosity and stop-power.",
+      "mumuki_reuse_note": "Can be adapted by showing the MUMUKI Honey Banana BDRN Ampoule bottle next to a fresh banana to establish the ingredient connection immediately.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 12.5,
+      "end_seconds": 16.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-demonstration",
+      "visual_evidence": "The creator rubs the inside of the banana peel directly onto her cheek and under-eye area.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the direct application of the ingredient to the skin, which is a highly engaging 'DIY' visual.",
+      "mumuki_reuse_note": "Replace the banana peel with the application of the MUMUKI Ampoule to show the product being applied to the same facial zones.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 18.5,
+      "end_seconds": 21.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-demonstration",
+      "visual_evidence": "The creator rubs the banana peel across her forehead, demonstrating a full-face application technique.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the ease of use and the 'skincare routine' aspect of the ingredient.",
+      "mumuki_reuse_note": "Use this as a reference for the 'application flow' of the MUMUKI Ampoule, showing a smooth, satisfying application motion.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 45.5,
+      "end_seconds": 49.0,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "skin-glow",
+      "visual_evidence": "The creator applies the product to her face and pats it in, showing her skin looking hydrated and glowing.",
+      "on_screen_text": "",
+      "spoken_evidence": "Instant glow.",
+      "why_this_moment_matters": "Provides the 'payoff' or result of the skincare routine, which is essential for conversion.",
+      "mumuki_reuse_note": "Directly mirror this shot with the MUMUKI Ampoule to showcase the 'instant glow' benefit of the product.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 52.0,
+      "end_seconds": 55.0,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "skin-glow",
+      "visual_evidence": "Close-up of the creator's face showing the final, dewy, and hydrated skin texture after the routine.",
+      "on_screen_text": "",
+      "spoken_evidence": "Ooh, we glowing!",
+      "why_this_moment_matters": "The final 'glow' shot is the ultimate proof of efficacy that viewers look for in skincare content.",
+      "mumuki_reuse_note": "Use this as the final 'result' shot in the MUMUKI video to emphasize the product's hydrating and brightening effects.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@thejenjones/video/7561970033195257101",
+  "local_video": "assets/videos/viral-thejenjones-7561970033195257101.mp4"
+}

@@ -1,0 +1,81 @@
+{
+  "video_id": "7579824086315011359",
+  "creator": "@drewcanole",
+  "title": "DIY Honey Face Mask",
+  "ingredient_focus": "honey / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 4.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "A woman is applying a thick, golden honey mask onto her face using a spoon, with visible acne spots on her skin.",
+      "on_screen_text": "Using Raw Honey on Your Face for 14 Days Can TRANSFORM Your Skin!",
+      "spoken_evidence": "Using raw honey face mask with a little bit of baking soda on your face every single night for 14 days.",
+      "why_this_moment_matters": "The immediate visual of applying a sticky, natural ingredient directly to the face creates high curiosity and 'gross-but-satisfying' appeal.",
+      "mumuki_reuse_note": "Use this as a direct hook for the MUMUKI ampoule application, showing the texture being spread on the skin.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 6.0,
+      "end_seconds": 9.0,
+      "moment_bucket": "texture_shot",
+      "role_tag": "sensory-appeal",
+      "visual_evidence": "Close-up of a honey dipper dripping thick, golden raw honey.",
+      "on_screen_text": "Raw Honey",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "High-quality texture shots of natural ingredients are visually satisfying and build trust in the product's purity.",
+      "mumuki_reuse_note": "Create a similar high-definition macro shot of the MUMUKI ampoule texture to emphasize its richness.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 24.0,
+      "end_seconds": 27.0,
+      "moment_bucket": "application_shot",
+      "role_tag": "product-application",
+      "visual_evidence": "A woman gently massaging a white, creamy substance into her skin with her fingertips.",
+      "on_screen_text": "drawing out impurities,",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the tactile experience of skincare application, which is essential for demonstrating the 'ritual' aspect of using an ampoule.",
+      "mumuki_reuse_note": "Replicate this exact massage technique with the MUMUKI ampoule to show how it absorbs into the skin.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 27.0,
+      "end_seconds": 30.0,
+      "moment_bucket": "payoff_shot",
+      "role_tag": "skin-glow",
+      "visual_evidence": "Close-up of a woman's face showing a dewy, glowing complexion after the skincare routine.",
+      "on_screen_text": "absolutely glorious.",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The 'glow' payoff is the ultimate goal for the viewer and provides the necessary social proof for the skincare routine.",
+      "mumuki_reuse_note": "Use this as the 'after' result shot to showcase the immediate radiance provided by the MUMUKI ampoule.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 38.0,
+      "end_seconds": 44.0,
+      "moment_bucket": "testimonial_shot",
+      "role_tag": "social-proof",
+      "visual_evidence": "A woman touching her face and smiling, looking at the camera with clear, healthy-looking skin.",
+      "on_screen_text": "Next morning",
+      "spoken_evidence": "Next morning she was like, Oh my gosh, my skin feels different. I have no more redness.",
+      "why_this_moment_matters": "Real-person testimonials regarding skin texture and redness reduction are highly persuasive for skincare buyers.",
+      "mumuki_reuse_note": "Film a similar 'morning after' reaction video using the MUMUKI ampoule to highlight its soothing properties.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@drewcanole/video/7579824086315011359",
+  "local_video": "assets/videos/viral-drewcanole-7579824086315011359.mp4"
+}

@@ -1,0 +1,67 @@
+{
+  "video_id": "7593798567966297355",
+  "creator": "@shamiebirungi19",
+  "title": "Honey Skin Glow Hack",
+  "ingredient_focus": "honey / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 3.5,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "Honey is being poured directly from a bottle onto the center of the creator's forehead.",
+      "on_screen_text": "It’s just honey!🍯",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The immediate, messy, and satisfying visual of pouring honey directly onto the face is a high-retention hook.",
+      "mumuki_reuse_note": "Use this as a 'texture hook' to show the richness of the MUMUKI ampoule, replacing honey with the product texture.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 3.5,
+      "end_seconds": 6.0,
+      "moment_bucket": "action_moment",
+      "role_tag": "visual-engagement",
+      "visual_evidence": "The honey drips down the creator's nose and she licks it off, showing the raw nature of the ingredient.",
+      "on_screen_text": "It’s just honey!🍯",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The interaction with the ingredient makes the DIY process feel authentic and relatable.",
+      "mumuki_reuse_note": "Not reusable as is, but the 'drip' visual can be adapted to show the ampoule's viscosity.",
+      "clip_priority": 4,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 6.5,
+      "end_seconds": 10.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "product-application",
+      "visual_evidence": "The creator uses her fingers to spread the thick, sticky honey across her entire face.",
+      "on_screen_text": "It’s just honey!🍯",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the full coverage application process, which is essential for skincare tutorials.",
+      "mumuki_reuse_note": "Replicate this application motion with the MUMUKI ampoule to demonstrate ease of spread and coverage.",
+      "clip_priority": 2,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 13.5,
+      "end_seconds": 17.18,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "skin-glow",
+      "visual_evidence": "The creator points to her cheek, highlighting the glossy, hydrated, and glowing finish of her skin.",
+      "on_screen_text": "That glow ✨ though",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "This is the 'payoff' that justifies the entire process; it proves the 'glow' result.",
+      "mumuki_reuse_note": "Essential for the 'After' shot of the MUMUKI ampoule to show the immediate skin radiance.",
+      "clip_priority": 3,
+      "clip_file": "beat-04.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@shamiebirungi19/video/7593798567966297355",
+  "local_video": "assets/videos/viral-shamiebirungi19-7593798567966297355.mp4"
+}

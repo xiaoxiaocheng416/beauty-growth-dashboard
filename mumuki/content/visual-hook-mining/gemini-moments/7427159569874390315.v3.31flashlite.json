@@ -1,0 +1,81 @@
+{
+  "video_id": "7427159569874390315",
+  "creator": "@duoheadspa",
+  "title": "Banana Fruit Facial",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 2.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "A close-up of a person's face completely covered in thin, circular slices of banana.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The bizarre and visually striking image of a face covered in banana slices creates immediate curiosity and 'stop-scrolling' effect.",
+      "mumuki_reuse_note": "Use as a visual hook to contrast the 'messy DIY' approach with the clean, professional application of the MUMUKI Honey Banana BDRN Ampoule.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 2.0,
+      "end_seconds": 4.5,
+      "moment_bucket": "application_moment",
+      "role_tag": "texture-focus",
+      "visual_evidence": "Two brushes applying a thick, white, creamy substance onto the person's face.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the satisfying, professional application of a skincare product, which is highly relevant to the ampoule format.",
+      "mumuki_reuse_note": "Can be used to demonstrate the smooth, luxurious application of the MUMUKI ampoule.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 5.0,
+      "end_seconds": 7.5,
+      "moment_bucket": "massage_moment",
+      "role_tag": "sensory-experience",
+      "visual_evidence": "A professional aesthetician performing a facial massage on the client's face with both hands.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Highlights the relaxing, spa-like experience associated with skincare routines.",
+      "mumuki_reuse_note": "Use to emphasize the self-care aspect of using the MUMUKI ampoule.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 9.5,
+      "end_seconds": 12.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "ingredient-focus",
+      "visual_evidence": "Hands placing individual banana slices onto the face, reinforcing the DIY banana theme.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Directly links the ingredient (banana) to the skin, validating the interest in banana-based skincare.",
+      "mumuki_reuse_note": "Transition from this to a close-up of the MUMUKI ampoule texture to show a more effective, modern alternative to raw fruit.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 13.0,
+      "end_seconds": 16.0,
+      "moment_bucket": "result_moment",
+      "role_tag": "skin-payoff",
+      "visual_evidence": "A towel being wiped off the face, revealing clean, glowing, and refreshed skin.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The 'reveal' is the most important part of any skincare video, showing the final skin payoff.",
+      "mumuki_reuse_note": "Use as the 'after' shot to show the glowing skin results achievable with the MUMUKI ampoule.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@duoheadspa/video/7427159569874390315",
+  "local_video": "assets/videos/viral-duoheadspa-7427159569874390315.mp4"
+}

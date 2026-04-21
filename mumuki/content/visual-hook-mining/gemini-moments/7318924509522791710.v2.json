@@ -1,0 +1,91 @@
+{
+  "video_id": "7318924509522791710",
+  "creator": "@thenaturalnadine",
+  "title": "Banana Peel Skincare Scrub",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 36.0,
+      "end_seconds": 40.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "Woman takes a banana peel and begins rubbing it gently all over her face.",
+      "on_screen_text": "then take your banana peel and start rubbing it gently all over your face",
+      "spoken_evidence": "then take your banana peel and start rubbing it gently all over your face",
+      "why_it_stops_scroll": "The unusual and direct application of a banana peel to the face is a strong visual hook that immediately grabs attention.",
+      "reusable_for_mumuki": "Discover the secret to youthful skin! Our Honey Banana BDRN Ampoule captures the essence of this natural ingredient for a radiant complexion.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 40.0,
+      "end_seconds": 44.0,
+      "moment_bucket": "visual_action",
+      "role_tag": "demonstration",
+      "visual_evidence": "Close-up shot of the woman rubbing the inside of the banana peel on her cheek, showing the texture and direct skin contact.",
+      "on_screen_text": "you'll be hydrating your skin from the inside out from the potassium it contains",
+      "spoken_evidence": "you'll be hydrating your skin from the inside out from the potassium it contains",
+      "why_it_stops_scroll": "The close-up detail of the peel on the skin highlights the natural, tactile aspect of the treatment.",
+      "reusable_for_mumuki": "Experience deep hydration and plumpness with our ampoule, just like the nourishing touch of fresh banana on your skin.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 44.0,
+      "end_seconds": 48.0,
+      "moment_bucket": "visual_action",
+      "role_tag": "demonstration",
+      "visual_evidence": "The woman continues to rub the banana peel around her nose and mouth area, targeting common areas for fine lines.",
+      "on_screen_text": "the vitamin B is anti aging the vitamin E protects your skin's protective layer",
+      "spoken_evidence": "the vitamin B is anti aging, the vitamin E protects your skin's protective layer",
+      "why_it_stops_scroll": "Shows the versatility of the application, suggesting it can address specific facial concerns.",
+      "reusable_for_mumuki": "Target signs of aging and strengthen your skin's protective barrier with the powerful vitamins in our banana-infused formula.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 48.0,
+      "end_seconds": 52.0,
+      "moment_bucket": "visual_action",
+      "role_tag": "demonstration",
+      "visual_evidence": "The woman extends the banana peel application to her jawline and neck, demonstrating comprehensive coverage.",
+      "on_screen_text": "and the tannins of the banana peels helps reduce redness tighten pores and reduce inflammation",
+      "spoken_evidence": "and the tannins of the banana peels helps reduce redness, tighten pores and reduce inflammation",
+      "why_it_stops_scroll": "Illustrates a full-face and neck treatment, appealing to users looking for overall skin improvement.",
+      "reusable_for_mumuki": "Achieve a firm, lifted appearance and soothe redness across your face and neck with the natural benefits of banana.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 52.0,
+      "end_seconds": 56.0,
+      "moment_bucket": "visual_action",
+      "role_tag": "texture_focus",
+      "visual_evidence": "The woman holds the banana peel, her face showing a slight sheen or residue from the peel, indicating a mask-like effect.",
+      "on_screen_text": "and let the banana peel residue sit on your face for 10 minutes wash it off and you can do your regular skincare routine",
+      "spoken_evidence": "and let the banana peel residue sit on your face for 10 minutes, wash it off and you can do your regular skincare routine",
+      "why_it_stops_scroll": "The visual of the residue on the skin suggests a treatment that is actively working, creating anticipation for results.",
+      "reusable_for_mumuki": "Feel the nourishing residue of banana working its magic. Our ampoule delivers concentrated goodness for visibly improved skin.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    },
+    {
+      "index": 6,
+      "start_seconds": 56.0,
+      "end_seconds": 61.0,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "glow_reveal",
+      "visual_evidence": "The woman smiles, touches her glowing, clear skin, and makes a peace sign, showcasing the positive results.",
+      "on_screen_text": "it's super easy something you can do everyday and make sure to follow me for more skin tips",
+      "spoken_evidence": "it's super easy, something you can do everyday and make sure to follow me for more skin tips",
+      "why_it_stops_scroll": "The 'after' shot clearly demonstrates the desired outcome: plump, hydrated, and radiant skin, which is highly appealing.",
+      "reusable_for_mumuki": "Unlock your skin's natural radiance! Our Honey Banana BDRN Ampoule gives you that plump, hydrated, and youthful glow every day.",
+      "clip_priority": 6,
+      "clip_file": "beat-06.mp4"
+    }
+  ]
+}

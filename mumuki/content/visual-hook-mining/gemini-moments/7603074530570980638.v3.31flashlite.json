@@ -1,0 +1,81 @@
+{
+  "video_id": "7603074530570980638",
+  "creator": "@bithhnh387",
+  "title": "Frozen Banana Skincare",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 34.0,
+      "end_seconds": 37.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "product-like application",
+      "visual_evidence": "A brush is applying a thick, golden, honey-like mask onto a person's face.",
+      "on_screen_text": "BRUSH",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the satisfying, luxurious application of a honey-based mask, which is highly relevant to the MUMUKI product texture.",
+      "mumuki_reuse_note": "Use this as a direct visual reference for how to showcase the texture and application of the MUMUKI Honey Banana BDRN Ampoule.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 25.0,
+      "end_seconds": 29.0,
+      "moment_bucket": "texture_moment",
+      "role_tag": "honey texture / sticky texture",
+      "visual_evidence": "Honey is being poured from a spoon into a glass container, showing its viscous, golden texture.",
+      "on_screen_text": "COOL",
+      "spoken_evidence": "Then mix in a little honey.",
+      "why_this_moment_matters": "Visualizes the key ingredient (honey) in a way that emphasizes its premium, sticky, and nourishing quality.",
+      "mumuki_reuse_note": "Can be used as a B-roll shot to highlight the honey ingredient in the MUMUKI formula.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 43.0,
+      "end_seconds": 46.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "face close-up",
+      "visual_evidence": "Close-up of the mask being smoothed over the skin, showing the texture and coverage.",
+      "on_screen_text": "MINUTES",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the product sitting on the skin, which helps the viewer visualize the skincare experience.",
+      "mumuki_reuse_note": "Good for demonstrating the 'masking' or 'treatment' aspect of the ampoule.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 55.5,
+      "end_seconds": 58.5,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "skin glow / skin payoff",
+      "visual_evidence": "A person with glowing, radiant skin is shown next to the banana character holding a coconut.",
+      "on_screen_text": "WOW",
+      "spoken_evidence": "Wow, look at that glow.",
+      "why_this_moment_matters": "Provides the 'after' result, which is crucial for proving the efficacy of the skincare routine.",
+      "mumuki_reuse_note": "Use this as the 'result' shot to show the skin benefits of using the MUMUKI ampoule.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 16.0,
+      "end_seconds": 19.0,
+      "moment_bucket": "diy_moment",
+      "role_tag": "DIY skincare mess",
+      "visual_evidence": "Banana peels are being stirred in a pot of boiling water.",
+      "on_screen_text": "FIRST",
+      "spoken_evidence": "First, toss the peel in a little water.",
+      "why_this_moment_matters": "Shows the 'DIY' process, which is a popular content angle that drives curiosity.",
+      "mumuki_reuse_note": "Can be used to contrast the 'messy DIY' process with the 'convenience and efficacy' of the ready-to-use MUMUKI ampoule.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@bithhnh387/video/7603074530570980638",
+  "local_video": "assets/videos/viral-bithhnh387-7603074530570980638.mp4"
+}

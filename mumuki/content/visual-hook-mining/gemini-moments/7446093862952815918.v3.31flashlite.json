@@ -1,0 +1,81 @@
+{
+  "video_id": "7446093862952815918",
+  "creator": "@tenishaward1",
+  "title": "Honey Comb Facial",
+  "ingredient_focus": "honey / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 3.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator is holding a large piece of raw honeycomb and squeezing it directly onto her forehead, with honey dripping down her face.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The raw, messy, and tactile nature of squeezing honeycomb directly onto the face creates an immediate 'what is she doing?' curiosity gap.",
+      "mumuki_reuse_note": "Use this as a high-impact hook by showing the rich, viscous texture of the MUMUKI ampoule being applied in a similar close-up, satisfying way.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 3.0,
+      "end_seconds": 6.0,
+      "moment_bucket": "ingredient_texture",
+      "role_tag": "texture-focus",
+      "visual_evidence": "Close-up of honey dripping and spreading across the creator's face, showing the sticky, thick consistency.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Highlights the sensory appeal of honey as a skincare ingredient, which is a key selling point for the ampoule.",
+      "mumuki_reuse_note": "Showcase the ampoule's texture in a similar macro shot to emphasize its richness and quality.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 8.0,
+      "end_seconds": 11.0,
+      "moment_bucket": "application_process",
+      "role_tag": "application-demo",
+      "visual_evidence": "The creator is massaging the honey into her skin with both hands, showing the full coverage of the DIY mask.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the ritualistic aspect of skincare application, which viewers find relaxing and satisfying to watch.",
+      "mumuki_reuse_note": "Replicate this massage motion with the MUMUKI ampoule to show how it absorbs or glides on the skin.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 12.0,
+      "end_seconds": 15.0,
+      "moment_bucket": "skin_payoff",
+      "role_tag": "result-focus",
+      "visual_evidence": "The creator shows her face after the mask, highlighting a natural, dewy glow.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Provides the 'payoff' that justifies the messy process, proving that the ingredient leads to visible skin improvement.",
+      "mumuki_reuse_note": "Use this as the 'after' shot to demonstrate the glow provided by the MUMUKI ampoule.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 15.0,
+      "end_seconds": 17.6,
+      "moment_bucket": "skin_payoff",
+      "role_tag": "result-focus",
+      "visual_evidence": "Close-up of the creator smiling and touching her glowing, hydrated skin.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The final result shot confirms the effectiveness of the honey-based skincare routine.",
+      "mumuki_reuse_note": "Use this as a closing shot to show the final skin texture achieved after using the MUMUKI product.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@tenishaward1/video/7446093862952815918",
+  "local_video": "assets/videos/viral-tenishaward1-7446093862952815918.mp4"
+}

@@ -1,0 +1,67 @@
+{
+  "video_id": "7615701080982211853",
+  "creator": "@tenishaward1",
+  "title": "Brighter Clearer Skin",
+  "ingredient_focus": "diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 2.5,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator is applying a thick, bright yellow paste onto her face with a brush, covering her entire face.",
+      "on_screen_text": "POV: You just want bright skin✨",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The high-contrast yellow color and the immediate application create a strong visual hook that stops the scroll.",
+      "mumuki_reuse_note": "Use this as a direct visual hook for the MUMUKI ampoule application to show texture and coverage.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 2.5,
+      "end_seconds": 5.0,
+      "moment_bucket": "product_application",
+      "role_tag": "texture-demonstration",
+      "visual_evidence": "Close-up of the brush spreading the smooth, thick yellow paste across the cheek and forehead.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the satisfying, smooth texture of the DIY mask, which is highly relevant to the texture of an ampoule.",
+      "mumuki_reuse_note": "Show the MUMUKI ampoule being spread on the skin in a similar close-up to highlight its consistency.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 5.0,
+      "end_seconds": 7.5,
+      "moment_bucket": "product_application",
+      "role_tag": "satisfying-application",
+      "visual_evidence": "The creator is carefully applying the mask around the nose and mouth area with a brush.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The precision application is visually satisfying and mimics the professional application of skincare products.",
+      "mumuki_reuse_note": "Use this to show the precision application of the MUMUKI ampoule around targeted areas.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 7.5,
+      "end_seconds": 9.9,
+      "moment_bucket": "result_moment",
+      "role_tag": "skin-payoff",
+      "visual_evidence": "The creator touches her clean, glowing skin, showing the final result after the mask.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Provides the 'payoff' or the desired outcome that viewers are looking for in skincare content.",
+      "mumuki_reuse_note": "Show the 'after' glow of the skin after using the MUMUKI ampoule to prove efficacy.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@tenishaward1/video/7615701080982211853",
+  "local_video": "assets/videos/viral-tenishaward1-7615701080982211853.mp4"
+}

@@ -1,0 +1,81 @@
+{
+  "video_id": "7459763407668006152",
+  "creator": "@kevinnkylee",
+  "title": "Banana Skin Tightening Hack",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 3.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator holds a whole banana directly in front of the camera, then begins peeling it.",
+      "on_screen_text": "Skincare hack to tighten your skin!",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The immediate visual of a raw food item being used for skincare creates a 'what is he doing?' curiosity gap.",
+      "mumuki_reuse_note": "Use a similar close-up of the Honey Banana BDRN Ampoule or a banana slice to immediately signal the ingredient focus.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 3.0,
+      "end_seconds": 6.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-demonstration",
+      "visual_evidence": "The creator rubs the inside of a banana peel directly onto his cheek and forehead.",
+      "on_screen_text": "Skincare hack to tighten your skin!",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Direct application of the ingredient to the skin is the core visual hook that validates the DIY skincare angle.",
+      "mumuki_reuse_note": "Show the texture of the Honey Banana ampoule being applied to the skin in a similar motion to emphasize the 'banana' benefit.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 6.0,
+      "end_seconds": 11.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-demonstration",
+      "visual_evidence": "The creator continues rubbing the banana peel across his nose, chin, and jawline.",
+      "on_screen_text": "Skincare hack to tighten your skin!",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the versatility of the ingredient across different facial zones, reinforcing the 'tightening' claim.",
+      "mumuki_reuse_note": "Demonstrate the ampoule being massaged into the same facial zones to show ease of use.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 13.0,
+      "end_seconds": 16.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-demonstration",
+      "visual_evidence": "The creator rubs the banana peel along his neck and jawline.",
+      "on_screen_text": "Skincare hack to tighten your skin! leave it for 10-20 mins",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The neck application is a common pain point for 'tightening' concerns, making it highly relevant for anti-aging products.",
+      "mumuki_reuse_note": "Highlight the neck application of the ampoule to suggest a comprehensive tightening routine.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 19.0,
+      "end_seconds": 26.0,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "result-showcase",
+      "visual_evidence": "The creator wipes his face with a tissue and then touches his skin, showing a glowing, smooth texture.",
+      "on_screen_text": "Skincare hack to tighten your skin!",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The 'after' shot is essential to prove the efficacy of the ingredient and satisfy the viewer's desire for results.",
+      "mumuki_reuse_note": "Show the 'glow' payoff after applying the Honey Banana ampoule to demonstrate the product's immediate effect.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@kevinnkylee/video/7459763407668006152",
+  "local_video": "assets/videos/viral-kevinnkylee-7459763407668006152.mp4"
+}

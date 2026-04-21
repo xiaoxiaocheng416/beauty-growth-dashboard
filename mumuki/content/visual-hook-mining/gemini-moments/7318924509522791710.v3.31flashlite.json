@@ -1,0 +1,79 @@
+{
+  "video_id": "7318924509522791710",
+  "creator": "@thenaturalnadine",
+  "title": "Banana Peel Skincare Scrub",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 36.0,
+      "end_seconds": 39.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator holds a banana peel and begins rubbing the inside of it directly onto her cheek.",
+      "on_screen_text": "then take your banana peel and start rubbing it gently all over your face",
+      "spoken_evidence": "then take your banana peel and start rubbing it gently all over your face",
+      "why_this_moment_matters": "This is the core 'what is she doing' moment that creates immediate curiosity and visual intrigue.",
+      "mumuki_reuse_note": "Can be adapted by showing the application of the MUMUKI ampoule in a similar direct-to-skin motion to highlight texture and ease of use.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 39.5,
+      "end_seconds": 43.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "product-like application",
+      "visual_evidence": "Close-up shot of the creator rubbing the banana peel under her eye and across her cheekbone.",
+      "on_screen_text": "you'll be hydrating your skin from the inside out from the potassium it contains",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the specific application technique and highlights the 'skincare' aspect of the DIY method.",
+      "mumuki_reuse_note": "Use this framing to show the ampoule being applied to the under-eye area, emphasizing the product's targeted benefits.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 47.5,
+      "end_seconds": 51.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "product-like application",
+      "visual_evidence": "Close-up of the creator rubbing the peel along her jawline and neck area.",
+      "on_screen_text": "and the tannins of the banana peels helps reduce redness",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the versatility of the application across different facial zones.",
+      "mumuki_reuse_note": "Show the ampoule being massaged into the jawline to demonstrate lifting or firming benefits.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 53.0,
+      "end_seconds": 56.0,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "skin glow / skin payoff",
+      "visual_evidence": "The creator shows her face with the banana residue on it, looking directly at the camera.",
+      "on_screen_text": "and let the banana peel residue sit on your face for 10 minutes",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the 'mask' effect of the DIY ingredient, which is a common visual trope in skincare content.",
+      "mumuki_reuse_note": "Show the ampoule applied as a serum or mask layer on the skin to highlight the product's finish and glow.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 57.5,
+      "end_seconds": 60.5,
+      "moment_bucket": "payoff_moment",
+      "role_tag": "skin glow / skin payoff",
+      "visual_evidence": "The creator poses with a peace sign, showing her clean, glowing skin after the process.",
+      "on_screen_text": "something you can do everyday",
+      "spoken_evidence": "It's super easy, something you can do everyday",
+      "why_this_moment_matters": "Provides the final 'result' shot, proving the efficacy of the routine.",
+      "mumuki_reuse_note": "Use this as the final shot of the MUMUKI video to show the 'after' glow and encourage daily use.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview"
+}

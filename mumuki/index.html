@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MUMUKI Creator Reference Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,850&family=Manrope:wght@500;650;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#/">
+          <span>MUMUKI</span>
+          <strong>Creator Hub</strong>
+        </a>
+
+        <nav class="nav" aria-label="Main">
+          <a href="#/" data-route="/">Home</a>
+          <a href="#/reference-video" data-route="/reference-video">Reference Video</a>
+          <a href="#/visual-hook-bank" data-route="/visual-hook-bank">Visual Hook Bank</a>
+          <a href="#/script-idea" data-route="/script-idea">Script Idea</a>
+        </nav>
+
+        <div class="side-note">
+          <p>Core angle</p>
+          <strong>Banana + honey stops people. Ampoule makes it usable.</strong>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div id="app"></div>
+      </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="visualHookGroupsData.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

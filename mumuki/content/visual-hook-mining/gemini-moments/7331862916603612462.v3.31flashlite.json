@@ -1,0 +1,81 @@
+{
+  "video_id": "7331862916603612462",
+  "creator": "@sheenaanayaaa",
+  "title": "Banana Peel Tightening Test",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 3.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator holds two banana peels up to the camera, framing her face.",
+      "on_screen_text": "",
+      "spoken_evidence": "Hey guys, let's try the banana peel facial that's super trendy right now.",
+      "why_this_moment_matters": "Immediate visual curiosity about using food for skincare.",
+      "mumuki_reuse_note": "Use a similar framing with the MUMUKI product to establish the ingredient focus immediately.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 5.0,
+      "end_seconds": 8.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-action",
+      "visual_evidence": "The creator rubs the inside of a banana peel directly onto her cheek and jawline.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the 'DIY' application method that viewers find intriguing.",
+      "mumuki_reuse_note": "Show the application of the MUMUKI ampoule in a similar sweeping motion to emphasize texture and coverage.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 10.5,
+      "end_seconds": 13.5,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-action",
+      "visual_evidence": "The creator places pieces of banana peel under her eyes like eye patches.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Creates a 'skincare hack' visual that is highly shareable.",
+      "mumuki_reuse_note": "Show the ampoule being applied to the under-eye area to highlight its targeted benefits.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 16.0,
+      "end_seconds": 19.0,
+      "moment_bucket": "process_moment",
+      "role_tag": "visual-action",
+      "visual_evidence": "The creator has multiple pieces of banana peel stuck to her face as a mask.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Strong visual impact of a 'DIY mask' that stops the scroll.",
+      "mumuki_reuse_note": "Show the ampoule applied as a thick, nourishing layer to mimic the 'mask' effect.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 26.5,
+      "end_seconds": 29.5,
+      "moment_bucket": "result_moment",
+      "role_tag": "skin-payoff",
+      "visual_evidence": "Close-up of the creator's face showing smooth, glowing skin after the process.",
+      "on_screen_text": "",
+      "spoken_evidence": "My skin is feeling super smooth.",
+      "why_this_moment_matters": "Provides the 'proof' that the skincare routine works.",
+      "mumuki_reuse_note": "Show a close-up of skin after applying the MUMUKI ampoule to highlight the glow and texture improvement.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@sheenaanayaaa/video/7331862916603612462",
+  "local_video": "assets/videos/viral-sheenaanayaaa-7331862916603612462.mp4"
+}

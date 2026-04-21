@@ -1,0 +1,81 @@
+{
+  "video_id": "7355150760293747998",
+  "creator": "@katiejanehughes",
+  "title": "Banana Skin Facial",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 4.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator is rubbing the inside of a banana peel directly onto her cheek.",
+      "on_screen_text": "apparently if you rub banana skin on your face it gives you a natural Botox effect",
+      "spoken_evidence": "apparently if you rub banana skin on your face, it gives you a natural Botox effect",
+      "why_this_moment_matters": "The unconventional use of a common food item as skincare creates immediate curiosity and stop-power.",
+      "mumuki_reuse_note": "Use this as a hook for the MUMUKI Honey Banana BDRN Ampoule by showing the product being applied in a similar motion to emphasize the 'natural' ingredient benefit.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 17.0,
+      "end_seconds": 20.0,
+      "moment_bucket": "application_demonstration",
+      "role_tag": "product-like application",
+      "visual_evidence": "Close-up of the creator rubbing the banana peel on one side of her face.",
+      "on_screen_text": "anyway I'm only gonna do half of my face just to see",
+      "spoken_evidence": "anyway I'm only gonna do half of my face just to see",
+      "why_this_moment_matters": "The 'half-face' experiment is a classic, highly effective visual trope for demonstrating product efficacy.",
+      "mumuki_reuse_note": "Replicate the half-face application test with the MUMUKI ampoule to visually prove the glow/tightening effect.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 54.5,
+      "end_seconds": 57.0,
+      "moment_bucket": "application_demonstration",
+      "role_tag": "sensory-experience",
+      "visual_evidence": "Close-up of the creator rubbing the peel on her cheek, showing the texture and the way it glides on the skin.",
+      "on_screen_text": "",
+      "spoken_evidence": "it feels really nice",
+      "why_this_moment_matters": "Focuses on the sensory experience of the application, which is crucial for skincare marketing.",
+      "mumuki_reuse_note": "Capture the texture of the MUMUKI ampoule as it glides on the skin to mimic this satisfying application feel.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 85.83,
+      "end_seconds": 87.83,
+      "moment_bucket": "result_demonstration",
+      "role_tag": "skin glow / skin payoff",
+      "visual_evidence": "The creator touches her skin, showing the texture and tightness after the application.",
+      "on_screen_text": "alright so my skin feels quite tight and like at you you need to do it to feel it",
+      "spoken_evidence": "my skin feels quite tight",
+      "why_this_moment_matters": "Provides a direct testimonial and visual check of the skin's condition after the treatment.",
+      "mumuki_reuse_note": "Show the 'tight' and 'glowing' skin result after using the MUMUKI ampoule to validate the product's claims.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 85.83,
+      "end_seconds": 87.83,
+      "moment_bucket": "result_demonstration",
+      "role_tag": "before-after",
+      "visual_evidence": "The creator points to her pores on the treated side versus the untreated side, highlighting the difference.",
+      "on_screen_text": "so my skin is very soft my pores are a little bit smaller on the side than the other side",
+      "spoken_evidence": "my pores are a little bit smaller on the side than the other side",
+      "why_this_moment_matters": "Clear visual comparison that provides social proof of the ingredient's effectiveness.",
+      "mumuki_reuse_note": "Use a split-screen comparison of the MUMUKI ampoule side vs. bare skin to highlight pore refinement and glow.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@katiejanehughes/video/7355150760293747998",
+  "local_video": "assets/videos/viral-katiejanehughes-7355150760293747998.mp4"
+}

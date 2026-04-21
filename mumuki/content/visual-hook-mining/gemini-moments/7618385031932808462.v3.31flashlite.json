@@ -1,0 +1,81 @@
+{
+  "video_id": "7618385031932808462",
+  "creator": "@scottyscheller",
+  "title": "Honey Health Hook",
+  "ingredient_focus": "honey / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 2.5,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "Close-up of a spoon lifting a thick, viscous, golden honey from a jar, creating a long, slow drip.",
+      "on_screen_text": "YOUR FAMILY NEEDS THIS",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The extreme close-up and the satisfying, thick texture of the honey immediately grab attention.",
+      "mumuki_reuse_note": "Use a similar close-up shot of the honey-infused ampoule texture to demonstrate its richness and quality.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 12.0,
+      "end_seconds": 14.5,
+      "moment_bucket": "texture_demonstration",
+      "role_tag": "texture-appeal",
+      "visual_evidence": "The creator holds the jar up to the camera, showing the honey dripping slowly off the spoon.",
+      "on_screen_text": "SUPERFOOD HONEY",
+      "spoken_evidence": "This is superfood honey.",
+      "why_this_moment_matters": "Highlights the premium, raw, and natural quality of the ingredient.",
+      "mumuki_reuse_note": "Show the ampoule's texture dripping from a dropper to emphasize its concentrated formula.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 15.0,
+      "end_seconds": 17.5,
+      "moment_bucket": "texture_demonstration",
+      "role_tag": "texture-appeal",
+      "visual_evidence": "Extreme close-up of the honey being stirred in the jar, showing its thick, golden, and sticky consistency.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Visualizes the 'medical grade' quality through texture, which is highly satisfying to watch.",
+      "mumuki_reuse_note": "Use a macro shot of the ampoule being swirled to highlight the honey-banana blend's viscosity.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 29.5,
+      "end_seconds": 32.0,
+      "moment_bucket": "texture_demonstration",
+      "role_tag": "texture-appeal",
+      "visual_evidence": "The creator holds the spoon with the honey dripping down, focusing on the slow, continuous flow.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The slow-motion effect of the honey flow is visually hypnotic and emphasizes purity.",
+      "mumuki_reuse_note": "Create a slow-motion shot of the ampoule serum dripping to convey a sense of luxury and potency.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 33.0,
+      "end_seconds": 35.5,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "Another angle of the honey dripping from the spoon, highlighting the golden color and clarity.",
+      "on_screen_text": "",
+      "spoken_evidence": "If you want to get rid of your allergies, this is the hack for you.",
+      "why_this_moment_matters": "Strong visual hook combined with a 'hack' claim that drives curiosity.",
+      "mumuki_reuse_note": "Use this as a B-roll to support a 'skincare hack' claim for the ampoule.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@scottyscheller/video/7618385031932808462",
+  "local_video": "assets/videos/viral-scottyscheller-7618385031932808462.mp4"
+}

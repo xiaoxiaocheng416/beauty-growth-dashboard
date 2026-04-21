@@ -1,0 +1,81 @@
+{
+  "video_id": "7447707169664879915",
+  "creator": "@byzareefa",
+  "title": "Banana Peel DIY Mask",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 1.5,
+      "end_seconds": 4.5,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator holds up a banana peel directly to the camera, showing the inside texture.",
+      "on_screen_text": "",
+      "spoken_evidence": "All you need is a banana peel.",
+      "why_this_moment_matters": "The direct, close-up reveal of the ingredient creates immediate curiosity and visual intrigue.",
+      "mumuki_reuse_note": "Use a similar close-up shot of the MUMUKI ampoule or a honey-infused texture to hook the viewer immediately.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 11.0,
+      "end_seconds": 14.5,
+      "moment_bucket": "application_moment",
+      "role_tag": "product-like application",
+      "visual_evidence": "The creator rubs the inside of the banana peel directly onto her cheek.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates the 'DIY skincare' action clearly, which is highly engaging for viewers interested in natural beauty hacks.",
+      "mumuki_reuse_note": "Replace the banana peel with the application of the MUMUKI ampoule to show the product being massaged into the skin.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 28.5,
+      "end_seconds": 31.5,
+      "moment_bucket": "application_moment",
+      "role_tag": "product-like application",
+      "visual_evidence": "The creator rubs the banana peel across her forehead and brow area.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Shows the versatility of the application on different facial zones, reinforcing the 'skincare routine' aspect.",
+      "mumuki_reuse_note": "Show the product being applied to the forehead to demonstrate ease of use and coverage.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 38.5,
+      "end_seconds": 42.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "product-like application",
+      "visual_evidence": "The creator applies the peel to her chin and jawline area.",
+      "on_screen_text": "",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Focuses on specific areas of concern, which helps viewers visualize the product's utility.",
+      "mumuki_reuse_note": "Show the ampoule being applied to the jawline to highlight the lifting or brightening effect.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 53.0,
+      "end_seconds": 56.5,
+      "moment_bucket": "result_moment",
+      "role_tag": "skin glow / skin payoff",
+      "visual_evidence": "The creator looks directly at the camera with a glowing, hydrated complexion after the treatment.",
+      "on_screen_text": "",
+      "spoken_evidence": "I can promise you you're not going to need Botox.",
+      "why_this_moment_matters": "Provides the 'payoff' shot that validates the efficacy of the ingredient, which is essential for conversion.",
+      "mumuki_reuse_note": "Use a similar 'after' shot showing the glowing skin result after using the MUMUKI ampoule.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@byzareefa/video/7447707169664879915",
+  "local_video": "assets/videos/viral-byzareefa-7447707169664879915.mp4"
+}

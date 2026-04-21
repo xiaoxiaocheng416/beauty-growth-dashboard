@@ -1,0 +1,81 @@
+{
+  "video_id": "7621189679148272928",
+  "creator": "@iamedsonbrandao",
+  "title": "Frozen Banana Lift Hack",
+  "ingredient_focus": "banana / diy skincare",
+  "candidate_valuable_moments": [
+    {
+      "index": 1,
+      "start_seconds": 0.0,
+      "end_seconds": 3.0,
+      "moment_bucket": "hook_moment",
+      "role_tag": "stop-power",
+      "visual_evidence": "The creator holds two halves of a frozen, dark-spotted banana directly in front of the camera.",
+      "on_screen_text": "I'M 59 AND PEOPLE THINK I'M 30 BOTOX NATURAL Frozen Banana",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "The visual of a frozen banana used for skincare is highly unconventional and immediately grabs attention.",
+      "mumuki_reuse_note": "Use a similar 'What is this?' opening shot with the MUMUKI ampoule to create curiosity.",
+      "clip_priority": 1,
+      "clip_file": "beat-01.mp4"
+    },
+    {
+      "index": 2,
+      "start_seconds": 3.5,
+      "end_seconds": 6.5,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-action",
+      "visual_evidence": "The creator rubs the frozen banana halves along his jawline in a lifting motion.",
+      "on_screen_text": "NATURAL GUA SHA LIFTS",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Demonstrates a clear, actionable 'hack' that viewers can mimic, proving the interest in DIY banana skincare.",
+      "mumuki_reuse_note": "Show the application of the MUMUKI ampoule using a similar upward lifting motion on the jawline.",
+      "clip_priority": 2,
+      "clip_file": "beat-02.mp4"
+    },
+    {
+      "index": 3,
+      "start_seconds": 10.5,
+      "end_seconds": 13.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-action",
+      "visual_evidence": "The creator rubs the flat surface of the frozen banana directly onto his cheek.",
+      "on_screen_text": "HYDRATES",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Direct skin contact with the ingredient highlights the 'skincare' aspect of the hack.",
+      "mumuki_reuse_note": "Show the ampoule being applied directly to the cheek to emphasize hydration.",
+      "clip_priority": 3,
+      "clip_file": "beat-03.mp4"
+    },
+    {
+      "index": 4,
+      "start_seconds": 17.0,
+      "end_seconds": 20.0,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-action",
+      "visual_evidence": "The creator presses the frozen banana halves under his eyes.",
+      "on_screen_text": "SOOTHES SKIN REDUCES DARK CIRCLES",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Targets a specific pain point (dark circles) with a simple visual action.",
+      "mumuki_reuse_note": "Show the ampoule being tapped gently under the eyes to address dark circles.",
+      "clip_priority": 4,
+      "clip_file": "beat-04.mp4"
+    },
+    {
+      "index": 5,
+      "start_seconds": 26.5,
+      "end_seconds": 29.5,
+      "moment_bucket": "application_moment",
+      "role_tag": "visual-action",
+      "visual_evidence": "The creator rubs the banana on his neck in an upward motion.",
+      "on_screen_text": "GIVES A GLOW ✨",
+      "spoken_evidence": "",
+      "why_this_moment_matters": "Focuses on the 'glow' result, which is a key benefit for skincare products.",
+      "mumuki_reuse_note": "Show the ampoule being applied to the neck to demonstrate the 'glow' effect.",
+      "clip_priority": 5,
+      "clip_file": "beat-05.mp4"
+    }
+  ],
+  "model_used": "gemini-3.1-flash-lite-preview",
+  "source_url": "https://www.tiktok.com/@iamedsonbrandao/video/7621189679148272928",
+  "local_video": "assets/videos/viral-iamedsonbrandao-7621189679148272928.mp4"
+}

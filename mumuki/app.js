@@ -383,6 +383,45 @@ it probably means it sold out.`
       ["No-BS trust", "No harsh ingredients. There's no BS inside of here.", "Removes objection in blunt language."],
       ["CTA", "I'll leave a link on the bottom left with the orange cart.", "Gives the TikTok Shop action."]
     ],
+    reusableSkeleton: `You got [visible problem] on your [face area] like this.
+
+Put this [product format] all over your [problem / same area].
+
+You got [second visible problem] right here.
+
+[Product format] all over your [second area].
+
+If you got [expression-line problem] like this when you [facial expression],
+put the [product format] right near your [third area].
+
+I've been using [product],
+and it made my skin [visible result] like crazy.
+
+Like this is the best my skin has looked in [timeframe].
+
+This is the first [product type] to have [category reason].
+
+It has [ingredient 1] and [ingredient 2]
+that keeps the skin [simple hydration / skin feel].
+
+It makes it [texture result] like this.
+
+All kinds of [supporting proof] in here.
+
+And this stuff is [ingredient trust proof].
+
+No [bad ingredient / objection].
+There's no BS inside of here.
+
+It's a bunch of [simple ingredient trust]
+that go straight into the skin to make it look [desired result].
+
+If you want to get that [desired skin look],
+you should definitely start using this stuff.
+
+I'll leave a link on the bottom left with the orange cart.
+
+Just act fast because [urgency / scarcity reason].`,
     slotMap: [
       ["visible problem", "forehead wrinkles / smile lines / crinkly eyes"],
       ["product action", "rub banana here / apply ampoule here"],

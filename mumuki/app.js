@@ -148,24 +148,19 @@ and I'm afraid to say it is from using banana and honey.
 
 That was my face just [timeframe] weeks ago.
 
-And this is all from using this one little Korean ampoule.
+And this is all from using this one little Korean ampoule,
+where the main ingredient is Honey Banana PDRN.
 
-Main thing in here is Honey Banana PDRN,
-plus collagen.
-
-It also has Volufiline.
-
-And if you know Volufiline,
-people used to talk about it for breast-volume creams,
-
-yeah, the boob filler thing.
+Also got collagen,
+and those ingredients are for that firmer,
+plumper-looking skin.
 
 Also got panthenol and 10-layer hyaluronic acid
 to lock in hydration.
 
 And if you know anything about wrinkle prevention,
-you want to keep those lines hydrated
-before they start looking worse.
+you want to deeply hydrate those fine lines
+to help stop them from becoming wrinkles.
 
 I've only been using this for [timeframe] weeks,
 
@@ -174,12 +169,17 @@ and normally my skin is such a dry, flat mess this time of year.
 But I've been walking around with glassy, glowy skin
 for the past [timeframe] weeks now.
 
-This Honey Banana BDRN thing is already super viral in Korea.
+PDRN is already crazy popular in Korea for this reason.
+
+People are paying hundreds for PDRN treatments
+because they want that plump, glass-skin look.
+
+That's why this Honey Banana BDRN thing caught my attention.
 
 It just came out on TikTok Shop.
 
 If you see the orange link,
-grab it fast while it's still available.`
+I would grab this very fast while it's still available.`
       }
     ]
   },

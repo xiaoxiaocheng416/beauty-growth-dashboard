@@ -226,6 +226,51 @@ I would grab this very fast while it's still available.`
       ["Claim softener", "So we're not freezing our face, we are just relaxing.", "Softens the treatment comparison."],
       ["CTA", "If it's even still in stock, I'm gonna put the link right there.", "Closes with availability pressure."]
     ],
+    reusableSkeleton: `My [face area] before I booked an appointment.
+
+[Same face area] after I still did not book an appointment.
+
+I saw a [trusted expert] say that this [product type] was literally going to [strong proof claim].
+
+I could not have bought it quick enough.
+
+It put [hero ingredient / technology] in this similar technology that they use when you go in office to [benefit 1], [benefit 2], [benefit 3].
+
+But it also supports [skin support system],
+which is basically like [simple metaphor] underneath our skin to [plain job].
+
+And this degrades as we age,
+which is why we can see [visible problem 1], [visible problem 2], and [visible problem 3].
+
+In Korea, they heard there's a massive wave of women who don't want to get [treatment] done to their face.
+
+So they put [key ingredient] in this.
+
+The [ingredient] actually works [where / how],
+to give a [visible appearance].
+
+So the skin on top [visible effect].
+
+So we're not [extreme treatment claim],
+we are just [softer believable claim].
+
+Take it from someone who has used this for [timeframe],
+it freaking works.
+
+Basically, [brand] just took my [long routine / annoying routine].
+
+And said, we're gonna give you [professional benefit] in one [product format].
+
+But we're gonna make it [price / access advantage].
+
+And we're just gonna pray to god that it doesn't sell out.
+
+This is their newest release.
+
+If it's even still in stock, I'm gonna put the link right there.
+
+But if you don't see that orange shopping cart,
+it just means it was sold out.`,
     slotMap: [
       ["face area", "forehead / smile lines / under eyes / flat-looking skin"],
       ["credible person", "K-beauty creator / esthetician / skincare reviewer"],

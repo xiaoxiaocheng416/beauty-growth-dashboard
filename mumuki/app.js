@@ -432,6 +432,69 @@ Just act fast because [urgency / scarcity reason].`,
     ],
     scripts: [
       {
+        title: "Script 2: Banana Peel / Glow Like Crazy",
+        note: "Closer to the original beef-tallow order: personal proof before ingredient explanation.",
+        body: `You got wrinkles on your forehead like this?
+
+Rub banana here.
+
+You got smile lines like this?
+
+Rub banana here.
+
+If your eyes get crinkly when you smile,
+
+rub banana here.
+
+I've been using banana peel for a while,
+and it made my skin glow like crazy.
+
+Like this is the best my skin has looked in my entire life.
+
+This is why people keep calling banana natural t0x.
+
+In Korea,
+they heard there's a massive wave of women
+who don't want this stuff in their face.
+
+So they made BDRN.
+
+Basically Honey Banana PDRN.
+
+And MUMUKI put it in this little Korean ampoule.
+
+It has panthenol and 10-layer hyaluronic acid,
+so your skin stays super hydrated.
+
+It has ceramide,
+peptides,
+and Volufiline,
+
+so the skin looks bouncier and less flat.
+
+And if you know Volufiline,
+people used to talk about it for breast-volume creams,
+
+yeah, the boob filler thing.
+
+No harsh stuff.
+
+No BS inside.
+
+Just natural ingredients going straight on the skin
+to make it look really youthful.
+
+If you want that plump, glowy skin,
+
+this is the stuff I would start using.
+
+I'll leave the link on the bottom left with the orange cart.
+
+Just act fast,
+because this just came out on TikTok Shop
+and I don't know how long it's gonna stay available.`
+      },
+      {
         title: "Script 1: Natural t0x / BDRN Transfer",
         note: "Uses the face-area rhythm, then transfers into Korea / BDRN logic.",
         body: `You got wrinkles on your forehead like this?
@@ -493,69 +556,6 @@ smoother,
 and more plump.
 
 If you want that glowy skin,
-
-this is the stuff I would start using.
-
-I'll leave the link on the bottom left with the orange cart.
-
-Just act fast,
-because this just came out on TikTok Shop
-and I don't know how long it's gonna stay available.`
-      },
-      {
-        title: "Script 2: Banana Peel / Glow Like Crazy",
-        note: "Closer to the original beef-tallow order: personal proof before ingredient explanation.",
-        body: `You got wrinkles on your forehead like this?
-
-Rub banana here.
-
-You got smile lines like this?
-
-Rub banana here.
-
-If your eyes get crinkly when you smile,
-
-rub banana here.
-
-I've been using banana peel for a while,
-and it made my skin glow like crazy.
-
-Like this is the best my skin has looked in my entire life.
-
-This is why people keep calling banana natural t0x.
-
-In Korea,
-they heard there's a massive wave of women
-who don't want this stuff in their face.
-
-So they made BDRN.
-
-Basically Honey Banana PDRN.
-
-And MUMUKI put it in this little Korean ampoule.
-
-It has panthenol and 10-layer hyaluronic acid,
-so your skin stays super hydrated.
-
-It has ceramide,
-peptides,
-and Volufiline,
-
-so the skin looks bouncier and less flat.
-
-And if you know Volufiline,
-people used to talk about it for breast-volume creams,
-
-yeah, the boob filler thing.
-
-No harsh stuff.
-
-No BS inside.
-
-Just natural ingredients going straight on the skin
-to make it look really youthful.
-
-If you want that plump, glowy skin,
 
 this is the stuff I would start using.
 

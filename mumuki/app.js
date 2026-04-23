@@ -1158,15 +1158,6 @@ function renderWeek1ScriptIdea(id) {
 
           <section class="script-section">
             <div class="section-head">
-              <p class="eyebrow">MUMUKI slot map</p>
-            </div>
-            <div class="slot-map-list">
-              ${item.slotMap.map((slot) => slotMapRow(slot)).join("")}
-            </div>
-          </section>
-
-          <section class="script-section">
-            <div class="section-head">
               <p class="eyebrow">MUMUKI scripts</p>
               <strong>${item.scripts.length} script${item.scripts.length > 1 ? "s" : ""}</strong>
             </div>
@@ -1239,23 +1230,6 @@ function renderTalkingHeadScriptIdea(item) {
             </div>
           </section>
 
-          <section class="script-section">
-            <div class="section-head">
-              <p class="eyebrow">Slot options</p>
-            </div>
-            <div class="slot-map-list">
-              ${item.slots.map((slot) => slotMapRow(slot)).join("")}
-            </div>
-          </section>
-
-          <section class="script-section">
-            <div class="section-head">
-              <p class="eyebrow">MUMUKI swaps</p>
-            </div>
-            <div class="slot-map-list">
-              ${item.mumukiSwaps.map((slot) => slotMapRow(slot)).join("")}
-            </div>
-          </section>
         </div>
       </article>
     </section>

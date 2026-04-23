@@ -88,6 +88,49 @@ const week1ScriptSystems = [
       ["Korea authority", "PDRN is insanely popular in Korea for this reason.", "Borrows demand from Korea."],
       ["Scarcity CTA", "If you see an orange link on screen right here, I would grab this very fast...", "Ends with orange-link urgency."]
     ],
+    reusableSkeleton: `Nobody believes I'm [age] anymore,
+and I'm afraid to say it is from using [weird ingredient / product story].
+
+That was my face just [timeframe] ago.
+
+And this is all from using this one little [Korean product format],
+where a main ingredient is [hero ingredient],
+aka [plain explanation / weird source].
+
+Also got [support ingredient],
+and those ingredients [high-tech mechanism / skin-support reason].
+
+Also got [hydration ingredient]
+to help lock in hydration.
+
+And if you know anything about [skin concern prevention],
+you want to deeply hydrate those [fine lines / dry lines]
+to help stop them from becoming [worse concern].
+
+I've only been using this [timeframe],
+and normally my skin is such a [specific dry / flat / dehydrated problem]
+this time of year.
+
+[Optional local / seasonal context].
+
+But I've been walking around with [visible result language]
+for the past [timeframe] now.
+
+[Hero ingredient / product category] is insanely popular in Korea
+for this reason.
+
+People are paying [high price]
+for [expensive / invasive version of same desire].
+
+That's why this [product / category] quickly became
+one of the fastest selling [category] products.
+
+It just came out in [market / TikTok Shop],
+and it's already [market proof if true].
+
+I had to wait [scarcity proof],
+but if you see the orange link,
+I would grab this very fast while it's still available.`,
     slotMap: [
       ["weird ingredient / product story", "banana and honey / Honey Banana PDRN"],
       ["Korean product format", "Korean ampoule"],
@@ -1045,6 +1088,17 @@ function renderWeek1ScriptIdea(id) {
               ${item.skeleton.map((beat, index) => week1SkeletonBeat(beat, index)).join("")}
             </div>
           </section>
+
+          ${item.reusableSkeleton ? `
+            <section class="script-section">
+              <div class="section-head">
+                <p class="eyebrow">Reusable skeleton</p>
+              </div>
+              <div class="script-draft-card skeleton-template-card">
+                <pre>${escapeHtml(item.reusableSkeleton)}</pre>
+              </div>
+            </section>
+          ` : ""}
 
           <section class="script-section">
             <div class="section-head">

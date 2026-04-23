@@ -599,6 +599,32 @@ and I don't know how long it's gonna stay available.`
       ["Elasticity stack", "and NAD and collagen for elasticity.", "Adds elasticity support."],
       ["Bundle CTA", "if you see those below, I would definitely grab this as the bundle.", "Ends with buying path."]
     ],
+    reusableSkeleton: `Wanna put it here, here, here, here, here, here, and even here.
+
+Anywhere that you're noticing [target problem 1] and [target problem 2].
+
+We're not using this [all over the face / like a random moisturizer]
+because this has [weird / strong ingredient reason].
+
+In we have [hero ingredient] to help with [main benefit],
+
+[ingredient 2] to help [benefit 2],
+
+[ingredient 3] for [benefit 3],
+
+[ingredient 4] for [benefit 4],
+
+and [ingredient 5] and [ingredient 6] for [benefit 5].
+
+If you really want to knock it out of the park,
+
+start with [companion product / second step].
+
+These [companion product] were sold out,
+
+so if you see those below,
+
+I would definitely grab this as the bundle.`,
     slotMap: [
       ["application map", "smile lines / forehead / under eyes / neck / flat areas"],
       ["target problem", "volume loss / fine lines / wrinkles"],

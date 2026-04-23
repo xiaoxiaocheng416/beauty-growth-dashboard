@@ -1080,15 +1080,6 @@ function renderWeek1ScriptIdea(id) {
             </div>
           </section>
 
-          <section class="script-section">
-            <div class="section-head">
-              <p class="eyebrow">Original skeleton</p>
-            </div>
-            <div class="beat-list">
-              ${item.skeleton.map((beat, index) => week1SkeletonBeat(beat, index)).join("")}
-            </div>
-          </section>
-
           ${item.reusableSkeleton ? `
             <section class="script-section">
               <div class="section-head">
@@ -1099,6 +1090,15 @@ function renderWeek1ScriptIdea(id) {
               </div>
             </section>
           ` : ""}
+
+          <section class="script-section">
+            <div class="section-head">
+              <p class="eyebrow">Original skeleton</p>
+            </div>
+            <div class="beat-list">
+              ${item.skeleton.map((beat, index) => week1SkeletonBeat(beat, index)).join("")}
+            </div>
+          </section>
 
           <section class="script-section">
             <div class="section-head">

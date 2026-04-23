@@ -448,6 +448,8 @@ rub banana here.
 
 I saw [credible person / review screenshot] say banana is called natural t0x.
 
+And this is the kind of thing she would try before booking the appointment.
+
 It's that same thing people go in office for
 to pump up collagen here,
 elastin here,
@@ -462,7 +464,7 @@ and some drooping.
 
 In Korea,
 they heard there's a massive wave of women
-who don't want this stuff in their face.
+who don't want to get this done to their face.
 
 So they made BDRN.
 
@@ -479,7 +481,12 @@ people used to talk about it for breast-volume creams,
 
 yeah, the boob filler thing.
 
-So this is not just banana plus honey.
+That whole thing is for the skin underneath,
+so the skin on top looks smoother and more plump.
+
+So we're not doing t0x.
+
+We're not freezing the face.
 
 This is actually the kind of thing people use when they want their skin to look
 smoother,

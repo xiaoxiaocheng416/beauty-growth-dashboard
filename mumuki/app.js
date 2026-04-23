@@ -287,7 +287,8 @@ it just means it was sold out.`,
 
 [Same face area] after I still did not book an appointment.
 
-I saw a [credible person] say this made her rethink booking the appointment.
+I saw a [credible person] say this Korean ampoule
+was literally going to put her out of business.
 
 I could not have bought it quick enough.
 
@@ -295,7 +296,7 @@ It put BDRN in this little Korean ampoule.
 
 BDRN is Honey Banana PDRN, plus collagen.
 
-It put BDRN in this similar technology that people use when they go in office
+This is the kind of thing people go in office for
 to pump up collagen here,
 elasticity here,
 density here.
@@ -303,8 +304,8 @@ density here.
 But it also has ceramide, peptides, and Volufiline.
 
 And if you know Volufiline,
-you already know why people used to talk about it for breast-volume creams,
-yeah, the boob filler thing.
+
+yeah, it's the boob filler thing.
 
 And as we get older,
 skin just does not hold the same as before.
@@ -314,18 +315,17 @@ saggy-looking skin.
 
 In Korea,
 they heard there's a massive wave of women
-who don't want this stuff in their face.
+who don't want to get this done to their face.
 
 So they put Honey Banana PDRN in this,
 plus collagen and 10-layer hyaluronic acid.
 
-So the skin on top does not look as dry and flat.
+That whole thing is for the skin underneath,
+so the skin on top looks smoother and more plump.
 
 So we're not doing t0x.
 
 We're not freezing the face.
-
-We're just trying to make the skin look smoother and plumper.
 
 Take it from someone whose routine was all over the place,
 this is the thing I wish I had earlier.
@@ -333,12 +333,16 @@ this is the thing I wish I had earlier.
 Basically, MUMUKI took my messy anti-aging routine
 and put the glass-skin part into one ampoule.
 
+But we're gonna make it so freaking affordable,
+and way easier to try.
+
 This just came out on TikTok Shop.
 
 I'll do you a favor,
 I'm gonna put the link right there.
 
-Grab it while it's still available.`
+But if you don't see the orange cart,
+it probably means it sold out.`
       }
     ]
   },

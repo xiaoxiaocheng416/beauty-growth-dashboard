@@ -906,6 +906,36 @@ p {
   line-height: 1.45;
 }
 
+.script-visual-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.script-visual-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 12px;
+  background: rgba(255, 253, 247, 0.78);
+}
+
+.script-visual-card img {
+  display: block;
+  width: min(260px, 100%);
+  border-radius: 14px;
+  background: #101010;
+}
+
+.script-visual-card figcaption {
+  max-width: 620px;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
 .section-head {
   display: flex;
   gap: 14px;

@@ -455,7 +455,7 @@ Just act fast because [urgency / scarcity reason].`,
     scripts: [
       {
         title: "Script 2: Banana Peel / Glow Like Crazy",
-        note: "Closer to the original beef-tallow order: personal proof before ingredient explanation.",
+        note: "Use the finger comparison screenshot when saying “If you saw these.”",
         body: `You got wrinkles on your forehead like this?
 
 Rub banana here.
@@ -468,45 +468,45 @@ If your eyes get crinkly when you smile,
 
 rub banana here.
 
-I've been using banana peel for a while,
+I was skeptical when I saw women in their 40s and 50s
+calling banana peel nature's t0x.
+
+But after seeing their results,
+I could not believe my eyes.
+
+That's when I found BDRN by MUMUKI.
+
+Basically banana PDRN,
+
+but plant-based.
+
+So I like it better for my sensitive skin.
+
+And people are already putting PDRN
+under their eyes,
+on smile lines,
+
+anywhere they want that plumpness back.
+
+And then they added Volufiline.
+
+That's the stuff girls used
+and their finger got fatter.
+
+If you saw these,
+you know what I'm talking about.
+
+People used to talk about it
+for boob enhancement.
+
+I've been using this ampoule,
+
 and it made my skin glow like crazy.
 
 Like this is the best my skin has looked in my entire life.
 
-This is why people keep calling banana natural t0x.
-
-In Korea,
-they heard there's a massive wave of women
-who don't want this stuff in their face.
-
-So they made BDRN.
-
-Basically Honey Banana PDRN.
-
-And MUMUKI put it in this little Korean ampoule.
-
-It has panthenol and 10-layer hyaluronic acid,
-so your skin stays super hydrated.
-
-It has ceramide,
-peptides,
-and Volufiline,
-
-so the skin looks bouncier and less flat.
-
-And if you know Volufiline,
-people used to talk about it for breast-volume creams,
-
-yeah, the boob filler thing.
-
-No harsh stuff.
-
-No BS inside.
-
-Just natural ingredients going straight on the skin
-to make it look really youthful.
-
-If you want that plump, glowy skin,
+If you want that plump,
+glowy skin,
 
 this is the stuff I would start using.
 
@@ -514,7 +514,14 @@ I'll leave the link on the bottom left with the orange cart.
 
 Just act fast,
 because this just came out on TikTok Shop
-and I don't know how long it's gonna stay available.`
+and I don't know how long it's gonna stay available.`,
+        visuals: [
+          {
+            src: "assets/proof/volufiline-finger-proof.png",
+            alt: "Volufiline finger comparison screenshot",
+            caption: "Visual note: show this when saying “If you saw these, you know what I'm talking about.”"
+          }
+        ]
       },
       {
         title: "Script 1: Natural t0x / BDRN Transfer",
@@ -1400,7 +1407,17 @@ function scriptDraftCard(script) {
       <h3>${script.title}</h3>
       <p>${script.note}</p>
       <pre>${escapeHtml(script.body)}</pre>
+      ${script.visuals ? `<div class="script-visual-list">${script.visuals.map((visual) => scriptVisualCard(visual)).join("")}</div>` : ""}
     </div>
+  `;
+}
+
+function scriptVisualCard(visual) {
+  return `
+    <figure class="script-visual-card">
+      <img src="${visual.src}" alt="${escapeHtml(visual.alt)}">
+      <figcaption>${escapeHtml(visual.caption)}</figcaption>
+    </figure>
   `;
 }
 

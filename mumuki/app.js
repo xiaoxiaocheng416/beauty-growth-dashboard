@@ -314,20 +314,22 @@ I could not have bought it quick enough.
 
 It put BDRN in this little Korean ampoule.
 
-BDRN is Honey Banana PDRN, plus collagen.
+BDRN is basically banana-based PDRN.
 
-This is the kind of thing people go in office for
-to pump up collagen here,
+And banana peels are already helping women in their 40s and 50s
+get amazing results.
+
+And PDRN is the kind of thing people go get in office
+when they want collagen here,
 elasticity here,
 density here.
 
-But it also has ceramide, peptides, and Volufiline.
+And then they added Volufiline.
 
-And if you know Volufiline,
+This is what people used to talk about
+for boob enhancement.
 
-yeah, it's the boob filler thing.
-
-And as we get older,
+As we get older,
 skin just does not hold the same as before.
 
 Which is why we can see some loose,
@@ -337,11 +339,11 @@ In Korea,
 they heard there's a massive wave of women
 who don't want to get this done to their face.
 
-So they put Honey Banana PDRN in this,
-plus collagen and 10-layer hyaluronic acid.
+So MUMUKI basically put all the good stuff
+into this one little ampoule.
 
-That whole thing is for the skin underneath,
-so the skin on top looks smoother and more plump.
+So the skin on top looks smoother
+and more plump.
 
 So we're not doing t0x.
 

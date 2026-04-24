@@ -605,47 +605,62 @@ and even here.
 
 Anywhere you're noticing volume loss,
 fine lines,
-wrinkles,
+saggy skin,
 all of that.
 
-Banana peel has potassium in it.
+When I saw women in their 40s and 50s
+rubbing banana peels on their face
+and calling it nature's t0x,
 
-it Makes your skin look smoother.
-Tighter.
+I was a little skeptical.
 
-That's why people keep calling it natural t0x.
+But after seeing the amazing results,
+I could not believe my eyes.
 
-In Korea,
-they heard there's a massive wave of women
-who want that smooth, plump look,
+And Koreans already made this into BDRN.
 
-but don't want this thing in their face.
+Basically banana-based PDRN,
 
-So they come up with BDRN.
+but plant-based.
 
-Basically Honey Banana PDRN.
+Compared to animal-based PDRN,
 
-And MUMUKI put it in this little Korean ampoule.
+I like it better for my sensitive skin.
 
-We're not using this all over our face.
+People are already putting PDRN
+under their eyes,
+on smile lines,
 
-Because this has an ingredient that used to be used as boob filler.
+anywhere they want that plumpness back.
 
-Volufiline for plumping.
+Plus they added Volufiline.
 
-BDRN to help firm the skin.
+That's the stuff that made people's fingers look like this,
+this,
+and this.
 
-10-layer hyaluronic acid for hydration.
+People used to talk about it
+for boob enhancement.
 
-Ceramide capsules for moisture.
+And as we get older,
 
-Collagen for elasticity.
+skin just does not hold the same as before.
 
-If you want that plump, glowy skin,
+That is why the face starts looking
+loose,
+and tired.
 
-no harsh stuff,
+This is for that support layer under the skin,
 
-all natural,
+so the skin on top looks smoother
+and more plump.
+
+So we're not doing t0x.
+
+We're not freezing the face.
+
+If you want that plump,
+glowy skin,
 
 this is the stuff I would start using.
 
@@ -653,7 +668,14 @@ I'll leave the link down below.
 
 If you see the orange cart,
 
-grab it while it's still available.`
+grab it while it's still available.`,
+        visuals: [
+          {
+            src: "assets/proof/volufiline-finger-proof.png",
+            alt: "Volufiline finger comparison screenshot",
+            caption: "Visual note: show finger comparison screenshots when saying “this, this, and this.”"
+          }
+        ]
       }
     ]
   }

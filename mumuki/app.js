@@ -144,49 +144,69 @@ I would grab this very fast while it's still available.`,
         title: "MUMUKI Script",
         note: "Keep the confession first. Do not explain the product too early.",
         body: `Nobody believes I'm [age] anymore,
-and I'm afraid to say it is from using banana and honey.
+and I'm afraid to say it is from using banana-based PDRN.
 
-That was my face just [timeframe] weeks ago.
+That was my face just [timeframe] ago.
 
-And this is all from using this one little Korean ampoule
-where a main ingredient is Honey Banana PDRN,
-aka BDRN, from banana and honey.
+When I saw women in their 40s and 50s
+rubbing banana peels on their face
+and calling it nature's t0x,
+I was skeptical.
 
-Also got collagen,
+But after seeing their amazing results,
+I literally could not believe my eyes.
 
-and those ingredients help make the skin look plumper,
-and more hydrated.
+That's when I started looking into banana
+and found out Korea already turned it
+into something called BDRN.
 
-Also got panthenol and 10-layer hyaluronic acid
-to help lock in hydration.
+BDRN is basically banana-based PDRN.
 
-And if you know anything about wrinkle prevention,
-you want to deeply hydrate those fine lines
-to help stop them from becoming wrinkles.
+And if you know PDRN,
+you already know people use this stuff under their eyes,
+on smile lines,
+anywhere they want that plumpness back.
 
-I've only been using this for [timeframe] weeks
-and normally my skin is such a dry,
-dehydrated mess this time of year.
+But this one is plant-based,
+and more gentle for my sensitive skin girlies.
+
+It also supports your collagen scaffold,
+basically like the scaffolding beneath your skin.
+
+That scaffolding degrades as we age,
+which is why we start seeing hollowing under the eyes,
+fine lines,
+some loose,
+saggy-looking skin.
+
+It also has Volufiline.
+
+This is what doctors and offices have used for years
+for boob enhancement
+and for the badonkadonk.
+
+I've only been using this for [timeframe],
+
+and normally my skin looks dry,
+flat,
+and tired this time of year.
 
 But I've been walking around with glassy,
-glowy,
-hydrated skin
-for the past [timeframe] weeks now.
+glowy skin
+for the past [timeframe].
 
-BDRN is insanely popular in Korea for this reason.
-
-Celebrities are literally flying there
-and paying up to $600 per injection into their face.
-
-That's why this Honey Banana BDRN ampoule
-became the one I wanted to try.
+BDRN is already getting crazy attention in Korea.
 
 It just came out on TikTok Shop.
 
-I don't know how long it's going to stay available,
+If you want to get that plump,
+glowy skin,
 
-but if you see the orange link,
-I would grab this very fast while it's still available.`
+you should definitely start using this stuff.
+
+I'll leave a link on the bottom left with the orange cart.
+
+Just act fast because I don't know how long it's gonna stay available.`
       }
     ]
   },

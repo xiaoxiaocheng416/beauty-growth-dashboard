@@ -455,7 +455,7 @@ Just act fast because [urgency / scarcity reason].`,
     scripts: [
       {
         title: "Script 2: Banana Peel / Glow Like Crazy",
-        note: "Use the finger comparison screenshot when saying “If you saw these.”",
+        note: "Use finger comparison screenshots when saying “this, this, and this.”",
         body: `You got wrinkles on your forehead like this?
 
 Rub banana here.
@@ -490,11 +490,9 @@ anywhere they want that plumpness back.
 
 And then they added Volufiline.
 
-That's the stuff girls used
-and their finger got fatter.
-
-If you saw these,
-you know what I'm talking about.
+That's the stuff that made people's fingers look like this,
+this,
+and this.
 
 People used to talk about it
 for boob enhancement.
@@ -519,7 +517,7 @@ and I don't know how long it's gonna stay available.`,
           {
             src: "assets/proof/volufiline-finger-proof.png",
             alt: "Volufiline finger comparison screenshot",
-            caption: "Visual note: show this when saying “If you saw these, you know what I'm talking about.”"
+            caption: "Visual note: show finger comparison screenshots when saying “this, this, and this.”"
           }
         ]
       },

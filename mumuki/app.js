@@ -371,7 +371,7 @@ it probably means it sold out.`
   {
     id: "opening-03",
     title: "You got wrinkles on your forehead",
-    count: "2 scripts",
+    count: "1 script",
     creator: "@wellnessbenefitsonly",
     sourceTitle: "Wrinkle Skin Hook",
     localVideo: "assets/videos/talking-wellnessbenefitsonly-7624739135223336205.mp4",
@@ -520,77 +520,6 @@ and I don't know how long it's gonna stay available.`,
             caption: "Visual note: show finger comparison screenshots when saying “this, this, and this.”"
           }
         ]
-      },
-      {
-        title: "Script 1: Natural t0x / BDRN Transfer",
-        note: "Uses the face-area rhythm, then transfers into Korea / BDRN logic.",
-        body: `You got wrinkles on your forehead like this?
-
-Rub banana here.
-
-You got smile lines like this?
-
-Rub banana here.
-
-If your eyes get crinkly when you smile,
-
-rub banana here.
-
-I saw [credible person / review screenshot] say banana is called natural t0x.
-
-And this is the kind of thing she would try before booking the appointment.
-
-It's that same thing people go in office for
-to pump up collagen here,
-elastin here,
-density structure here.
-
-And as we age,
-skin just does not hold the same as before.
-
-Which is why we can see some loose,
-saggy skin,
-and some drooping.
-
-In Korea,
-they heard there's a massive wave of women
-who don't want to get this done to their face.
-
-So they made BDRN.
-
-Basically Honey Banana PDRN.
-
-And MUMUKI put it in this little Korean ampoule.
-
-It also has ceramide,
-peptides,
-and Volufiline.
-
-And if you know Volufiline,
-people used to talk about it for breast-volume creams,
-
-yeah, the boob filler thing.
-
-That whole thing is for the skin underneath,
-so the skin on top looks smoother and more plump.
-
-So we're not doing t0x.
-
-We're not freezing the face.
-
-This is actually the kind of thing people use when they want their skin to look
-smoother,
-and more plump.
-
-If you want that glowy skin,
-
-this is the stuff I would start using.
-
-I'll leave the link on the bottom left with the orange cart.
-
-Just act fast,
-because this just came out on TikTok Shop
-and I don't know how long it's gonna stay available.`
       }
     ]
   },

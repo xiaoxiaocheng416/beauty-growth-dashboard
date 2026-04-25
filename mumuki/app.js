@@ -143,6 +143,12 @@ I would grab this very fast while it's still available.`,
       {
         title: "MUMUKI Script",
         note: "Keep the confession first. Do not explain the product too early.",
+        visualSlots: [
+          "Age / before-face frame",
+          "40s / 50s banana peel social proof",
+          "PDRN under-eye / smile-line proof",
+          "Product + orange cart frame"
+        ],
         body: `Nobody believes I'm [age] anymore,
 and I'm afraid to say it is from using banana-based PDRN.
 
@@ -303,6 +309,12 @@ it just means it was sold out.`,
       {
         title: "MUMUKI Script",
         note: "Keep the appointment tension and rough in-office comparison.",
+        visualSlots: [
+          "Before / after appointment face area",
+          "Credible person screenshot",
+          "In-office collagen / elasticity / density visual",
+          "Product + orange cart frame"
+        ],
         body: `My [face area] before I booked an appointment.
 
 [Same face area] after I still did not book an appointment.
@@ -456,6 +468,12 @@ Just act fast because [urgency / scarcity reason].`,
       {
         title: "Script 2: Banana Peel / Glow Like Crazy",
         note: "Use finger comparison screenshots when saying “this, this, and this.”",
+        visualSlots: [
+          "Forehead / smile-line / eye banana-rub frames",
+          "40s / 50s banana peel result proof",
+          "Volufiline finger comparison",
+          "Ampoule + glow result frame"
+        ],
         body: `You got wrinkles on your forehead like this?
 
 Rub banana here.
@@ -595,6 +613,12 @@ I would definitely grab this as the bundle.`,
       {
         title: "MUMUKI Script",
         note: "Keep it choppy. Do not turn ingredient stack into brand-page copy.",
+        visualSlots: [
+          "Here / here face-map screenshot",
+          "Banana peel nature's t0x proof",
+          "Volufiline finger comparison",
+          "Ampoule on target areas"
+        ],
         body: `You wanna rub it here,
 here,
 here,
@@ -1356,7 +1380,39 @@ function scriptDraftCard(script) {
       <h3>${script.title}</h3>
       <p>${script.note}</p>
       <pre>${escapeHtml(script.body)}</pre>
-      ${script.visuals ? `<div class="script-visual-list">${script.visuals.map((visual) => scriptVisualCard(visual)).join("")}</div>` : ""}
+      ${scriptVisualBoard(script)}
+    </div>
+  `;
+}
+
+function scriptVisualBoard(script) {
+  const visuals = script.visuals || [];
+  const slots = script.visualSlots || [
+    "Hook frame",
+    "Proof screenshot",
+    "Product / texture frame",
+    "Result / CTA frame"
+  ];
+
+  return `
+    <div class="script-visual-board">
+      <div class="script-visual-head">
+        <p class="eyebrow">Visual board</p>
+        <strong>Script-specific screenshots / proof frames</strong>
+      </div>
+      <div class="script-visual-list">
+        ${slots.map((slot) => scriptVisualSlot(slot)).join("")}
+        ${visuals.map((visual) => scriptVisualCard(visual)).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function scriptVisualSlot(slot) {
+  return `
+    <div class="script-visual-slot">
+      <span>Drop image here</span>
+      <strong>${escapeHtml(slot)}</strong>
     </div>
   `;
 }

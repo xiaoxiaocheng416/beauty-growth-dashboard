@@ -377,10 +377,98 @@ it just means it was sold out.`,
         title: "MUMUKI Script",
         note: "Keep the appointment tension and rough in-office comparison.",
         visualSlots: [
-          "Before / after appointment face area",
-          "Credible person screenshot",
-          "In-office collagen / elasticity / density visual",
-          "Product + orange cart frame"
+          {
+            label: "Forehead / smile line",
+            caption: "Line match: My [face area] before I booked an appointment. [Same face area] after I still did not book an appointment.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-02/forehead.png",
+                alt: "Forehead line reference"
+              },
+              {
+                src: "assets/script-visuals/opening-02/smile-line.avif",
+                alt: "Smile line reference"
+              }
+            ]
+          },
+          {
+            label: "BDRN image",
+            src: "assets/script-visuals/opening-02/bdrn.png",
+            alt: "BDRN product story screenshot",
+            caption: "Line match: BDRN, aka banana-based plant PDRN, in this little Korean ampoule."
+          },
+          {
+            label: "Banana proof",
+            caption: "Line match: banana peels are already helping women in their 40s and 50s get amazing results.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-02/rub-banana-1.png",
+                alt: "Banana peel proof screenshot 1"
+              },
+              {
+                src: "assets/script-visuals/opening-02/rub-banana-2.png",
+                alt: "Banana peel proof screenshot 2"
+              },
+              {
+                src: "assets/script-visuals/opening-02/rub-banana-3.png",
+                alt: "Banana peel proof screenshot 3"
+              },
+              {
+                src: "assets/script-visuals/opening-02/results-1.png",
+                alt: "Banana peel result screenshot 1"
+              },
+              {
+                src: "assets/script-visuals/opening-02/results-2.mp4",
+                alt: "Banana peel result video 2"
+              },
+              {
+                src: "assets/script-visuals/opening-02/results-3.png",
+                alt: "Banana peel result screenshot 3"
+              }
+            ]
+          },
+          {
+            label: "PDRN proof",
+            caption: "Line match: PDRN is the kind of thing people go get in office when they want collagen, elasticity, density.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-02/pdrn.png",
+                alt: "PDRN explanation screenshot"
+              },
+              {
+                src: "assets/script-visuals/opening-02/pdrn-before-after.png",
+                alt: "PDRN before after screenshot"
+              }
+            ]
+          },
+          {
+            label: "Volufiline 1 / 2",
+            caption: "Line match: This is what people used to talk about for boob enhancement.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-02/volufiline-1.png",
+                alt: "Volufiline ingredient proof screenshot 1"
+              },
+              {
+                src: "assets/script-visuals/opening-02/volufiline-2.png",
+                alt: "Volufiline ingredient proof screenshot 2"
+              }
+            ]
+          },
+          {
+            label: "Aging face 1 / 2",
+            caption: "Line match: as we get older, skin just does not hold the same as before.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-02/aging-face-1.webp",
+                alt: "Aging face reference 1"
+              },
+              {
+                src: "assets/script-visuals/opening-02/aging-face-2.png",
+                alt: "Aging face reference 2"
+              }
+            ]
+          }
         ],
         body: `My [face area] before I booked an appointment.
 
@@ -391,9 +479,9 @@ was literally going to put her out of business.
 
 I could not have bought it quick enough.
 
-It put BDRN in this little Korean ampoule.
-
-BDRN is basically banana-based PDRN.
+It put BDRN,
+aka banana-based plant PDRN,
+in this little Korean ampoule.
 
 And banana peels are already helping women in their 40s and 50s
 get amazing results.
@@ -431,7 +519,7 @@ We're not freezing the face.
 Take it from someone whose routine was all over the place,
 this is the thing I wish I had earlier.
 
-Basically, MUMUKI took my messy anti-aging routine
+MUMUKI took my messy anti-aging routine
 and put the glass-skin part into one ampoule.
 
 But we're gonna make it so freaking affordable,

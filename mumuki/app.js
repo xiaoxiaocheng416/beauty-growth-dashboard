@@ -151,22 +151,22 @@ I would grab this very fast while it's still available.`,
             caption: "Line match: using banana-based PDRN / BDRN product story."
           },
           {
-            label: "Rub banana 1",
-            src: "assets/script-visuals/opening-01/rub-banana-1.png",
-            alt: "Banana peel nature's t0x screenshot 1",
-            caption: "Line match: women in their 40s and 50s rubbing banana peels."
-          },
-          {
-            label: "Rub banana 2",
-            src: "assets/script-visuals/opening-01/rub-banana-2.png",
-            alt: "Banana peel nature's t0x screenshot 2",
-            caption: "Line match: calling it nature's t0x."
-          },
-          {
-            label: "Rub banana 3",
-            src: "assets/script-visuals/opening-01/rub-banana-3.png",
-            alt: "Banana peel nature's t0x screenshot 3",
-            caption: "Line match: I was skeptical."
+            label: "Rub banana 1 / 2 / 3",
+            caption: "One-line match: When I saw women in their 40s and 50s rubbing banana peels on their face and calling it nature's t0x, I was skeptical.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-01/rub-banana-1.png",
+                alt: "Banana peel nature's t0x screenshot 1"
+              },
+              {
+                src: "assets/script-visuals/opening-01/rub-banana-2.png",
+                alt: "Banana peel nature's t0x screenshot 2"
+              },
+              {
+                src: "assets/script-visuals/opening-01/rub-banana-3.png",
+                alt: "Banana peel nature's t0x screenshot 3"
+              }
+            ]
           },
           {
             label: "Results 1",
@@ -1444,6 +1444,10 @@ function scriptVisualBoard(script) {
 }
 
 function scriptVisualSlot(slot) {
+  if (typeof slot === "object" && slot.items) {
+    return scriptVisualGroup(slot);
+  }
+
   if (typeof slot === "object" && slot.src) {
     return scriptVisualCard(slot);
   }
@@ -1458,18 +1462,34 @@ function scriptVisualSlot(slot) {
   `;
 }
 
-function scriptVisualCard(visual) {
-  const isVideo = visual.type === "video" || /\.(mp4|mov|webm)$/i.test(visual.src);
+function scriptVisualGroup(group) {
+  return `
+    <figure class="script-visual-card script-visual-group-card">
+      ${group.label ? `<span>${escapeHtml(group.label)}</span>` : ""}
+      <div class="script-visual-group">
+        ${group.items.map((visual) => scriptVisualMedia(visual)).join("")}
+      </div>
+      <figcaption>${escapeHtml(group.caption)}</figcaption>
+    </figure>
+  `;
+}
 
+function scriptVisualCard(visual) {
   return `
     <figure class="script-visual-card">
       ${visual.label ? `<span>${escapeHtml(visual.label)}</span>` : ""}
-      ${isVideo
-        ? `<video src="${visual.src}" controls muted playsinline></video>`
-        : `<img src="${visual.src}" alt="${escapeHtml(visual.alt)}">`}
+      ${scriptVisualMedia(visual)}
       <figcaption>${escapeHtml(visual.caption)}</figcaption>
     </figure>
   `;
+}
+
+function scriptVisualMedia(visual) {
+  const isVideo = visual.type === "video" || /\.(mp4|mov|webm)$/i.test(visual.src);
+
+  return isVideo
+    ? `<video src="${visual.src}" controls muted playsinline></video>`
+    : `<img src="${visual.src}" alt="${escapeHtml(visual.alt)}">`;
 }
 
 function skitSkeletonBeat(beat, index) {

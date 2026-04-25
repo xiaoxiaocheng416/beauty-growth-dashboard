@@ -971,6 +971,16 @@ p {
   text-transform: uppercase;
 }
 
+.script-visual-group-card {
+  grid-column: 1 / -1;
+}
+
+.script-visual-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
 .script-visual-card figcaption {
   max-width: 620px;
   margin-top: 9px;

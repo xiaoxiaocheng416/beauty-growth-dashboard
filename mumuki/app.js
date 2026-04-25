@@ -169,22 +169,22 @@ I would grab this very fast while it's still available.`,
             ]
           },
           {
-            label: "Results 1",
-            src: "assets/script-visuals/opening-01/results-1.png",
-            alt: "Banana peel result screenshot 1",
-            caption: "Line match: after seeing their amazing results."
-          },
-          {
-            label: "Results 2",
-            src: "assets/script-visuals/opening-01/results-2.mp4",
-            alt: "Banana peel result video 2",
-            caption: "Line match: I could not believe my eyes."
-          },
-          {
-            label: "Results 3",
-            src: "assets/script-visuals/opening-01/results-3.png",
-            alt: "Banana peel result screenshot 3",
-            caption: "Line match: results proof."
+            label: "Results 1 / 2 / 3",
+            caption: "One-line match: But after seeing their amazing results, I literally could not believe my eyes.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-01/results-1.png",
+                alt: "Banana peel result screenshot 1"
+              },
+              {
+                src: "assets/script-visuals/opening-01/results-2.mp4",
+                alt: "Banana peel result video 2"
+              },
+              {
+                src: "assets/script-visuals/opening-01/results-3.png",
+                alt: "Banana peel result screenshot 3"
+              }
+            ]
           }
         ],
         body: `Nobody believes I'm [age] anymore,

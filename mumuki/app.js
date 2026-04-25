@@ -185,6 +185,38 @@ I would grab this very fast while it's still available.`,
                 alt: "Banana peel result screenshot 3"
               }
             ]
+          },
+          {
+            label: "Plant-based PDRN",
+            src: "assets/script-visuals/opening-01/plant-based-pdrn.png",
+            alt: "Plant-based PDRN product explanation",
+            caption: "Line match: plant-based PDRN, more gentle for sensitive skin girlies."
+          },
+          {
+            label: "PDRN support",
+            src: "assets/script-visuals/opening-01/pdrn.png",
+            alt: "PDRN support screenshot",
+            caption: "Line match: PDRN under eyes, smile lines, anywhere they want that plumpness back."
+          },
+          {
+            label: "Support layer",
+            src: "assets/script-visuals/opening-01/support.png",
+            alt: "Skin ECM support layer diagram",
+            caption: "Line match: supports your collagen scaffold, like the scaffolding beneath your skin."
+          },
+          {
+            label: "Volufiline 1 / 2",
+            caption: "Line match: This is what doctors and offices have used for years for boob enhancement and for the badonkadonk.",
+            items: [
+              {
+                src: "assets/script-visuals/opening-01/volufiline-1.png",
+                alt: "Volufiline ingredient proof screenshot 1"
+              },
+              {
+                src: "assets/script-visuals/opening-01/volufiline-2.png",
+                alt: "Volufiline ingredient proof screenshot 2"
+              }
+            ]
           }
         ],
         body: `Nobody believes I'm [age] anymore,

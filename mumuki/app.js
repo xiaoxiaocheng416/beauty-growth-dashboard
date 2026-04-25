@@ -144,10 +144,48 @@ I would grab this very fast while it's still available.`,
         title: "MUMUKI Script",
         note: "Keep the confession first. Do not explain the product too early.",
         visualSlots: [
-          "Age / before-face frame",
-          "40s / 50s banana peel social proof",
-          "PDRN under-eye / smile-line proof",
-          "Product + orange cart frame"
+          {
+            label: "BDRN image",
+            src: "assets/script-visuals/opening-01/bdrn.png",
+            alt: "BDRN product story screenshot",
+            caption: "Line match: using banana-based PDRN / BDRN product story."
+          },
+          {
+            label: "Rub banana 1",
+            src: "assets/script-visuals/opening-01/rub-banana-1.png",
+            alt: "Banana peel nature's t0x screenshot 1",
+            caption: "Line match: women in their 40s and 50s rubbing banana peels."
+          },
+          {
+            label: "Rub banana 2",
+            src: "assets/script-visuals/opening-01/rub-banana-2.png",
+            alt: "Banana peel nature's t0x screenshot 2",
+            caption: "Line match: calling it nature's t0x."
+          },
+          {
+            label: "Rub banana 3",
+            src: "assets/script-visuals/opening-01/rub-banana-3.png",
+            alt: "Banana peel nature's t0x screenshot 3",
+            caption: "Line match: I was skeptical."
+          },
+          {
+            label: "Results 1",
+            src: "assets/script-visuals/opening-01/results-1.png",
+            alt: "Banana peel result screenshot 1",
+            caption: "Line match: after seeing their amazing results."
+          },
+          {
+            label: "Results 2",
+            src: "assets/script-visuals/opening-01/results-2.mp4",
+            alt: "Banana peel result video 2",
+            caption: "Line match: I could not believe my eyes."
+          },
+          {
+            label: "Results 3",
+            src: "assets/script-visuals/opening-01/results-3.png",
+            alt: "Banana peel result screenshot 3",
+            caption: "Line match: results proof."
+          }
         ],
         body: `Nobody believes I'm [age] anymore,
 and I'm afraid to say it is from using banana-based PDRN.
@@ -162,11 +200,8 @@ I was skeptical.
 But after seeing their amazing results,
 I literally could not believe my eyes.
 
-That's when I started looking into banana
-and found out Korea already turned it
-into something called BDRN.
-
-BDRN is basically banana-based PDRN.
+Now Koreans already made banana plus PDRN
+into BDRN.
 
 And if you know PDRN,
 you already know people use this stuff under their eyes,
@@ -1409,18 +1444,29 @@ function scriptVisualBoard(script) {
 }
 
 function scriptVisualSlot(slot) {
+  if (typeof slot === "object" && slot.src) {
+    return scriptVisualCard(slot);
+  }
+
+  const label = typeof slot === "object" ? slot.label : slot;
+
   return `
     <div class="script-visual-slot">
       <span>Drop image here</span>
-      <strong>${escapeHtml(slot)}</strong>
+      <strong>${escapeHtml(label)}</strong>
     </div>
   `;
 }
 
 function scriptVisualCard(visual) {
+  const isVideo = visual.type === "video" || /\.(mp4|mov|webm)$/i.test(visual.src);
+
   return `
     <figure class="script-visual-card">
-      <img src="${visual.src}" alt="${escapeHtml(visual.alt)}">
+      ${visual.label ? `<span>${escapeHtml(visual.label)}</span>` : ""}
+      ${isVideo
+        ? `<video src="${visual.src}" controls muted playsinline></video>`
+        : `<img src="${visual.src}" alt="${escapeHtml(visual.alt)}">`}
       <figcaption>${escapeHtml(visual.caption)}</figcaption>
     </figure>
   `;

@@ -860,12 +860,236 @@ grab it while it's still available.`,
   }
 ];
 
+const bananaPeelScienceDemoScript = {
+  id: "banana-peel-bdrn",
+  title: "Banana Peel BDRN Science Demo",
+  count: "1 script",
+  note: "Why banana works → Korea upgraded it → MUMUKI ampoule.",
+  body: `Why is everyone rubbing banana peel on their face,
+saying it makes their skin look so much tighter?
+
+When I first saw it,
+I was a little skeptical.
+
+But after seeing women in their 40s and 50s
+get results like this,
+this,
+and this,
+
+I literally could not believe my eyes.
+
+Why does it work so well?
+
+My ADHD brain was curious,
+so I did some research.
+
+Turns out banana peel has antioxidants in it.
+
+That is why people use it for
+dull-looking skin,
+dry lines,
+and texture.
+
+And Koreans already knew this, of course.
+
+Korean skincare,
+always living in the future,
+
+made banana-derived PDRN.
+
+So we do not need to rub a whole banana
+on our face anymore.
+
+This is MUMUKI BDRN ampoule.
+
+BDRN is basically the next version of PDRN,
+
+but plant-based.
+
+So I like it better for my sensitive skin girlies.
+
+And if you know PDRN,
+
+you already know people use this stuff
+under their eyes,
+on smile lines,
+on the forehead,
+
+anywhere they want that plumpness back.
+
+As we get older,
+
+skin just does not hold the same as before.
+
+That is why the face starts looking
+flat,
+loose,
+and tired.
+
+This has all the good stuff for that plump,
+glowy skin.
+
+BDRN,
+collagen,
+Volufiline,
+and 10-layer hyaluronic acid.
+
+Look at this texture.
+
+It feels sticky at first,
+
+but it melts into the skin
+and absorbs fast.
+
+Super super gentle for sensitive skin.
+
+This just came out on TikTok Shop,
+
+and I already know people are going to sell it out.
+
+If you still see the orange cart,
+
+I would grab it while you can.`,
+  visualMatch: [
+    {
+      script: `Why is everyone rubbing banana peel on their face,
+saying it makes their skin look so much tighter?`,
+      visual: "3 banana peel clips across the top of the screen. Talking head stays underneath."
+    },
+    {
+      script: `When I first saw it,
+I was a little skeptical.`,
+      visual: "Talking head. Optional skeptical face / quick glance at the banana clips."
+    },
+    {
+      script: `But after seeing women in their 40s and 50s
+get results like this,
+this,
+and this,`,
+      visual: "Show results 1 / results 2 / results 3. Each 'this' gets one result visual."
+    },
+    {
+      script: "I literally could not believe my eyes.",
+      visual: "Talking head reaction. Keep the results still visible or cut back to face."
+    },
+    {
+      script: `Why does it work so well?
+
+My ADHD brain was curious,
+so I did some research.`,
+      visual: "Creator talking head + quick search / screenshot setup."
+    },
+    {
+      script: `Turns out banana peel has antioxidants in it.
+
+That is why people use it for
+dull-looking skin,
+dry lines,
+and texture.`,
+      visual: "Readable source card. Highlight antioxidants and the benefit words. Do not use tiny article text."
+    },
+    {
+      script: `And Koreans already knew this, of course.
+
+Korean skincare,
+always living in the future,
+
+made banana-derived PDRN.`,
+      visual: "Transition from banana peel visual to BDRN / product visual."
+    },
+    {
+      script: `So we do not need to rub a whole banana
+on our face anymore.
+
+This is MUMUKI BDRN ampoule.`,
+      visual: "Move banana away. Bring MUMUKI ampoule into frame."
+    },
+    {
+      script: `BDRN is basically the next version of PDRN,
+
+but plant-based.
+
+So I like it better for my sensitive skin girlies.`,
+      visual: "Plant-based PDRN card or BDRN product explanation screenshot."
+    },
+    {
+      script: `And if you know PDRN,
+
+you already know people use this stuff
+under their eyes,
+on smile lines,
+on the forehead,
+
+anywhere they want that plumpness back.`,
+      visual: "Point to under eyes, smile lines, forehead. Optional PDRN proof card."
+    },
+    {
+      script: `As we get older,
+
+skin just does not hold the same as before.
+
+That is why the face starts looking
+flat,
+loose,
+and tired.`,
+      visual: "Aging / flat face visual. Keep it cropped close enough for mobile."
+    },
+    {
+      script: `This has all the good stuff for that plump,
+glowy skin.
+
+BDRN,
+collagen,
+Volufiline,
+and 10-layer hyaluronic acid.`,
+      visual: "Ingredient card or product close-up. Keep text simple: BDRN / collagen / Volufiline / 10-layer HA."
+    },
+    {
+      script: `Look at this texture.
+
+It feels sticky at first,
+
+but it melts into the skin
+and absorbs fast.`,
+      visual: "Texture close-up. Show stretch / sticky texture, then rub in and melt."
+    },
+    {
+      script: "Super super gentle for sensitive skin.",
+      visual: "Face application or glow finish. No heavy text needed."
+    },
+    {
+      script: `This just came out on TikTok Shop,
+
+and I already know people are going to sell it out.
+
+If you still see the orange cart,
+
+I would grab it while you can.`,
+      visual: "Product page / orange cart / final glow frame."
+    }
+  ],
+  mustFollow: [
+    "First 4 seconds need motion. Use banana peel clips, not only talking head.",
+    "Results visuals must be big enough to read on mobile.",
+    "Do not explain BDRN before the banana trend is clear.",
+    "Product reveal should happen right after the banana-to-BDRN bridge.",
+    "Texture must be shown when saying 'Look at this texture.'",
+    "Do not say it replaces Botox, filler, injections, or medical treatments."
+  ]
+};
+
 const scriptIdeaSections = [
   {
     title: "Skit",
     count: "1 skeleton",
     href: "#/script-idea/skit",
     note: "Two-person setup. Old solution fails. Product reveal gives proof."
+  },
+  {
+    title: "Banana Peel BDRN Demo",
+    count: bananaPeelScienceDemoScript.count,
+    href: `#/script-idea/${bananaPeelScienceDemoScript.id}`,
+    note: bananaPeelScienceDemoScript.note
   },
   ...week1ScriptSystems.map((item, index) => ({
     title: `Opening 0${index + 1}`,
@@ -1030,6 +1254,8 @@ function route() {
     renderReferenceVideo();
   } else if (path === "/visual-hook-bank" || path === "/visual-hook-grouping") {
     renderVisualHookGrouping();
+  } else if (path === `/script-idea/${bananaPeelScienceDemoScript.id}`) {
+    renderBananaPeelScienceDemoScriptIdea();
   } else if (path.startsWith("/script-idea/opening-")) {
     renderWeek1ScriptIdea(path.split("/").pop());
   } else if (path === "/script-idea/skit") {
@@ -1313,7 +1539,7 @@ function renderScriptIdea() {
           <h1>Week 1 Script System</h1>
         </div>
         <p class="small-note">
-          Keep the skit. Add 4 reference skeletons and 5 MUMUKI scripts.
+          Skit, 4 opening systems, and the banana peel BDRN demo.
         </p>
       </div>
 
@@ -1407,6 +1633,68 @@ function scriptIdeaCard(section) {
       <h2>${section.title}</h2>
       <p>${section.note}</p>
     </a>
+  `;
+}
+
+function renderBananaPeelScienceDemoScriptIdea() {
+  const item = bananaPeelScienceDemoScript;
+
+  app.innerHTML = `
+    <section class="page script-page script-detail-page">
+      <a class="back-link" href="#/script-idea">← Back to Script Idea</a>
+      <div class="page-header">
+        <div>
+          <p class="eyebrow">New Script</p>
+          <h1>${item.title}</h1>
+        </div>
+        <p class="small-note">${item.note}</p>
+      </div>
+
+      <article class="standalone-script-card">
+        <section class="script-section">
+          <div class="section-head">
+            <p class="eyebrow">Full script</p>
+            <strong>word by word</strong>
+          </div>
+          <div class="script-draft-card">
+            <pre>${escapeHtml(item.body)}</pre>
+          </div>
+        </section>
+
+        <section class="script-section">
+          <div class="section-head">
+            <p class="eyebrow">Script + on-screen visuals</p>
+            <strong>line match</strong>
+          </div>
+          <div class="visual-match-table">
+            <div class="visual-match-head">
+              <span>Script</span>
+              <span>On-screen visuals</span>
+            </div>
+            ${item.visualMatch.map((row) => visualMatchRow(row)).join("")}
+          </div>
+        </section>
+
+        <section class="script-section">
+          <div class="section-head">
+            <p class="eyebrow">Must follow</p>
+            <strong>shooting rules</strong>
+          </div>
+          <ul class="must-follow-list">
+            ${item.mustFollow.map((rule) => `<li>${escapeHtml(rule)}</li>`).join("")}
+          </ul>
+        </section>
+      </article>
+    </section>
+  `;
+}
+
+function visualMatchRow(row) {
+  return `
+    <div class="visual-match-row">
+      <pre>${escapeHtml(row.script)}</pre>
+      <p>${escapeHtml(row.visual)}</p>
+    </div>
   `;
 }
 

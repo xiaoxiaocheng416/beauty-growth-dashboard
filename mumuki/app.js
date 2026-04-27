@@ -865,8 +865,10 @@ const bananaPeelScienceDemoScript = {
   title: "Banana Peel BDRN Science Demo",
   count: "1 script",
   note: "Why banana works → Korea upgraded it → MUMUKI ampoule.",
-  body: `Why is everyone rubbing banana peel on their face,
-saying it makes their skin look so much tighter?
+  downloadHref: "assets/downloads/banana-peel-bdrn-assets.zip",
+  body: `So why is everyone rubbing banana peel on their face?
+
+Saying it makes their skin look so much tighter?
 
 When I first saw it,
 I was a little skeptical.
@@ -952,32 +954,79 @@ If you still see the orange cart,
 I would grab it while you can.`,
   visualMatch: [
     {
-      script: `Why is everyone rubbing banana peel on their face,
-saying it makes their skin look so much tighter?`,
-      visual: "3 banana peel clips across the top of the screen. Talking head stays underneath."
+      script: `So why is everyone rubbing banana peel on their face?
+
+Saying it makes their skin look so much tighter?`,
+      visual: "Use 3-5 short muted banana peel clips. Talking head stays underneath.",
+      visuals: [
+        {
+          src: "content/visual-hook-mining/clips/katiejanehughes__banana-skin-facial__7355150760293747998_v3_31flashlite/beat-01.mp4",
+          alt: "Banana skin facial hook clip",
+          className: "hook-clip",
+          silentLoop: true
+        },
+        {
+          src: "content/visual-hook-mining/clips/victoria-benitez__banana-for-skin-girlies__7330117596110392619_v3_31flashlite/beat-01.mp4",
+          alt: "Banana for skin girlies hook clip",
+          className: "hook-clip",
+          silentLoop: true
+        },
+        {
+          src: "content/visual-hook-mining/clips/zack-chug__banana-vs-t0x-hook__7627186004625018134_v3_31flashlite/beat-01.mp4",
+          alt: "Banana vs t0x hook clip",
+          className: "hook-clip",
+          silentLoop: true
+        },
+        {
+          src: "content/visual-hook-mining/clips/sheenaanayaaa__banana-peel-tightening-test__7331862916603612462_v3_31flashlite/beat-02.mp4",
+          alt: "Banana peel tightening test clip",
+          className: "hook-clip",
+          silentLoop: true
+        },
+        {
+          src: "content/visual-hook-mining/clips/katiejanehughes__banana-skin-facial__7355150760293747998_v3_31flashlite/beat-02.mp4",
+          alt: "Banana skin facial half-face clip",
+          className: "hook-clip",
+          silentLoop: true
+        }
+      ]
     },
     {
       script: `When I first saw it,
 I was a little skeptical.`,
-      visual: "Talking head. Optional skeptical face / quick glance at the banana clips."
+      visual: ""
     },
     {
       script: `But after seeing women in their 40s and 50s
 get results like this,
 this,
 and this,`,
-      visual: "Show results 1 / results 2 / results 3. Each 'this' gets one result visual."
+      visual: "Use these 3 result visuals. Each 'this' gets one visual.",
+      visuals: [
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/results-3.png",
+          alt: "Results 3"
+        },
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/results-2.png",
+          alt: "Results 2"
+        },
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/results.png",
+          alt: "Results"
+        }
+      ]
     },
     {
       script: "I literally could not believe my eyes.",
-      visual: "Talking head reaction. Keep the results still visible or cut back to face."
+      visual: ""
     },
     {
       script: `Why does it work so well?
 
 My ADHD brain was curious,
 so I did some research.`,
-      visual: "Creator talking head + quick search / screenshot setup."
+      visual: ""
     },
     {
       script: `Turns out banana peel has antioxidants in it.
@@ -986,7 +1035,26 @@ That is why people use it for
 dull-looking skin,
 dry lines,
 and texture.`,
-      visual: "Readable source card. Highlight antioxidants and the benefit words. Do not use tiny article text."
+      visual: "",
+      visuals: [
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/study-benefit.png",
+          alt: "Banana peel study benefit source card",
+          className: "wide-source-card"
+        },
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/dull-skin.jpg",
+          alt: "Dull-looking skin reference"
+        },
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/dry-lines.jpg",
+          alt: "Dry lines reference"
+        },
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/undereye-wrinkle.webp",
+          alt: "Texture and under-eye line reference"
+        }
+      ]
     },
     {
       script: `And Koreans already knew this, of course.
@@ -995,14 +1063,20 @@ Korean skincare,
 always living in the future,
 
 made banana-derived PDRN.`,
-      visual: "Transition from banana peel visual to BDRN / product visual."
+      visual: "",
+      visuals: [
+        {
+          src: "assets/script-visuals/opening-01/bdrn.png",
+          alt: "Banana-derived PDRN card"
+        }
+      ]
     },
     {
       script: `So we do not need to rub a whole banana
 on our face anymore.
 
 This is MUMUKI BDRN ampoule.`,
-      visual: "Move banana away. Bring MUMUKI ampoule into frame."
+      visual: "Open the ampoule and drop it onto the face."
     },
     {
       script: `BDRN is basically the next version of PDRN,
@@ -1010,7 +1084,13 @@ This is MUMUKI BDRN ampoule.`,
 but plant-based.
 
 So I like it better for my sensitive skin girlies.`,
-      visual: "Plant-based PDRN card or BDRN product explanation screenshot."
+      visual: "Pat it into the face. Show the stretchy texture clearly.",
+      visuals: [
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/plant-based-pdrn.png",
+          alt: "Plant-based PDRN explanation card"
+        }
+      ]
     },
     {
       script: `And if you know PDRN,
@@ -1021,7 +1101,13 @@ on smile lines,
 on the forehead,
 
 anywhere they want that plumpness back.`,
-      visual: "Point to under eyes, smile lines, forehead. Optional PDRN proof card."
+      visual: "Finger swipe under eyes, smile lines, and forehead.",
+      visuals: [
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/pdrn-before-after.png",
+          alt: "PDRN before and after proof card"
+        }
+      ]
     },
     {
       script: `As we get older,
@@ -1032,7 +1118,13 @@ That is why the face starts looking
 flat,
 loose,
 and tired.`,
-      visual: "Aging / flat face visual. Keep it cropped close enough for mobile."
+      visual: "",
+      visuals: [
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/agingface-2.png",
+          alt: "Youthful face and aging face comparison"
+        }
+      ]
     },
     {
       script: `This has all the good stuff for that plump,
@@ -1042,7 +1134,18 @@ BDRN,
 collagen,
 Volufiline,
 and 10-layer hyaluronic acid.`,
-      visual: "Ingredient card or product close-up. Keep text simple: BDRN / collagen / Volufiline / 10-layer HA."
+      visual: "Show Volufiline source card + support layer card.",
+      visuals: [
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/volufiline.png",
+          alt: "Volufiline plumper skin source card"
+        },
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/support.png",
+          alt: "Skin ECM support layer card",
+          className: "wide-source-card"
+        }
+      ]
     },
     {
       script: `Look at this texture.
@@ -1051,7 +1154,17 @@ It feels sticky at first,
 
 but it melts into the skin
 and absorbs fast.`,
-      visual: "Texture close-up. Show stretch / sticky texture, then rub in and melt."
+      visual: "Put it on your hand or cheek. Show the sticky stretch, then rub it in.",
+      visuals: [
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/texture.png",
+          alt: "MUMUKI ampoule texture demo"
+        },
+        {
+          src: "assets/script-visuals/banana-peel-bdrn/hands-texture.png",
+          alt: "MUMUKI ampoule hand texture demo"
+        }
+      ]
     },
     {
       script: "Super super gentle for sensitive skin.",
@@ -1065,15 +1178,15 @@ and I already know people are going to sell it out.
 If you still see the orange cart,
 
 I would grab it while you can.`,
-      visual: "Product page / orange cart / final glow frame."
+      visual: "Point to the bottom-left orange cart."
     }
   ],
   mustFollow: [
-    "First 4 seconds need motion. Use banana peel clips, not only talking head.",
-    "Results visuals must be big enough to read on mobile.",
-    "Do not explain BDRN before the banana trend is clear.",
-    "Product reveal should happen right after the banana-to-BDRN bridge.",
-    "Texture must be shown when saying 'Look at this texture.'",
+    "Hook must show other people rubbing banana peel on their face. It does not have to use our exact screenshots.",
+    "Early proof must show other people's results. It does not have to use our exact result photos.",
+    "Keep the same structure: why banana → skeptical → ingredient reason → BDRN bridge → product / benefit demo → CTA.",
+    "Skin-state words can change if they sound more natural: dull, dry lines, texture, flat, loose, tired, plump, glowy.",
+    "Talking-head framing: head should fill most of the 9-grid, background should stay clean, and leave space for screenshots / source cards.",
     "Do not say it replaces Botox, filler, injections, or medical treatments."
   ]
 };
@@ -1384,6 +1497,18 @@ function renderVisualHookGrouping() {
         <p class="small-note">${visualHookGroupsData.length} groups. ${totalClips} selected clips.</p>
       </div>
 
+      <div class="script-link-panel">
+        <div>
+          <p class="eyebrow">Ready-to-shoot script</p>
+          <h2>Banana Peel BDRN Demo</h2>
+          <p>Script + on-screen visual match for the banana peel angle.</p>
+        </div>
+        <div class="script-link-actions">
+          <a class="action-button" href="#/script-idea/${bananaPeelScienceDemoScript.id}">Open shooting sheet</a>
+          <a class="action-button secondary" href="${bananaPeelScienceDemoScript.downloadHref}" download>Download visuals</a>
+        </div>
+      </div>
+
       <div class="group-stack">
         ${visualHookGroupsData.map((group) => hookGroupSection(group)).join("")}
       </div>
@@ -1647,20 +1772,13 @@ function renderBananaPeelScienceDemoScriptIdea() {
           <p class="eyebrow">New Script</p>
           <h1>${item.title}</h1>
         </div>
-        <p class="small-note">${item.note}</p>
+        <div class="script-page-actions">
+          <p class="small-note">${item.note}</p>
+          <a class="action-button secondary" href="${item.downloadHref}" download>Download all visuals</a>
+        </div>
       </div>
 
       <article class="standalone-script-card">
-        <section class="script-section">
-          <div class="section-head">
-            <p class="eyebrow">Full script</p>
-            <strong>word by word</strong>
-          </div>
-          <div class="script-draft-card">
-            <pre>${escapeHtml(item.body)}</pre>
-          </div>
-        </section>
-
         <section class="script-section">
           <div class="section-head">
             <p class="eyebrow">Script + on-screen visuals</p>
@@ -1684,16 +1802,36 @@ function renderBananaPeelScienceDemoScriptIdea() {
             ${item.mustFollow.map((rule) => `<li>${escapeHtml(rule)}</li>`).join("")}
           </ul>
         </section>
+
+        <section class="script-section">
+          <div class="section-head">
+            <p class="eyebrow">Full script</p>
+          </div>
+          <div class="script-draft-card">
+            <pre>${escapeHtml(item.body)}</pre>
+          </div>
+        </section>
       </article>
     </section>
   `;
 }
 
 function visualMatchRow(row) {
+  const visualContent = row.visual
+    ? `<p>${escapeHtml(row.visual)}</p>`
+    : "";
+
   return `
     <div class="visual-match-row">
       <pre>${escapeHtml(row.script)}</pre>
-      <p>${escapeHtml(row.visual)}</p>
+      <div class="visual-match-visual">
+        ${visualContent}
+        ${row.visuals ? `
+          <div class="visual-match-media-row">
+            ${row.visuals.map((visual) => scriptVisualMedia(visual)).join("")}
+          </div>
+        ` : ""}
+      </div>
     </div>
   `;
 }
@@ -1894,10 +2032,14 @@ function scriptVisualCard(visual) {
 
 function scriptVisualMedia(visual) {
   const isVideo = visual.type === "video" || /\.(mp4|mov|webm)$/i.test(visual.src);
+  const className = visual.className ? ` class="${escapeHtml(visual.className)}"` : "";
+  const videoAttrs = visual.silentLoop
+    ? "autoplay loop muted playsinline"
+    : "controls muted playsinline";
 
   return isVideo
-    ? `<video src="${visual.src}" controls muted playsinline></video>`
-    : `<img src="${visual.src}" alt="${escapeHtml(visual.alt)}">`;
+    ? `<video${className} src="${visual.src}" ${videoAttrs}></video>`
+    : `<img${className} src="${visual.src}" alt="${escapeHtml(visual.alt)}">`;
 }
 
 function skitSkeletonBeat(beat, index) {

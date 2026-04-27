@@ -865,7 +865,7 @@ const bananaPeelScienceDemoScript = {
   title: "Banana Peel BDRN Science Demo",
   count: "1 script",
   note: "Why banana works → Korea upgraded it → MUMUKI ampoule.",
-  downloadHref: "assets/downloads/banana-peel-bdrn-assets.zip",
+  downloadHref: "https://drive.google.com/drive/folders/1Il7B0-no_wxzppU1vvOiwauKtBuAIlSO",
   body: `So why is everyone rubbing banana peel on their face?
 
 Saying it makes their skin look so much tighter?
@@ -1497,18 +1497,6 @@ function renderVisualHookGrouping() {
         <p class="small-note">${visualHookGroupsData.length} groups. ${totalClips} selected clips.</p>
       </div>
 
-      <div class="script-link-panel">
-        <div>
-          <p class="eyebrow">Ready-to-shoot script</p>
-          <h2>Banana Peel BDRN Demo</h2>
-          <p>Script + on-screen visual match for the banana peel angle.</p>
-        </div>
-        <div class="script-link-actions">
-          <a class="action-button" href="#/script-idea/${bananaPeelScienceDemoScript.id}">Open shooting sheet</a>
-          <a class="action-button secondary" href="${bananaPeelScienceDemoScript.downloadHref}" download>Download visuals</a>
-        </div>
-      </div>
-
       <div class="group-stack">
         ${visualHookGroupsData.map((group) => hookGroupSection(group)).join("")}
       </div>
@@ -1774,7 +1762,7 @@ function renderBananaPeelScienceDemoScriptIdea() {
         </div>
         <div class="script-page-actions">
           <p class="small-note">${item.note}</p>
-          <a class="action-button secondary" href="${item.downloadHref}" download>Download all visuals</a>
+          <a class="action-button secondary" href="${item.downloadHref}" target="_blank" rel="noreferrer">Google Drive assets</a>
         </div>
       </div>
 

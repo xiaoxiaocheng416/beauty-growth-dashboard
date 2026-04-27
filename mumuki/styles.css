@@ -403,31 +403,6 @@ p {
   text-transform: uppercase;
 }
 
-.script-link-panel {
-  display: flex;
-  gap: 18px;
-  justify-content: space-between;
-  align-items: end;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  margin: 0 0 28px;
-  padding: 20px;
-  background: rgba(255, 253, 247, 0.82);
-  box-shadow: var(--shadow);
-}
-
-.script-link-panel h2 {
-  margin: 5px 0 8px;
-  font-size: clamp(30px, 3.2vw, 48px);
-  line-height: 0.95;
-}
-
-.script-link-panel p:last-child {
-  max-width: 520px;
-  margin-bottom: 0;
-}
-
-.script-link-actions,
 .script-page-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1357,11 +1332,6 @@ p {
     position: static;
   }
 
-  .script-link-panel {
-    display: block;
-  }
-
-  .script-link-actions,
   .script-page-actions {
     justify-content: flex-start;
     margin-top: 14px;

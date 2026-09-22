@@ -1,0 +1,51 @@
+{
+  "source": "Six screenshots supplied by the user in this conversation",
+  "portal_badge": "86",
+  "portal_title": "Ideation, Storytelling, Scripting",
+  "board_title": "how to master TOF",
+  "scope": "Visible screenshot regions only, not a full board export",
+  "images": [
+    {
+      "file": "images/01.png",
+      "width": 1742,
+      "height": 1414,
+      "bytes": 215153,
+      "sha256": "35d307928693351261043310dae14ef4b770ec40b0f58f3f9396e944331a3a13"
+    },
+    {
+      "file": "images/02.png",
+      "width": 1124,
+      "height": 1156,
+      "bytes": 135308,
+      "sha256": "be6cb1bf58066f69bcaa808b11a30eb6618c4a97ce7d5d67376e61fd6bba1875"
+    },
+    {
+      "file": "images/03.png",
+      "width": 1266,
+      "height": 1674,
+      "bytes": 555975,
+      "sha256": "b790d9f8d1c651958459e41021a618f492a473a530fa9f295d7094aebfb43710"
+    },
+    {
+      "file": "images/04.png",
+      "width": 1806,
+      "height": 1130,
+      "bytes": 671523,
+      "sha256": "29d283cf46da70c131087b53f52885d5bf9d882abcf6f9cd7fe0def792cb6b6a"
+    },
+    {
+      "file": "images/05.png",
+      "width": 2164,
+      "height": 1318,
+      "bytes": 247533,
+      "sha256": "4dc5f7876d072f1c10d85d8d8399ac89893af18a266f4608b56a081ff05e0b47"
+    },
+    {
+      "file": "images/06.png",
+      "width": 1394,
+      "height": 1326,
+      "bytes": 439298,
+      "sha256": "7db107fa53d4ef7c65101cfb42bf3be5df342635d6874ca409131bf89c9ebe20"
+    }
+  ]
+}

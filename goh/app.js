@@ -459,6 +459,26 @@
     </article>`;
   }
 
+  function creativePriorityEntry(entry) {
+    const item = data.recordings.find((recording) => recording.id === entry.id);
+    const shareUrl = `${data.publicBase}#/recording/${encodeURIComponent(entry.id)}`;
+    return `<article class="priority-entry creative-entry ${entry.rank === 1 ? 'is-lead' : ''}">
+      <div class="priority-rank"><span>${String(entry.rank).padStart(2, '0')}</span><small>${escapeHtml(entry.stage)}</small></div>
+      <div class="priority-copy">
+        <div class="role-row">${entry.roles.map((role) => `<span>${escapeHtml(role)}</span>`).join('')}</div>
+        <h2>${escapeHtml(entry.titleZh)}</h2>
+        <p class="priority-original">${escapeHtml(entry.title)}${item?.durationSeconds ? ` · ${escapeHtml(formatDuration(item.durationSeconds))}` : ''}</p>
+        <p>${escapeHtml(entry.reason)}</p>
+        <div class="priority-action"><strong>看完立刻做</strong><span>${escapeHtml(entry.action)}</span></div>
+      </div>
+      <div class="priority-links">
+        <a class="article-action primary" href="#/recording/${encodeURIComponent(entry.id)}">直接观看</a>
+        ${entry.relatedSop ? `<a class="text-link" href="#/sop/${encodeURIComponent(entry.relatedSop)}">相关 SOP ${escapeHtml(entry.relatedSop)} →</a>` : ''}
+        <a class="text-link share-link" href="${escapeHtml(shareUrl)}" target="_blank" rel="noreferrer">分享链接 ↗</a>
+      </div>
+    </article>`;
+  }
+
   function renderMustRead() {
     setActiveNav('must-read');
     workspace.innerHTML = `
@@ -473,6 +493,14 @@
       </section>
       <section class="priority-list" aria-label="优先 SOP">
         ${data.priority.map(priorityEntry).join('')}
+      </section>
+      <header class="priority-subheading">
+        <p class="kicker">Visual identity × Creative direction</p>
+        <h2>还要立刻看的 6 场课程与录播</h2>
+        <p>前面的 SOP 负责判断和流程；这组负责镜头前后的实际表达，包括品牌信任、视觉识别、拍摄、故事、电影感和选题。Creative Director 应优先看 01 → 03 → 04 → 05。</p>
+      </header>
+      <section class="priority-list creative-priority-list" aria-label="优先课程与录播">
+        ${data.creativePriority.map(creativePriorityEntry).join('')}
       </section>`;
   }
 

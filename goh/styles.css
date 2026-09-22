@@ -167,6 +167,12 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .role-briefs strong { font-size: 1.05rem; }
 .role-briefs p { max-width: 42rem; margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.65; }
 .priority-list { border-top: 1px solid var(--ink); }
+.priority-subheading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .65fr); gap: 2rem 3rem; align-items: end; margin-top: 6rem; padding: 0 0 2rem; }
+.priority-subheading .kicker { grid-column: 1 / -1; }
+.priority-subheading h2 { max-width: 14ch; margin: 0; font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: .95; letter-spacing: -.055em; text-wrap: balance; }
+.priority-subheading > p:last-child { max-width: 36rem; margin: 0; color: var(--ink-soft); font-size: .96rem; line-height: 1.75; }
+.creative-priority-list .priority-rank > span { color: var(--ink-soft); }
+.creative-entry .priority-original { text-transform: none; }
 .priority-entry { display: grid; grid-template-columns: 8rem minmax(0, 1fr) 9rem; gap: 2rem; padding: 2.2rem 0 2.65rem; border-bottom: 1px solid var(--line-dark); }
 .priority-entry.is-lead { padding-top: 3rem; padding-bottom: 3.5rem; }
 .priority-rank { display: grid; align-content: space-between; gap: 2rem; }
@@ -295,7 +301,8 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
   .sop-list { max-height: 24rem; border-right: 0; border-bottom: 1px solid var(--line); }
   .sop-detail { max-height: none; }
   .article-head { position: static; }
-  .priority-heading, .translation-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .priority-heading, .priority-subheading, .translation-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .priority-subheading .kicker { grid-column: 1; }
   .priority-entry { grid-template-columns: 5rem minmax(0, 1fr); }
   .priority-links { grid-column: 2; flex-direction: row; justify-content: flex-start; }
   .translation-shell { grid-template-columns: 1fr; gap: 2rem; }
@@ -323,6 +330,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
   .embedded-player-wrap { margin-right: 1.15rem; margin-left: 1.15rem; }
   .app-footer { display: grid; gap: .35rem; }
   .role-briefs { grid-template-columns: 1fr; }
+  .priority-subheading { margin-top: 4rem; }
   .priority-entry { grid-template-columns: 1fr; gap: 1rem; }
   .priority-rank { display: flex; align-items: baseline; justify-content: space-between; }
   .priority-links { grid-column: 1; }

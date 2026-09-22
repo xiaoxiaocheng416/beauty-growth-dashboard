@@ -654,7 +654,7 @@
       ['content_mastermind', 'Content · Yash'],
       ['brand_architect', 'Brand · SooWei'],
       ['scripting_mastermind', 'Scripting · Aidan'],
-      ['downloaded', '本地 17 场'],
+      ['downloaded', `本地 ${data.stats.downloadedRecordings} 场`],
     ];
     workspace.innerHTML = `
       <header class="page-heading">

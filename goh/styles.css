@@ -157,6 +157,51 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .resource-link:hover, .article-action:hover { border-color: var(--ink); background: var(--accent-soft); }
 .resource-link.is-sop { border-color: var(--ink); background: var(--ink); color: white; }
 
+.priority-heading { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(18rem, .65fr); align-items: end; gap: 3rem; padding: 1.5rem 0 3rem; border-bottom: 1px solid var(--line-dark); }
+.priority-heading .kicker { grid-column: 1 / -1; }
+.priority-heading h1 { max-width: 12ch; margin: 0; font-size: clamp(3rem, 6.5vw, 6.3rem); line-height: .91; letter-spacing: -.065em; text-wrap: balance; }
+.priority-heading > p:last-child { max-width: 34rem; margin: 0 0 .45rem; color: var(--ink-soft); font-size: 1.05rem; line-height: 1.75; text-wrap: pretty; }
+.role-briefs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin: 1.25rem 0 3.4rem; border: 1px solid var(--line); background: var(--line); }
+.role-briefs article { display: grid; gap: .55rem; padding: 1.5rem; background: var(--surface); }
+.role-briefs span { color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.role-briefs strong { font-size: 1.05rem; }
+.role-briefs p { max-width: 42rem; margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.65; }
+.priority-list { border-top: 1px solid var(--ink); }
+.priority-entry { display: grid; grid-template-columns: 8rem minmax(0, 1fr) 9rem; gap: 2rem; padding: 2.2rem 0 2.65rem; border-bottom: 1px solid var(--line-dark); }
+.priority-entry.is-lead { padding-top: 3rem; padding-bottom: 3.5rem; }
+.priority-rank { display: grid; align-content: space-between; gap: 2rem; }
+.priority-rank > span { font-size: clamp(3rem, 5vw, 5rem); font-weight: 800; line-height: .8; letter-spacing: -.08em; font-variant-numeric: tabular-nums; }
+.priority-rank small { color: var(--accent-ink); font-size: .68rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.priority-copy { max-width: 46rem; }
+.role-row { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .85rem; }
+.role-row span { padding: .28rem .48rem; border: 1px solid var(--line-dark); border-radius: .3rem; color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .04em; }
+.priority-copy h2 { max-width: 24ch; margin: 0; font-size: clamp(1.55rem, 3vw, 2.45rem); line-height: 1.08; letter-spacing: -.04em; text-wrap: balance; }
+.priority-copy > p { max-width: 46rem; color: var(--ink-soft); line-height: 1.75; }
+.priority-copy .priority-original { margin: .5rem 0 1.1rem; color: var(--muted); font-size: .72rem; }
+.priority-action { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .8rem; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .8rem; line-height: 1.6; }
+.priority-action strong { color: var(--accent-ink); white-space: nowrap; }
+.priority-links { display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: .7rem; }
+.priority-links .article-action { justify-content: center; margin: 0; }
+.text-link { color: var(--muted); font-size: .7rem; font-weight: 650; text-align: center; text-decoration: none; }
+.text-link:hover { color: var(--ink); }
+.article-action.zh-action { border-color: var(--accent-ink); color: var(--accent-ink); background: var(--accent); }
+
+.translation-page { max-width: 64rem; margin: 0 auto; }
+.back-link { display: inline-flex; margin-bottom: 1.5rem; color: var(--muted); font-size: .72rem; font-weight: 650; text-decoration: none; }
+.back-link:hover { color: var(--ink); }
+.translation-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, .45fr); gap: 3rem; align-items: end; padding: 1rem 0 2.5rem; border-bottom: 1px solid var(--ink); }
+.translation-head h1 { max-width: 18ch; margin: .8rem 0 1rem; font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: .96; letter-spacing: -.055em; text-wrap: balance; }
+.translation-head > div > p:not(.kicker) { max-width: 42rem; color: var(--muted); line-height: 1.7; }
+.translation-task { display: grid; gap: .6rem; padding: 1.35rem; border-left: .35rem solid var(--accent); background: var(--paper-deep); }
+.translation-task span { color: var(--muted); font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.translation-task strong { font-size: .85rem; line-height: 1.65; }
+.language-switch { display: flex; gap: .5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+.language-switch a, .language-switch span { padding: .5rem .75rem; border: 1px solid var(--line); border-radius: var(--radius-control); color: var(--muted); font-size: .72rem; font-weight: 700; text-decoration: none; }
+.language-switch .is-active { border-color: var(--ink); color: var(--ink); background: var(--accent); }
+.translated-body { max-width: 48rem; margin: 0 auto; padding-top: 3rem; padding-bottom: 5rem; font-size: 1.04rem; }
+.translated-body h2 { margin-top: 4rem; color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.translated-body h2:first-child { margin-top: 0; }
+
 .library-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; align-items: end; padding: 1.5rem 0; }
 .search-wrap label { display: block; margin-bottom: .55rem; color: var(--muted); font-size: .7rem; font-weight: 700; }
 .search-box { position: relative; }
@@ -173,6 +218,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .sop-item:hover { background: var(--paper-deep); }
 .sop-item.is-active { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--ink); }
 .sop-badge { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: .45rem; color: var(--accent); background: var(--ink); font-size: .66rem; font-weight: 800; }
+.learning-badge { font-size: .56rem; letter-spacing: .05em; }
 .sop-item strong { display: block; font-size: .78rem; line-height: 1.35; }
 .sop-item small { display: block; margin-top: .22rem; color: var(--muted); font-size: .64rem; }
 .status-dot { width: .45rem; height: .45rem; border-radius: 50%; background: var(--success); }
@@ -212,6 +258,9 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .article-body th, .article-body td { padding: .65rem .7rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
 .article-body th { background: var(--paper-deep); }
 .article-note { margin: 0 2rem 2rem; padding: 1rem; border: 1px solid #ecd5a2; border-radius: .55rem; color: var(--warning); background: #fff9eb; font-size: .8rem; }
+.learning-empty { color: var(--muted); }
+.learning-layout .sop-item:active { transform: translateY(1px); }
+.learning-layout .article-head h2 { text-wrap: balance; }
 
 .app-footer { display: flex; justify-content: space-between; width: min(calc(100% - (var(--gutter) * 2)), var(--container)); margin: 0 auto; padding: 1.4rem 0 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .65rem; }
 
@@ -227,11 +276,15 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
   .sop-list { max-height: 24rem; border-right: 0; border-bottom: 1px solid var(--line); }
   .sop-detail { max-height: none; }
   .article-head { position: static; }
+  .priority-heading, .translation-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .priority-entry { grid-template-columns: 5rem minmax(0, 1fr); }
+  .priority-links { grid-column: 2; flex-direction: row; justify-content: flex-start; }
 }
 
 @media (max-width: 620px) {
   .brand-name { display: none; }
-  .product-nav { gap: 1rem; }
+  .product-nav { gap: .8rem; }
+  .product-nav a { font-size: .68rem; }
   .app-shell { padding-top: 2rem; }
   .page-heading h1 { font-size: 2.6rem; }
   .signal-row { grid-template-columns: repeat(2, 1fr); }
@@ -243,4 +296,10 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
   .article-head, .article-body { padding-right: 1.15rem; padding-left: 1.15rem; }
   .article-note { margin-right: 1.15rem; margin-left: 1.15rem; }
   .app-footer { display: grid; gap: .35rem; }
+  .role-briefs { grid-template-columns: 1fr; }
+  .priority-entry { grid-template-columns: 1fr; gap: 1rem; }
+  .priority-rank { display: flex; align-items: baseline; justify-content: space-between; }
+  .priority-links { grid-column: 1; }
+  .priority-action { grid-template-columns: 1fr; }
+  .translation-task { border-left-width: .25rem; }
 }

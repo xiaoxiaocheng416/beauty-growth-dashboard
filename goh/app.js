@@ -16,6 +16,8 @@
   let activePhase = data.roadmap[0]?.id || '';
   let activeGroup = 'all';
   let searchQuery = '';
+  let activeLearningGroup = 'all';
+  let learningQuery = '';
 
   function escapeHtml(value = '') {
     return String(value)
@@ -177,7 +179,12 @@
         continue;
       }
       if (/^\s*\d+[.)]\s+/.test(line)) {
-        if (list !== 'ol') { closeList(); list = 'ol'; html.push('<ol>'); }
+        if (list !== 'ol') {
+          const start = Number(line.match(/^\s*(\d+)/)?.[1] || 1);
+          closeList();
+          list = 'ol';
+          html.push(start > 1 ? `<ol start="${start}">` : '<ol>');
+        }
         html.push(`<li>${inlineMarkdown(line.replace(/^\s*\d+[.)]\s+/, ''), sop)}</li>`);
         index += 1;
         continue;
@@ -229,14 +236,33 @@
     return `<a class="resource-link" href="${escapeHtml(safeExternal(item.url))}" target="_blank" rel="noreferrer">${escapeHtml(item.label || 'Open resource')} ↗</a>`;
   }
 
+  function formatDuration(seconds) {
+    const value = Number(seconds || 0);
+    if (!value) return '时长未知';
+    const minutes = Math.floor(value / 60);
+    const remainder = Math.round(value % 60);
+    return `${minutes}:${String(remainder).padStart(2, '0')}`;
+  }
+
+  function formatDate(value) {
+    if (!value) return '日期未标注';
+    const parts = String(value).split('-');
+    return parts.length === 3 ? `${parts[0]}-${parts[1]}-${parts[2]}` : value;
+  }
+
   function stepMarkup(step, index) {
+    const matchedRecording = step.recording
+      ? data.recordings.find((recording) => recording.category === step.recording.category
+        && new RegExp(step.recording.match, 'i').test(recording.title))
+      : null;
     const resources = [
       ...(step.sops || []).map((sop) => `<a class="resource-link is-sop" href="#/sop/${encodeURIComponent(sop.badge)}">SOP ${escapeHtml(sop.badge)} · ${escapeHtml(sop.title)}</a>`),
+      ...(matchedRecording ? [`<a class="resource-link is-sop" href="#/recording/${encodeURIComponent(matchedRecording.id)}">录播 · ${escapeHtml(matchedRecording.title)}</a>`] : []),
       ...(step.links || []).map(resourceLink),
       ...(step.guides || []).map((guide) => `<span class="resource-link">Guide · ${escapeHtml(guide.label)}</span>`),
     ].join('');
     const lessonList = (step.lessons || []).length
-      ? `<p><strong>Related modules</strong><br>${step.lessons.map((lesson) => escapeHtml(lesson.title)).join('<br>')}</p>`
+      ? `<p><strong>Related modules</strong><br>${step.lessons.map((lesson) => `<a href="#/module/${encodeURIComponent(lesson.id)}">${escapeHtml(lesson.title)}</a>`).join('<br>')}</p>`
       : '';
     const detail = step.body || step.desc || lessonList || resources
       ? `<div class="step-body">${step.body ? `<p>${escapeHtml(step.body)}</p>` : ''}${step.desc && step.desc !== step.body ? `<p>${escapeHtml(step.desc)}</p>` : ''}${lessonList}${resources ? `<div class="resource-row">${resources}</div>` : ''}</div>`
@@ -303,6 +329,7 @@
     const isPdf = sop.format === 'pdf' && pdfPages.length;
     const originalUrl = sop.original ? localFile(sop.original) : '';
     const actions = [
+      sop.zhBody ? `<a class="article-action zh-action" href="#/zh/${encodeURIComponent(sop.badge)}">中文 1:1</a>` : '',
       sop.original ? `<a class="article-action primary" href="${escapeHtml(originalUrl)}" target="_blank">打开原文件</a>` : '',
       sop.sourceUrl ? `<a class="article-action" href="${escapeHtml(safeExternal(sop.sourceUrl))}" target="_blank" rel="noreferrer">打开来源 ↗</a>` : '',
       sop.text ? `<a class="article-action" href="${escapeHtml(localFile(sop.text))}" target="_blank">Markdown</a>` : '',
@@ -333,12 +360,75 @@
     </section>`;
   }
 
+  function priorityEntry(entry) {
+    const sop = data.sops.find((item) => item.badge === entry.badge);
+    return `<article class="priority-entry ${entry.rank === 1 ? 'is-lead' : ''}">
+      <div class="priority-rank"><span>${String(entry.rank).padStart(2, '0')}</span><small>${escapeHtml(entry.stage)}</small></div>
+      <div class="priority-copy">
+        <div class="role-row">${entry.roles.map((role) => `<span>${escapeHtml(role)}</span>`).join('')}</div>
+        <h2>${escapeHtml(entry.titleZh)}</h2>
+        <p class="priority-original">SOP ${escapeHtml(entry.badge)} · ${escapeHtml(sop?.title || '')}</p>
+        <p>${escapeHtml(entry.reason)}</p>
+        <div class="priority-action"><strong>看完立刻做</strong><span>${escapeHtml(entry.action)}</span></div>
+      </div>
+      <div class="priority-links">
+        <a class="article-action primary" href="#/zh/${encodeURIComponent(entry.badge)}">中文阅读</a>
+        <a class="text-link" href="#/sop/${encodeURIComponent(entry.badge)}">英文原版 →</a>
+      </div>
+    </article>`;
+  }
+
+  function renderMustRead() {
+    setActiveNav('must-read');
+    workspace.innerHTML = `
+      <header class="priority-heading">
+        <p class="kicker">Yicheng × Creative Director</p>
+        <h1>现在最该看的<br>5 篇内容 SOP</h1>
+        <p>这不是按课程顺序排，而是按你们现在的决策依赖排：先统一品牌和内容形式，再解决 TOF 与 MOF，最后把复盘和生产交给团队。</p>
+      </header>
+      <section class="role-briefs" aria-label="阅读分工">
+        <article><span>给 Yicheng</span><strong>先看 21 → 06 → 07</strong><p>你负责品牌判断、真实经历、受众洞察和最后取舍。前三篇决定团队应该放大什么。</p></article>
+        <article><span>给 Creative Director</span><strong>先看同样 3 篇，再看 02 → 03</strong><p>先理解你的判断，再负责把它变成复盘机制、brief、剪辑和追踪流程。</p></article>
+      </section>
+      <section class="priority-list" aria-label="优先 SOP">
+        ${data.priority.map(priorityEntry).join('')}
+      </section>`;
+  }
+
+  function renderChineseSop(badge) {
+    setActiveNav('must-read');
+    const sop = data.sops.find((item) => item.badge === badge && item.zhBody);
+    const entry = data.priority.find((item) => item.badge === badge);
+    if (!sop || !entry) {
+      workspace.innerHTML = '<div class="empty-list">这篇 SOP 还没有中文逐段翻译。<br><a href="#/must-read">返回必看清单</a></div>';
+      return;
+    }
+    workspace.innerHTML = `<section class="translation-page">
+      <a class="back-link" href="#/must-read">← 返回必看清单</a>
+      <header class="translation-head">
+        <div>
+          <p class="kicker">SOP ${escapeHtml(sop.badge)} · 中文逐段翻译</p>
+          <h1>${escapeHtml(entry.titleZh)}</h1>
+          <p>${escapeHtml(entry.reason)}</p>
+          <div class="role-row">${entry.roles.map((role) => `<span>${escapeHtml(role)}</span>`).join('')}</div>
+        </div>
+        <aside class="translation-task"><span>看完立刻做</span><strong>${escapeHtml(entry.action)}</strong></aside>
+      </header>
+      <nav class="language-switch" aria-label="阅读语言">
+        <span class="is-active">中文翻译</span>
+        <a href="#/sop/${encodeURIComponent(sop.badge)}">英文原版与 PDF</a>
+      </nav>
+      <article class="article-body translated-body">${renderMarkdown(sop.zhBody, sop)}</article>
+    </section>`;
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
   function filteredSops() {
     const query = searchQuery.trim().toLowerCase();
     return data.sops.filter((sop) => {
       if (activeGroup !== 'all' && sop.group !== activeGroup) return false;
       if (!query) return true;
-      return `${sop.badge} ${sop.title} ${sop.description} ${sop.body}`.toLowerCase().includes(query);
+      return `${sop.badge} ${sop.title} ${sop.description} ${sop.body} ${sop.zhBody || ''}`.toLowerCase().includes(query);
     });
   }
 
@@ -394,10 +484,139 @@
     }));
   }
 
+  function allLearningItems() {
+    const modules = data.modules.map((item) => ({ ...item, type: 'module' }));
+    const roadmapModules = (data.roadmapOnlyModules || []).map((item) => ({ ...item, type: 'module' }));
+    const recordings = data.recordings.map((item) => ({ ...item, type: 'recording' }));
+    return [...recordings, ...modules, ...roadmapModules];
+  }
+
+  function learningItems() {
+    const query = learningQuery.trim().toLowerCase();
+    return allLearningItems().filter((item) => {
+      if (item.roadmapOnly) return false;
+      if (activeLearningGroup === 'modules' && item.type !== 'module') return false;
+      if (activeLearningGroup === 'downloaded' && !(item.type === 'recording' && item.hasLocalVideo)) return false;
+      if (['content_mastermind', 'brand_architect', 'scripting_mastermind'].includes(activeLearningGroup)
+        && !(item.type === 'recording' && item.category === activeLearningGroup)) return false;
+      if (!query) return true;
+      return `${item.title} ${item.section || ''} ${item.categoryLabel || ''} ${item.summaryBody || ''}`.toLowerCase().includes(query);
+    });
+  }
+
+  function learningDetail(item) {
+    if (!item) return '<section class="sop-detail"><div class="empty-list">没有符合条件的课程或录播。</div></section>';
+    if (item.type === 'module') {
+      const moduleNote = item.roadmapOnly
+        ? 'Roadmap 快照关联的课程入口；它不在当前 65 节课程目录中。'
+        : '官网课程模块。Roadmap 中引用同一课程时，会直接跳到这里。';
+      const moduleBody = item.roadmapOnly
+        ? '这里保留 Roadmap 原始课程入口，方便继续回查旧版或专属模块。'
+        : '当前本地快照保存了课程目录和官网入口。课程原视频与逐字稿尚未覆盖全部 65 节。';
+      return `<section class="sop-detail" aria-live="polite">
+        <header class="article-head">
+          <div class="article-meta"><span>Program module</span><span>·</span><span>${escapeHtml(item.section)}</span></div>
+          <h2>${escapeHtml(item.title)}</h2>
+          <p>${escapeHtml(moduleNote)}</p>
+          <div class="article-actions"><a class="article-action primary" href="${escapeHtml(safeExternal(item.portalUrl))}" target="_blank" rel="noreferrer">在 GOH 打开 ↗</a></div>
+        </header>
+        <article class="article-body learning-empty"><p>${escapeHtml(moduleBody)}</p></article>
+      </section>`;
+    }
+    const actions = [
+      item.localVideo ? `<a class="article-action primary" href="${escapeHtml(safeExternal(item.localVideo))}" target="_blank">打开本地录播</a>` : '',
+      `<a class="article-action ${item.localVideo ? '' : 'primary'}" href="${escapeHtml(safeExternal(item.portalUrl))}" target="_blank" rel="noreferrer">在 GOH 打开 ↗</a>`,
+      item.summaryUrl ? `<a class="article-action" href="${escapeHtml(safeExternal(item.summaryUrl))}" target="_blank" rel="noreferrer">官方摘要 PDF ↗</a>` : '',
+      item.localTranscript ? `<a class="article-action" href="${escapeHtml(safeExternal(item.localTranscript))}" target="_blank">机器逐字稿</a>` : '',
+    ].join('');
+    const status = item.hasLocalVideo ? '本地录播已归档' : '目录与播放器已归档';
+    const body = item.summaryBody
+      ? `<article class="article-body">${renderMarkdown(item.summaryBody, item)}</article>`
+      : '<div class="article-note">官网没有提供这场录播的官方摘要；播放器入口和基础信息已经保存。</div>';
+    return `<section class="sop-detail" aria-live="polite">
+      <header class="article-head">
+        <div class="article-meta"><span>${escapeHtml(item.categoryLabel)}</span><span>·</span><span>${escapeHtml(formatDate(item.callDate))}</span><span>·</span><span>${escapeHtml(formatDuration(item.durationSeconds))}</span></div>
+        <h2>${escapeHtml(item.title)}</h2>
+        <p>${escapeHtml(status)}${item.localTranscript ? ' · 有机器逐字稿' : ''}</p>
+        <div class="article-actions">${actions}</div>
+      </header>
+      ${body}
+    </section>`;
+  }
+
+  function renderLearning(selectedType = '', selectedId = '') {
+    setActiveNav('learning');
+    const items = learningItems();
+    const selected = allLearningItems().find((item) => item.type === selectedType && item.id === selectedId) || items[0] || null;
+    const filters = [
+      ['all', '全部'],
+      ['modules', 'Program Modules'],
+      ['content_mastermind', 'Content · Yash'],
+      ['brand_architect', 'Brand · SooWei'],
+      ['scripting_mastermind', 'Scripting · Aidan'],
+      ['downloaded', '本地 17 场'],
+    ];
+    workspace.innerHTML = `
+      <header class="page-heading">
+        <div>
+          <p class="kicker">One learning library</p>
+          <h1>课程与录播</h1>
+          <p>Program Modules、Group Calls 和本地核心录播放在同一处。Roadmap 负责学习顺序，这里负责查找原课与复盘资料。</p>
+        </div>
+        <aside class="snapshot-card"><p class="kicker">Local video coverage</p><strong>${data.stats.downloadedRecordings} / ${data.stats.recordings}</strong><span>核心录播已下载，其余保留官网入口与摘要</span></aside>
+      </header>
+      ${renderStats([
+        [data.stats.modules, 'Program Modules'],
+        [data.stats.recordings, 'Group Calls'],
+        [data.stats.downloadedRecordings, 'Local videos'],
+        [data.stats.recordingSummaries, 'Official summaries'],
+      ])}
+      <div class="library-toolbar">
+        <div class="search-wrap"><label for="learning-search">搜索课程、录播和官方摘要</label><div class="search-box"><input id="learning-search" type="search" value="${escapeHtml(learningQuery)}" placeholder="例如：B-roll、TOF、visual identity、scripting"><span aria-hidden="true">⌕</span></div></div>
+        <span class="result-count">${items.length} / ${data.stats.modules + data.stats.recordings} entries</span>
+      </div>
+      <div class="filter-row" aria-label="Course and recording categories">
+        ${filters.map(([value, label]) => `<button class="filter-chip ${activeLearningGroup === value ? 'is-active' : ''}" type="button" data-learning-group="${escapeHtml(value)}">${escapeHtml(label)}</button>`).join('')}
+      </div>
+      <section class="library-layout learning-layout">
+        <div class="sop-list" aria-label="Course and recording list">
+          ${items.length ? items.map((item) => {
+            const active = selected?.id === item.id && selected?.type === item.type;
+            const badge = item.type === 'module' ? 'MOD' : item.hasLocalVideo ? 'VID' : 'CALL';
+            const meta = item.type === 'module' ? item.section : `${item.categoryLabel} · ${formatDate(item.callDate)}`;
+            return `<button class="sop-item ${active ? 'is-active' : ''}" type="button" data-learning-type="${item.type}" data-learning-id="${escapeHtml(item.id)}"><span class="sop-badge learning-badge">${badge}</span><span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(meta)}</small></span><i class="status-dot ${item.type === 'recording' && item.hasLocalVideo ? '' : 'link'}" aria-hidden="true"></i></button>`;
+          }).join('') : '<div class="empty-list">没有找到匹配内容。</div>'}
+        </div>
+        ${learningDetail(selected)}
+      </section>`;
+
+    const search = workspace.querySelector('#learning-search');
+    search?.addEventListener('input', (event) => {
+      learningQuery = event.target.value;
+      renderLearning('', '');
+      const replacement = workspace.querySelector('#learning-search');
+      replacement?.focus();
+      replacement?.setSelectionRange(learningQuery.length, learningQuery.length);
+    });
+    workspace.querySelectorAll('[data-learning-group]').forEach((button) => button.addEventListener('click', () => {
+      activeLearningGroup = button.dataset.learningGroup;
+      renderLearning('', '');
+    }));
+    workspace.querySelectorAll('[data-learning-id]').forEach((button) => button.addEventListener('click', () => {
+      const routeName = button.dataset.learningType === 'module' ? 'module' : 'recording';
+      location.hash = `#/${routeName}/${encodeURIComponent(button.dataset.learningId)}`;
+    }));
+  }
+
   function route() {
     const parts = (location.hash.replace(/^#\/?/, '') || 'roadmap').split('/');
-    if (parts[0] === 'sops') renderSops('');
+    if (parts[0] === 'must-read') renderMustRead();
+    else if (parts[0] === 'zh') renderChineseSop(decodeURIComponent(parts[1] || ''));
+    else if (parts[0] === 'sops') renderSops('');
     else if (parts[0] === 'sop') renderSops(decodeURIComponent(parts[1] || ''));
+    else if (parts[0] === 'learning') renderLearning('', '');
+    else if (parts[0] === 'module') renderLearning('module', decodeURIComponent(parts[1] || ''));
+    else if (parts[0] === 'recording') renderLearning('recording', decodeURIComponent(parts[1] || ''));
     else renderRoadmap();
   }
 

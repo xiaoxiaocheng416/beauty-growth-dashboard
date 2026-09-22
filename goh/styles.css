@@ -283,6 +283,14 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .embedded-player-wrap { margin: 0 2rem 1.5rem; overflow: hidden; border: 1px solid #dedbd4; border-radius: .8rem; background: #090909; box-shadow: 0 16px 34px rgba(18, 17, 14, .11); }
 .video-player-mount { width: 100%; min-height: 12rem; background: #090909; }
 .video-player-error { padding: 3rem 1.5rem; color: #eee8dc; font-size: .84rem; line-height: 1.7; text-align: center; }
+.recording-summary { border-top: 1px solid var(--line); }
+.summary-language { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.2rem 2rem; border-bottom: 1px solid var(--line); background: var(--paper-deep); }
+.summary-language span { font-size: .82rem; font-weight: 750; }
+.summary-language small { color: var(--muted); font-size: .66rem; }
+.recording-translation { max-width: none; padding-top: 2.5rem; }
+.original-summary { border-top: 1px solid var(--line-dark); }
+.original-summary > summary { padding: 1rem 2rem; color: var(--muted); font-size: .72rem; font-weight: 700; cursor: pointer; }
+.original-summary[open] > summary { border-bottom: 1px solid var(--line); color: var(--ink); }
 .learning-empty { color: var(--muted); }
 .learning-layout .sop-item:active { transform: translateY(1px); }
 .learning-layout .article-head h2 { text-wrap: balance; }
@@ -328,6 +336,7 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
   .article-head, .article-body { padding-right: 1.15rem; padding-left: 1.15rem; }
   .article-note { margin-right: 1.15rem; margin-left: 1.15rem; }
   .embedded-player-wrap { margin-right: 1.15rem; margin-left: 1.15rem; }
+  .summary-language, .original-summary > summary { padding-right: 1.15rem; padding-left: 1.15rem; }
   .app-footer { display: grid; gap: .35rem; }
   .role-briefs { grid-template-columns: 1fr; }
   .priority-subheading { margin-top: 4rem; }

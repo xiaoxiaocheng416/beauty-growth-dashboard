@@ -146,6 +146,25 @@
       .trim();
   }
 
+  function enhanceRecordingTranslation(markdown) {
+    return String(markdown || '')
+      .replace(/^\s*[–—]\s*/gm, '- ')
+      .split('\n')
+      .map((line) => {
+        const trimmed = line.trim();
+        if (!trimmed || /^#{1,6}\s|^-\s|^\d+[.)]\s|^https?:\/\//.test(trimmed)) return line;
+        const shortLabel = trimmed.length <= 32
+          && !/[。！？!?]$/.test(trimmed)
+          && !/^GOH CONSULTING$/i.test(trimmed)
+          && !/^(日期|来源|官方摘要)[:：]/.test(trimmed);
+        return shortLabel ? `## ${trimmed}` : line;
+      })
+      .join('\n')
+      .replace(/^GOH CONSULTING\s*$/gim, '')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
   function renderMarkdown(markdown, sop, preserveBreaks = true) {
     const content = articleMarkdown(markdown, sop);
     if (!content) return '<p>这项资料当前只保留来源链接。</p>';
@@ -657,7 +676,13 @@
       item.localTranscript ? `<a class="article-action" href="${escapeHtml(safeExternal(item.localTranscript))}" target="_blank">机器逐字稿</a>` : '',
     ].join('');
     const status = item.hasLocalVideo ? '本地录播已归档' : '目录与播放器已归档';
-    const body = item.summaryBody
+    const body = item.zhSummaryBody
+      ? `<section class="recording-summary">
+          <div class="summary-language"><span>中文完整翻译</span><small>官方摘要逐段翻译</small></div>
+          <article class="article-body translated-body recording-translation">${renderMarkdown(enhanceRecordingTranslation(item.zhSummaryBody), item, false)}</article>
+          ${item.summaryBody ? `<details class="original-summary"><summary>查看英文原始摘要</summary><article class="article-body">${renderMarkdown(item.summaryBody, item)}</article></details>` : ''}
+        </section>`
+      : item.summaryBody
       ? `<article class="article-body">${renderMarkdown(item.summaryBody, item)}</article>`
       : '<div class="article-note">官网没有提供这场录播的官方摘要；播放器入口和基础信息已经保存。</div>';
     return `<section class="sop-detail" aria-live="polite">

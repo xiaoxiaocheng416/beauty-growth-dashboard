@@ -125,7 +125,28 @@
     return lines.slice(index).join('\n').trim();
   }
 
-  function renderMarkdown(markdown, sop) {
+  function enhanceTranslation(markdown) {
+    const sectionPattern = /^(重要|目标|唯一法则|这是什么|为什么(?:这很)?重要|你需要什么|概览|团队|团队结构|团队管理|工具|主仪表盘|追踪|开始之前|谁负责|流程，一步一步来|整套 SOP 所依赖的唯一一条规则|什么时候用这个|什么时候用它（以及什么时候不用）|好的样子|做得好是什么样|常见错误|边缘情况和例外|注意事项|需要注意的事项|快速清单|快速检查清单|待确认的缺口|招聘故事框架（Hiring Story Framework）|实例——.+|选择你处理反对意见内容的方法|第 \d+ 步[:：].+|\d+\s+-\s+.+)$/;
+    return String(markdown || '')
+      .replace(/\n*## 第 \d+ 页\n*/g, '\n')
+      .replace(/^\s*\.(?:GOH CONSULTING|TOF CONTENT SOP|设定预期|逆向工程|爆款视频|内容制作|工作流程)\.?\s*$/gim, '')
+      .replace(/^\s*(?:GOH CONSULTING|MOF CONTENT SOP)\s*$/gim, '')
+      .replace(/[ \t]+[●•]\s*/g, '\n- ')
+      .replace(/^\s*[●•]\s*/gm, '- ')
+      .replace(/\s*☐\s*/g, '\n- ☐ ')
+      .replace(/^\s*​\s*/gm, '- ')
+      .split('\n')
+      .map((line) => {
+        const trimmed = line.trim();
+        if (trimmed && sectionPattern.test(trimmed) && !trimmed.startsWith('#')) return `### ${trimmed}`;
+        return line;
+      })
+      .join('\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
+  function renderMarkdown(markdown, sop, preserveBreaks = true) {
     const content = articleMarkdown(markdown, sop);
     if (!content) return '<p>这项资料当前只保留来源链接。</p>';
     const lines = content.split('\n');
@@ -215,7 +236,9 @@
         paragraph.push(lines[index]);
         index += 1;
       }
-      html.push(`<p>${inlineMarkdown(paragraph.join('\n'), sop).replaceAll('\n', '<br>')}</p>`);
+      const separator = preserveBreaks ? '\n' : ' ';
+      const rendered = inlineMarkdown(paragraph.join(separator), sop);
+      html.push(`<p>${preserveBreaks ? rendered.replaceAll('\n', '<br>') : rendered}</p>`);
     }
     closeList();
     if (codeLines.length) html.push(`<pre><code>${escapeHtml(codeLines.join('\n'))}</code></pre>`);
@@ -248,6 +271,62 @@
     if (!value) return '日期未标注';
     const parts = String(value).split('-');
     return parts.length === 3 ? `${parts[0]}-${parts[1]}-${parts[2]}` : value;
+  }
+
+  function videoMarkup(item) {
+    if (!item?.embedId) {
+      return '<div class="article-note">这条旧版 Roadmap 课程没有可用的站内播放器，保留 GOH 备用入口。</div>';
+    }
+    return `<div class="embedded-player-wrap">
+      <div class="video-player-mount" data-video-player data-embed-id="${escapeHtml(item.embedId)}" data-player-base="${escapeHtml(item.playerBase || '')}" data-player-aspect="${escapeHtml(item.playerAspect || 56.25)}" aria-label="${escapeHtml(item.title)} 视频播放器"></div>
+    </div>`;
+  }
+
+  function mountVidalytics(item) {
+    const mount = workspace.querySelector('[data-video-player]');
+    if (!mount || !item?.embedId) return;
+    const embedId = item.embedId;
+    const playerBase = item.playerBase || `https://fast.vidalytics.com/embeds/Dyp2a1Oi/${embedId}/`;
+    const container = document.createElement('div');
+    container.id = `vidalytics_embed_${embedId}`;
+    container.style.width = '100%';
+    container.style.position = 'relative';
+    container.style.paddingTop = `${Number(item.playerAspect || 56.25)}%`;
+    mount.replaceChildren(container);
+
+    const vendor = 'Vidalytics';
+    const vendorLoader = `${vendor}L`;
+    const vendorState = `_${vendor.toLowerCase()}`;
+    window[vendor] ||= {};
+    window[vendorLoader] ||= {};
+    window[vendorState] ||= {};
+    const loaderName = 'Loader';
+    const currentLoader = window[vendorState][loaderName];
+    const loaderClass = window[vendorLoader][loaderName];
+
+    const startPlayer = () => {
+      const Loader = window[vendorLoader][loaderName];
+      const loader = currentLoader || new Loader();
+      window[vendorState][loaderName] = loader;
+      loader.loadScript(`${playerBase}player.min.js`, () => {
+        const Player = window[vendor].Embed;
+        const player = new Player();
+        player.run(container.id);
+      });
+    };
+
+    if (loaderClass) {
+      startPlayer();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = `${playerBase}loader.min.js`;
+    script.async = true;
+    script.onload = startPlayer;
+    script.onerror = () => {
+      mount.innerHTML = '<div class="video-player-error">播放器暂时无法加载，请稍后重试或使用下方备用入口。</div>';
+    };
+    document.head.appendChild(script);
   }
 
   function stepMarkup(step, index) {
@@ -362,6 +441,7 @@
 
   function priorityEntry(entry) {
     const sop = data.sops.find((item) => item.badge === entry.badge);
+    const shareUrl = `${data.publicBase}#/zh/${encodeURIComponent(entry.badge)}`;
     return `<article class="priority-entry ${entry.rank === 1 ? 'is-lead' : ''}">
       <div class="priority-rank"><span>${String(entry.rank).padStart(2, '0')}</span><small>${escapeHtml(entry.stage)}</small></div>
       <div class="priority-copy">
@@ -374,6 +454,7 @@
       <div class="priority-links">
         <a class="article-action primary" href="#/zh/${encodeURIComponent(entry.badge)}">中文阅读</a>
         <a class="text-link" href="#/sop/${encodeURIComponent(entry.badge)}">英文原版 →</a>
+        <a class="text-link share-link" href="${escapeHtml(shareUrl)}" target="_blank" rel="noreferrer">分享链接 ↗</a>
       </div>
     </article>`;
   }
@@ -403,23 +484,40 @@
       workspace.innerHTML = '<div class="empty-list">这篇 SOP 还没有中文逐段翻译。<br><a href="#/must-read">返回必看清单</a></div>';
       return;
     }
-    workspace.innerHTML = `<section class="translation-page">
-      <a class="back-link" href="#/must-read">← 返回必看清单</a>
-      <header class="translation-head">
-        <div>
-          <p class="kicker">SOP ${escapeHtml(sop.badge)} · 中文逐段翻译</p>
-          <h1>${escapeHtml(entry.titleZh)}</h1>
-          <p>${escapeHtml(entry.reason)}</p>
-          <div class="role-row">${entry.roles.map((role) => `<span>${escapeHtml(role)}</span>`).join('')}</div>
-        </div>
-        <aside class="translation-task"><span>看完立刻做</span><strong>${escapeHtml(entry.action)}</strong></aside>
-      </header>
-      <nav class="language-switch" aria-label="阅读语言">
-        <span class="is-active">中文翻译</span>
-        <a href="#/sop/${encodeURIComponent(sop.badge)}">英文原版与 PDF</a>
-      </nav>
-      <article class="article-body translated-body">${renderMarkdown(sop.zhBody, sop)}</article>
+    const shareUrl = `${data.publicBase}#/zh/${encodeURIComponent(sop.badge)}`;
+    workspace.innerHTML = `<section class="translation-shell">
+      <aside class="translation-outline">
+        <a class="back-link" href="#/must-read">← 返回必看清单</a>
+        <p class="outline-label">5 篇必看 SOP</p>
+        <nav>${data.priority.map((item) => `<a class="${item.badge === sop.badge ? 'is-active' : ''}" href="#/zh/${encodeURIComponent(item.badge)}"><b>${String(item.rank).padStart(2, '0')}</b><span>${escapeHtml(item.titleZh)}</span></a>`).join('')}</nav>
+        <button class="copy-url" type="button" data-copy-url="${escapeHtml(shareUrl)}">复制当前直达链接</button>
+        <a class="canonical-url" href="${escapeHtml(shareUrl)}" target="_blank" rel="noreferrer">${escapeHtml(shareUrl.replace(/^https?:\/\//, ''))}</a>
+      </aside>
+      <section class="translation-page">
+        <header class="translation-head">
+          <div>
+            <p class="kicker">SOP ${escapeHtml(sop.badge)} · 中文逐段翻译</p>
+            <h1>${escapeHtml(entry.titleZh)}</h1>
+            <p>${escapeHtml(entry.reason)}</p>
+            <div class="role-row">${entry.roles.map((role) => `<span>${escapeHtml(role)}</span>`).join('')}</div>
+          </div>
+          <aside class="translation-task"><span>看完立刻做</span><strong>${escapeHtml(entry.action)}</strong></aside>
+        </header>
+        <nav class="language-switch" aria-label="阅读语言">
+          <span class="is-active">中文翻译</span>
+          <a href="#/sop/${encodeURIComponent(sop.badge)}">英文原版与 PDF</a>
+        </nav>
+        <article class="article-body translated-body">${renderMarkdown(enhanceTranslation(sop.zhBody), sop, false)}</article>
+      </section>
     </section>`;
+    workspace.querySelector('[data-copy-url]')?.addEventListener('click', async (event) => {
+      try {
+        await navigator.clipboard.writeText(event.currentTarget.dataset.copyUrl);
+        event.currentTarget.textContent = '链接已复制';
+      } catch {
+        event.currentTarget.textContent = '请长按下方网址复制';
+      }
+    });
     window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
@@ -512,20 +610,21 @@
         : '官网课程模块。Roadmap 中引用同一课程时，会直接跳到这里。';
       const moduleBody = item.roadmapOnly
         ? '这里保留 Roadmap 原始课程入口，方便继续回查旧版或专属模块。'
-        : '当前本地快照保存了课程目录和官网入口。课程原视频与逐字稿尚未覆盖全部 65 节。';
+        : '课程视频已嵌入站内播放器，可以直接观看；GOH 入口仅作为备用来源。';
       return `<section class="sop-detail" aria-live="polite">
         <header class="article-head">
           <div class="article-meta"><span>Program module</span><span>·</span><span>${escapeHtml(item.section)}</span></div>
           <h2>${escapeHtml(item.title)}</h2>
           <p>${escapeHtml(moduleNote)}</p>
-          <div class="article-actions"><a class="article-action primary" href="${escapeHtml(safeExternal(item.portalUrl))}" target="_blank" rel="noreferrer">在 GOH 打开 ↗</a></div>
+          <div class="article-actions"><a class="article-action" href="${escapeHtml(safeExternal(item.portalUrl))}" target="_blank" rel="noreferrer">GOH 备用入口 ↗</a></div>
         </header>
+        ${videoMarkup(item)}
         <article class="article-body learning-empty"><p>${escapeHtml(moduleBody)}</p></article>
       </section>`;
     }
     const actions = [
       item.localVideo ? `<a class="article-action primary" href="${escapeHtml(safeExternal(item.localVideo))}" target="_blank">打开本地录播</a>` : '',
-      `<a class="article-action ${item.localVideo ? '' : 'primary'}" href="${escapeHtml(safeExternal(item.portalUrl))}" target="_blank" rel="noreferrer">在 GOH 打开 ↗</a>`,
+      `<a class="article-action" href="${escapeHtml(safeExternal(item.portalUrl))}" target="_blank" rel="noreferrer">GOH 备用入口 ↗</a>`,
       item.summaryUrl ? `<a class="article-action" href="${escapeHtml(safeExternal(item.summaryUrl))}" target="_blank" rel="noreferrer">官方摘要 PDF ↗</a>` : '',
       item.localTranscript ? `<a class="article-action" href="${escapeHtml(safeExternal(item.localTranscript))}" target="_blank">机器逐字稿</a>` : '',
     ].join('');
@@ -540,6 +639,7 @@
         <p>${escapeHtml(status)}${item.localTranscript ? ' · 有机器逐字稿' : ''}</p>
         <div class="article-actions">${actions}</div>
       </header>
+      ${videoMarkup(item)}
       ${body}
     </section>`;
   }
@@ -561,9 +661,9 @@
         <div>
           <p class="kicker">One learning library</p>
           <h1>课程与录播</h1>
-          <p>Program Modules、Group Calls 和本地核心录播放在同一处。Roadmap 负责学习顺序，这里负责查找原课与复盘资料。</p>
+          <p>Program Modules 与 Group Calls 全部可以站内播放。Roadmap 负责学习顺序，这里负责查找原课、录播和复盘资料。</p>
         </div>
-        <aside class="snapshot-card"><p class="kicker">Local video coverage</p><strong>${data.stats.downloadedRecordings} / ${data.stats.recordings}</strong><span>核心录播已下载，其余保留官网入口与摘要</span></aside>
+        <aside class="snapshot-card"><p class="kicker">Site playback</p><strong>${data.stats.modules + data.stats.recordings} / ${data.stats.modules + data.stats.recordings}</strong><span>65 节课程与 64 场 Group Calls 均可直接播放</span></aside>
       </header>
       ${renderStats([
         [data.stats.modules, 'Program Modules'],
@@ -582,13 +682,15 @@
         <div class="sop-list" aria-label="Course and recording list">
           ${items.length ? items.map((item) => {
             const active = selected?.id === item.id && selected?.type === item.type;
-            const badge = item.type === 'module' ? 'MOD' : item.hasLocalVideo ? 'VID' : 'CALL';
+            const badge = item.type === 'module' ? 'MOD' : 'VID';
             const meta = item.type === 'module' ? item.section : `${item.categoryLabel} · ${formatDate(item.callDate)}`;
             return `<button class="sop-item ${active ? 'is-active' : ''}" type="button" data-learning-type="${item.type}" data-learning-id="${escapeHtml(item.id)}"><span class="sop-badge learning-badge">${badge}</span><span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(meta)}</small></span><i class="status-dot ${item.type === 'recording' && item.hasLocalVideo ? '' : 'link'}" aria-hidden="true"></i></button>`;
           }).join('') : '<div class="empty-list">没有找到匹配内容。</div>'}
         </div>
         ${learningDetail(selected)}
       </section>`;
+
+    mountVidalytics(selected);
 
     const search = workspace.querySelector('#learning-search');
     search?.addEventListener('input', (event) => {

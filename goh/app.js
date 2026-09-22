@@ -299,11 +299,25 @@
 
   function sopDetail(sop) {
     if (!sop) return '<section class="sop-detail"><div class="empty-list">没有符合条件的 SOP。</div></section>';
+    const pdfPages = sop.pdfPages || [];
+    const isPdf = sop.format === 'pdf' && pdfPages.length;
+    const originalUrl = sop.original ? localFile(sop.original) : '';
     const actions = [
-      sop.original ? `<a class="article-action primary" href="${escapeHtml(localFile(sop.original))}" target="_blank">打开原文件</a>` : '',
+      sop.original ? `<a class="article-action primary" href="${escapeHtml(originalUrl)}" target="_blank">打开原文件</a>` : '',
       sop.sourceUrl ? `<a class="article-action" href="${escapeHtml(safeExternal(sop.sourceUrl))}" target="_blank" rel="noreferrer">打开来源 ↗</a>` : '',
       sop.text ? `<a class="article-action" href="${escapeHtml(localFile(sop.text))}" target="_blank">Markdown</a>` : '',
     ].join('');
+    const content = isPdf
+      ? `<div class="pdf-reader">
+          <div class="pdf-page-stack">
+            ${pdfPages.map((page, index) => `<figure><img src="${escapeHtml(localFile(page))}" alt="${escapeHtml(sop.title)} · Page ${index + 1}" ${index ? 'loading="lazy"' : ''}><figcaption>Page ${index + 1} / ${pdfPages.length}</figcaption></figure>`).join('')}
+          </div>
+          <details class="extracted-text">
+            <summary>查看可搜索的提取文本</summary>
+            <article class="article-body">${renderMarkdown(sop.body, sop)}</article>
+          </details>
+        </div>`
+      : `<article class="article-body">${renderMarkdown(sop.body, sop)}</article>`;
     const partial = !archivedStates.has(sop.status)
       ? `<div class="article-note">${sop.status === 'screenshot_partial' ? '这项内容来自 6 张可见区域截图；完整白板仍需通过来源链接访问。' : '这项资料当前只保留公开来源链接，尚未完整离线归档。'}</div>`
       : '';
@@ -314,7 +328,7 @@
         <p>${escapeHtml(sop.description || '')}</p>
         <div class="article-actions">${actions}</div>
       </header>
-      <article class="article-body">${renderMarkdown(sop.body, sop)}</article>
+      ${content}
       ${partial}
     </section>`;
   }

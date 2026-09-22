@@ -184,6 +184,15 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 .article-head h2 { margin: .7rem 0 .45rem; font-size: clamp(1.7rem, 3vw, 2.8rem); line-height: 1.05; letter-spacing: -.04em; }
 .article-head > p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.6; }
 .article-action.primary { border-color: var(--ink); color: white; background: var(--ink); }
+.pdf-reader { padding: 1.25rem; }
+.pdf-page-stack { display: grid; gap: 1.25rem; }
+.pdf-page-stack figure { margin: 0; border: 1px solid var(--line); border-radius: .7rem; background: white; box-shadow: 0 .5rem 1.8rem rgba(45, 46, 38, .08); overflow: hidden; }
+.pdf-page-stack img { display: block; width: 100%; height: auto; background: white; }
+.pdf-page-stack figcaption { padding: .55rem .75rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .68rem; text-align: right; }
+.extracted-text { margin-top: 1rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--paper); overflow: hidden; }
+.extracted-text summary { padding: .9rem 1rem; color: var(--muted); font-size: .75rem; font-weight: 700; cursor: pointer; }
+.extracted-text[open] summary { border-bottom: 1px solid var(--line); color: var(--ink); }
+.extracted-text .article-body { padding: 1.5rem; }
 .article-body { max-width: 52rem; padding: 2rem; color: var(--ink-soft); font-size: 1rem; line-height: 1.75; }
 .article-body h1, .article-body h2, .article-body h3, .article-body h4 { color: var(--ink); line-height: 1.2; letter-spacing: -.025em; }
 .article-body h1 { margin: 0 0 1.5rem; font-size: 2rem; }

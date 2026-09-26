@@ -15,15 +15,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1hpddqy4wwab3QUzGdWN9YlrBFq710aWa/view?usp=drivesdk",
     "driveId": "1hpddqy4wwab3QUzGdWN9YlrBFq710aWa",
-    "media": "previews/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-000.3-006.6.mp4",
-    "poster": "assets/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-000.3-006.6.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-000.3-006.6.mov",
+    "poster": "assets/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-000.3-006.6.jpg?v=482986eba2f5",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "庭院小径背影行走。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "庭院小径背影行走",
       "行走",
@@ -47,9 +47,10 @@
       "行走"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-000.3-006.6.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-000.3-006.6.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-009.0-017.4",
@@ -67,15 +68,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1hpddqy4wwab3QUzGdWN9YlrBFq710aWa/view?usp=drivesdk",
     "driveId": "1hpddqy4wwab3QUzGdWN9YlrBFq710aWa",
-    "media": "previews/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-009.0-017.4.mp4",
-    "poster": "assets/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-009.0-017.4.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-009.0-017.4.mov",
+    "poster": "assets/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-009.0-017.4.jpg?v=13e1d47a728b",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "走进书画装饰的室内。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "走进书画装饰的室内",
       "进入室内",
@@ -99,9 +100,10 @@
       "行走"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-009.0-017.4.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1hpddqy4wwab3QUzGdWN9YlrBFq710aWa-009.0-017.4.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-007.2-014.5",
@@ -119,15 +121,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/19RVP4YV0h8S_1H0iCgEeJdpStQUc292H/view?usp=drivesdk",
     "driveId": "19RVP4YV0h8S_1H0iCgEeJdpStQUc292H",
-    "media": "previews/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-007.2-014.5.mp4",
-    "poster": "assets/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-007.2-014.5.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-007.2-014.5.mov",
+    "poster": "assets/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-007.2-014.5.jpg?v=9d7a80fc679d",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "餐桌前看手机并放下。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "餐桌前看手机并放下",
       "使用手机",
@@ -151,9 +153,10 @@
       "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-007.2-014.5.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-007.2-014.5.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-043.8-050.6",
@@ -171,15 +174,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/19RVP4YV0h8S_1H0iCgEeJdpStQUc292H/view?usp=drivesdk",
     "driveId": "19RVP4YV0h8S_1H0iCgEeJdpStQUc292H",
-    "media": "previews/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-043.8-050.6.mp4",
-    "poster": "assets/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-043.8-050.6.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-043.8-050.6.mov",
+    "poster": "assets/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-043.8-050.6.jpg?v=43dfad6172bf",
     "preview": null,
     "purposes": [
       "情绪"
     ],
     "review": "visual",
     "description": "餐桌前托腮看向一旁。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "餐桌前托腮看向一旁",
       "托腮",
@@ -202,9 +205,10 @@
       "用餐"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-043.8-050.6.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-043.8-050.6.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-024.7-029.1",
@@ -222,15 +226,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/19RVP4YV0h8S_1H0iCgEeJdpStQUc292H/view?usp=drivesdk",
     "driveId": "19RVP4YV0h8S_1H0iCgEeJdpStQUc292H",
-    "media": "previews/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-024.7-029.1.mp4",
-    "poster": "assets/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-024.7-029.1.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-024.7-029.1.mov",
+    "poster": "assets/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-024.7-029.1.jpg?v=774d93792e58",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "白色小狗站在座椅上。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "白色小狗站在座椅上",
       "小狗站立",
@@ -253,9 +257,10 @@
       "宠物"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-024.7-029.1.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19RVP4YV0h8S_1H0iCgEeJdpStQUc292H-024.7-029.1.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE-001.4-007.3",
@@ -273,15 +278,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE/view?usp=drivesdk",
     "driveId": "1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE",
-    "media": "previews/driveraw-1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE-001.4-007.3.mp4",
-    "poster": "assets/driveraw-1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE-001.4-007.3.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE-001.4-007.3.mov",
+    "poster": "assets/driveraw-1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE-001.4-007.3.jpg?v=54ee946cb787",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "餐桌前拿起手机查看。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "餐桌前拿起手机查看",
       "拿起手机",
@@ -305,9 +310,10 @@
       "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE-001.4-007.3.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1g8sgaTjynM50HuT1f27Lb0e2VnUabDOE-001.4-007.3.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J-000.1-001.9",
@@ -325,15 +331,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J/view?usp=drivesdk",
     "driveId": "19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J",
-    "media": "previews/driveraw-19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J-000.1-001.9.mp4",
-    "poster": "assets/driveraw-19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J-000.1-001.9.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J-000.1-001.9.mov",
+    "poster": "assets/driveraw-19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J-000.1-001.9.jpg?v=c5bd239fa163",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "餐桌摆盘与餐具细节。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "餐桌摆盘与餐具细节",
       "餐桌细节",
@@ -356,9 +362,10 @@
       "用餐"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J-000.1-001.9.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-19QU8dcoWK-RD7yHPy3QjzCNJd9ijI64J-000.1-001.9.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-019.4-023.8",
@@ -376,15 +383,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk/view?usp=drivesdk",
     "driveId": "1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk",
-    "media": "previews/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-019.4-023.8.mp4",
-    "poster": "assets/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-019.4-023.8.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-019.4-023.8.mov",
+    "poster": "assets/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-019.4-023.8.jpg?v=23db94d99ace",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "餐桌前点燃餐品并观察。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "餐桌前点燃餐品并观察",
       "点燃餐品",
@@ -407,9 +414,10 @@
       "用餐"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-019.4-023.8.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-019.4-023.8.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-027.8-032.4",
@@ -427,15 +435,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk/view?usp=drivesdk",
     "driveId": "1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk",
-    "media": "previews/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-027.8-032.4.mp4",
-    "poster": "assets/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-027.8-032.4.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-027.8-032.4.mov",
+    "poster": "assets/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-027.8-032.4.jpg?v=9a089d6e7ee6",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "餐品火焰与摆盘近景。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "餐品火焰与摆盘近景",
       "餐品细节",
@@ -458,9 +466,10 @@
       "用餐"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-027.8-032.4.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-027.8-032.4.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-036.4-039.7",
@@ -478,15 +487,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk/view?usp=drivesdk",
     "driveId": "1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk",
-    "media": "previews/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-036.4-039.7.mp4",
-    "poster": "assets/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-036.4-039.7.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-036.4-039.7.mov",
+    "poster": "assets/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-036.4-039.7.jpg?v=98be2f8be239",
     "preview": null,
     "purposes": [
       "情绪"
     ],
     "review": "visual",
     "description": "餐桌前微笑竖拇指。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "餐桌前微笑竖拇指",
       "微笑竖拇指",
@@ -509,9 +518,10 @@
       "开心"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-036.4-039.7.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1r1n-7b4t8mqlPM2J38FYIiBhqI3CQrVk-036.4-039.7.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3-002.6-005.8",
@@ -529,15 +539,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3/view?usp=drivesdk",
     "driveId": "14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3",
-    "media": "previews/driveraw-14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3-002.6-005.8.mp4",
-    "poster": "assets/driveraw-14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3-002.6-005.8.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3-002.6-005.8.mov",
+    "poster": "assets/driveraw-14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3-002.6-005.8.jpg?v=741430d03057",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "夜间绿植小径背影行走。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "夜间绿植小径背影行走",
       "行走",
@@ -561,10 +571,11 @@
       "行走"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
     "qualityNote": "夜间手持拖影较明显；只作为备选，避免放大或慢放。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3-002.6-005.8.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-14VTAf4Q09S6hVeyGLWw9cTMQrBUahEG3-002.6-005.8.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa-000.3-002.9",
@@ -582,15 +593,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa/view?usp=drivesdk",
     "driveId": "1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa",
-    "media": "previews/driveraw-1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa-000.3-002.9.mp4",
-    "poster": "assets/driveraw-1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa-000.3-002.9.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa-000.3-002.9.mov",
+    "poster": "assets/driveraw-1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa-000.3-002.9.jpg?v=c477510831c5",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "跑步机前查看手机。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "跑步机前查看手机",
       "使用手机",
@@ -614,9 +625,10 @@
       "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa-000.3-002.9.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1WTGfi7Ec4QOu7xZPJF0Yxw5WCXt55ZYa-000.3-002.9.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt-000.4-007.7",
@@ -634,15 +646,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt/view?usp=drivesdk",
     "driveId": "1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt",
-    "media": "previews/driveraw-1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt-000.4-007.7.mp4",
-    "poster": "assets/driveraw-1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt-000.4-007.7.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt-000.4-007.7.mov",
+    "poster": "assets/driveraw-1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt-000.4-007.7.jpg?v=23aedc610ccb",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "跑步机上行走正面。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "跑步机上行走正面",
       "跑步机行走",
@@ -665,9 +677,10 @@
       "健身"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt-000.4-007.7.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1Ah_q_CSW-hyQH8-dKNiz3KjZZVdQn1Yt-000.4-007.7.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8-006.4-013.3",
@@ -685,15 +698,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8/view?usp=drivesdk",
     "driveId": "1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8",
-    "media": "previews/driveraw-1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8-006.4-013.3.mp4",
-    "poster": "assets/driveraw-1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8-006.4-013.3.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8-006.4-013.3.mov",
+    "poster": "assets/driveraw-1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8-006.4-013.3.jpg?v=e597dcc1e019",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "跑步机上行走背面。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "跑步机上行走背面",
       "跑步机行走",
@@ -716,10 +729,11 @@
       "健身"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
     "qualityNote": "人物逆光，适合交代背影和健身房环境，不适合强调面部细节。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8-006.4-013.3.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1ZYzTa-WcFiaE1f_U0OGf1fkKTDKkNDI8-006.4-013.3.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-003.0-009.0",
@@ -737,15 +751,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09/view?usp=drivesdk",
     "driveId": "1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09",
-    "media": "previews/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-003.0-009.0.mp4",
-    "poster": "assets/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-003.0-009.0.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-003.0-009.0.mov",
+    "poster": "assets/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-003.0-009.0.jpg?v=66441f1e97b3",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "展厅侧面举手机行走。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "展厅侧面举手机行走",
       "举手机行走",
@@ -769,9 +783,10 @@
       "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-003.0-009.0.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-003.0-009.0.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-017.0-023.6",
@@ -789,15 +804,15 @@
     "path": "Drive / raw / 9月26日",
     "original": "https://drive.google.com/file/d/1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09/view?usp=drivesdk",
     "driveId": "1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09",
-    "media": "previews/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-017.0-023.6.mp4",
-    "poster": "assets/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-017.0-023.6.jpg",
+    "media": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-017.0-023.6.mov",
+    "poster": "assets/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-017.0-023.6.jpg?v=3089fb4ae48f",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "沿彩色展板向展厅深处走。",
-    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。",
+    "reviewNote": "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。",
     "keywords": [
       "沿彩色展板向展厅深处走",
       "行走",
@@ -821,9 +836,10 @@
       "行走"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-017.0-023.6.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
+    "previewNote": "保留原片 HDR / Dolby Vision 色彩、分辨率、帧率与现场原声，仅切分时间段；不调色、不做 HDR 转 SDR。网页直接播放该原色切片，实际显示由播放器和屏幕的 HDR 支持决定。缩略图使用系统色彩转换。",
+    "colorPolicy": "native-hdr-passthrough",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/driveraw-1tmBr5kblmhCvRrJQ6WakrmgmqciV0i09-017.0-023.6.mov",
+    "downloadLabel": "下载原色切片（原分辨率）↓"
   },
   {
     "id": "batch0926-c3ba9ce6c1bcedfa-001.0-007.5",
@@ -831,7 +847,7 @@
     "sourceLabel": "9/26 切片",
     "title": "夜间托腮操作电脑",
     "filename": "IMG_1026.MOV",
-    "category": "情绪与状态",
+    "category": "工作与团队",
     "activity": "托腮看屏幕",
     "location": "室内休息区",
     "shot": "中景",
@@ -840,15 +856,15 @@
     "sourceDuration": 8.966667,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-c3ba9ce6c1bcedfa-001.0-007.5.mp4",
-    "poster": "assets/batch0926-c3ba9ce6c1bcedfa-001.0-007.5.jpg",
+    "media": "previews/batch0926-c3ba9ce6c1bcedfa-001.0-007.5.mp4?v=12c8c48207d4",
+    "poster": "assets/batch0926-c3ba9ce6c1bcedfa-001.0-007.5.jpg?v=7d6e73c73de1",
     "preview": null,
     "purposes": [
       "情绪"
     ],
     "review": "visual",
     "description": "室内休息区。夜间托腮操作电脑。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "夜间托腮操作电脑",
       "托腮看屏幕",
@@ -868,14 +884,14 @@
     "resolution": "1440 × 1920",
     "frameRate": "30/1",
     "curation": "primary",
-    "curationReason": "竖屏、夜间电脑与托腮，场景和动作组合有独立用途。",
+    "curationReason": "夜间竖屏电脑与托腮，场景和姿态有独立用途。",
     "alternativeId": null,
     "previousCategory": "工作与办公",
     "contentTags": [
-      "思考",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-c3ba9ce6c1bcedfa-001.0-007.5.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -883,54 +899,56 @@
     "id": "batch0926-ca85d53e30b078b2-003.0-009.0",
     "source": "batch0926",
     "sourceLabel": "9/26 切片",
-    "title": "树荫石阶背影行走",
+    "title": "树荫步道背影连续前行",
     "filename": "temp_video_1790416429121.MP4",
     "category": "生活与出行",
-    "activity": "沿石阶行走",
+    "activity": "背影行走",
     "location": "树荫步道",
     "shot": "中景",
     "orientation": "横屏",
-    "duration": 6,
+    "duration": 8.0,
     "sourceDuration": 27.3273,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-ca85d53e30b078b2-003.0-009.0.mp4",
-    "poster": "assets/batch0926-ca85d53e30b078b2-003.0-009.0.jpg",
+    "media": "previews/batch0926-ca85d53e30b078b2-003.0-009.0.mp4?v=b448f902f918",
+    "poster": "assets/batch0926-ca85d53e30b078b2-003.0-009.0.jpg?v=78990c73c5e5",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
-    "description": "树荫步道。树荫石阶背影行走。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "description": "树荫步道。树荫步道背影连续前行。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
-      "树荫石阶背影行走",
-      "沿石阶行走",
+      "树荫步道背影连续前行",
+      "背影行走",
+      "temp_video_1790416429121.MP4",
       "树荫步道",
-      "9/26",
-      "9:26:26 broll"
+      "旅行",
+      "自然环境"
     ],
     "line": null,
-    "range": "3.0–9.0 秒",
+    "range": "10.8–18.8 秒",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
     "parentId": "batch0926-ca85d53e30b078b2",
     "clipNumber": "N02",
-    "inPoint": 3,
-    "outPoint": 9,
+    "inPoint": 10.8,
+    "outPoint": 18.8,
     "qualityNote": null,
-    "selectionReason": "保留连续前行，避开起步调整",
+    "selectionReason": "改选树荫步道中段，栏杆引导线和前后纵深更清楚；持续前行与 N03 回头是不同动作。",
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
-    "curation": "backup",
-    "curationReason": "同为树荫步道背影行走；N03 多一个完整回头动作。本条用于只需要持续前行时。",
-    "alternativeId": "batch0926-ca85d53e30b078b2-020.8-026.8",
+    "curation": "primary",
+    "curationReason": "改选树荫步道中段，栏杆引导线和前后纵深更清楚；持续前行与 N03 回头是不同动作。",
+    "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-ca85d53e30b078b2-003.0-009.0.mp4",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/batch0926-ca85d53e30b078b2-003.0-009.0.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
@@ -948,15 +966,15 @@
     "sourceDuration": 27.3273,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-ca85d53e30b078b2-020.8-026.8.mp4",
-    "poster": "assets/batch0926-ca85d53e30b078b2-020.8-026.8.jpg",
+    "media": "previews/batch0926-ca85d53e30b078b2-020.8-026.8.mp4?v=4e5e1ce4c995",
+    "poster": "assets/batch0926-ca85d53e30b078b2-020.8-026.8.jpg?v=971b82e5340f",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "树荫步道。石阶背影行走后回头。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "石阶背影行走后回头",
       "行走后回头",
@@ -976,7 +994,7 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "背影行走接回头，有明确动作变化，可用于前后画面衔接。",
+    "curationReason": "保留背影到回头的动作变化，与持续前行镜头配合。",
     "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
@@ -984,6 +1002,7 @@
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-ca85d53e30b078b2-020.8-026.8.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -993,7 +1012,7 @@
     "sourceLabel": "9/26 切片",
     "title": "砖塔庭院举手机",
     "filename": "temp_video_1790416451476.MP4",
-    "category": "工作与团队",
+    "category": "生活与出行",
     "activity": "举起手机",
     "location": "砖塔庭院",
     "shot": "中景",
@@ -1002,15 +1021,15 @@
     "sourceDuration": 7.774433,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-e849a3cf693b9a11-000.2-002.9.mp4",
-    "poster": "assets/batch0926-e849a3cf693b9a11-000.2-002.9.jpg",
+    "media": "previews/batch0926-e849a3cf693b9a11-000.2-002.9.mp4?v=7abcba96e587",
+    "poster": "assets/batch0926-e849a3cf693b9a11-000.2-002.9.jpg?v=5e07f6800473",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "砖塔庭院。砖塔庭院举手机。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "砖塔庭院举手机",
       "举起手机",
@@ -1030,14 +1049,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "hold",
-    "curationReason": "机位在靠近，人物头部构图不完整；举手机动作与取景调整混在一起，可用余量少。",
+    "curationReason": "机位俯仰、头部截断和整理头发混在一起；本段可用构图余量少。",
     "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
-      "使用手机",
-      "旅行"
+      "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-e849a3cf693b9a11-000.2-002.9.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1056,15 +1075,15 @@
     "sourceDuration": 25.558867,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-94a8bf5179daad1f-011.7-015.4.mp4",
-    "poster": "assets/batch0926-94a8bf5179daad1f-011.7-015.4.jpg",
+    "media": "previews/batch0926-94a8bf5179daad1f-011.7-015.4.mp4?v=7aed7db0dbe8",
+    "poster": "assets/batch0926-94a8bf5179daad1f-011.7-015.4.jpg?v=f5b4d8b7a2ea",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "砖塔庭院。砖塔前向左走过。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "砖塔前向左走过",
       "横向行走",
@@ -1084,13 +1103,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "backup",
-    "curationReason": "同场景重复走位，默认改用连续侧面跟拍。",
-    "alternativeId": "batch0926-c1ca780b433e7d4f-012.0-015.2",
+    "curationReason": "可用的向左行走中远景；与 N08 方向和建筑背景接近，作为较近景别备选。",
+    "alternativeId": "batch0926-b1d4512c5256b645-013.6-015.8",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-94a8bf5179daad1f-011.7-015.4.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1109,15 +1129,15 @@
     "sourceDuration": 25.558867,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-94a8bf5179daad1f-021.0-024.8.mp4",
-    "poster": "assets/batch0926-94a8bf5179daad1f-021.0-024.8.jpg",
+    "media": "previews/batch0926-94a8bf5179daad1f-021.0-024.8.mp4?v=342dd0c63d36",
+    "poster": "assets/batch0926-94a8bf5179daad1f-021.0-024.8.jpg?v=efab29741d81",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "砖塔庭院。砖塔前朝镜头走近。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "砖塔前朝镜头走近",
       "朝镜头走近",
@@ -1137,120 +1157,125 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "backup",
-    "curationReason": "用户反馈此条观感一般；退到备选，优先使用重新选取的连续跟拍。",
-    "alternativeId": "batch0926-c1ca780b433e7d4f-002.0-007.5",
-    "previousCategory": "日常与出行",
-    "contentTags": [
-      "旅行"
-    ],
-    "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-94a8bf5179daad1f-021.0-024.8.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
-  },
-  {
-    "id": "batch0926-b80a9cba91f256b1-000.5-006.5",
-    "source": "batch0926",
-    "sourceLabel": "9/26 切片",
-    "title": "砖塔前向右缓步行走",
-    "filename": "temp_video_1790416470091.MP4",
-    "category": "生活与出行",
-    "activity": "横向行走",
-    "location": "砖塔庭院",
-    "shot": "全景",
-    "orientation": "横屏",
-    "duration": 6.0,
-    "sourceDuration": 20.487133,
-    "path": "9:26:26 broll",
-    "original": null,
-    "media": "previews/batch0926-b80a9cba91f256b1-000.5-006.5.mp4",
-    "poster": "assets/batch0926-b80a9cba91f256b1-000.5-006.5.jpg",
-    "preview": null,
-    "purposes": [
-      "转场"
-    ],
-    "review": "visual",
-    "description": "砖塔庭院。砖塔前向右缓步行走。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
-    "keywords": [
-      "砖塔前向右缓步行走",
-      "横向行走",
-      "砖塔庭院",
-      "9/26",
-      "9:26:26 broll"
-    ],
-    "line": null,
-    "range": "0.5–6.5 秒",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "parentId": "batch0926-b80a9cba91f256b1",
-    "clipNumber": "N07",
-    "inPoint": 0.5,
-    "outPoint": 6.5,
-    "qualityNote": null,
-    "selectionReason": "保留单向走位，避开后段游客穿行",
-    "resolution": "3840 × 2160",
-    "frameRate": "30000/1001",
-    "curation": "backup",
-    "curationReason": "保留向右横向走位备选，默认改用连续背影跟拍。",
-    "alternativeId": "batch0926-c1ca780b433e7d4f-002.0-007.5",
-    "previousCategory": "日常与出行",
-    "contentTags": [
-      "旅行"
-    ],
-    "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-b80a9cba91f256b1-000.5-006.5.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓"
-  },
-  {
-    "id": "batch0926-b1d4512c5256b645-012.7-018.0",
-    "source": "batch0926",
-    "sourceLabel": "9/26 切片",
-    "title": "砖塔前向左走出画面",
-    "filename": "temp_video_1790416482087.MP4",
-    "category": "生活与出行",
-    "activity": "走出画面",
-    "location": "砖塔庭院",
-    "shot": "全景",
-    "orientation": "横屏",
-    "duration": 5.3,
-    "sourceDuration": 22.022,
-    "path": "9:26:26 broll",
-    "original": null,
-    "media": "previews/batch0926-b1d4512c5256b645-012.7-018.0.mp4",
-    "poster": "assets/batch0926-b1d4512c5256b645-012.7-018.0.jpg",
-    "preview": null,
-    "purposes": [
-      "转场"
-    ],
-    "review": "visual",
-    "description": "砖塔庭院。砖塔前向左走出画面。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
-    "keywords": [
-      "砖塔前向左走出画面",
-      "走出画面",
-      "砖塔庭院",
-      "9/26",
-      "9:26:26 broll"
-    ],
-    "line": null,
-    "range": "12.7–18.0 秒",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
-    "parentId": "batch0926-b1d4512c5256b645",
-    "clipNumber": "N08",
-    "inPoint": 12.7,
-    "outPoint": 18,
-    "qualityNote": null,
-    "selectionReason": "截取折返完成后的单向行走至出画",
-    "resolution": "3840 × 2160",
-    "frameRate": "30000/1001",
-    "curation": "backup",
-    "curationReason": "用户反馈此条观感一般；退到备选，优先使用重新选取的连续跟拍。",
+    "curationReason": "保留用户认为一般的走近版本，主要用途与其他砖塔镜头重叠。",
     "alternativeId": "batch0926-c1ca780b433e7d4f-012.0-015.2",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-b1d4512c5256b645-012.7-018.0.mp4",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-94a8bf5179daad1f-021.0-024.8.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
+  },
+  {
+    "id": "batch0926-b80a9cba91f256b1-004.2-007.2",
+    "source": "batch0926",
+    "sourceLabel": "9/26 切片",
+    "title": "砖塔前向右连续行走",
+    "filename": "temp_video_1790416470091.MP4",
+    "category": "生活与出行",
+    "activity": "连续行走",
+    "location": "砖塔庭院",
+    "shot": "全景",
+    "orientation": "横屏",
+    "duration": 3.0,
+    "sourceDuration": 20.487133,
+    "path": "9:26:26 broll",
+    "original": null,
+    "media": "previews/batch0926-b80a9cba91f256b1-004.2-007.2.mp4?v=80bbb9827ba3",
+    "poster": "assets/batch0926-b80a9cba91f256b1-004.2-007.2.jpg?v=b9c44a357458",
+    "preview": null,
+    "purposes": [
+      "转场"
+    ],
+    "review": "visual",
+    "description": "砖塔庭院。砖塔前向右连续行走。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
+    "keywords": [
+      "砖塔前向右连续行走",
+      "连续行走",
+      "temp_video_1790416470091.MP4",
+      "砖塔庭院",
+      "旅行"
+    ],
+    "line": null,
+    "range": "4.2–7.2 秒",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "parentId": "batch0926-b80a9cba91f256b1",
+    "clipNumber": "N07",
+    "inPoint": 4.2,
+    "outPoint": 7.2,
+    "qualityNote": null,
+    "selectionReason": "重选连续向右横移段，人物与建筑同框，提供跟拍以外的横向衔接。",
+    "resolution": "3840 × 2160",
+    "frameRate": "30000/1001",
+    "curation": "primary",
+    "curationReason": "重选连续向右横移段，人物与建筑同框，提供跟拍以外的横向衔接。",
+    "alternativeId": null,
+    "previousCategory": "日常与出行",
+    "contentTags": [
+      "旅行"
+    ],
+    "taxonomyVersion": "soowei-coarse-v1",
+    "colorPolicy": "native-passthrough",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/batch0926-b80a9cba91f256b1-004.2-007.2.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
+  },
+  {
+    "id": "batch0926-b1d4512c5256b645-013.6-015.8",
+    "source": "batch0926",
+    "sourceLabel": "9/26 切片",
+    "title": "砖塔前向左横穿全景",
+    "filename": "temp_video_1790416482087.MP4",
+    "category": "生活与出行",
+    "activity": "连续行走",
+    "location": "砖塔庭院",
+    "shot": "全景",
+    "orientation": "横屏",
+    "duration": 2.2,
+    "sourceDuration": 22.022,
+    "path": "9:26:26 broll",
+    "original": null,
+    "media": "previews/batch0926-b1d4512c5256b645-013.6-015.8.mp4?v=6a5b5795a927",
+    "poster": "assets/batch0926-b1d4512c5256b645-013.6-015.8.jpg?v=078082f2672a",
+    "preview": null,
+    "purposes": [
+      "转场"
+    ],
+    "review": "visual",
+    "description": "砖塔庭院。砖塔前向左横穿全景。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
+    "keywords": [
+      "砖塔前向左横穿全景",
+      "连续行走",
+      "temp_video_1790416482087.MP4",
+      "砖塔庭院",
+      "旅行"
+    ],
+    "line": null,
+    "range": "13.6–15.8 秒",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "parentId": "batch0926-b1d4512c5256b645",
+    "clipNumber": "N08",
+    "inPoint": 13.6,
+    "outPoint": 15.8,
+    "qualityNote": null,
+    "selectionReason": "重选向左行走的全身远景，避开折返和最后出画；交代人与砖塔的尺度。",
+    "resolution": "3840 × 2160",
+    "frameRate": "30000/1001",
+    "curation": "primary",
+    "curationReason": "重选向左行走的全身远景，避开折返和最后出画；交代人与砖塔的尺度。",
+    "alternativeId": null,
+    "previousCategory": "日常与出行",
+    "contentTags": [
+      "旅行"
+    ],
+    "taxonomyVersion": "soowei-coarse-v1",
+    "colorPolicy": "native-passthrough",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/batch0926-b1d4512c5256b645-013.6-015.8.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
@@ -1268,15 +1293,15 @@
     "sourceDuration": 6.4064,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-a29a01fd4498444c-000.2-002.8.mp4",
-    "poster": "assets/batch0926-a29a01fd4498444c-000.2-002.8.jpg",
+    "media": "previews/batch0926-a29a01fd4498444c-000.2-002.8.mp4?v=e5abece92593",
+    "poster": "assets/batch0926-a29a01fd4498444c-000.2-002.8.jpg?v=083f41b64976",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "砖塔庭院。砖塔前向右走过。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "砖塔前向右走过",
       "横向行走",
@@ -1296,13 +1321,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "hold",
-    "curationReason": "与 N07 的向右走位近似，但时长短、边缘游客干扰更多，优先使用 N07。",
-    "alternativeId": "batch0926-b80a9cba91f256b1-000.5-006.5",
+    "curationReason": "同方向有效覆盖较短，后面紧接游客经过；N07 留有更好的使用余量。",
+    "alternativeId": "batch0926-b80a9cba91f256b1-004.2-007.2",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-a29a01fd4498444c-000.2-002.8.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1321,15 +1347,15 @@
     "sourceDuration": 19.586233,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-c1ca780b433e7d4f-002.0-007.5.mp4",
-    "poster": "assets/batch0926-c1ca780b433e7d4f-002.0-007.5.jpg",
+    "media": "previews/batch0926-c1ca780b433e7d4f-002.0-007.5.mp4?v=d4de4e0fa446",
+    "poster": "assets/batch0926-c1ca780b433e7d4f-002.0-007.5.jpg?v=83049efb6cf8",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "砖塔庭院。砖塔前连续行走背影跟拍。",
-    "reviewNote": "重新比较砖塔原片候选，按每秒 4 帧检查连续性、构图与游客干扰，并核对导出首尾。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "砖塔前连续行走背影跟拍",
       "背影行走",
@@ -1349,13 +1375,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "连续背影跟拍，人物与建筑的距离自然变化，替换正面走近的摆拍感镜头。",
+    "curationReason": "用户认可的连续背影跟拍；保留原切点。",
     "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-c1ca780b433e7d4f-002.0-007.5.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1374,15 +1401,15 @@
     "sourceDuration": 19.586233,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-c1ca780b433e7d4f-012.0-015.2.mp4",
-    "poster": "assets/batch0926-c1ca780b433e7d4f-012.0-015.2.jpg",
+    "media": "previews/batch0926-c1ca780b433e7d4f-012.0-015.2.mp4?v=9cd5dbaf14b5",
+    "poster": "assets/batch0926-c1ca780b433e7d4f-012.0-015.2.jpg?v=f70411bb4730",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "砖塔庭院。砖塔旁行走侧脸跟拍。",
-    "reviewNote": "重新比较砖塔原片候选，按每秒 4 帧检查连续性、构图与游客干扰，并核对导出首尾。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "砖塔旁行走侧脸跟拍",
       "侧面行走",
@@ -1402,13 +1429,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "连续侧面跟拍，人物表情和建筑同时可见，替换远景走出画面版本。",
+    "curationReason": "用户认可的侧脸跟拍；保留原切点。",
     "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-c1ca780b433e7d4f-012.0-015.2.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1423,99 +1451,102 @@
     "location": "砖塔庭院",
     "shot": "中近景",
     "orientation": "横屏",
-    "duration": 6.3,
+    "duration": 5.3,
     "sourceDuration": 34.367667,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-bcf932ac909e7f55-011.0-017.3.mp4",
-    "poster": "assets/batch0926-bcf932ac909e7f55-011.0-017.3.jpg",
+    "media": "previews/batch0926-bcf932ac909e7f55-011.0-017.3.mp4?v=9c4349f79fe7",
+    "poster": "assets/batch0926-bcf932ac909e7f55-011.0-017.3.jpg?v=cf454af65868",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "砖塔庭院。石墙旁侧面行走。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "石墙旁侧面行走",
       "侧面行走",
+      "temp_video_1790416517496.MP4",
       "砖塔庭院",
-      "9/26",
-      "9:26:26 broll"
+      "旅行"
     ],
     "line": null,
-    "range": "11.0–17.3 秒",
+    "range": "12.0–17.3 秒",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
     "parentId": "batch0926-bcf932ac909e7f55",
     "clipNumber": "N12",
-    "inPoint": 11,
+    "inPoint": 12.0,
     "outPoint": 17.3,
     "qualityNote": null,
-    "selectionReason": "保留无遮挡的侧面行走",
+    "selectionReason": "石墙、绿植与人物侧面形成不同层次；入点移到前景游客通过之后。",
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "侧面中近景，补充远景行走缺少的人物细节，可与 N08 拉开景别。",
+    "curationReason": "石墙、绿植与人物侧面形成不同层次；入点移到前景游客通过之后。",
     "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-bcf932ac909e7f55-011.0-017.3.mp4",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/batch0926-bcf932ac909e7f55-011.0-017.3.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
-    "id": "batch0926-bcf932ac909e7f55-024.0-030.0",
+    "id": "batch0926-bcf932ac909e7f55-023.4-029.0",
     "source": "batch0926",
     "sourceLabel": "9/26 切片",
-    "title": "砖塔广场背侧行走",
+    "title": "砖塔广场背侧跟拍",
     "filename": "temp_video_1790416517496.MP4",
     "category": "生活与出行",
-    "activity": "背侧行走",
+    "activity": "连续行走",
     "location": "砖塔庭院",
     "shot": "中景",
     "orientation": "横屏",
-    "duration": 6,
+    "duration": 5.6,
     "sourceDuration": 34.367667,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-bcf932ac909e7f55-024.0-030.0.mp4",
-    "poster": "assets/batch0926-bcf932ac909e7f55-024.0-030.0.jpg",
+    "media": "previews/batch0926-bcf932ac909e7f55-023.4-029.0.mp4?v=dea78f50054e",
+    "poster": "assets/batch0926-bcf932ac909e7f55-023.4-029.0.jpg?v=306c0a8fb905",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
-    "description": "砖塔庭院。砖塔广场背侧行走。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "description": "砖塔庭院。砖塔广场背侧跟拍。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
-      "砖塔广场背侧行走",
-      "背侧行走",
+      "砖塔广场背侧跟拍",
+      "连续行走",
+      "temp_video_1790416517496.MP4",
       "砖塔庭院",
-      "9/26",
-      "9:26:26 broll"
+      "旅行"
     ],
     "line": null,
-    "range": "24.0–30.0 秒",
+    "range": "23.4–29.0 秒",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
     "parentId": "batch0926-bcf932ac909e7f55",
     "clipNumber": "N13",
-    "inPoint": 24,
-    "outPoint": 30,
+    "inPoint": 23.4,
+    "outPoint": 29.0,
     "qualityNote": null,
-    "selectionReason": "广场环境与背侧走位独立成段",
+    "selectionReason": "从树荫与矮墙走入砖塔广场，具有空间展开的作用，区别于固定机位横移。",
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
-    "curation": "backup",
-    "curationReason": "仍是砖塔广场的背侧行走，未增加足够新的动作信息。",
-    "alternativeId": "batch0926-b1d4512c5256b645-012.7-018.0",
+    "curation": "primary",
+    "curationReason": "从树荫与矮墙走入砖塔广场，具有空间展开的作用，区别于固定机位横移。",
+    "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-bcf932ac909e7f55-024.0-030.0.mp4",
+    "colorPolicy": "native-passthrough",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/batch0926-bcf932ac909e7f55-023.4-029.0.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
@@ -1533,15 +1564,15 @@
     "sourceDuration": 21.688333,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-c2b2023467ae3933-008.0-015.0.mp4",
-    "poster": "assets/batch0926-c2b2023467ae3933-008.0-015.0.jpg",
+    "media": "previews/batch0926-c2b2023467ae3933-008.0-015.0.mp4?v=8ed2ca47bd2e",
+    "poster": "assets/batch0926-c2b2023467ae3933-008.0-015.0.jpg?v=f93935bcec70",
     "preview": null,
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "description": "庭院台阶。树荫台阶背影前行。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "树荫台阶背影前行",
       "背影行走",
@@ -1561,14 +1592,15 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "backup",
-    "curationReason": "树荫台阶背影前行与 N03 相近；本条留作更长的持续行走备选。",
-    "alternativeId": "batch0926-ca85d53e30b078b2-020.8-026.8",
+    "curationReason": "台阶背影构图可用，但路人迎面经过更多；同类优先 N02。",
+    "alternativeId": "batch0926-ca85d53e30b078b2-003.0-009.0",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-c2b2023467ae3933-008.0-015.0.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1579,50 +1611,51 @@
     "title": "沙滩侧面转向海面",
     "filename": "temp_video_1790416599254.MP4",
     "category": "生活与出行",
-    "activity": "站立转头",
+    "activity": "转身看海",
     "location": "沙滩",
     "shot": "中景",
     "orientation": "横屏",
-    "duration": 6.6,
+    "duration": 5.8,
     "sourceDuration": 23.456767,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-3b6ca3e3fa8c5021-007.2-013.8.mp4",
-    "poster": "assets/batch0926-3b6ca3e3fa8c5021-007.2-013.8.jpg",
+    "media": "previews/batch0926-3b6ca3e3fa8c5021-007.2-013.8.mp4?v=ad9fb0c47faa",
+    "poster": "assets/batch0926-3b6ca3e3fa8c5021-007.2-013.8.jpg?v=62583fb94bd2",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "沙滩。沙滩侧面转向海面。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "沙滩侧面转向海面",
-      "站立转头",
+      "转身看海",
+      "temp_video_1790416599254.MP4",
       "沙滩",
-      "9/26",
-      "9:26:26 broll"
+      "海滩"
     ],
     "line": null,
-    "range": "7.2–13.8 秒",
+    "range": "8.0–13.8 秒",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
     "parentId": "batch0926-3b6ca3e3fa8c5021",
     "clipNumber": "N15",
-    "inPoint": 7.2,
+    "inPoint": 8.0,
     "outPoint": 13.8,
     "qualityNote": null,
-    "selectionReason": "去掉前段反复整理头发，保留自然转向",
+    "selectionReason": "侧面转向海面，与 N16 绕至正面方向不同；去掉开头整理头发的收手。",
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
-    "curation": "backup",
-    "curationReason": "同场景、同服装的沙滩人物镜头；N16 从背侧转到正面，画面变化更完整。",
-    "alternativeId": "batch0926-1a11c7c1df9a0380-002.4-008.6",
+    "curation": "primary",
+    "curationReason": "侧面转向海面，与 N16 绕至正面方向不同；去掉开头整理头发的收手。",
+    "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-3b6ca3e3fa8c5021-007.2-013.8.mp4",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/batch0926-3b6ca3e3fa8c5021-007.2-013.8.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
@@ -1640,15 +1673,15 @@
     "sourceDuration": 12.479133,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-1a11c7c1df9a0380-002.4-008.6.mp4",
-    "poster": "assets/batch0926-1a11c7c1df9a0380-002.4-008.6.jpg",
+    "media": "previews/batch0926-1a11c7c1df9a0380-002.4-008.6.mp4?v=e9e34c67d1f1",
+    "poster": "assets/batch0926-1a11c7c1df9a0380-002.4-008.6.jpg?v=9ea5e01beea7",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "沙滩。沙滩背侧至正面绕拍。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "沙滩背侧至正面绕拍",
       "站立环顾",
@@ -1668,13 +1701,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "沙滩绕拍保留从背侧到正面的变化，本批只优先留这一条。",
+    "curationReason": "沙滩背侧绕至正面，保留人与海岸的关系；不因同地点就与 N15 合并。",
     "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-1a11c7c1df9a0380-002.4-008.6.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1682,53 +1716,54 @@
     "id": "batch0926-a8a8ac68f4d08bca-000.3-003.6",
     "source": "batch0926",
     "sourceLabel": "9/26 切片",
-    "title": "夜色窗边座椅与海景",
+    "title": "夜色座椅前景与海面",
     "filename": "temp_video_1790416636181.MP4",
     "category": "生活与出行",
-    "activity": "室内海景",
+    "activity": "海景空镜",
     "location": "临海室内与露台",
     "shot": "全景",
     "orientation": "横屏",
-    "duration": 3.3,
+    "duration": 3.8,
     "sourceDuration": 43.5435,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-a8a8ac68f4d08bca-000.3-003.6.mp4",
-    "poster": "assets/batch0926-a8a8ac68f4d08bca-000.3-003.6.jpg",
+    "media": "previews/batch0926-a8a8ac68f4d08bca-000.3-003.6.mp4?v=79dbf0de9d32",
+    "poster": "assets/batch0926-a8a8ac68f4d08bca-000.3-003.6.jpg?v=90321c13fdfe",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
-    "description": "临海室内与露台。夜色窗边座椅与海景。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "description": "临海室内与露台。夜色座椅前景与海面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
-      "夜色窗边座椅与海景",
-      "室内海景",
+      "夜色座椅前景与海面",
+      "海景空镜",
+      "temp_video_1790416636181.MP4",
       "临海室内与露台",
-      "9/26",
-      "9:26:26 broll"
+      "旅行"
     ],
     "line": null,
-    "range": "0.3–3.6 秒",
+    "range": "39.5–43.3 秒",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
     "parentId": "batch0926-a8a8ac68f4d08bca",
     "clipNumber": "N17",
-    "inPoint": 0.3,
-    "outPoint": 3.6,
+    "inPoint": 39.5,
+    "outPoint": 43.3,
     "qualityNote": null,
-    "selectionReason": "保留开头稳定构图，去掉随后斜甩机位",
+    "selectionReason": "改选末尾的座椅与海景，避开前段抬镜与倾斜；保留空景的前景层次。",
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
-    "curation": "backup",
-    "curationReason": "同场所夜间海景；N18 同时交代灯串、露台和海面，本条用于需要室内座椅前景时。",
-    "alternativeId": "batch0926-a8a8ac68f4d08bca-013.5-020.5",
+    "curation": "primary",
+    "curationReason": "改选末尾的座椅与海景，避开前段抬镜与倾斜；保留空景的前景层次。",
+    "alternativeId": null,
     "previousCategory": "环境与空镜",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-a8a8ac68f4d08bca-000.3-003.6.mp4",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/batch0926-a8a8ac68f4d08bca-000.3-003.6.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
@@ -1746,15 +1781,15 @@
     "sourceDuration": 43.5435,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-a8a8ac68f4d08bca-013.5-020.5.mp4",
-    "poster": "assets/batch0926-a8a8ac68f4d08bca-013.5-020.5.jpg",
+    "media": "previews/batch0926-a8a8ac68f4d08bca-013.5-020.5.mp4?v=e56e893e497a",
+    "poster": "assets/batch0926-a8a8ac68f4d08bca-013.5-020.5.jpg?v=22acfc583ccd",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "临海室内与露台。夜色露台灯串与海景。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "夜色露台灯串与海景",
       "露台海景",
@@ -1774,13 +1809,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "灯串、露台与夜色海面共同交代环境，可作人物镜头之间的环境补充。",
+    "curationReason": "灯串、露台和海面有明确环境层次，与 N17 的座椅构图不同。",
     "alternativeId": null,
     "previousCategory": "环境与空镜",
     "contentTags": [
       "旅行"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-a8a8ac68f4d08bca-013.5-020.5.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1790,7 +1826,7 @@
     "sourceLabel": "9/26 切片",
     "title": "室内靠坐单手看手机",
     "filename": "temp_video_1790416665386.MP4",
-    "category": "工作与团队",
+    "category": "生活与出行",
     "activity": "靠坐看手机",
     "location": "室内休息区",
     "shot": "中景",
@@ -1799,15 +1835,15 @@
     "sourceDuration": 14.6146,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-f2deaf2990c6fca7-002.0-008.5.mp4",
-    "poster": "assets/batch0926-f2deaf2990c6fca7-002.0-008.5.jpg",
+    "media": "previews/batch0926-f2deaf2990c6fca7-002.0-008.5.mp4?v=5b3383841892",
+    "poster": "assets/batch0926-f2deaf2990c6fca7-002.0-008.5.jpg?v=e98de0166a02",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "室内休息区。室内靠坐单手看手机。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "室内靠坐单手看手机",
       "靠坐看手机",
@@ -1827,13 +1863,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "靠坐看手机的中景，场景清楚；与 N21 的托腮近景形成差别。",
+    "curationReason": "靠坐单手看手机，姿态与桌边操作不同；室内纵深清楚。",
     "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-f2deaf2990c6fca7-002.0-008.5.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1843,7 +1880,7 @@
     "sourceLabel": "9/26 切片",
     "title": "桌旁低头操作手机",
     "filename": "temp_video_1790416675912.MP4",
-    "category": "工作与团队",
+    "category": "生活与出行",
     "activity": "低头操作手机",
     "location": "室内休息区",
     "shot": "中景",
@@ -1852,15 +1889,15 @@
     "sourceDuration": 15.148467,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-9b32c1ba3e761649-003.0-009.5.mp4",
-    "poster": "assets/batch0926-9b32c1ba3e761649-003.0-009.5.jpg",
+    "media": "previews/batch0926-9b32c1ba3e761649-003.0-009.5.mp4?v=69f4fd19abd6",
+    "poster": "assets/batch0926-9b32c1ba3e761649-003.0-009.5.jpg?v=d331df1bfd97",
     "preview": null,
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "description": "室内休息区。桌旁低头操作手机。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "桌旁低头操作手机",
       "低头操作手机",
@@ -1879,14 +1916,15 @@
     "selectionReason": "保留连续低头操作，去掉重复停留",
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
-    "curation": "backup",
-    "curationReason": "手机使用场景已由 N19、N21 覆盖，低头操作没有足够新的画面信息。",
-    "alternativeId": "batch0926-f2deaf2990c6fca7-002.0-008.5",
+    "curation": "primary",
+    "curationReason": "桌旁前倾操作手机，与 N19 靠坐和 N21 托腮有可见动作差异。",
+    "alternativeId": null,
     "previousCategory": "日常与出行",
     "contentTags": [
       "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-9b32c1ba3e761649-003.0-009.5.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1896,7 +1934,7 @@
     "sourceLabel": "9/26 切片",
     "title": "托腮看手机后放下手",
     "filename": "temp_video_1790416687625.MP4",
-    "category": "情绪与状态",
+    "category": "生活与出行",
     "activity": "托腮看手机",
     "location": "室内休息区",
     "shot": "中近景",
@@ -1905,15 +1943,15 @@
     "sourceDuration": 12.6126,
     "path": "9:26:26 broll",
     "original": null,
-    "media": "previews/batch0926-584b5a976ecc0004-000.3-004.5.mp4",
-    "poster": "assets/batch0926-584b5a976ecc0004-000.3-004.5.jpg",
+    "media": "previews/batch0926-584b5a976ecc0004-000.3-004.5.mp4?v=1743b34add71",
+    "poster": "assets/batch0926-584b5a976ecc0004-000.3-004.5.jpg?v=cb22ba66618e",
     "preview": null,
     "purposes": [
       "情绪"
     ],
     "review": "visual",
     "description": "室内休息区。托腮看手机后放下手。",
-    "reviewNote": "按每秒一帧检查原片，依据动作、遮挡与机位变化选择入出点，另外核对切片首尾画面。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "keywords": [
       "托腮看手机后放下手",
       "托腮看手机",
@@ -1933,14 +1971,14 @@
     "resolution": "3840 × 2160",
     "frameRate": "30000/1001",
     "curation": "primary",
-    "curationReason": "保留托腮到放手的单一动作，景别比 N19 更近，可用于人物状态段落。",
+    "curationReason": "较近的托腮到放手动作，用于状态或手机使用；不推断真实心理。",
     "alternativeId": null,
     "previousCategory": "人物状态与情绪",
     "contentTags": [
-      "思考",
       "使用手机"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/batch0926-584b5a976ecc0004-000.3-004.5.mp4",
     "downloadLabel": "下载切片（原分辨率）↓"
   },
@@ -1953,72 +1991,93 @@
     "activity": "抬手指向远处",
     "location": "芽庄",
     "orientation": "横屏",
-    "duration": 4.2,
+    "duration": 2.6,
     "path": "Charlie芽庄 / 交流与手势",
     "purposes": [],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B23.mp4",
-    "poster": "assets/nhatrang-B23.jpg",
+    "media": "previews/nhatrang-B23.mp4?v=dbaeb37130b1",
+    "poster": "assets/nhatrang-B23.jpg?v=d50453b1acfc",
     "preview": null,
-    "range": "30.0–34.2 秒",
-    "description": "芽庄海边。侧面抬手指向远处。",
+    "range": "31.6–34.2 秒",
+    "description": "芽庄。侧面抬手指向远处。",
     "keywords": [
-      "L1034431.MP4",
       "侧面抬手指向远处",
-      "海边",
+      "抬手指向远处",
+      "L1034431.MP4",
       "芽庄",
-      "Nha Trang"
+      "海滩"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B23.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
+    "curation": "primary",
+    "curationReason": "聚焦抬手指向远处的短动作，去掉前面的等待，保留动作前后余量。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 31.6,
+    "outPoint": 34.2,
+    "sourceDuration": 37.5375,
+    "resolution": "3840 × 2160",
+    "frameRate": "30000/1001",
+    "selectionReason": "聚焦抬手指向远处的短动作，去掉前面的等待，保留动作前后余量。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/nhatrang-B23.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "nhatrang-B22",
     "source": "local",
-    "title": "海边走动交流侧面",
+    "title": "海边正面至侧面交流",
     "filename": "L1034431.MP4",
     "category": "生活与出行",
-    "activity": "交流与手势",
+    "activity": "走动交流",
     "location": "芽庄",
     "orientation": "横屏",
-    "duration": 6,
+    "duration": 9.5,
     "path": "Charlie芽庄 / 交流与手势",
     "purposes": [
       "转场"
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B22.mp4",
-    "poster": "assets/nhatrang-B22.jpg",
+    "media": "previews/nhatrang-B22.mp4?v=848986681fa2",
+    "poster": "assets/nhatrang-B22.jpg?v=8caed34e66d0",
     "preview": null,
-    "range": "11.0–17.0 秒",
-    "description": "芽庄海边。海边走动交流侧面。",
+    "range": "0.5–10.0 秒",
+    "description": "芽庄。海边正面至侧面交流。",
     "keywords": [
+      "海边正面至侧面交流",
+      "走动交流",
       "L1034431.MP4",
-      "海边走动交流侧面",
-      "海边",
       "芽庄",
-      "Nha Trang"
+      "海滩"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B22.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
+    "curation": "primary",
+    "curationReason": "改选原片较早的正面至侧面交流，面部更明亮，岩壁、海湾和人物有层次。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 0.5,
+    "outPoint": 10.0,
+    "sourceDuration": 37.5375,
+    "resolution": "3840 × 2160",
+    "frameRate": "30000/1001",
+    "selectionReason": "改选原片较早的正面至侧面交流，面部更明亮，岩壁、海湾和人物有层次。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "shot": "中近景",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/nhatrang-B22.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "nhatrang-B15",
@@ -2036,8 +2095,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B15.mp4",
-    "poster": "assets/nhatrang-B15.jpg",
+    "media": "previews/nhatrang-B15.mp4?v=0d92b96212eb",
+    "poster": "assets/nhatrang-B15.jpg?v=69f873d6fbdd",
     "preview": null,
     "range": "8.5–13.0 秒",
     "description": "芽庄海边。侧后方看海绕拍。",
@@ -2049,12 +2108,16 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "原生竖屏的侧后方看海，保留竖版景别。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B15.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2075,8 +2138,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B14.mp4",
-    "poster": "assets/nhatrang-B14.jpg",
+    "media": "previews/nhatrang-B14.mp4?v=35421e6cfe16",
+    "poster": "assets/nhatrang-B14.jpg?v=d38929dcbae5",
     "preview": null,
     "range": "6.5–12.4 秒",
     "description": "芽庄海边。侧后方站立看海。",
@@ -2088,12 +2151,16 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "与 B16 侧后方看海接近；原片后段还存在失焦，保留当前清楚段作备选。",
+    "alternativeId": "nhatrang-B16",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B14.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2103,7 +2170,7 @@
     "source": "local",
     "title": "侧面托腮看屏幕",
     "filename": "L1034419.MP4",
-    "category": "情绪与状态",
+    "category": "工作与团队",
     "activity": "托腮看屏幕",
     "location": "芽庄",
     "orientation": "横屏",
@@ -2114,8 +2181,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B11.mp4",
-    "poster": "assets/nhatrang-B11.jpg",
+    "media": "previews/nhatrang-B11.mp4?v=ee600bd75cd9",
+    "poster": "assets/nhatrang-B11.jpg?v=0cbbcd54da87",
     "preview": null,
     "range": "29.5–35.5 秒",
     "description": "芽庄海边。侧面托腮看屏幕。",
@@ -2127,13 +2194,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
-      "思考",
-      "使用电脑"
+      "使用电脑",
+      "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "侧面托腮与电脑同框，区别于单纯打字。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B11.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2154,8 +2225,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B16.mp4",
-    "poster": "assets/nhatrang-B16.jpg",
+    "media": "previews/nhatrang-B16.mp4?v=ca63e2731966",
+    "poster": "assets/nhatrang-B16.jpg?v=47ea54c115d2",
     "preview": null,
     "range": "12.0–17.0 秒",
     "description": "芽庄海边。侧面至背面看海绕拍。",
@@ -2167,12 +2238,16 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "侧面绕至背面的中远景，人物与海面关系完整。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B16.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2180,41 +2255,52 @@
   {
     "id": "nhatrang-B17",
     "source": "local",
-    "title": "海边侧面站姿",
+    "title": "海边正面转向侧脸",
     "filename": "L1034433.MP4",
     "category": "生活与出行",
-    "activity": "站立看海",
+    "activity": "站立转头",
     "location": "芽庄",
     "orientation": "横屏",
-    "duration": 5,
+    "duration": 4.7,
     "path": "Charlie芽庄 / 站立看海",
     "purposes": [
       "环境"
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B17.mp4",
-    "poster": "assets/nhatrang-B17.jpg",
+    "media": "previews/nhatrang-B17.mp4?v=ae38c0f265a6",
+    "poster": "assets/nhatrang-B17.jpg?v=a98924e3e406",
     "preview": null,
-    "range": "24.0–29.0 秒",
-    "description": "芽庄海边。海边侧面站姿。",
+    "range": "20.8–25.5 秒",
+    "description": "芽庄。海边正面转向侧脸。",
     "keywords": [
+      "海边正面转向侧脸",
+      "站立转头",
       "L1034433.MP4",
-      "海边侧面站姿",
-      "海边",
       "芽庄",
-      "Nha Trang"
+      "海滩"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B17.mp4",
-    "downloadLabel": "下载切片（原分辨率）↓",
-    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
+    "curation": "primary",
+    "curationReason": "改选正面转向侧脸的段落，补足面部角度，与 B16 背影区别更清楚。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 20.8,
+    "outPoint": 25.5,
+    "sourceDuration": 31.031,
+    "resolution": "3840 × 2160",
+    "frameRate": "30000/1001",
+    "selectionReason": "改选正面转向侧脸的段落，补足面部角度，与 B16 背影区别更清楚。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "shot": "中景",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/nhatrang-B17.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "nhatrang-B13",
@@ -2232,8 +2318,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B13.mp4",
-    "poster": "assets/nhatrang-B13.jpg",
+    "media": "previews/nhatrang-B13.mp4?v=6f7fd2a5e073",
+    "poster": "assets/nhatrang-B13.jpg?v=7b78a08bd3e2",
     "preview": null,
     "range": "24.0–30.0 秒",
     "description": "芽庄海边。海边站立远望全景。",
@@ -2245,12 +2331,16 @@
       "Nha Trang"
     ],
     "line": "先停下来，看看眼前这片海。",
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "较远的站立看海镜头，保留较多海岸环境。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B13.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2260,7 +2350,7 @@
     "source": "local",
     "title": "背侧托腮看屏幕",
     "filename": "L1034419.MP4",
-    "category": "情绪与状态",
+    "category": "工作与团队",
     "activity": "托腮看屏幕",
     "location": "芽庄",
     "orientation": "横屏",
@@ -2271,8 +2361,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B10.mp4",
-    "poster": "assets/nhatrang-B10.jpg",
+    "media": "previews/nhatrang-B10.mp4?v=665c96968e23",
+    "poster": "assets/nhatrang-B10.jpg?v=28d7faad69d0",
     "preview": null,
     "range": "11.0–16.5 秒",
     "description": "芽庄海边。背侧托腮看屏幕。",
@@ -2284,13 +2374,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
-      "思考",
-      "使用电脑"
+      "使用电脑",
+      "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "背側托腮和 B11 动作相近，B11 的侧面人物轮廓更明确。",
+    "alternativeId": "nhatrang-B11",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B10.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2311,8 +2405,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B07.mp4",
-    "poster": "assets/nhatrang-B07.jpg",
+    "media": "previews/nhatrang-B07.mp4?v=34cc7ebf29fb",
+    "poster": "assets/nhatrang-B07.jpg?v=bae7503f9139",
     "preview": null,
     "range": "1.0–6.0 秒",
     "description": "芽庄海边。侧面电脑与双手中景。",
@@ -2324,13 +2418,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "更近的侧面机位，电脑与双手关系清楚；可搭配全景使用。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B07.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2351,8 +2449,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B02.mp4",
-    "poster": "assets/nhatrang-B02.jpg",
+    "media": "previews/nhatrang-B02.mp4?v=2e662b8caf10",
+    "poster": "assets/nhatrang-B02.jpg?v=282bb2781a93",
     "preview": null,
     "range": "0.5–5.5 秒",
     "description": "芽庄海边。侧面躺椅打字。",
@@ -2364,13 +2462,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "同为躺椅侧面用电脑，B07 的手部与电脑细节更明确；此段保留作同角度备选。",
+    "alternativeId": "nhatrang-B07",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B02.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2391,8 +2493,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B03.mp4",
-    "poster": "assets/nhatrang-B03.jpg",
+    "media": "previews/nhatrang-B03.mp4?v=87157213d23d",
+    "poster": "assets/nhatrang-B03.jpg?v=ad5e23920025",
     "preview": null,
     "range": "8.0–14.0 秒",
     "description": "芽庄海边。正侧躺椅用电脑。",
@@ -2404,13 +2506,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "正侧机位同时交代人物、电脑和躺椅，与背侧屏幕画面不同。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B03.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2431,8 +2537,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B04.mp4",
-    "poster": "assets/nhatrang-B04.jpg",
+    "media": "previews/nhatrang-B04.mp4?v=0ac9ba7d9d35",
+    "poster": "assets/nhatrang-B04.jpg?v=df4a20cd5333",
     "preview": null,
     "range": "1.0–7.0 秒",
     "description": "芽庄海边。正侧躺椅用电脑。",
@@ -2444,13 +2550,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "原生竖屏的正侧躺椅电脑镜头，保留竖版构图选择。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B04.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2471,8 +2581,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B08.mp4",
-    "poster": "assets/nhatrang-B08.jpg",
+    "media": "previews/nhatrang-B08.mp4?v=9e0dd2918225",
+    "poster": "assets/nhatrang-B08.jpg?v=670bfca784b2",
     "preview": null,
     "range": "1.0–7.0 秒",
     "description": "芽庄海边。海面背景侧面用电脑。",
@@ -2484,13 +2594,18 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "面部偏暗；海面与电脑组合已由竖屏 B09 提供，横屏版留作备选。",
+    "alternativeId": "nhatrang-B09",
+    "qualityNote": "面部曝光偏暗；适合交代海边用电脑的环境，不适合强调面部表情。",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B08.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2511,8 +2626,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B09.mp4",
-    "poster": "assets/nhatrang-B09.jpg",
+    "media": "previews/nhatrang-B09.mp4?v=17e769362617",
+    "poster": "assets/nhatrang-B09.jpg?v=9a08044d19e2",
     "preview": null,
     "range": "3.0–9.5 秒",
     "description": "芽庄海边。海面背景侧面用电脑。",
@@ -2524,13 +2639,18 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "海面背景的原生竖屏电脑镜头，保留独立画幅选择。",
+    "alternativeId": null,
+    "qualityNote": "面部曝光偏暗；适合交代海边用电脑的环境，不适合强调面部表情。",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B09.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2551,8 +2671,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B06.mp4",
-    "poster": "assets/nhatrang-B06.jpg",
+    "media": "previews/nhatrang-B06.mp4?v=c11afbcf175e",
+    "poster": "assets/nhatrang-B06.jpg?v=131d08d55e75",
     "preview": null,
     "range": "2.0–8.0 秒",
     "description": "芽庄海边。移动机位躺椅电脑全景。",
@@ -2564,13 +2684,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "躺椅、桌面与场地的全景，承担环境交代。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B06.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2591,8 +2715,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B01.mp4",
-    "poster": "assets/nhatrang-B01.jpg",
+    "media": "previews/nhatrang-B01.mp4?v=3f805941742e",
+    "poster": "assets/nhatrang-B01.jpg?v=30c65881629e",
     "preview": null,
     "range": "1.0–8.0 秒",
     "description": "芽庄海边。背侧操作电脑。",
@@ -2604,13 +2728,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "背侧机位看得到电脑屏幕与手部操作，提供工作动作的覆盖。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B01.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2631,8 +2759,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B05.mp4",
-    "poster": "assets/nhatrang-B05.jpg",
+    "media": "previews/nhatrang-B05.mp4?v=a1892a0e9c1c",
+    "poster": "assets/nhatrang-B05.jpg?v=3f35ac039de9",
     "preview": null,
     "range": "0.2–2.7 秒",
     "description": "芽庄海边。躺椅电脑环境全景。",
@@ -2644,13 +2772,17 @@
       "Nha Trang"
     ],
     "line": "换到海边，继续把手上的工作做完。",
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "与 B06 同角度、同环境接近，本段更短；B06 提供更多剪辑余量。",
+    "alternativeId": "nhatrang-B06",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B05.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2671,8 +2803,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B20.mp4",
-    "poster": "assets/nhatrang-B20.jpg",
+    "media": "previews/nhatrang-B20.mp4?v=414d51e982d4",
+    "poster": "assets/nhatrang-B20.jpg?v=65dbbe5955e4",
     "preview": null,
     "range": "8.0–11.6 秒",
     "description": "芽庄海边。回头转身走向镜头。",
@@ -2684,12 +2816,16 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "回头后朝镜头走，方向与向海走的镜头相反。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B20.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2699,7 +2835,7 @@
     "source": "local",
     "title": "收起手机转身向海",
     "filename": "L1034428.MP4",
-    "category": "工作与团队",
+    "category": "生活与出行",
     "activity": "走动与转身",
     "location": "芽庄",
     "orientation": "横屏",
@@ -2710,8 +2846,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B18.mp4",
-    "poster": "assets/nhatrang-B18.jpg",
+    "media": "previews/nhatrang-B18.mp4?v=8843b96f176d",
+    "poster": "assets/nhatrang-B18.jpg?v=67695171fea4",
     "preview": null,
     "range": "17.0–22.0 秒",
     "description": "芽庄海边。收起手机转身向海。",
@@ -2723,13 +2859,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "使用手机",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "收起手机再转向海面，有清楚的动作转换。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B18.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2750,8 +2890,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B19.mp4",
-    "poster": "assets/nhatrang-B19.jpg",
+    "media": "previews/nhatrang-B19.mp4?v=769a5a56e1f0",
+    "poster": "assets/nhatrang-B19.jpg?v=bde2841fa6f3",
     "preview": null,
     "range": "1.0–4.8 秒",
     "description": "芽庄海边。背影朝海走近。",
@@ -2763,12 +2903,16 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "与 B21 同为竖屏朝海背影行走，当前片段更短；作为较近人物版本。",
+    "alternativeId": "nhatrang-B21",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B19.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2789,8 +2933,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B21.mp4",
-    "poster": "assets/nhatrang-B21.jpg",
+    "media": "previews/nhatrang-B21.mp4?v=f19bb259dba2",
+    "poster": "assets/nhatrang-B21.jpg?v=da578957d1ad",
     "preview": null,
     "range": "1.0–6.0 秒",
     "description": "芽庄海边。背影缓步走向海边。",
@@ -2802,12 +2946,16 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "竖屏持续朝海行走，提供背影行进镜头。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B21.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2817,7 +2965,7 @@
     "source": "local",
     "title": "边走边看手机",
     "filename": "L1034428.MP4",
-    "category": "工作与团队",
+    "category": "生活与出行",
     "activity": "看手机",
     "location": "芽庄",
     "orientation": "横屏",
@@ -2828,8 +2976,8 @@
     ],
     "review": "visual",
     "original": null,
-    "media": "previews/nhatrang-B12.mp4",
-    "poster": "assets/nhatrang-B12.jpg",
+    "media": "previews/nhatrang-B12.mp4?v=487d1ad0465d",
+    "poster": "assets/nhatrang-B12.jpg?v=9e76fafe81f8",
     "preview": null,
     "range": "8.0–15.5 秒",
     "description": "芽庄海边。边走边看手机。",
@@ -2841,13 +2989,17 @@
       "Nha Trang"
     ],
     "line": null,
-    "reviewNote": "已按画面抽帧检查并选段，保留原片入出点；情绪用途不代表人物的真实心理状态。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "使用手机",
       "海滩"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "海边边走边看手机，是独立的使用手机动作。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/nhatrang-B12.mp4",
     "downloadLabel": "下载切片（原分辨率）↓",
     "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。"
@@ -2866,11 +3018,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/115DbjGRaEPHL6ZrxYEa6UqboEqkKZoiB/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/115DbjGRaEPHL6ZrxYEa6UqboEqkKZoiB/preview",
-    "poster": "assets/drive-115DbjGRaEPHL6ZrxYEa6UqboEqkKZoiB.jpg",
-    "media": "previews/drive-115DbjGRaEPHL6ZrxYEa6UqboEqkKZoiB.mp4",
+    "poster": "assets/drive-115DbjGRaEPHL6ZrxYEa6UqboEqkKZoiB.jpg?v=24aa5e2d0bff",
+    "media": "previews/drive-115DbjGRaEPHL6ZrxYEa6UqboEqkKZoiB.mp4?v=4b42b9b3434e",
     "range": null,
     "description": "电梯口，中景。电梯旁持杯抬手交流。",
     "keywords": [
@@ -2883,12 +3035,16 @@
     "shot": "中景",
     "sourceDuration": 4.133333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "团队互动"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "电梯口交流与后一条相近，本条开头主体被前景人物挡住较多。",
+    "alternativeId": "drive-1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/115DbjGRaEPHL6ZrxYEa6UqboEqkKZoiB/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -2907,11 +3063,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH/preview",
-    "poster": "assets/drive-1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH.jpg",
-    "media": "previews/drive-1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH.mp4",
+    "poster": "assets/drive-1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH.jpg?v=c1789c9afe19",
+    "media": "previews/drive-1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH.mp4?v=5fd6fe8390ef",
     "range": null,
     "description": "电梯口，中景。电梯口站立转头交流。",
     "keywords": [
@@ -2924,12 +3080,16 @@
     "shot": "中景",
     "sourceDuration": 4.866667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "团队互动"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "电梯口交流全景，人物与同行者关系较清楚。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1hEp9RxbowFpjs7GVDwhpfUQ--QohicmH/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -2948,11 +3108,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1UYZvVRNw8Vs5ZaEGnZ3AZ35DFV_B8Vva/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1UYZvVRNw8Vs5ZaEGnZ3AZ35DFV_B8Vva/preview",
-    "poster": "assets/drive-1UYZvVRNw8Vs5ZaEGnZ3AZ35DFV_B8Vva.jpg",
-    "media": "previews/drive-1UYZvVRNw8Vs5ZaEGnZ3AZ35DFV_B8Vva.mp4",
+    "poster": "assets/drive-1UYZvVRNw8Vs5ZaEGnZ3AZ35DFV_B8Vva.jpg?v=29c0bd3c002a",
+    "media": "previews/drive-1UYZvVRNw8Vs5ZaEGnZ3AZ35DFV_B8Vva.mp4?v=c03d6a7fb359",
     "range": null,
     "description": "走廊，中景。走廊边走边抬手交流。",
     "keywords": [
@@ -2965,12 +3125,16 @@
     "shot": "中景",
     "sourceDuration": 6.066667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "团队互动"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "边走边交流，有独立的移动和互动用途。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1UYZvVRNw8Vs5ZaEGnZ3AZ35DFV_B8Vva/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -2989,11 +3153,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1YwGNTZYfYPbB0OhSN6JviDdykstIXsdB/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1YwGNTZYfYPbB0OhSN6JviDdykstIXsdB/preview",
-    "poster": "assets/drive-1YwGNTZYfYPbB0OhSN6JviDdykstIXsdB.jpg",
-    "media": "previews/drive-1YwGNTZYfYPbB0OhSN6JviDdykstIXsdB.mp4",
+    "poster": "assets/drive-1YwGNTZYfYPbB0OhSN6JviDdykstIXsdB.jpg?v=ac22f68e0b1e",
+    "media": "previews/drive-1YwGNTZYfYPbB0OhSN6JviDdykstIXsdB.mp4?v=5848ffa60cf5",
     "range": null,
     "description": "摄影棚，全景。棚内多人站立手势交流。",
     "keywords": [
@@ -3006,12 +3170,16 @@
     "shot": "全景",
     "sourceDuration": 3.433333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "团队互动"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "棚内多人交流，保留拍摄现场的团队关系。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1YwGNTZYfYPbB0OhSN6JviDdykstIXsdB/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3030,11 +3198,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/19c2kZ8L7yqG2k_9op5NGXm_7UbXhdVv7/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/19c2kZ8L7yqG2k_9op5NGXm_7UbXhdVv7/preview",
-    "poster": "assets/drive-19c2kZ8L7yqG2k_9op5NGXm_7UbXhdVv7.jpg",
-    "media": "previews/drive-19c2kZ8L7yqG2k_9op5NGXm_7UbXhdVv7.mp4",
+    "poster": "assets/drive-19c2kZ8L7yqG2k_9op5NGXm_7UbXhdVv7.jpg?v=194b43b08b38",
+    "media": "previews/drive-19c2kZ8L7yqG2k_9op5NGXm_7UbXhdVv7.mp4?v=806097532284",
     "range": null,
     "description": "摄影棚，全景。监看屏与摄影机后方。",
     "keywords": [
@@ -3047,12 +3215,16 @@
     "shot": "全景",
     "sourceDuration": 6.2,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "拍摄幕后"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "监看屏、摄影设备与被拍人物同框，交代制作过程。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/19c2kZ8L7yqG2k_9op5NGXm_7UbXhdVv7/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3071,11 +3243,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1XOehd_VeFwsyhzoivHTOI-WBGowhza_v/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1XOehd_VeFwsyhzoivHTOI-WBGowhza_v/preview",
-    "poster": "assets/drive-1XOehd_VeFwsyhzoivHTOI-WBGowhza_v.jpg",
-    "media": "previews/drive-1XOehd_VeFwsyhzoivHTOI-WBGowhza_v.mp4",
+    "poster": "assets/drive-1XOehd_VeFwsyhzoivHTOI-WBGowhza_v.jpg?v=2a0668254905",
+    "media": "previews/drive-1XOehd_VeFwsyhzoivHTOI-WBGowhza_v.mp4?v=eaff633dff56",
     "range": null,
     "description": "摄影棚，全景。举手机拍摄棚内人物。",
     "keywords": [
@@ -3088,12 +3260,16 @@
     "shot": "全景",
     "sourceDuration": 4.733333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "拍摄幕后"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "举手机拍摄的动作清楚，提供幕后操作角度；前景较暗。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1XOehd_VeFwsyhzoivHTOI-WBGowhza_v/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3112,11 +3288,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1pbG15qIr7cj5zBi2obcHYOPrzq8GbOIh/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1pbG15qIr7cj5zBi2obcHYOPrzq8GbOIh/preview",
-    "poster": "assets/drive-1pbG15qIr7cj5zBi2obcHYOPrzq8GbOIh.jpg",
-    "media": "previews/drive-1pbG15qIr7cj5zBi2obcHYOPrzq8GbOIh.mp4",
+    "poster": "assets/drive-1pbG15qIr7cj5zBi2obcHYOPrzq8GbOIh.jpg?v=4f11b57483c0",
+    "media": "previews/drive-1pbG15qIr7cj5zBi2obcHYOPrzq8GbOIh.mp4?v=fe59fad868d3",
     "range": null,
     "description": "摄影棚，全景。从摄影机后方看布景。",
     "keywords": [
@@ -3129,12 +3305,16 @@
     "shot": "全景",
     "sourceDuration": 4.133333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "拍摄幕后"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "与 live4 的浅色布景相近，本条摄影机遮挡更多；可作器材前景版。",
+    "alternativeId": "drive-1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1pbG15qIr7cj5zBi2obcHYOPrzq8GbOIh/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3153,11 +3333,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P/preview",
-    "poster": "assets/drive-1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P.jpg",
-    "media": "previews/drive-1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P.mp4",
+    "poster": "assets/drive-1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P.jpg?v=ad6afaf5b184",
+    "media": "previews/drive-1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P.mp4?v=7aace614ab60",
     "range": null,
     "description": "摄影棚，全景。浅色布景与灯光设备。",
     "keywords": [
@@ -3170,12 +3350,16 @@
     "shot": "全景",
     "sourceDuration": 5.166667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "环境与空镜",
     "contentTags": [
       "拍摄幕后"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "浅色布景、灯光和机位的环境全景。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1Xr2ozQmLiyhrhynLsmZ3f3hsfNqu-83P/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3194,11 +3378,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1jHt9UwpbG3W7dBp1PM3ZAAeTMEqI7gHc/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1jHt9UwpbG3W7dBp1PM3ZAAeTMEqI7gHc/preview",
-    "poster": "assets/drive-1jHt9UwpbG3W7dBp1PM3ZAAeTMEqI7gHc.jpg",
-    "media": "previews/drive-1jHt9UwpbG3W7dBp1PM3ZAAeTMEqI7gHc.mp4",
+    "poster": "assets/drive-1jHt9UwpbG3W7dBp1PM3ZAAeTMEqI7gHc.jpg?v=552bb7b79852",
+    "media": "previews/drive-1jHt9UwpbG3W7dBp1PM3ZAAeTMEqI7gHc.mp4?v=e1849d8ea001",
     "range": null,
     "description": "摄影棚，全景。红色布景与灯光机位。",
     "keywords": [
@@ -3211,12 +3395,16 @@
     "shot": "全景",
     "sourceDuration": 2.966667,
     "line": "这就是我们拍摄的现场。",
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "环境与空镜",
     "contentTags": [
       "拍摄幕后"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "红色布景与前几条有明显场景差别，可作不同拍摄现场的覆盖。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1jHt9UwpbG3W7dBp1PM3ZAAeTMEqI7gHc/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3235,11 +3423,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/11_FqPMbPfym5Iud9-ARAhMubeFd2wCIU/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/11_FqPMbPfym5Iud9-ARAhMubeFd2wCIU/preview",
-    "poster": "assets/drive-11_FqPMbPfym5Iud9-ARAhMubeFd2wCIU.jpg",
-    "media": "previews/drive-11_FqPMbPfym5Iud9-ARAhMubeFd2wCIU.mp4",
+    "poster": "assets/drive-11_FqPMbPfym5Iud9-ARAhMubeFd2wCIU.jpg?v=53609cb4ade8",
+    "media": "previews/drive-11_FqPMbPfym5Iud9-ARAhMubeFd2wCIU.mp4?v=ffcaf766dce4",
     "range": null,
     "description": "办公室，近景。身体前倾注视屏幕。",
     "keywords": [
@@ -3252,13 +3440,17 @@
     "shot": "近景",
     "sourceDuration": 6.033333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "专注",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "前倾看屏幕有动作，但面部暗部更重；常规电脑画面优先较清楚的 work6。",
+    "alternativeId": "drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/11_FqPMbPfym5Iud9-ARAhMubeFd2wCIU/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3277,11 +3469,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1LldTWLsY3N-IC_SrmohAICtSDZRu2pt8/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1LldTWLsY3N-IC_SrmohAICtSDZRu2pt8/preview",
-    "poster": "assets/drive-1LldTWLsY3N-IC_SrmohAICtSDZRu2pt8.jpg",
-    "media": "previews/drive-1LldTWLsY3N-IC_SrmohAICtSDZRu2pt8.mp4",
+    "poster": "assets/drive-1LldTWLsY3N-IC_SrmohAICtSDZRu2pt8.jpg?v=ad24a6d52ade",
+    "media": "previews/drive-1LldTWLsY3N-IC_SrmohAICtSDZRu2pt8.mp4?v=9d86175aec0d",
     "range": null,
     "description": "办公室，中景。桌前后仰揉颈再前倾。",
     "keywords": [
@@ -3294,12 +3486,16 @@
     "shot": "中景",
     "sourceDuration": 5.3,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "个人工作"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "后仰揉颈再前倾的动作有独立用途，标签只记可见动作，不直接标压力大。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1LldTWLsY3N-IC_SrmohAICtSDZRu2pt8/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3318,11 +3514,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc/preview",
-    "poster": "assets/drive-1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc.jpg",
-    "media": "previews/drive-1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc.mp4",
+    "poster": "assets/drive-1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc.jpg?v=c26addad8361",
+    "media": "previews/drive-1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc.mp4?v=e4e87a4ebf1a",
     "range": null,
     "description": "办公室，中近景。电脑正面托腮停顿。",
     "keywords": [
@@ -3335,13 +3531,17 @@
     "shot": "中近景",
     "sourceDuration": 8.233333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "思考",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "正面托腮、屏幕和面部都可辨认，适合表现停顿状态。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3360,11 +3560,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1jQv64QFmtCnKkBx9X-QhWFwHS8FtX6-3/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1jQv64QFmtCnKkBx9X-QhWFwHS8FtX6-3/preview",
-    "poster": "assets/drive-1jQv64QFmtCnKkBx9X-QhWFwHS8FtX6-3.jpg",
-    "media": "previews/drive-1jQv64QFmtCnKkBx9X-QhWFwHS8FtX6-3.mp4",
+    "poster": "assets/drive-1jQv64QFmtCnKkBx9X-QhWFwHS8FtX6-3.jpg?v=c977c3e53496",
+    "media": "previews/drive-1jQv64QFmtCnKkBx9X-QhWFwHS8FtX6-3.mp4?v=a03d0c6f8d4f",
     "range": null,
     "description": "办公室，中景。电脑侧面托腮后放手。",
     "keywords": [
@@ -3377,13 +3577,17 @@
     "shot": "中景",
     "sourceDuration": 6.966667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "思考",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "同类托腮动作已有正面版本，本条面部偏暗、灯具进入画面边缘。",
+    "alternativeId": "drive-1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1jQv64QFmtCnKkBx9X-QhWFwHS8FtX6-3/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3402,11 +3606,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1ijP4R4ORxRgCTmjLySPBG6W8GK-v-ckW/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1ijP4R4ORxRgCTmjLySPBG6W8GK-v-ckW/preview",
-    "poster": "assets/drive-1ijP4R4ORxRgCTmjLySPBG6W8GK-v-ckW.jpg",
-    "media": "previews/drive-1ijP4R4ORxRgCTmjLySPBG6W8GK-v-ckW.mp4",
+    "poster": "assets/drive-1ijP4R4ORxRgCTmjLySPBG6W8GK-v-ckW.jpg?v=a7d3ec36b8f2",
+    "media": "previews/drive-1ijP4R4ORxRgCTmjLySPBG6W8GK-v-ckW.mp4?v=edadcddfb82f",
     "range": null,
     "description": "户外草地，中近景。草地围栏前托腮。",
     "keywords": [
@@ -3419,12 +3623,16 @@
     "shot": "中近景",
     "sourceDuration": 4.266667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "思考"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "草地托腮可用，但背景层次较少；作为不同地点的状态备选。",
+    "alternativeId": "drive-1JrhsHrdTzn5kRgJN-qOVs10KkELdeNbc",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1ijP4R4ORxRgCTmjLySPBG6W8GK-v-ckW/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3443,11 +3651,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1hIRrYY8H5fOEZv4hHn9QdkPRdTORF5HF/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1hIRrYY8H5fOEZv4hHn9QdkPRdTORF5HF/preview",
-    "poster": "assets/drive-1hIRrYY8H5fOEZv4hHn9QdkPRdTORF5HF.jpg",
-    "media": "previews/drive-1hIRrYY8H5fOEZv4hHn9QdkPRdTORF5HF.mp4",
+    "poster": "assets/drive-1hIRrYY8H5fOEZv4hHn9QdkPRdTORF5HF.jpg?v=907b18251ed5",
+    "media": "previews/drive-1hIRrYY8H5fOEZv4hHn9QdkPRdTORF5HF.mp4?v=306dad7ce8e1",
     "range": null,
     "description": "河边，中景。河边夕阳下托腮。",
     "keywords": [
@@ -3460,12 +3668,16 @@
     "shot": "中景",
     "sourceDuration": 3.866667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "思考"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "夕阳城市环境与托腮动作同框；以场景和姿态使用，不推断心理。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1hIRrYY8H5fOEZv4hHn9QdkPRdTORF5HF/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3484,11 +3696,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1A0p8bXVfR2fl48HhGqGcpM2scPL4FSfI/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1A0p8bXVfR2fl48HhGqGcpM2scPL4FSfI/preview",
-    "poster": "assets/drive-1A0p8bXVfR2fl48HhGqGcpM2scPL4FSfI.jpg",
-    "media": "previews/drive-1A0p8bXVfR2fl48HhGqGcpM2scPL4FSfI.mp4",
+    "poster": "assets/drive-1A0p8bXVfR2fl48HhGqGcpM2scPL4FSfI.jpg?v=8bdc16a93a97",
+    "media": "previews/drive-1A0p8bXVfR2fl48HhGqGcpM2scPL4FSfI.mp4?v=984f9725470a",
     "range": null,
     "description": "走廊，中景。走廊抬手遮脸后微笑。",
     "keywords": [
@@ -3501,12 +3713,16 @@
     "shot": "中景",
     "sourceDuration": 3.166667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "开心"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "开头遮脸且片段短；同类微笑互动优先棚内版本。",
+    "alternativeId": "drive-1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1A0p8bXVfR2fl48HhGqGcpM2scPL4FSfI/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3525,11 +3741,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC/preview",
-    "poster": "assets/drive-1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC.jpg",
-    "media": "previews/drive-1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC.mp4",
+    "poster": "assets/drive-1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC.jpg?v=728830b4e019",
+    "media": "previews/drive-1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC.mp4?v=eb9e8464f58e",
     "range": null,
     "description": "摄影棚，全景。棚内站立转身微笑。",
     "keywords": [
@@ -3542,12 +3758,16 @@
     "shot": "全景",
     "sourceDuration": 2.966667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "人物状态与情绪",
     "contentTags": [
       "开心"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "转身微笑与同行者同框，保留可见的开心互动。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1d7sFXQoAARvi-jlckSXgUa74cHa-fDRC/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3558,47 +3778,58 @@
     "title": "窗边电脑前抬手说话",
     "filename": "work.mp4",
     "category": "工作与团队",
-    "activity": "说话与手势",
+    "activity": "电脑前说话",
     "location": "窗边办公室",
     "orientation": "横屏",
-    "duration": 21.533333,
+    "duration": 6.8,
     "path": "yipengbroll/work",
     "purposes": [],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT/preview",
-    "poster": "assets/drive-1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT.jpg",
-    "media": "previews/drive-1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT.mp4",
-    "range": null,
-    "description": "窗边办公室，中景。窗边电脑前抬手说话。",
+    "poster": "assets/drive-1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT.jpg?v=4eb73feb75a7",
+    "media": "previews/drive-1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT.mp4?v=ce8652bf7f13",
+    "range": "0.2–7.0 秒",
+    "description": "窗边办公室。窗边电脑前抬手说话。",
     "keywords": [
-      "说话与手势",
+      "窗边电脑前抬手说话",
+      "电脑前说话",
+      "work.mp4",
       "窗边办公室",
-      "中景",
-      "窗边电脑前抬手说话"
+      "个人工作",
+      "使用电脑"
     ],
     "driveId": "1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT",
     "shot": "中景",
     "sourceDuration": 21.533333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "个人工作",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://drive.google.com/file/d/1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT/view?usp=drivesdk",
-    "downloadLabel": "在 Drive 下载原片 ↗",
-    "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
+    "curation": "primary",
+    "curationReason": "窗边电脑前说话与手势明确，截取前段，减少重复手势与后段停顿。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 0.2,
+    "outPoint": 7.0,
+    "resolution": "3840 × 2160",
+    "frameRate": "30/1",
+    "selectionReason": "窗边电脑前说话与手势明确，截取前段，减少重复手势与后段停顿。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/drive-1VP7HHlsSiKWLnnxwUr_7nzc2pDh6thiT.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "drive-1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL",
     "source": "drive",
-    "title": "桌边双手操作电脑",
+    "title": "昏暗室内侧面看电脑",
     "filename": "work2.mp4",
     "category": "工作与团队",
-    "activity": "操作电脑",
+    "activity": "看电脑",
     "location": "办公室",
     "orientation": "横屏",
     "duration": 15.033333,
@@ -3606,29 +3837,32 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL/preview",
-    "poster": "assets/drive-1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL.jpg",
-    "media": "previews/drive-1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL.mp4",
+    "poster": "assets/drive-1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL.jpg?v=0af7f55d5c78",
+    "media": "previews/drive-1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL.mp4?v=c669d737e62c",
     "range": null,
-    "description": "办公室，中景。桌边双手操作电脑。",
+    "description": "室内侧面看电脑，面部与手部较暗。",
     "keywords": [
-      "操作电脑",
-      "办公室",
-      "中景",
-      "桌边双手操作电脑"
+      "昏暗室内侧面看电脑",
+      "看电脑",
+      "使用电脑"
     ],
     "driveId": "1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL",
     "shot": "中景",
     "sourceDuration": 15.033333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "侧面看电脑的面部与手部更暗；同类机位 work6 的信息更清楚。",
+    "alternativeId": "drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1fg9kXRIN_LlNsFYxD-UUmBkzXsZLqzgL/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3647,11 +3881,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1gnxPojpp63m5iYqadZ1RFus5l2upXjGz/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1gnxPojpp63m5iYqadZ1RFus5l2upXjGz/preview",
-    "poster": "assets/drive-1gnxPojpp63m5iYqadZ1RFus5l2upXjGz.jpg",
-    "media": "previews/drive-1gnxPojpp63m5iYqadZ1RFus5l2upXjGz.mp4",
+    "poster": "assets/drive-1gnxPojpp63m5iYqadZ1RFus5l2upXjGz.jpg?v=98cef3f402c6",
+    "media": "previews/drive-1gnxPojpp63m5iYqadZ1RFus5l2upXjGz.mp4?v=3b2f9771d55a",
     "range": null,
     "description": "办公室，特写。屏幕前侧脸特写。",
     "keywords": [
@@ -3664,13 +3898,17 @@
     "shot": "特写",
     "sourceDuration": 6.366667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "专注",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "较近的屏幕前侧脸，补充面部近景。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1gnxPojpp63m5iYqadZ1RFus5l2upXjGz/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3689,11 +3927,11 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1uF1gIAHYbNWHHOOQrgQf2S6tzka8bbNu/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1uF1gIAHYbNWHHOOQrgQf2S6tzka8bbNu/preview",
-    "poster": "assets/drive-1uF1gIAHYbNWHHOOQrgQf2S6tzka8bbNu.jpg",
-    "media": "previews/drive-1uF1gIAHYbNWHHOOQrgQf2S6tzka8bbNu.mp4",
+    "poster": "assets/drive-1uF1gIAHYbNWHHOOQrgQf2S6tzka8bbNu.jpg?v=9701c3792e0b",
+    "media": "previews/drive-1uF1gIAHYbNWHHOOQrgQf2S6tzka8bbNu.mp4?v=29b369f1c7c0",
     "range": null,
     "description": "办公室，中近景。屏幕前正面注视。",
     "keywords": [
@@ -3706,13 +3944,17 @@
     "shot": "中近景",
     "sourceDuration": 7.0,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "专注",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "正面人物和电脑同框，与侧脸近景形成不同景别。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1uF1gIAHYbNWHHOOQrgQf2S6tzka8bbNu/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3723,7 +3965,7 @@
     "title": "双屏桌面前侧身办公",
     "filename": "work5.mp4",
     "category": "工作与团队",
-    "activity": "用电脑",
+    "activity": "使用电脑",
     "location": "办公室",
     "orientation": "横屏",
     "duration": 6.0,
@@ -3731,33 +3973,42 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t/preview",
-    "poster": "assets/drive-1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t.jpg",
-    "media": "previews/drive-1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t.mp4",
+    "poster": "assets/drive-1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t.jpg?v=ee362ee40adc",
+    "media": "previews/drive-1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t.mp4?v=be827e715317",
     "range": "0.0–6.0 秒",
-    "description": "办公室，中景。双屏桌面前侧身办公。",
+    "description": "办公室。双屏桌面前侧身办公。",
     "keywords": [
-      "用电脑",
-      "办公室",
-      "中景",
-      "双屏桌面前侧身办公"
+      "双屏桌面前侧身办公",
+      "使用电脑",
+      "work5.mp4",
+      "办公室"
     ],
     "driveId": "1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t",
     "shot": "中景",
     "sourceDuration": 16.333333,
     "line": null,
-    "reviewNote": "检查开头多个关键帧，并检测全片黑屏区间。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "qualityNote": "预览已去掉 6.0 秒后的黑屏尾段；原片保留。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://drive.google.com/file/d/1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t/view?usp=drivesdk",
-    "downloadLabel": "在 Drive 下载原片 ↗",
-    "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
+    "curation": "backup",
+    "curationReason": "双屏环境有信息，但面部偏暗且边缘露出灯具；原片黑尾已从可用切片中去掉。",
+    "alternativeId": "drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m",
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 0,
+    "outPoint": 6.0,
+    "resolution": "3840 × 2160",
+    "frameRate": "30/1",
+    "selectionReason": "双屏环境有信息，但面部偏暗且边缘露出灯具；原片黑尾已从可用切片中去掉。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/drive-1M1LEaPOoogfv4xUmvPYmtF-bCfaHNp5t.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m",
@@ -3773,11 +4024,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m/preview",
-    "poster": "assets/drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m.jpg",
-    "media": "previews/drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m.mp4",
+    "poster": "assets/drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m.jpg?v=1495a87e2aec",
+    "media": "previews/drive-1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m.mp4?v=f4927e04a280",
     "range": null,
     "description": "办公室，中景。昏暗桌边侧面用电脑。",
     "keywords": [
@@ -3790,12 +4041,16 @@
     "shot": "中景",
     "sourceDuration": 8.066667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "工作与办公",
     "contentTags": [
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "侧面人物、电脑和桌面关系较清楚，作为常规工作覆盖。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1o4gwH-Hl8_Acdzz1DbVeLPrgG3Bmnl6m/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3812,11 +4067,11 @@
     "duration": 4.933333,
     "path": "yipengbroll/work",
     "purposes": [],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw/preview",
-    "poster": "assets/drive-1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw.jpg",
-    "media": "previews/drive-1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw.mp4",
+    "poster": "assets/drive-1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw.jpg?v=d4ebb00cc002",
+    "media": "previews/drive-1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw.mp4?v=d5f709961602",
     "range": null,
     "description": "窗边办公室，中景。桌前说话与抬手指向。",
     "keywords": [
@@ -3829,13 +4084,17 @@
     "shot": "中景",
     "sourceDuration": 4.933333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "个人工作",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "说话与指向动作清楚；与 call.mp4 属于同画面近重复，仅本条默认展示。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3846,40 +4105,50 @@
     "title": "桌边两人对话与手势",
     "filename": "team4.mp4",
     "category": "工作与团队",
-    "activity": "桌边交流",
+    "activity": "两人交流",
     "location": "窗边办公室",
     "orientation": "横屏",
-    "duration": 19.6,
+    "duration": 9.5,
     "path": "yipengbroll/work",
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE/preview",
-    "poster": "assets/drive-1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE.jpg",
-    "media": "previews/drive-1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE.mp4",
-    "range": null,
-    "description": "窗边办公室，中景。桌边两人对话与手势。",
+    "poster": "assets/drive-1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE.jpg?v=31a21e63527c",
+    "media": "previews/drive-1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE.mp4?v=653f6fd52c7b",
+    "range": "0.3–9.8 秒",
+    "description": "窗边办公室。桌边两人对话与手势。",
     "keywords": [
-      "桌边交流",
+      "桌边两人对话与手势",
+      "两人交流",
+      "team4.mp4",
       "窗边办公室",
-      "中景",
-      "桌边两人对话与手势"
+      "团队工作"
     ],
     "driveId": "1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE",
     "shot": "中景",
     "sourceDuration": 19.6,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "团队工作"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://drive.google.com/file/d/1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE/view?usp=drivesdk",
-    "downloadLabel": "在 Drive 下载原片 ↗",
-    "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
+    "curation": "primary",
+    "curationReason": "两人交流与手势有互动，截取前段，避开后半段较长静候。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 0.3,
+    "outPoint": 9.8,
+    "resolution": "1920 × 1080",
+    "frameRate": "30/1",
+    "selectionReason": "两人交流与手势有互动，截取前段，避开后半段较长静候。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/drive-1BddPW7GGR6kuo5ABotxha7P_2V0vcSrE.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "drive-1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6",
@@ -3887,40 +4156,50 @@
     "title": "三人围坐电脑前交流",
     "filename": "callwithteam2.mp4",
     "category": "工作与团队",
-    "activity": "围看电脑",
+    "activity": "多人交流",
     "location": "办公室",
     "orientation": "横屏",
-    "duration": 15.566667,
+    "duration": 7.1,
     "path": "yipengbroll/work",
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6/preview",
-    "poster": "assets/drive-1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6.jpg",
-    "media": "previews/drive-1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6.mp4",
-    "range": null,
-    "description": "办公室，中景。三人围坐电脑前交流。",
+    "poster": "assets/drive-1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6.jpg?v=08c65959f275",
+    "media": "previews/drive-1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6.mp4?v=215854872cd0",
+    "range": "0.3–7.4 秒",
+    "description": "办公室。三人围坐电脑前交流。",
     "keywords": [
-      "围看电脑",
+      "三人围坐电脑前交流",
+      "多人交流",
+      "callwithteam2.mp4",
       "办公室",
-      "中景",
-      "三人围坐电脑前交流"
+      "团队工作"
     ],
     "driveId": "1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6",
     "shot": "中景",
     "sourceDuration": 15.566667,
     "line": "先和团队把这件事聊清楚。",
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "团队工作"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://drive.google.com/file/d/1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6/view?usp=drivesdk",
-    "downloadLabel": "在 Drive 下载原片 ↗",
-    "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
+    "curation": "primary",
+    "curationReason": "三人围坐讨论，截取手势交流段，避开后面的摸头整理动作。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 0.3,
+    "outPoint": 7.4,
+    "resolution": "1920 × 1080",
+    "frameRate": "30/1",
+    "selectionReason": "三人围坐讨论，截取手势交流段，避开后面的摸头整理动作。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/drive-1PIX5wJ5oEvNHHp_33UyGDzPo33_6dfN6.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "drive-1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg",
@@ -3936,11 +4215,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg/preview",
-    "poster": "assets/drive-1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg.jpg",
-    "media": "previews/drive-1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg.mp4",
+    "poster": "assets/drive-1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg.jpg?v=9e78ad035c52",
+    "media": "previews/drive-1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg.mp4?v=82fe58b3a55c",
     "range": null,
     "description": "办公室，中景。两人并坐看电脑交流。",
     "keywords": [
@@ -3953,12 +4232,16 @@
     "shot": "中景",
     "sourceDuration": 6.6,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "团队工作"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "侧面双人交流，补充三人正面机位之外的覆盖。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1eD0bd6rSt8qEa1soabbuNUGqDoXP8TDg/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -3975,11 +4258,11 @@
     "duration": 4.933333,
     "path": "yipengbroll/work",
     "purposes": [],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1TbBx-4rxSvL8B7qmsMFK9c1HLXKckdTM/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1TbBx-4rxSvL8B7qmsMFK9c1HLXKckdTM/preview",
-    "poster": "assets/drive-1TbBx-4rxSvL8B7qmsMFK9c1HLXKckdTM.jpg",
-    "media": "previews/drive-1TbBx-4rxSvL8B7qmsMFK9c1HLXKckdTM.mp4",
+    "poster": "assets/drive-1TbBx-4rxSvL8B7qmsMFK9c1HLXKckdTM.jpg?v=961c5492bc33",
+    "media": "previews/drive-1TbBx-4rxSvL8B7qmsMFK9c1HLXKckdTM.mp4?v=e569bef665e9",
     "range": null,
     "description": "窗边办公室，中景。电脑前抬手指向前方。",
     "keywords": [
@@ -3992,13 +4275,17 @@
     "shot": "中景",
     "sourceDuration": 4.933333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "个人工作",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "hold",
+    "curationReason": "与 talking with team.mp4 同时长、逐帧对齐后高度相似，按同画面近重复收起；文件并非逐字节相同。",
+    "alternativeId": "drive-1y3W8VxnbjOCbM2Xy1Ue9OGU9-lE1pKlw",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1TbBx-4rxSvL8B7qmsMFK9c1HLXKckdTM/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4017,11 +4304,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1YZTDkc2gcBONkm1FM0e_EUiOy3FuGvKN/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1YZTDkc2gcBONkm1FM0e_EUiOy3FuGvKN/preview",
-    "poster": "assets/drive-1YZTDkc2gcBONkm1FM0e_EUiOy3FuGvKN.jpg",
-    "media": "previews/drive-1YZTDkc2gcBONkm1FM0e_EUiOy3FuGvKN.mp4",
+    "poster": "assets/drive-1YZTDkc2gcBONkm1FM0e_EUiOy3FuGvKN.jpg?v=9aeca6d8538a",
+    "media": "previews/drive-1YZTDkc2gcBONkm1FM0e_EUiOy3FuGvKN.mp4?v=18bebd120ee7",
     "range": null,
     "description": "室内台面，中景。台面电脑前站立说话。",
     "keywords": [
@@ -4034,13 +4321,17 @@
     "shot": "中景",
     "sourceDuration": 4.566667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "个人工作",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "站立用电脑的场景独立，但开头头部被截断，构图使用余量较小。",
+    "alternativeId": "drive-1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1YZTDkc2gcBONkm1FM0e_EUiOy3FuGvKN/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4057,11 +4348,11 @@
     "duration": 5.6,
     "path": "yipengbroll/work",
     "purposes": [],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz/preview",
-    "poster": "assets/drive-1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz.jpg",
-    "media": "previews/drive-1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz.mp4",
+    "poster": "assets/drive-1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz.jpg?v=5537137acf5d",
+    "media": "previews/drive-1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz.mp4?v=7d97738389d2",
     "range": null,
     "description": "摄影棚，中景。电脑前说话与手势。",
     "keywords": [
@@ -4074,13 +4365,17 @@
     "shot": "中景",
     "sourceDuration": 5.6,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "交流与拍摄",
     "contentTags": [
       "个人工作",
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "电脑前说话与拍摄设备背景同框，可交代制作现场中的工作。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1lHRWPkwXZKBovBwSBwVsPNMC9aJ8jOhz/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4091,7 +4386,7 @@
     "title": "笔记本前托腮与说话",
     "filename": "working-call3.mp4",
     "category": "情绪与状态",
-    "activity": "托腮看屏幕",
+    "activity": "电脑前说话",
     "location": "室内",
     "orientation": "横屏",
     "duration": 7.1,
@@ -4099,24 +4394,26 @@
     "purposes": [
       "情绪"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p/preview",
-    "poster": "assets/drive-1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p.jpg",
-    "media": "previews/drive-1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p.mp4",
+    "poster": "assets/drive-1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p.jpg?v=b3cab92ee212",
+    "media": "previews/drive-1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p.mp4?v=83da114c5e68",
     "range": "0.0–7.1 秒",
-    "description": "室内，中近景。笔记本前托腮与说话。",
+    "description": "室内。笔记本前托腮与说话。",
     "keywords": [
-      "托腮看屏幕",
+      "笔记本前托腮与说话",
+      "电脑前说话",
+      "working-call3.mp4",
       "室内",
-      "中近景",
-      "笔记本前托腮与说话"
+      "思考",
+      "使用电脑"
     ],
     "driveId": "1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p",
     "shot": "中近景",
     "sourceDuration": 130.147846,
     "line": null,
-    "reviewNote": "检查开头多个关键帧，并检测全片黑屏区间。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "qualityNote": "预览已去掉 7.1 秒后的黑屏尾段；原片保留。",
     "previousCategory": "工作与办公",
     "contentTags": [
@@ -4124,9 +4421,18 @@
       "使用电脑"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://drive.google.com/file/d/1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p/view?usp=drivesdk",
-    "downloadLabel": "在 Drive 下载原片 ↗",
-    "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
+    "curation": "primary",
+    "curationReason": "暖光环境中的托腮与说话，具有独立场景；切片去掉原文件长黑尾。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 0,
+    "outPoint": 7.1,
+    "resolution": "3840 × 2160",
+    "frameRate": "30/1",
+    "selectionReason": "暖光环境中的托腮与说话，具有独立场景；切片去掉原文件长黑尾。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/drive-1jdVZiqi9GR3jsXCYfd3uoEZhgosIX69p.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "drive-1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w",
@@ -4142,11 +4448,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w/preview",
-    "poster": "assets/drive-1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w.jpg",
-    "media": "previews/drive-1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w.mp4",
+    "poster": "assets/drive-1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w.jpg?v=0795d57f471d",
+    "media": "previews/drive-1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w.mp4?v=62e4face6d90",
     "range": null,
     "description": "河边，中景。河边背影与城市天际线。",
     "keywords": [
@@ -4159,13 +4465,17 @@
     "shot": "中景",
     "sourceDuration": 3.333333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "日出日落",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "河边背影与城市全景，提供环境关系。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4184,11 +4494,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1SyD4e-AJZ-N1det99K0Q71N_yHki4Ymj/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1SyD4e-AJZ-N1det99K0Q71N_yHki4Ymj/preview",
-    "poster": "assets/drive-1SyD4e-AJZ-N1det99K0Q71N_yHki4Ymj.jpg",
-    "media": "previews/drive-1SyD4e-AJZ-N1det99K0Q71N_yHki4Ymj.mp4",
+    "poster": "assets/drive-1SyD4e-AJZ-N1det99K0Q71N_yHki4Ymj.jpg?v=c6b64c3bab11",
+    "media": "previews/drive-1SyD4e-AJZ-N1det99K0Q71N_yHki4Ymj.mp4?v=dfa733082384",
     "range": null,
     "description": "城市公园，近景。公园木栈道背影跟拍。",
     "keywords": [
@@ -4201,13 +4511,17 @@
     "shot": "近景",
     "sourceDuration": 5.6,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "同类木栈道背影已有 walkingnyc-8，本条迎面路人更集中。",
+    "alternativeId": "drive-1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1SyD4e-AJZ-N1det99K0Q71N_yHki4Ymj/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4226,11 +4540,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1dOHi3Zh7aeOVzQxs090P_KN9STHLVnXs/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1dOHi3Zh7aeOVzQxs090P_KN9STHLVnXs/preview",
-    "poster": "assets/drive-1dOHi3Zh7aeOVzQxs090P_KN9STHLVnXs.jpg",
-    "media": "previews/drive-1dOHi3Zh7aeOVzQxs090P_KN9STHLVnXs.mp4",
+    "poster": "assets/drive-1dOHi3Zh7aeOVzQxs090P_KN9STHLVnXs.jpg?v=06f215541756",
+    "media": "previews/drive-1dOHi3Zh7aeOVzQxs090P_KN9STHLVnXs.mp4?v=bc01ec98062b",
     "range": null,
     "description": "河边，中近景。河边站立侧头看向远处。",
     "keywords": [
@@ -4243,13 +4557,17 @@
     "shot": "中近景",
     "sourceDuration": 2.366667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "日出日落",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "夕阳正面站立覆盖较短，lookingaround-2 的构图与时间余量更好。",
+    "alternativeId": "drive-1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1dOHi3Zh7aeOVzQxs090P_KN9STHLVnXs/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4260,41 +4578,52 @@
     "title": "河边步行侧脸跟拍",
     "filename": "walkingnyc-3.mp4",
     "category": "生活与出行",
-    "activity": "河边行走",
+    "activity": "侧脸行走",
     "location": "河边",
     "orientation": "横屏",
-    "duration": 8.633333,
+    "duration": 5.0,
     "path": "yipengbroll/day in life/walkingnyc",
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH/preview",
-    "poster": "assets/drive-1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH.jpg",
-    "media": "previews/drive-1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH.mp4",
-    "range": null,
-    "description": "河边，近景。河边步行侧脸跟拍。",
+    "poster": "assets/drive-1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH.jpg?v=ef2dcbbdf9d4",
+    "media": "previews/drive-1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH.mp4?v=e4724f93f547",
+    "range": "3.2–8.2 秒",
+    "description": "河边。河边步行侧脸跟拍。",
     "keywords": [
-      "河边行走",
+      "河边步行侧脸跟拍",
+      "侧脸行走",
+      "walkingnyc-3.mp4",
       "河边",
-      "近景",
-      "河边步行侧脸跟拍"
+      "日出日落",
+      "自然环境"
     ],
     "driveId": "1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH",
     "shot": "近景",
     "sourceDuration": 8.633333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "日出日落",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://drive.google.com/file/d/1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH/view?usp=drivesdk",
-    "downloadLabel": "在 Drive 下载原片 ↗",
-    "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
+    "curation": "primary",
+    "curationReason": "保留夕阳下的侧脸跟拍，切掉人物过近贴出左边缘的前段。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 3.2,
+    "outPoint": 8.2,
+    "resolution": "5120 × 3840",
+    "frameRate": "30/1",
+    "selectionReason": "保留夕阳下的侧脸跟拍，切掉人物过近贴出左边缘的前段。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/drive-1-wOIXkDe2Ma4I4WdX3akGeW-jzgz5IyH.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "drive-1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz",
@@ -4310,11 +4639,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz/preview",
-    "poster": "assets/drive-1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz.jpg",
-    "media": "previews/drive-1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz.mp4",
+    "poster": "assets/drive-1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz.jpg?v=1b03b0e1e8e0",
+    "media": "previews/drive-1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz.mp4?v=48f7a1e14933",
     "range": null,
     "description": "河边，全景。夕阳河边全身走过。",
     "keywords": [
@@ -4327,13 +4656,17 @@
     "shot": "全景",
     "sourceDuration": 3.566667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "日出日落",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "人物剪影与日落城市的全景，作用是环境交代，不要求看清表情。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1TALy866V_3NFZSkQ6x_HmZ9tIo7Enwkz/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4352,11 +4685,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1qk-Xy-roWVU_wpSUeEqqaVTGV8l1H02m/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1qk-Xy-roWVU_wpSUeEqqaVTGV8l1H02m/preview",
-    "poster": "assets/drive-1qk-Xy-roWVU_wpSUeEqqaVTGV8l1H02m.jpg",
-    "media": "previews/drive-1qk-Xy-roWVU_wpSUeEqqaVTGV8l1H02m.mp4",
+    "poster": "assets/drive-1qk-Xy-roWVU_wpSUeEqqaVTGV8l1H02m.jpg?v=1fd9e34468d3",
+    "media": "previews/drive-1qk-Xy-roWVU_wpSUeEqqaVTGV8l1H02m.mp4?v=10f3bcc040a5",
     "range": null,
     "description": "城市公园，中景。公园边走边侧头。",
     "keywords": [
@@ -4369,13 +4702,17 @@
     "shot": "中景",
     "sourceDuration": 8.366667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "公园侧面跟拍可用，但多处头部贴上边缘、背景摊位较杂。",
+    "alternativeId": "drive-1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1qk-Xy-roWVU_wpSUeEqqaVTGV8l1H02m/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4394,11 +4731,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf/preview",
-    "poster": "assets/drive-1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf.jpg",
-    "media": "previews/drive-1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf.mp4",
+    "poster": "assets/drive-1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf.jpg?v=ca846e9a48aa",
+    "media": "previews/drive-1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf.mp4?v=9e44a8ca3f85",
     "range": null,
     "description": "Bryant Park 入口，中景。公园入口背影步行。",
     "keywords": [
@@ -4411,13 +4748,17 @@
     "shot": "中景",
     "sourceDuration": 4.733333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "进入公园广场的背影，环境展开明确。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4436,11 +4777,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1CtIZq6_lfuNHdRhI6HqRQ5dNHBq4EGSC/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1CtIZq6_lfuNHdRhI6HqRQ5dNHBq4EGSC/preview",
-    "poster": "assets/drive-1CtIZq6_lfuNHdRhI6HqRQ5dNHBq4EGSC.jpg",
-    "media": "previews/drive-1CtIZq6_lfuNHdRhI6HqRQ5dNHBq4EGSC.mp4",
+    "poster": "assets/drive-1CtIZq6_lfuNHdRhI6HqRQ5dNHBq4EGSC.jpg?v=60a0be7f884a",
+    "media": "previews/drive-1CtIZq6_lfuNHdRhI6HqRQ5dNHBq4EGSC.mp4?v=e8dfa958050d",
     "range": null,
     "description": "城市公园，中近景。经过公园座椅区。",
     "keywords": [
@@ -4453,13 +4794,17 @@
     "shot": "中近景",
     "sourceDuration": 8.0,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "座椅区背影与公园入口较接近，人物偏画面边缘、背景行人较密。",
+    "alternativeId": "drive-1Q85KPf5_n23T9GJ9PL5Jv6Mis8-Ip4gf",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1CtIZq6_lfuNHdRhI6HqRQ5dNHBq4EGSC/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4478,11 +4823,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu/preview",
-    "poster": "assets/drive-1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu.jpg",
-    "media": "previews/drive-1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu.mp4",
+    "poster": "assets/drive-1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu.jpg?v=dc71ce81c0c1",
+    "media": "previews/drive-1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu.mp4?v=0df97035161a",
     "range": null,
     "description": "城市公园，近景。公园小径背影行走。",
     "keywords": [
@@ -4495,13 +4840,17 @@
     "shot": "近景",
     "sourceDuration": 8.566667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "树荫木栈道和栏杆形成引导线，前后纵深明确。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4520,11 +4869,11 @@
     "purposes": [
       "转场"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/10s9QOPO5DN3kBuAIKs7EhNDpYPb4iA6i/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/10s9QOPO5DN3kBuAIKs7EhNDpYPb4iA6i/preview",
-    "poster": "assets/drive-10s9QOPO5DN3kBuAIKs7EhNDpYPb4iA6i.jpg",
-    "media": "previews/drive-10s9QOPO5DN3kBuAIKs7EhNDpYPb4iA6i.mp4",
+    "poster": "assets/drive-10s9QOPO5DN3kBuAIKs7EhNDpYPb4iA6i.jpg?v=03ba2e7d9614",
+    "media": "previews/drive-10s9QOPO5DN3kBuAIKs7EhNDpYPb4iA6i.mp4?v=903df73efbd0",
     "range": null,
     "description": "城市公园，近景。树荫步道背影跟拍。",
     "keywords": [
@@ -4537,13 +4886,17 @@
     "shot": "近景",
     "sourceDuration": 4.566667,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "旅行",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "与同组木栈道跟拍接近，主体较近、可见环境较少。",
+    "alternativeId": "drive-1cQR3RlonKsGk96pVPjtb53Q0IgRQsUxu",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/10s9QOPO5DN3kBuAIKs7EhNDpYPb4iA6i/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4551,44 +4904,55 @@
   {
     "id": "drive-1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind",
     "source": "drive",
-    "title": "倚栏看水面与侧脸绕拍",
+    "title": "倚栏侧脸与城市水面",
     "filename": "lookingaround1-1.mp4",
     "category": "生活与出行",
-    "activity": "倚栏远望",
+    "activity": "倚栏看远处",
     "location": "河边",
     "orientation": "横屏",
-    "duration": 5.3,
+    "duration": 3.1,
     "path": "yipengbroll/day in life/lookingaround",
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind/preview",
-    "poster": "assets/drive-1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind.jpg",
-    "media": "previews/drive-1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind.mp4",
-    "range": null,
-    "description": "河边，中景。倚栏看水面与侧脸绕拍。",
+    "poster": "assets/drive-1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind.jpg?v=1b474f9f33ee",
+    "media": "previews/drive-1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind.mp4?v=1e1251fc1717",
+    "range": "2.0–5.1 秒",
+    "description": "河边。倚栏侧脸与城市水面。",
     "keywords": [
-      "倚栏远望",
+      "倚栏侧脸与城市水面",
+      "倚栏看远处",
+      "lookingaround1-1.mp4",
       "河边",
-      "中景",
-      "倚栏看水面与侧脸绕拍"
+      "日出日落",
+      "自然环境"
     ],
     "driveId": "1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind",
     "shot": "中景",
     "sourceDuration": 5.3,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "日出日落",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
-    "downloadUrl": "https://drive.google.com/file/d/1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind/view?usp=drivesdk",
-    "downloadLabel": "在 Drive 下载原片 ↗",
-    "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
+    "curation": "primary",
+    "curationReason": "栏杆边侧脸与水面有层次，改选绕拍后段，避开过近的开头。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
+    "inPoint": 2.0,
+    "outPoint": 5.1,
+    "resolution": "5120 × 3840",
+    "frameRate": "30/1",
+    "selectionReason": "栏杆边侧脸与水面有层次，改选绕拍后段，避开过近的开头。",
+    "previewNote": "预览为轻量副本；下载为原分辨率切片。完整原片保留在素材来源中。",
+    "downloadUrl": "https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26-review2/drive-1uvMxe7nVxVlGjN77xsshd6tZkHU6Nind.mp4",
+    "downloadLabel": "下载切片（原分辨率）↓"
   },
   {
     "id": "drive-1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK",
@@ -4604,11 +4968,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK/preview",
-    "poster": "assets/drive-1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK.jpg",
-    "media": "previews/drive-1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK.mp4",
+    "poster": "assets/drive-1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK.jpg?v=761bb4d6d956",
+    "media": "previews/drive-1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK.mp4?v=4f75850e051c",
     "range": null,
     "description": "河边，中景。夕阳下正面环顾。",
     "keywords": [
@@ -4621,13 +4985,17 @@
     "shot": "中景",
     "sourceDuration": 10.733333,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "日出日落",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "primary",
+    "curationReason": "夕阳下正面与转头都清楚，有足够的留白和使用余量。",
+    "alternativeId": null,
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1YKCWpGjZsiVPfZjveT09IX6OTkrnByLK/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"
@@ -4646,11 +5014,11 @@
     "purposes": [
       "环境"
     ],
-    "review": "keyframes",
+    "review": "visual",
     "original": "https://drive.google.com/file/d/1pMN9fWwkH7ADQpcHV-I3e052-0sYTOAq/view?usp=drivesdk",
     "preview": "https://drive.google.com/file/d/1pMN9fWwkH7ADQpcHV-I3e052-0sYTOAq/preview",
-    "poster": "assets/drive-1pMN9fWwkH7ADQpcHV-I3e052-0sYTOAq.jpg",
-    "media": "previews/drive-1pMN9fWwkH7ADQpcHV-I3e052-0sYTOAq.mp4",
+    "poster": "assets/drive-1pMN9fWwkH7ADQpcHV-I3e052-0sYTOAq.jpg?v=ce4c7f137d92",
+    "media": "previews/drive-1pMN9fWwkH7ADQpcHV-I3e052-0sYTOAq.mp4?v=a48c6bdad1c6",
     "range": null,
     "description": "河边，中景。河边背影转头环顾。",
     "keywords": [
@@ -4663,13 +5031,17 @@
     "shot": "中景",
     "sourceDuration": 3.4,
     "line": null,
-    "reviewNote": "已核对前、中、后关键帧；不等同于逐帧审片。本地副本与 Drive 文件名、字节大小一致。",
+    "reviewNote": "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。",
     "previousCategory": "日常与出行",
     "contentTags": [
       "日出日落",
       "自然环境"
     ],
     "taxonomyVersion": "soowei-coarse-v1",
+    "curation": "backup",
+    "curationReason": "夕阳背影与 walkingnyc-1 接近，本条头部占比更大。",
+    "alternativeId": "drive-1D7RnkT5ntqIwpx-V4EVkR6jxJCQQJ88w",
+    "reviewRevision": "2026-09-26-full-reaudit",
     "downloadUrl": "https://drive.google.com/file/d/1pMN9fWwkH7ADQpcHV-I3e052-0sYTOAq/view?usp=drivesdk",
     "downloadLabel": "在 Drive 下载原片 ↗",
     "previewNote": "当前播放轻量预览；原片可在 Drive 打开或下载。预览默认静音。"

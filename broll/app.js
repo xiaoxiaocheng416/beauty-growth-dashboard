@@ -50,7 +50,7 @@ function render() {
 }
 function openDetail(r) {
   current = r; $('#player').replaceChildren();
-  if (r.media) { const v = el('video'); v.controls = true; v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = r.media; v.poster = r.poster; v.addEventListener('error', () => { const n = el('div','player-error'); n.append(el('p','','预览文件暂时无法播放。可以打开视频文件查看。')); const a = el('a','button','打开视频文件 ↗'); a.href = r.original || r.downloadUrl || r.media; a.target = '_blank'; a.rel = 'noopener'; n.append(a); $('#player').replaceChildren(n); }); $('#player').append(v); }
+  if (r.media) { const v = el('video'); v.controls = true; v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = r.media; v.poster = r.poster; v.addEventListener('error', () => { const n = el('div','player-error'); n.append(el('p','','预览文件暂时无法播放。可以打开视频文件查看。')); const a = el('a','button','打开视频文件 ↗'); a.href = r.cutMedia || r.original || r.downloadUrl || r.media; a.target = '_blank'; a.rel = 'noopener'; n.append(a); $('#player').replaceChildren(n); }); $('#player').append(v); }
   else { const iframe = el('iframe'); iframe.src = r.preview; iframe.title = `Google Drive 视频预览：${r.filename}`; iframe.allow = 'fullscreen'; iframe.allowFullscreen = true; $('#player').append(iframe); }
   $('#detail-meta').textContent = (sourceNames[r.source] || r.source) + ' / ' + r.category;
   $('#detail-title').textContent = r.title; $('#detail-tags').replaceChildren(tags(r)); $('#detail-description').textContent = r.description;

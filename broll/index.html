@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B-roll 索引 · Yipeng</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111110'/%3E%3Cpath d='M12 8L25 16L12 24Z' fill='%23d8ff67'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark">▷</span> B-ROLL <small>YIPENG</small></a>
+    <div class="side-label">按画面内容找</div>
+    <nav id="categories" aria-label="内容分类"></nav>
+    <div class="side-note"><span class="green-dot"></span>原片留在原来的位置<br>这里负责检索与预览。</div>
+    <button class="text-button" id="sop-open">Soowei 的整理方法 ↗</button>
+    <a class="text-button" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/10-X1HK9bXK3oMkZBUrG9qxF3loltNjrW">打开 Drive 素材库 ↗</a>
+  </aside>
+  <main>
+    <header>
+      <div><div class="eyebrow">素材索引</div><h1>找到这一句需要的画面。</h1></div>
+      <div class="collection-stats"><b id="total">104</b><span>条已归档 · <span id="drive-total">44</span> Drive / <span id="local-total">23</span> 芽庄 / <span id="batch-total">21</span> 9/26 / <span id="raw-total">16</span> Drive 新切片</span></div>
+    </header>
+    <section class="controls" aria-label="筛选素材">
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" aria-label="搜索素材" placeholder="搜索动作、情绪、地点或文件名，例如：思考、团队、看海"></label>
+      <div class="purpose-row"><span class="filter-label">内容标签</span><div id="purposes" class="chips" role="group" aria-label="内容标签"></div></div>
+      <button id="mobile-filters" class="mobile-filters button secondary" aria-expanded="false" aria-controls="advanced-filters">更多筛选</button>
+      <div class="select-row" id="advanced-filters">
+        <label>显示<select id="curation"><option value="primary">常用素材</option><option value="backup">备选</option><option value="hold">暂不推荐</option><option value="all">全部归档</option></select></label>
+        <label>来源<select id="source"><option value="">全部来源</option><option value="drive">Drive 旧素材</option><option value="local">芽庄切片</option><option value="batch0926">9/26 切片</option><option value="driveraw0926">Drive 新切片</option></select></label>
+        <label>剪辑用途<select id="editorial-purpose"><option value="">全部用途</option><option>情绪</option><option>环境</option><option>转场</option><option>证据</option></select></label>
+        <label>画幅<select id="orientation"><option value="">全部画幅</option><option>横屏</option><option>竖屏</option><option>待确认</option></select></label>
+        <label>标注依据<select id="review"><option value="">全部素材</option><option value="visual">已看画面选段</option><option value="keyframes">已核对关键帧</option></select></label>
+        <label class="fav-toggle"><input id="favorites" type="checkbox">只看收藏</label>
+        <button id="reset" class="text-button">清空筛选</button>
+      </div>
+      <p class="curation-summary">Drive 新切片：13 段常用 · 3 段备选。9/26 与芽庄原片正在复审。</p>
+    </section>
+    <div class="result-bar"><span id="result-count" aria-live="polite"></span><span class="snapshot">Drive 目录快照 · 2026-09-26 <button id="sync-info" title="查看更新说明" aria-label="查看更新说明">ⓘ</button></span></div>
+    <section id="grid" class="grid" aria-label="素材列表"></section>
+    <section id="empty" class="empty" hidden><h2>这里还没有匹配的素材</h2><p id="empty-text">换一个关键词，或清空部分筛选。</p><button id="empty-reset" class="button">清空筛选</button></section>
+    <footer><a href="https://github.com/xiaoxiaocheng416/beauty-growth-dashboard/releases/download/broll-2026-09-26/drive-new-16-clips.zip" download>下载 Drive 新批次全部切片（16 段）↓</a><br>先按五个大类和粗标签找素材，具体动作见标题，剪辑用途单独记录。收藏仅保存在当前浏览器。</footer>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <button class="close" id="detail-close" aria-label="关闭预览">×</button>
+    <div id="player" class="player"></div>
+    <div class="detail-body"><div id="detail-meta" class="eyebrow"></div><h2 id="detail-title"></h2><div id="detail-tags" class="tags"></div><p id="detail-description"></p><div id="detail-line" class="line-example" hidden><h3>可配导语 · 使用建议</h3><p id="detail-line-text"></p></div><p id="detail-curation" class="detail-evidence" hidden></p><button id="detail-alternative" class="text-button" hidden></button><p id="detail-quality" class="quality-note" hidden></p><p id="detail-evidence" class="detail-evidence"></p><dl id="detail-fields"></dl><div class="detail-actions"><a id="detail-original" class="button" target="_blank" rel="noopener">打开原片 ↗</a><a id="detail-download" class="button secondary">打开切片 ↗</a><button id="detail-favorite" class="button secondary">收藏</button></div><p class="small" id="detail-note"></p></div>
+  </dialog>
+  <dialog id="sop" aria-labelledby="sop-title"><button class="close" id="sop-close" aria-label="关闭说明">×</button><div class="sop-content"><div class="eyebrow">MASTER B-ROLL · SOOWEI / GOH</div><h2 id="sop-title">按内容存，按用途找。</h2><p>SOP 建议用一个月里经常发生的活动、动作和情绪来建素材目录，再在剪辑时判断镜头承担什么作用。</p><div class="sop-table"><div><b>情绪 Emotion</b><p>表情、反应、努力和感受，让观众与人物建立连接。</p></div><div><b>环境 Context</b><p>交代地点、空间和事件背景。</p></div><div><b>转场 Transition</b><p>用动作或移动连接前后两个画面。</p></div><div><b>证据 Proof</b><p>支持具体说法的实际工作、屏幕、成果、客户评价等。必须结合要证明的说法判断。</p></div></div><h3>这个索引怎么整理</h3><p>左侧按工作与团队、生活与出行、经历／成果／幕后、情绪与状态、收款证据五类整理。顶部按使用电脑、使用手机、旅行、海滩、思考等粗标签检索；具体动作见标题。剪辑用途单独筛选，随着素材增加再细分。</p><p>44 条旧素材已核对本地副本的前、中、后关键帧，按可见动作修正分类；关键帧检查不等于逐帧审片。23 条芽庄切片保留原片入出点。「9/26 切片」从 16 条原片中选出 21 个短片段，按每秒一帧检查并核对切片首尾，保留原片入出点。其中 9 段作为常用，10 段放备选，2 段暂不推荐；未删除视频文件。预览为轻量副本，下载切片保留原分辨率。</p><p>Drive 新切片从 13 条原片中选用 10 条，导出 16 段；原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查。序列抽帧不等同实时连续播放验收。HDR 已转为标准 SDR，保留原分辨率、原速和现场原声。</p><p>导语仅在少量画面明确匹配时给出，每条最多一句，并标为建议。坐在电脑前不自动算成果证据；托腮也不直接断言焦虑或迷茫。</p><a class="button" target="_blank" rel="noopener" href="https://docs.google.com/document/d/1GGlUBLaP3Y4k3uoWwZewbsYWzCe4A_0X3WkyQzebo00/edit">查看 SOP 原文 ↗</a></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

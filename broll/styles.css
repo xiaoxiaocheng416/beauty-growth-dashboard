@@ -56,3 +56,5 @@ html:has(dialog[open]){overflow:hidden}dialog{overscroll-behavior:contain}
   .sop-content{padding:54px 20px 24px}.toast{bottom:max(16px,env(safe-area-inset-bottom));width:max-content}
 }
 @media(max-width:420px){.grid{grid-template-columns:1fr}.collection-stats{display:none}}
+
+.language-toggle{white-space:nowrap;margin-left:auto}.collection-stats{max-width:360px}html[lang="en"] .category{gap:8px}html[lang="en"] .category span{line-height:1.35}html[lang="en"] .detail-actions{flex-wrap:wrap}@media(max-width:800px){header{flex-wrap:wrap}.language-toggle{margin-left:0}.collection-stats{max-width:none}html[lang="en"] h1{font-size:25px}}

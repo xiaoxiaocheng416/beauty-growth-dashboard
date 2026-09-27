@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>B-roll 索引 · Yipeng</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111110'/%3E%3Cpath d='M12 8L25 16L12 24Z' fill='%23d8ff67'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=4cf4afd97dbb">
-  <script src="data.js?v=e35c91ff9b92" defer></script>
-  <script src="app.js?v=384135af3d31" defer></script>
+  <link rel="stylesheet" href="styles.css?v=e318c4f282a5">
+  <script src="data.js?v=27a763ecc7eb" defer></script>
+  <script src="i18n.js?v=b5a704bf2385" defer></script>
+  <script src="app.js?v=2aab2fac2601" defer></script>
 </head>
 <body>
   <aside class="sidebar">
@@ -21,7 +22,7 @@
   <main>
     <header>
       <div><div class="eyebrow">素材索引</div><h1>找到这一句需要的画面。</h1></div>
-      <div class="collection-stats"><b id="total">109</b><span>条已归档 · <span id="drive-total">44</span> Drive / <span id="local-total">28</span> 芽庄 / <span id="batch-total">21</span> 9/26 / <span id="raw-total">16</span> Drive 新切片</span></div>
+      <button class="button secondary language-toggle" id="language-toggle" type="button" aria-label="Switch to English">English</button><div class="collection-stats"><b id="total">109</b><span>条已归档 · <span id="drive-total">44</span> Drive / <span id="local-total">28</span> 芽庄 / <span id="batch-total">21</span> 9/26 / <span id="raw-total">16</span> Drive 新切片</span></div>
     </header>
     <section class="controls" aria-label="筛选素材">
       <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" aria-label="搜索素材" placeholder="搜索动作、情绪、地点或文件名，例如：思考、团队、看海"></label>
@@ -46,9 +47,9 @@
   <dialog id="detail" aria-labelledby="detail-title">
     <button class="close" id="detail-close" aria-label="关闭预览">×</button>
     <div id="player" class="player"></div>
-    <div class="detail-body"><div id="detail-meta" class="eyebrow"></div><h2 id="detail-title"></h2><div id="detail-tags" class="tags"></div><p id="detail-description"></p><div id="detail-line" class="line-example" hidden><h3>可配导语 · 使用建议</h3><p id="detail-line-text"></p></div><p id="detail-curation" class="detail-evidence" hidden></p><button id="detail-alternative" class="text-button" hidden></button><p id="detail-quality" class="quality-note" hidden></p><p id="detail-evidence" class="detail-evidence"></p><dl id="detail-fields"></dl><div class="detail-actions"><a id="detail-original" class="button" target="_blank" rel="noopener">打开原片 ↗</a><a id="detail-download" class="button secondary">打开切片 ↗</a><button id="detail-favorite" class="button secondary">收藏</button></div><p class="small" id="detail-note"></p></div>
+    <div class="detail-body"><div id="detail-meta" class="eyebrow"></div><h2 id="detail-title"></h2><div id="detail-tags" class="tags"></div><p id="detail-description"></p><div id="detail-line" class="line-example" hidden><h3>可配导语 · 使用建议</h3><p id="detail-line-text"></p></div><p id="detail-curation" class="detail-evidence" hidden></p><button id="detail-alternative" class="text-button" hidden></button><p id="detail-quality" class="quality-note" hidden></p><p id="detail-evidence" class="detail-evidence"></p><dl id="detail-fields"></dl><div class="detail-actions"><a id="detail-original" class="button" target="_blank" rel="noopener">打开原片 ↗</a><a id="detail-drive-cut" class="button secondary" target="_blank" rel="noopener" hidden>在 Drive 打开切片 ↗</a><a id="detail-download" class="button secondary">打开切片 ↗</a><button id="detail-favorite" class="button secondary">收藏</button></div><p class="small" id="detail-note"></p></div>
   </dialog>
-  <dialog id="sop" aria-labelledby="sop-title"><button class="close" id="sop-close" aria-label="关闭说明">×</button><div class="sop-content"><div class="eyebrow">MASTER B-ROLL · SOOWEI / GOH</div><h2 id="sop-title">按内容存，按用途找。</h2><p>SOP 建议用一个月里经常发生的活动、动作和情绪来建素材目录，再在剪辑时判断镜头承担什么作用。</p><div class="sop-table"><div><b>情绪 Emotion</b><p>表情、反应、努力和感受，让观众与人物建立连接。</p></div><div><b>环境 Context</b><p>交代地点、空间和事件背景。</p></div><div><b>转场 Transition</b><p>用动作或移动连接前后两个画面。</p></div><div><b>证据 Proof</b><p>支持具体说法的实际工作、屏幕、成果、客户评价等。必须结合要证明的说法判断。</p></div></div><h3>这个索引怎么整理</h3><p>左侧按工作与团队、生活与出行、经历／成果／幕后、情绪与状态、收款证据五类整理。顶部按使用电脑、使用手机、旅行、海滩等粗标签检索；具体动作见标题。剪辑用途单独筛选，随着素材增加再细分。</p><p>本轮重新复核芽庄 17 条原片、9/26 的 17 条非情侣原片，以及 44 条旧视频。全片画面时间轴按每秒 1 帧检查，重点候选以每秒 4 帧比较，17 条已重新导出。不同景别、角度和动作可以同时保留；只有用途接近时才择优。序列抽帧不等同正常速度连续播放验收。</p><p>Drive 新切片从 13 条原片中选用 10 条，导出 16 段；原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查。序列抽帧不等同实时连续播放验收。切片现保留原片 HDR / Dolby Vision 色彩、原分辨率、原速和现场原声；不调色，不做 HDR 转 SDR。网页直接播放原色切片，缩略图使用系统色彩转换。</p><p>导语仅在少量画面明确匹配时给出，每条最多一句，并标为建议。坐在电脑前不自动算成果证据；托腮也不直接断言焦虑或迷茫。</p><a class="button" target="_blank" rel="noopener" href="https://docs.google.com/document/d/1GGlUBLaP3Y4k3uoWwZewbsYWzCe4A_0X3WkyQzebo00/edit">查看 SOP 原文 ↗</a></div></dialog>
+  <dialog id="sop" aria-labelledby="sop-title"><button class="close" id="sop-close" aria-label="关闭说明">×</button><div class="sop-content"><div class="eyebrow">MASTER B-ROLL · SOOWEI / GOH</div><h2 id="sop-title">按内容存，按用途找。</h2><p>SOP 建议用一个月里经常发生的活动、动作和情绪来建素材目录，再在剪辑时判断镜头承担什么作用。</p><div class="sop-table"><div><b>情绪 Emotion</b><p>表情、反应、努力和感受，让观众与人物建立连接。</p></div><div><b>环境 Context</b><p>交代地点、空间和事件背景。</p></div><div><b>转场 Transition</b><p>用动作或移动连接前后两个画面。</p></div><div><b>证据 Proof</b><p>支持具体说法的实际工作、屏幕、成果、客户评价等。必须结合要证明的说法判断。</p></div></div><h3>这个索引怎么整理</h3><p>左侧按工作与团队、生活与出行、经历／成果／幕后、情绪与状态、收款证据五类整理。顶部按使用电脑、使用手机、旅行、海滩等粗标签检索；具体动作见标题。剪辑用途单独筛选，随着素材增加再细分。</p><p>标签已统一复核：场景与可见动作一起标记，例如「旅行＋行走」。机位移动不等于人物行走；托腮、微笑按实际画面标记，不推断内心感受。</p><p>全库 109 条已结合现有审片记录与当前切片三点画面重新核对标签。抽帧复核不等同正常速度连续播放验收。原有切点与用户取舍保留。</p><p>原色 HDR 切片保留原码流，不做 HDR 转 SDR；播放效果取决于设备支持。其他预览为轻量副本，下载保留原分辨率。</p><p>导语仅在少量画面明确匹配时给出，每条最多一句，并标为建议。坐在电脑前不自动算成果证据；托腮也不直接断言焦虑或迷茫。</p><a class="button" target="_blank" rel="noopener" href="https://docs.google.com/document/d/1GGlUBLaP3Y4k3uoWwZewbsYWzCe4A_0X3WkyQzebo00/edit">查看 SOP 原文 ↗</a></div></dialog>
   <div id="toast" class="toast" role="status" hidden></div>
 </body>
 </html>

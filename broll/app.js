@@ -9,7 +9,6 @@ const items = window.BROLL_DATA;
 const categoryNames = ['全部素材', '工作与团队', '生活与出行', '经历、成果与幕后', '情绪与状态', '收款证据'];
 const contentTagNames = ['全部标签', ...new Set(items.flatMap(r => r.contentTags || []))];
 const sourceNames = {drive: 'Drive 旧素材', local: '芽庄切片', batch0926: '9/26 切片', driveraw0926: 'Drive 新切片'};
-const sourceBadges = {drive: 'Drive', local: '芽庄', batch0926: '9/26', driveraw0926: 'Drive 新'};
 const curationNames = {primary:'常用', backup:'备选', hold:'暂不推荐'};
 let category = '全部素材', contentTag = '全部标签', current = null;
 let favorites = new Set();
@@ -46,9 +45,9 @@ function render() {
   records.forEach(raw => {
     const r = displayRecord(raw);
     const card = el('article', 'card'), visual = el('button', 'visual'); visual.setAttribute('aria-label', `${language === 'en' ? 'Preview: ' : '预览：'}${r.title}`); visual.onclick = () => openDetail(raw);
-    const fallback = el('span','cloud-cover'); fallback.append(el('b','',r.activity),el('small','',t(sourceNames[r.source] || r.source) + (language === 'en' ? ' · Preview' : ' · 点击预览'))); visual.append(fallback);
+    const fallback = el('span','cloud-cover'); fallback.append(el('b','',r.activity),el('small','',language === 'en' ? 'Preview' : '点击预览')); visual.append(fallback);
     if (r.poster) { const img = el('img'); img.src = r.poster; img.alt = r.title + (language === 'en' ? ' thumbnail' : '的画面缩略图'); img.loading = 'lazy'; img.onload = () => { fallback.hidden = true; }; img.onerror = () => { img.remove(); fallback.hidden = false; }; visual.append(img); }
-    visual.append(el('span','play-icon','▷'),el('span','source-badge',sourceBadges[r.source] || r.source));
+    visual.append(el('span','play-icon','▷'));
     visual.append(el('span','duration', `${r.orientation}${r.duration !== null ? ' · ' + r.duration.toFixed(1) + 's' : ''}`));
     const body = el('div','card-body'), top = el('div','card-top'), fav = el('button','favorite' + (favorites.has(r.id) ? ' saved' : ''), favorites.has(r.id) ? '★' : '☆');
     fav.setAttribute('aria-label', (language === 'en' ? (favorites.has(r.id) ? 'Remove favorite: ' : 'Save: ') : (favorites.has(r.id) ? '取消收藏：' : '收藏：')) + r.title); fav.setAttribute('aria-pressed', String(favorites.has(r.id))); fav.onclick = () => saveFavorite(r.id);
@@ -102,9 +101,7 @@ $('#detail').addEventListener('cancel',()=>{$('#player').replaceChildren();curre
 $('#detail').addEventListener('click',e=>{if(e.target===$('#detail')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDetail();}});
 $('#sop-open').onclick=()=>$('#sop').showModal();$('#sop-close').onclick=()=>$('#sop').close();
 $('#sync-info').onclick=()=>notice('这是 2026-09-26 的目录索引，尚未自动同步。Drive 新增素材后，需要重新扫描并更新索引。');
-$('#total').textContent=items.length;$('#drive-total').textContent=items.filter(r=>r.source==='drive').length;$('#local-total').textContent=items.filter(r=>r.source==='local').length;
-$('#batch-total').textContent=items.filter(r=>r.source==='batch0926').length;
-$('#raw-total').textContent=items.filter(r=>r.source==='driveraw0926').length;
+$('#total').textContent=items.length;
 const requestedSource = new URLSearchParams(location.hash.slice(1)).get('source');
 if (requestedSource && items.some(r => r.source === requestedSource)) $('#source').value = requestedSource;
 applyStaticLanguage();

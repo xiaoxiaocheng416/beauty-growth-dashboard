@@ -1,4 +1,5 @@
 window.BROLL_EN_UI = {
+  "条已归档": "clips archived",
   "B-roll 索引 · Yipeng": "B-roll Library · Yipeng",
   "按画面内容找": "Browse by content",
   "原片留在原来的位置": "Originals stay in their source folders",

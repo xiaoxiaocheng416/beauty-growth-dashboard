@@ -55,9 +55,20 @@ function render() {
     card.append(visual,body); $('#grid').append(card);
   });
 }
+function driveLink(value, download = false) {
+  if (!value) return '';
+  let u; try { u = new URL(value); } catch { return value; }
+  if (u.hostname !== 'drive.google.com' && u.hostname !== 'drive.usercontent.google.com') return value;
+  const id = u.pathname.match(/\/file\/d\/([^/]+)/)?.[1] || u.searchParams.get('id');
+  if (!id) return value;
+  const locale = language === 'en' ? 'en' : 'zh-CN';
+  return download
+    ? `https://drive.google.com/uc?export=download&id=${encodeURIComponent(id)}&hl=${locale}`
+    : `https://drive.google.com/file/d/${encodeURIComponent(id)}/view?hl=${locale}`;
+}
 function openDetail(raw) {
   current = raw; const r = displayRecord(raw); $('#player').replaceChildren();
-  if (r.media) { const v = el('video'); v.controls = true; v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = r.media; v.poster = r.poster; v.addEventListener('error', () => { const n = el('div','player-error'); n.append(el('p','','预览文件暂时无法播放。可以打开视频文件查看。')); const a = el('a','button','打开视频文件 ↗'); a.href = r.cutMedia || r.original || r.downloadUrl || r.media; a.target = '_blank'; a.rel = 'noopener'; n.append(a); $('#player').replaceChildren(n); }); $('#player').append(v); }
+  if (r.media) { const v = el('video'); v.controls = true; v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = r.media; v.poster = r.poster; v.addEventListener('error', () => { const n = el('div','player-error'); n.append(el('p','','预览文件暂时无法播放。可以打开视频文件查看。')); const a = el('a','button','打开视频文件 ↗'); a.href = driveLink(r.downloadUrl || r.cutMedia || r.media || r.original, true); a.target = '_blank'; a.rel = 'noopener'; n.append(a); $('#player').replaceChildren(n); }); $('#player').append(v); }
   else { const iframe = el('iframe'); iframe.src = r.preview; iframe.title = `Google Drive ${language === 'en' ? 'preview: ' : '视频预览：'}${r.filename}`; iframe.allow = 'fullscreen'; iframe.allowFullscreen = true; $('#player').append(iframe); }
   $('#detail-meta').textContent = t(sourceNames[r.source] || r.source) + ' / ' + r.category;
   $('#detail-title').textContent = r.title; $('#detail-tags').replaceChildren(tags(r)); $('#detail-description').textContent = r.description;
@@ -76,21 +87,23 @@ function openDetail(raw) {
   if (r.resolution) fields.push(['切片分辨率',r.resolution]);
   if (r.sourceDuration && r.sourceDuration > r.duration + 1) fields.push(['原片时长',r.sourceDuration.toFixed(2) + (language === 'en' ? ' s' : ' 秒')]);
   if (r.range) fields.push(['原片时间',r.range]); $('#detail-fields').replaceChildren(); fields.forEach(([a,b])=>$('#detail-fields').append(el('dt','',a),el('dd','',b)));
-  $('#detail-original').href = r.original; $('#detail-original').textContent = t((r.source === 'drive' || r.driveId) ? '在 Drive 打开原片 ↗' : '打开本地原片 ↗');
-  $('#detail-download').hidden = !r.media; $('#detail-download').href = r.cutMedia || r.rawMedia || r.media;
-  $('#detail-download').textContent = t(r.cutMedia ? '下载切片（原分辨率）↓' : r.source === 'drive' ? '打开本地原画质副本 ↗' : r.source === 'batch0926' ? '打开预览视频 ↗' : '打开切片 ↗');
-  if (r.source === 'batch0926') $('#detail-download').href = r.cutMedia || r.media;
-  if (r.cutMedia) $('#detail-download').setAttribute('download', r.cutMedia.split('/').pop()); else $('#detail-download').removeAttribute('download');
-  $('#detail-original').hidden = !r.original;
-  if (r.downloadUrl) {
-    $('#detail-download').href = r.downloadUrl;
-    $('#detail-download').textContent = r.downloadLabel || t('下载视频 ↓');
-    if (r.downloadUrl.startsWith('downloads/')) $('#detail-download').setAttribute('download', r.id + '.mp4');
-  }
+  const primaryUrl = r.downloadUrl || r.cutMedia || r.rawMedia || r.media;
+  const rawUrl = driveLink(r.original, true);
+  const downloadUrl = driveLink(primaryUrl, true);
+  $('#detail-download').hidden = !downloadUrl;
+  $('#detail-download').href = downloadUrl || '';
+  $('#detail-download').textContent = t(r.downloadLabel?.includes('原片') || (r.source === 'drive' && !r.cutMedia && primaryUrl === r.original) ? '下载原片 ↓' : '下载切片（原分辨率）↓');
+  $('#detail-download').setAttribute('download', r.filename || r.id + '.mp4');
+  $('#detail-original').href = rawUrl || '';
+  $('#detail-original').textContent = t('下载原片 ↓');
+  $('#detail-original').hidden = !rawUrl || rawUrl === downloadUrl;
+  $('#detail-original').setAttribute('download', r.filename || 'original.mp4');
   $('#detail-favorite').textContent = t(favorites.has(r.id) ? '已收藏 ★' : '收藏 ☆'); $('#detail-favorite').onclick = () => saveFavorite(r.id);
   $('#detail-note').textContent = r.previewNote || t('保留现场原声，预览默认静音。未调色、未变速。');
-  $('#detail-drive-cut').hidden = !r.driveCutUrl;
-  if (r.driveCutUrl) $('#detail-drive-cut').href = r.driveCutUrl;
+  const drivePreview = r.driveCutUrl || (r.original?.includes('drive.google.com') ? r.original : '');
+  $('#detail-drive-cut').hidden = !drivePreview;
+  $('#detail-drive-cut').href = driveLink(drivePreview);
+  $('#detail-drive-cut').textContent = t('在 Drive 查看 ↗');
   if (!$('#detail').open) $('#detail').showModal();
 }
 function closeDetail() { $('#player').replaceChildren(); current = null; $('#detail').close(); }

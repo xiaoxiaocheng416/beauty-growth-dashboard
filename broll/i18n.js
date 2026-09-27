@@ -1,4 +1,6 @@
 window.BROLL_EN_UI = {
+  "下载原片 ↓": "Download original ↓",
+  "在 Drive 查看 ↗": "View in Drive ↗",
   "条已归档": "clips archived",
   "B-roll 索引 · Yipeng": "B-roll Library · Yipeng",
   "按画面内容找": "Browse by content",

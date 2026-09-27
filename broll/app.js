@@ -92,10 +92,10 @@ function openDetail(raw) {
   const downloadUrl = driveLink(primaryUrl, true);
   $('#detail-download').hidden = !downloadUrl;
   $('#detail-download').href = downloadUrl || '';
-  $('#detail-download').textContent = t(r.downloadLabel?.includes('原片') || (r.source === 'drive' && !r.cutMedia && primaryUrl === r.original) ? '下载原片 ↓' : '下载切片（原分辨率）↓');
+  $('#detail-download').textContent = t(r.downloadLabel?.includes('原片') || (r.source === 'drive' && !r.cutMedia && primaryUrl === r.original) ? '下载未剪辑完整原片 ↓' : '下载已剪辑片段 ↓');
   $('#detail-download').setAttribute('download', r.filename || r.id + '.mp4');
   $('#detail-original').href = rawUrl || '';
-  $('#detail-original').textContent = t('下载原片 ↓');
+  $('#detail-original').textContent = t('下载未剪辑完整原片 ↓');
   $('#detail-original').hidden = !rawUrl || rawUrl === downloadUrl;
   $('#detail-original').setAttribute('download', r.filename || 'original.mp4');
   $('#detail-favorite').textContent = t(favorites.has(r.id) ? '已收藏 ★' : '收藏 ☆'); $('#detail-favorite').onclick = () => saveFavorite(r.id);
@@ -103,7 +103,7 @@ function openDetail(raw) {
   const drivePreview = r.driveCutUrl || (r.original?.includes('drive.google.com') ? r.original : '');
   $('#detail-drive-cut').hidden = !drivePreview;
   $('#detail-drive-cut').href = driveLink(drivePreview);
-  $('#detail-drive-cut').textContent = t('在 Drive 查看 ↗');
+  $('#detail-drive-cut').textContent = t(r.driveCutUrl ? '在 Drive 查看已剪辑片段 ↗' : '在 Drive 查看未剪辑原片 ↗');
   if (!$('#detail').open) $('#detail').showModal();
 }
 function closeDetail() { $('#player').replaceChildren(); current = null; $('#detail').close(); }

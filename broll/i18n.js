@@ -1,4 +1,9 @@
 window.BROLL_EN_UI = {
+  "下载未剪辑完整原片 ↓": "Download full raw footage (unedited) \u2193",
+  "下载已剪辑片段 ↓": "Download edited clip \u2193",
+  "在 Drive 查看已剪辑片段 ↗": "View edited clip in Drive \u2197",
+  "在 Drive 查看未剪辑原片 ↗": "View unedited raw footage in Drive \u2197",
+
   "下载原片 ↓": "Download original ↓",
   "在 Drive 查看 ↗": "View in Drive ↗",
   "条已归档": "clips archived",

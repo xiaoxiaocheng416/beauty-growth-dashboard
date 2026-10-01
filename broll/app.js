@@ -70,7 +70,7 @@ function openDetail(raw) {
   current = raw; const r = displayRecord(raw); $('#player').replaceChildren();
   if (r.media) { const v = el('video'); v.controls = true; v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = r.media; v.poster = r.poster; v.addEventListener('error', () => { const n = el('div','player-error'); n.append(el('p','','预览文件暂时无法播放。可以打开视频文件查看。')); const a = el('a','button','打开视频文件 ↗'); a.href = driveLink(r.downloadUrl || r.cutMedia || r.media || r.original, true); a.target = '_blank'; a.rel = 'noopener'; n.append(a); $('#player').replaceChildren(n); }); $('#player').append(v); }
   else { const iframe = el('iframe'); iframe.src = r.preview; iframe.title = `Google Drive ${language === 'en' ? 'preview: ' : '视频预览：'}${r.filename}`; iframe.allow = 'fullscreen'; iframe.allowFullscreen = true; $('#player').append(iframe); }
-  $('#detail-meta').textContent = t(sourceNames[r.source] || r.source) + ' / ' + r.category;
+  $('#detail-meta').textContent = r.category;
   $('#detail-title').textContent = r.title; $('#detail-tags').replaceChildren(tags(r)); $('#detail-description').textContent = r.description;
   $('#detail-line').hidden = !r.line; $('#detail-line-text').textContent = r.line || '';
   $('#detail-evidence').textContent = r.reviewNote || '画面抽帧检查与选段';

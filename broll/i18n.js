@@ -1,4 +1,5 @@
 window.BROLL_EN_UI = {
+  "工作空间": "Workspace",
   "下载未剪辑完整原片 ↓": "Download full raw footage (unedited) \u2193",
   "下载已剪辑片段 ↓": "Download edited clip \u2193",
   "在 Drive 查看已剪辑片段 ↗": "View edited clip in Drive \u2197",
@@ -181,7 +182,7 @@ window.BROLL_EN_UI = {
   "预览已去掉 6.0 秒后的黑屏尾段；原片保留。": "The preview excludes the black tail after 6.0 seconds. The original is retained.",
   "预览已去掉 7.1 秒后的黑屏尾段；原片保留。": "The preview excludes the black tail after 7.1 seconds. The original is retained.",
   "标签已统一复核：场景与可见动作一起标记，例如「旅行＋行走」。机位移动不等于人物行走；托腮、微笑按实际画面标记，不推断内心感受。": "Tags combine the setting and visible action, such as Travel + Walking. Camera movement is not subject movement. Chin-resting and smiling describe what is visible, without inferring internal feelings.",
-  "全库 119 条已结合现有审片记录与当前切片三点画面重新核对标签。抽帧复核不等同正常速度连续播放验收。原有切点与用户取舍保留。": "Tags for all 119 clips were checked against existing review notes and three sampled points in each current cut. Frame sampling is not a real-time playback review. Approved edits and selection decisions are retained.",
+  "全库 129 条已结合现有审片记录与当前切片三点画面重新核对标签。抽帧复核不等同正常速度连续播放验收。原有切点与用户取舍保留。": "Tags for all 129 clips were checked against existing review notes and three sampled points in each current cut. Frame sampling is not a real-time playback review. Approved edits and selection decisions are retained.",
   "原色 HDR 切片保留原码流，不做 HDR 转 SDR；播放效果取决于设备支持。其他预览为轻量副本，下载保留原分辨率。": "Original-color HDR cuts retain their bitstream without HDR-to-SDR conversion; playback depends on the device. Other previews are lightweight, with original-resolution downloads.",
   "新增原片全长 2 fps、候选及定稿 4 fps 序列抽帧复核，完整解码通过；非实时连续播放验收。用户已指定取舍与切点。": "Originals reviewed at 2 fps; candidate and final cuts at 4 fps. Full decoding passed. The user confirmed selections and time ranges; this was not a real-time playback review.",
   "原片全长按每秒 2 帧检查，候选切片按每秒 4 帧复核，并完整解码检查音视频；这是序列抽帧审片，不等同实时连续播放验收。 色彩修正版另经原始视频码流哈希一致性、HDR 元数据、精确时长与完整解码核验。": "Reviewed using full-source frame sampling and denser candidate frame sampling, with complete decoding checks; not a real-time playback review. Original bitstream hashes, HDR metadata and exact duration were also checked.",
@@ -189,7 +190,7 @@ window.BROLL_EN_UI = {
   "2026-09-26 按原片完整画面时间轴每秒 1 帧复核，重点候选另以每秒 4 帧比较并检查导出首尾；序列抽帧不等同正常速度连续播放验收。": "Reviewed using full-source frame sampling and denser candidate frame sampling, with complete decoding checks; not a real-time playback review.",
   "预览为轻量副本。下载切片保留原分辨率、帧率与现场原声；未调色、未变速。": "Lightweight preview. Downloads retain original resolution, frame rate and sound, without color grading or speed changes. Originals and earlier versions are retained.",
   "预览为轻量副本。下载切片保留原分辨率、帧率和现场原声；未调色、未变速。原片及旧版本保留。": "Lightweight preview. Downloads retain original resolution, frame rate and sound, without color grading or speed changes. Originals and earlier versions are retained.",
-  "全库 87 段常用 · 27 段备选 · 5 段暂不推荐。切换「全部归档」查看所有条目。": "87 regular selections · 27 alternates · 5 on hold. Choose All archived clips to see everything.",
+  "全库 97 段常用 · 27 段备选 · 5 段暂不推荐。切换「全部归档」查看所有条目。": "97 regular selections · 27 alternates · 5 on hold. Choose All archived clips to see everything.",
   "这是 2026-09-26 的目录索引，尚未自动同步。Drive 新增素材后，需要重新扫描并更新索引。": "This is a library snapshot, not an automatic Drive sync. New Drive footage must be scanned and added to the index."
 };
 let language = new URLSearchParams(location.search).get('lang');
